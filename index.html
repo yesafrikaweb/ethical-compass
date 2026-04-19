@@ -306,11 +306,11 @@
       <div class="calculator-container">
         <div class="calc-inputs">
           <div class="input-group">
-            <label>Regulatory Risk <span>$ <span id="val-regulatory">500</span>k</span></label>
+            <label>Regulatory Risk <span>R <span id="val-regulatory">500</span>k</span></label>
             <input type="range" id="input-regulatory" min="0" max="1000" value="500" oninput="updateROI()">
           </div>
           <div class="input-group">
-            <label>Brand Value at Risk <span>$ <span id="val-brand">2.5</span>M</span></label>
+            <label>Brand Value at Risk <span>R <span id="val-brand">2.5</span>M</span></label>
             <input type="range" id="input-brand" min="0" max="10000" value="2500" oninput="updateROI()">
           </div>
           <div class="input-group">
@@ -321,7 +321,7 @@
         <div class="calc-results">
           <div class="result-label">Potential Institutional ROI</div>
           <div class="roi-value" id="roi-display">12x</div>
-          <p style="font-size: 0.875rem;">Estimated value of failure prevention per $1 of investment in continuous oversight.</p>
+          <p style="font-size: 0.875rem;">Estimated value of failure prevention per R 1 of investment in continuous oversight.</p>
         </div>
       </div>
     </section>
@@ -436,11 +436,15 @@
 
   </main>
 
-  <footer class="container" style="border-top: 1px solid var(--color-border); text-align: left; padding-top: 4rem;">
-    <div>
+  <footer class="container footer-layout">
+    <div class="footer-brand">
       <h4 style="margin-bottom: 0.5rem;">Ethical Compass</h4>
       <p style="font-size: 0.875rem;">A forensic platform for institutional accountability.</p>
       <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 1rem;">&copy; 2026 Ethical Compass. Professional usage only.</p>
+    </div>
+    <div class="footer-contact">
+      <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; color: var(--color-text-muted);">Strategic Inquiries</p>
+      <a href="mailto:intelligence@ethicalcompass.ai" style="color: var(--color-text-bright); text-decoration: none; font-size: 0.875rem; font-weight: 500;">intelligence@ethicalcompass.ai</a>
     </div>
   </footer>
 
