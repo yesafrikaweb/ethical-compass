@@ -1,0 +1,390 @@
+:root {
+  --color-midnight: #05070a; /* Darker, more premium black */
+  --color-deep-blue: #0a0f1a;
+  --color-electric-blue: #3b82f6; /* More refined blue */
+  --color-electric-blue-glow: rgba(59, 130, 246, 0.2);
+  --color-ubuntu-orange: #e95420; /* Humanistic / Ubuntu Orange */
+  --color-ubuntu-orange-glow: rgba(233, 84, 32, 0.2);
+  --color-border: rgba(255, 255, 255, 0.05);
+  --color-border-bright: rgba(255, 255, 255, 0.1);
+  --color-text-bright: #ffffff;
+  --color-text-muted: #64748b;
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --radius-sm: 4px; /* Sharper corners for elegance */
+  --radius-md: 8px;
+  --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.light-mode {
+  --color-midnight: #fcfcfc; /* Elegant Off-White */
+  --color-deep-blue: #f8f9fa;
+  --color-text-bright: #05070a;
+  --color-text-muted: #475569;
+  --color-border: rgba(0, 0, 0, 0.05);
+  --color-border-bright: rgba(0, 0, 0, 0.1);
+  --color-electric-blue-glow: rgba(59, 130, 246, 0.1);
+  --color-ubuntu-orange-glow: rgba(233, 84, 32, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-midnight);
+  color: var(--color-text-bright);
+  font-family: var(--font-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Typography Refinement */
+h1, h2, h3, h4 {
+  font-weight: 500; /* Lighter weight for elegance */
+  letter-spacing: -0.03em;
+  color: var(--color-text-bright);
+}
+
+h1 { font-size: 4rem; line-height: 1; }
+h2 { font-size: 2.5rem; }
+h4 { font-size: 1.1rem; color: var(--color-text-bright); }
+
+p {
+  font-weight: 300;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  text-transform: none !important;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+/* Elegant Section Titles */
+.section-title {
+  margin-bottom: 5rem;
+  max-width: 600px;
+}
+
+.section-title h2 {
+  margin-bottom: 1rem;
+}
+
+.section-title p {
+  font-size: 1.1rem;
+}
+
+/* Blueprint / Diagram Cards */
+.diagram-card {
+  border: 1px solid var(--color-border);
+  padding: 3rem;
+  position: relative;
+  transition: var(--transition);
+  background: transparent;
+}
+
+.diagram-card:hover {
+  border-color: var(--color-border-bright);
+  background: radial-gradient(circle at top left, rgba(0,0,0,0.02), transparent);
+}
+
+body:not(.light-mode) .diagram-card:hover {
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.03), transparent);
+}
+
+/* SVG Diagram Utilities */
+.svg-diagram {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.node {
+  fill: var(--color-midnight);
+  stroke: var(--color-border-bright);
+  stroke-width: 1px;
+}
+
+.node-active {
+  stroke: var(--color-electric-blue);
+  fill: rgba(59, 130, 246, 0.05);
+}
+
+.connector {
+  stroke: var(--color-border);
+  stroke-width: 1px;
+  fill: none;
+}
+
+.connector-active {
+  stroke: var(--color-electric-blue);
+  stroke-dasharray: 4 4;
+  animation: dash 20s linear infinite;
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: -1000; }
+}
+
+/* Hero Diagram Specifics */
+.hero-diagram-container {
+  position: relative;
+  height: 500px;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Comparison Table Refinement */
+.elegant-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.elegant-table th {
+  text-align: left;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-border-bright);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  text-transform: none !important;
+  letter-spacing: normal;
+}
+
+.elegant-table td {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  font-weight: 300;
+}
+
+/* Matrix Styles */
+.matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background-color: var(--color-border);
+  border: 1px solid var(--color-border);
+}
+
+.matrix-item {
+  background-color: transparent;
+  padding: 2.5rem;
+}
+
+/* Badge Styles */
+.elegant-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--color-electric-blue);
+  color: var(--color-electric-blue);
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+/* Calculator Styles */
+.calculator-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.calc-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.input-group label {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-group label span {
+  color: var(--color-text-bright);
+  font-weight: 500;
+}
+
+input[type="range"] {
+  width: 100%;
+  -webkit-appearance: none;
+  background: var(--color-border);
+  height: 2px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background: var(--color-electric-blue);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--color-electric-blue-glow);
+}
+
+.calc-results {
+  background: transparent;
+  border: 1px solid var(--color-border-bright);
+  padding: 3rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.roi-value {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-ubuntu-orange);
+  margin: 1rem 0;
+}
+
+.result-label {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  text-transform: none;
+}
+
+/* Sector List Styles */
+.sector-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.sector-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.sector-bullet {
+  width: 8px;
+  height: 8px;
+  background: var(--color-electric-blue);
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Lens Sandbox Styles */
+.sandbox-container {
+  border: 1px solid var(--color-border);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background: transparent;
+}
+
+.sandbox-lenses {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.lens-toggle {
+  background: transparent;
+  border: 1px solid var(--color-border-bright);
+  padding: 1rem 2rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.875rem;
+}
+
+.lens-toggle.active {
+  border-color: var(--color-electric-blue);
+  color: var(--color-electric-blue);
+  box-shadow: 0 0 20px var(--color-electric-blue-glow);
+}
+
+.sandbox-stream {
+  height: 120px;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.stream-node {
+  position: absolute;
+  width: 20px;
+  height: 1px;
+  background: var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.stream-node.risk {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-border-bright);
+}
+
+.stream-node.active-risk {
+  background: var(--color-electric-blue);
+  box-shadow: 0 0 15px var(--color-electric-blue);
+}
+
+.stream-node.ubuntu-risk {
+  background: var(--color-ubuntu-orange);
+  box-shadow: 0 0 15px var(--color-ubuntu-orange);
+}
+
+.risk-label {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  color: var(--color-text-bright);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.stream-node.active .risk-label {
+  opacity: 1;
+  top: -30px;
+}
+
+/* Mode Toggle */
+.mode-toggle {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: transparent;
+  border: 1px solid var(--color-border-bright);
+  padding: 0.5rem 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.mode-toggle:hover {
+  border-color: var(--color-electric-blue);
+  color: var(--color-electric-blue);
+}
