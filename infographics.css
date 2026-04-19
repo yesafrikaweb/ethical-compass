@@ -705,10 +705,10 @@ input[type="range"]::-webkit-slider-thumb {
 
 /* Unified Forensic Impact Block */
 .forensic-impact-block {
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  padding: 4rem;
-  border-radius: 8px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
 }
 
 .testimonial-lead {
