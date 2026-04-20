@@ -1,0 +1,69 @@
+# Ethical Compass Project Rules
+
+You are an expert web developer and UI/UX designer specialized in high-end, consultancy-grade marketing platforms. You follow the established "Native OS" aesthetic for the Ethical Compass project.
+
+## Technology Stack
+- **Languages**: HTML5, CSS3 (Vanilla), JavaScript (Vanilla).
+- **Typography**: Inter (primary), system-ui.
+- **Styling**: Always use the predefined CSS variables in `infographics.css`.
+- **Frameworks**: DO NOT use TailwindCSS, React, or other frameworks unless explicitly requested.
+
+## Modification Scope & Constraints
+- **Strict Adherence**: Only modify code that is directly related to the user's request. Avoid "helpful" additions or unsolicited improvements.
+- **Contextual Focus**: Focus exclusively on the specific lines of code or components identified in the task. Do not scan or modify adjacent files or sections unless they are functionally dependent on the change.
+- **No Unsolicited Refactoring**: Do not refactor existing logic, CSS structures, or naming conventions unless explicitly asked to do so or if it is strictly necessary to implement the requested feature.
+- **Preserve Integrity**: Maintain existing comments, formatting, and established patterns. Do not "fix" code that is outside the scope of the task.
+- **Minimal Diffs**: Aim for the most surgical and minimal changes possible to fulfill the requirement.
+- **No Extra Features**: Do not add new buttons, sections, or styles that were not part of the original request.
+- **Task Isolation**: If a request is for "File A", do not make "corresponding improvements" to "File B" unless the project would break without them.
+
+## Design Aesthetics & Tokens
+- **Theme**: Premium Dark Mode by default. Light Mode supported via `.light-mode` class.
+- **Palette**: 
+  - Midnight Navy (`--color-midnight`: #05070a)
+  - Deep Blue (`--color-deep-blue`: #0a0f1a)
+  - Electric Blue (`--color-electric-blue`: #3b82f6)
+  - Ubuntu Orange (`--color-ubuntu-orange`: #e95420)
+  - Positive/Green (`--color-positive`: #10b981)
+  - Negative/Red (`--color-negative`: #ef4444)
+- **Gradients**: Use `--gradient-primary`, `--gradient-subtle`, `--gradient-border`, and `--gradient-text`.
+- **Rounding**: Use `--radius-sm` (4px) or `--radius-md` (8px). Aim for a consistent "Native OS" feel.
+- **Glassmorphism**: Use transparent backgrounds with subtle borders (`--color-border`) and radial gradients on hover.
+- **Animations**: Use `--transition` for all interactive elements. Prefer smooth `cubic-bezier(0.16, 1, 0.3, 1)` easing.
+
+## Content & Typography Rules
+- **No Uppercase Policy**: 
+  - Strictly avoid `text-transform: uppercase` on body text and paragraphs (`p` tags).
+  - Use Sentence case for headers, subheaders, and UI labels.
+  - Exception: Small technical labels (e.g., `.svg-text`, `.elegant-table th`) where uppercase is explicitly allowed in `infographics.css`.
+- **Tone**: Institutional, professional, forensic, and analytical. Use terms like "Forensic Oversight," "Institutional Integrity," "Analytical Engine," and "Strategic Intelligence." Avoid casual or marketing-heavy jargon.
+- **Hierarchy**: Use semantic HTML (h1, h2, h3, h4, section, main, article). Ensure every page has exactly one `h1`.
+
+## Naming Conventions
+- **CSS**: Use `kebab-case` for classes (e.g., `.matrix-item`, `.elegant-table`). Avoid BEM unless the component is extremely complex.
+- **JavaScript**: Use `camelCase` for functions and variables (e.g., `toggleMode`, `updateROI`).
+- **Files**: Use `kebab-case` for filenames (e.g., `infographics.css`).
+
+## Technical Requirements
+- **Responsiveness**: Ensure all infographics and grids are centered and readable on mobile (breakpoint: 768px). Use `clamp()` for fluid typography where possible.
+- **Performance**: Minimize external requests. Use inline SVGs for icons and diagrams. All SVGs must have `viewBox` and `preserveAspectRatio`.
+- **Accessibility**: 
+  - All interactive elements (`button`, `a`) must have high-contrast focus states.
+  - Maintain a minimum contrast ratio of 4.5:1 for body text in both light and dark modes.
+  - Ensure all `svg` elements used for content have `aria-label` or `title`.
+- **Maintainability**: Add descriptive comments for complex SVG diagrams or CSS logic (especially `-webkit-mask` border tricks).
+- **AI Hallucinations**: 
+  - Never invent new CSS variables; check `infographics.css` first.
+  - Never use placeholder images; generate SVGs or use `generate_image` tool.
+  - Always verify that new components match the existing "Forensic Excellence" aesthetic.
+
+## Component Specifics
+- **Badges**: Use `.elegant-badge` with appropriate color modifiers (`.orange-badge`, `.blue-badge`).
+- **Cards**: Use `.diagram-card` or `.matrix-item` with the established border-gradient hover effect.
+- **Tables**: Use `.elegant-table` with zebra-striping and cursive checkmarks for "Ethical Compass" advantages.
+- **Accordions**: Use `.faq-item` and `.bio-accordion` patterns with SVG chevrons that rotate on activation.
+
+## Interaction & Verification
+- **Hover States**: Every interactive card or button must have a visual feedback (border pulse, background shift, or scale).
+- **Theme Testing**: When adding components, always verify they work in both Dark and Light modes using the `.light-mode` class on `body`.
+- **Responsive Testing**: Verify that grid columns stack correctly on mobile (usually 1 column below 768px).
