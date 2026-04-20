@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <!-- Appearance Toggle: Minimalist switch for Light/Dark mode transitions -->
   <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -24,16 +28,19 @@
     </svg>
   </button>
 
+  <!-- Hero Section: High-level value proposition and visual oversight metaphor -->
   <header class="container" style="padding-bottom: 0;">
     <div class="header-badges">
       <div class="elegant-badge blue-badge">Organisational Governance Oversight</div>
     </div>
-    <h1 class="hero-title">The precision of continuous forensic governance.</h1>
-    <p class="hero-subtitle">Ethical Compass replaces periodic audits with a persistent analytical engine, providing real-time oversight for complex organizational environments.</p>
-    
+    <h1 class="hero-title">The precision of continuous institutional oversight.</h1>
+    <p class="hero-subtitle">Ethical Compass replaces periodic audits with a persistent analytical engine, providing
+      real-time oversight for complex organizational environments.</p>
+
     <div class="hero-diagram-container">
+      <!-- Oversight Pulse Diagram: Visual representation of continuous institutional monitoring -->
       <svg class="svg-diagram" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
-        <!-- Abstract Forensic Pulse -->
+        <!-- Abstract Oversight Pulse -->
         <defs>
           <linearGradient id="grad1" x1="0%" y1="0%" x2="100% " y2="0%">
             <stop offset="0%" style="stop-color:var(--color-electric-blue);stop-opacity:0" />
@@ -41,13 +48,16 @@
             <stop offset="100%" style="stop-color:var(--color-electric-blue);stop-opacity:0" />
           </linearGradient>
         </defs>
-        <path d="M0 200 Q 100 200 150 200 T 200 150 T 250 250 T 300 200 T 400 200 T 450 100 T 500 300 T 550 200 T 800 200" 
-              fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-        <path d="M0 200 Q 100 200 150 200 T 200 150 T 250 250 T 300 200 T 400 200 T 450 100 T 500 300 T 550 200 T 800 200" 
-              fill="none" stroke="url(#grad1)" stroke-width="2">
+        <path
+          d="M0 200 Q 100 200 150 200 T 200 150 T 250 250 T 300 200 T 400 200 T 450 100 T 500 300 T 550 200 T 800 200"
+          fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+        <path
+          d="M0 200 Q 100 200 150 200 T 200 150 T 250 250 T 300 200 T 400 200 T 450 100 T 500 300 T 550 200 T 800 200"
+          fill="none" stroke="url(#grad1)" stroke-width="2">
           <animate attributeName="stroke-dasharray" from="0, 1000" to="1000, 0" dur="4s" repeatCount="indefinite" />
           <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="4s" repeatCount="indefinite" />
         </path>
+        <!-- Central Hub Node: The analytical engine at the core of the oversight -->
         <circle cx="400" cy="200" r="100" class="node" style="opacity: 0.1;" />
         <circle cx="400" cy="200" r="60" class="node" style="opacity: 0.2;" />
         <circle cx="400" cy="200" r="5" fill="var(--color-electric-blue)" />
@@ -57,36 +67,44 @@
 
   <main class="container">
 
+    <!-- Capabilities Matrix: Key pillars of the Ethical Compass service offering -->
     <section id="capabilities">
       <div class="section-title">
-        <h2>Key Modules & Capabilities</h2>
-        <p>A specialized ecosystem of forensic tools designed for institutional integrity.</p>
+        <h2>Strategic Capabilities</h2>
+        <p>A specialized framework of oversight tools designed for institutional integrity.</p>
       </div>
 
       <div class="matrix-grid">
         <div class="matrix-item">
-          <div class="elegant-badge" style="border-color: var(--color-border); color: var(--color-text-muted);">Impact Engine</div>
+          <div class="elegant-badge" style="border-color: var(--color-border); color: var(--color-text-muted);">Impact
+            Engine</div>
           <h4>Proactive Oversight</h4>
-          <p class="matrix-item-desc">Continuous scanning of project protocols and data streams for emerging ethical risks and regulatory gaps.</p>
+          <p class="matrix-item-desc">Continuous scanning of project protocols and data streams for emerging ethical
+            risks and regulatory gaps.</p>
+          <div class="card-logs" id="oversight-logs"></div>
         </div>
         <div class="matrix-item">
           <div class="elegant-badge orange-badge">Workbench</div>
           <h4>Adversarial Simulation</h4>
-          <p class="matrix-item-desc">Simulating bad-faith actors and reputational attack vectors to test institutional resilience before deployment.</p>
+          <p class="matrix-item-desc">Simulating bad-faith actors and reputational attack vectors to test institutional
+            resilience before deployment.</p>
         </div>
         <div class="matrix-item">
           <div class="elegant-badge">Sovereign AI</div>
           <h4>Private Governance</h4>
-          <p class="matrix-item-desc">Air-gapped, on-premise deployments for security-conscious organizations with extreme data sovereignty needs.</p>
+          <p class="matrix-item-desc">Air-gapped, on-premise deployments for security-conscious organizations with
+            extreme data sovereignty needs.</p>
         </div>
         <div class="matrix-item">
           <div class="elegant-badge">BI Platform</div>
           <h4>Strategic Intelligence</h4>
-          <p class="matrix-item-desc">A high-density analytical canvas for C-suite decision makers to monitor qualitative and quantitative risk indices.</p>
+          <p class="matrix-item-desc">A high-density analytical canvas for C-suite decision makers to monitor
+            qualitative and quantitative risk indices.</p>
         </div>
       </div>
     </section>
 
+    <!-- Institutional Intelligence FAQ: Direct responses to common strategic inquiries -->
     <section id="faq" style="margin-top: 8rem;">
       <div class="faq-layout">
         <div class="faq-header">
@@ -100,29 +118,39 @@
           <div class="faq-item">
             <button class="faq-trigger" onclick="toggleFAQ(this)">
               Who exactly benefits from the Ethical Compass analytical ecosystem?
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
             </button>
             <div class="faq-content">
               <p>Our ecosystem is designed for three core institutional personas:</p>
               <ul>
-                <li><strong>C-Suite Executives:</strong> Seeking strategic clarity on non-financial risks and long-term institutional stability.</li>
-                <li><strong>Ethics & Governance Officers:</strong> Transitioning from manual audit cycles to automated, continuous forensic oversight.</li>
-                <li><strong>System Architects:</strong> Integrating "Ethics by Design" and automated governance directly into operational pipelines.</li>
+                <li><strong>C-Suite Executives:</strong> Seeking strategic clarity on non-financial risks and long-term
+                  institutional stability.</li>
+                <li><strong>Ethics & Governance Officers:</strong> Transitioning from manual audit cycles to automated,
+                  continuous strategic oversight.</li>
+                <li><strong>System Architects:</strong> Integrating "Ethics by Design" and automated governance directly
+                  into operational pipelines.</li>
               </ul>
             </div>
           </div>
-          
+
           <!-- Item 2: Sectors - Finance & Healthcare -->
           <div class="faq-item">
             <button class="faq-trigger" onclick="toggleFAQ(this)">
               In which strategic sectors is Ethical Compass most impactful?
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
             </button>
             <div class="faq-content">
               <p>We deliver high-value analytical impact across several critical verticals:</p>
               <ul>
                 <li><strong>Financial Services:</strong> M&A due diligence and ESG investment scoring.</li>
-                <li><strong>Healthcare & Pharma:</strong> Ethical oversight of clinical trials and HIPAA compliance synchronization.</li>
+                <li><strong>Healthcare & Pharma:</strong> Ethical oversight of clinical trials and HIPAA compliance
+                  synchronization.</li>
                 <li><strong>Public Sector:</strong> Tender fairness analysis and anti-corruption oversight.</li>
               </ul>
             </div>
@@ -132,14 +160,19 @@
           <div class="faq-item">
             <button class="faq-trigger" onclick="toggleFAQ(this)">
               How do we support Technical and Operational infrastructures?
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
             </button>
             <div class="faq-content">
               <p>Our tools are purpose-built for high-density tech environments:</p>
               <ul>
                 <li><strong>Tech & Software:</strong> Adversarial red-teaming directly in CI/CD pipelines.</li>
-                <li><strong>Global Supply Chain:</strong> Continuous third-party due diligence and real-time monitoring.</li>
-                <li><strong>Education & Advisory:</strong> Providing the technical foundation for professional GRC certification.</li>
+                <li><strong>Global Supply Chain:</strong> Continuous third-party due diligence and real-time monitoring.
+                </li>
+                <li><strong>Education & Advisory:</strong> Providing the technical foundation for professional GRC
+                  certification.</li>
               </ul>
             </div>
           </div>
@@ -148,27 +181,40 @@
           <div class="faq-item">
             <button class="faq-trigger" onclick="toggleFAQ(this)">
               What measures are taken to ensure Data Sovereignty and Security?
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
             </button>
             <div class="faq-content">
-              <p>Ethical Compass prioritizes institutional control above all else. We offer sovereign AI deployments and air-gapped, on-premise configurations for organizations with extreme security and data sovereignty requirements.</p>
+              <p>Ethical Compass prioritizes institutional control above all else. We offer sovereign AI deployments and
+                air-gapped, on-premise configurations for organizations with extreme security and data sovereignty
+                requirements.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Impact & ROI: Quantifiable institutional benefits and expert validation -->
     <section id="impact" style="margin-top: 8rem;">
-      <div class="forensic-impact-block">
+      <div class="institutional-impact-block">
         <div class="section-title">
-          <h2>Forensic Excellence at Scale</h2>
-          <p style="max-width: 700px; margin-bottom: 2rem;">Our commitment to forensic precision and institutional integrity is evident in every oversight cycle we execute. We deliver industry-leading governance that ensures your projects are built on an ethical foundation.</p>
-          
+          <h2>Impact & Institutional Integrity</h2>
+          <p style="max-width: 700px; margin-bottom: 2rem;">Our commitment to analytical precision and institutional
+            integrity is evident in every oversight cycle we execute. We deliver industry-leading governance that
+            ensures your projects are built on an ethical foundation.</p>
+
           <div class="testimonial-lead">
             <div class="quote-icon-small">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21L14.017 18C14.017 16.895 14.912 16 16.017 16H19.017V14H15.017C13.912 14 13.017 13.105 13.017 12V6C13.017 4.895 13.912 4 15.017 4H21.017C22.122 4 23.017 4.895 23.017 6V12C23.017 13.105 22.122 14 21.017 14H21.017V16C21.017 18.761 18.778 21 16.017 21H14.017ZM1.017 21L1.017 18C1.017 16.895 1.912 16 3.017 16H6.017V14H2.017C0.912 14 0.017 13.105 0.017 12V6C0.017 4.895 0.912 4 2.017 4H8.017C9.122 4 10.017 4.895 10.017 6V12C10.017 13.105 9.122 14 8.017 14H8.017V16C8.017 18.761 5.778 21 3.017 21H1.017Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M14.017 21L14.017 18C14.017 16.895 14.912 16 16.017 16H19.017V14H15.017C13.912 14 13.017 13.105 13.017 12V6C13.017 4.895 13.912 4 15.017 4H21.017C22.122 4 23.017 4.895 23.017 6V12C23.017 13.105 22.122 14 21.017 14H21.017V16C21.017 18.761 18.778 21 16.017 21H14.017ZM1.017 21L1.017 18C1.017 16.895 1.912 16 3.017 16H6.017V14H2.017C0.912 14 0.017 13.105 0.017 12V6C0.017 4.895 0.912 4 2.017 4H8.017C9.122 4 10.017 4.895 10.017 6V12C10.017 13.105 9.122 14 8.017 14H8.017V16C8.017 18.761 5.778 21 3.017 21H1.017Z" />
+              </svg>
             </div>
-            <p class="quote-text-small">"Institutional integrity is not a static milestone, but a continuous forensic practice. Ethical Compass provides the analytical depth required to navigate the complex intersection of global standards and human-centric governance."</p>
+            <p class="quote-text-small">"Institutional integrity is not a static milestone, but a continuous governance
+              practice. Ethical Compass provides the analytical depth required to navigate the complex intersection of
+              global standards and human-centric governance."</p>
             <div class="author-info-small">
               <span class="author-name">Praveen Naidoo</span>
               <span class="author-role">| Ethics & Governance Expert</span>
@@ -183,7 +229,7 @@
           </div>
           <div class="number-item">
             <div class="number-value">99.8<span class="accent-text">%</span></div>
-            <div class="number-label">forensic scanning accuracy</div>
+            <div class="number-label">precision monitoring accuracy</div>
           </div>
           <div class="number-item">
             <div class="number-value">
@@ -201,6 +247,7 @@
       </div>
     </section>
 
+    <!-- Closed-Loop Governance: Procedural flow from data scanning to auditable remediation -->
     <section id="governance" style="margin-top: 8rem;">
       <div class="section-title">
         <h2>Closed-Loop Governance</h2>
@@ -212,7 +259,7 @@
           <svg class="svg-diagram" viewBox="0 0 400 400">
             <circle cx="200" cy="200" r="150" class="connector" />
             <circle cx="200" cy="200" r="150" class="connector-active" />
-            
+
             <!-- Nodes -->
             <g transform="translate(200, 50)">
               <circle r="10" class="node node-active" />
@@ -234,7 +281,7 @@
         </div>
         <div class="governance-info">
           <div class="info-item">
-            <h4>Forensic Analysis</h4>
+            <h4>Strategic Analysis</h4>
             <p>Scanning institutional data streams for ethical and regulatory red flags.</p>
           </div>
           <div class="info-item">
@@ -253,6 +300,7 @@
       </div>
     </section>
 
+    <!-- Comparison Matrix: Technical differentiation from legacy GRC systems -->
     <section id="comparison" style="margin-top: 8rem;">
       <div class="section-title">
         <h2>Comparison Matrix</h2>
@@ -271,36 +319,37 @@
             <tr>
               <td>Analytical Method</td>
               <td>Manual assessment</td>
-              <td class="accent-text forensic-check">Continuous forensic engine</td>
+              <td class="accent-text precision-check">Continuous governance engine</td>
             </tr>
             <tr>
               <td>Detection Latency</td>
               <td>Quarterly / Annual</td>
-              <td class="accent-text forensic-check">Near real-time oversight</td>
+              <td class="accent-text precision-check">Near real-time oversight</td>
             </tr>
             <tr>
               <td>Governance Depth</td>
               <td>Surface compliance</td>
-              <td class="accent-text forensic-check">Deep forensic investigation</td>
+              <td class="accent-text precision-check">Deep institutional investigation</td>
             </tr>
             <tr>
               <td>Data Sovereignty</td>
               <td>Public cloud only</td>
-              <td class="accent-text forensic-check">Sovereign AI / Air-gapped</td>
+              <td class="accent-text precision-check">Data Sovereignty / Air-gapped</td>
             </tr>
             <tr>
               <td>Human In the Loop</td>
               <td class="orange-check">Retains human oversight</td>
-              <td class="accent-text forensic-check">Retains human oversight</td>
+              <td class="accent-text precision-check">Retains human oversight</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
+    <!-- Economics of Integrity: Interactive calculator for failure prevention ROI -->
     <section id="roi" style="margin-top: 8rem;">
       <div class="section-title">
-        <h2>The ROI of Integrity Calculator</h2>
+        <h2>Economics of Integrity Calculator</h2>
         <p>Estimate the cost of a single major reputational failure versus the efficiency of continuous oversight.</p>
       </div>
       <div class="calculator-container">
@@ -321,11 +370,13 @@
         <div class="calc-results">
           <div class="result-label">Potential Institutional ROI</div>
           <div class="roi-value" id="roi-display">12x</div>
-          <p style="font-size: 0.875rem;">Estimated value of failure prevention per R 1 of investment in continuous oversight.</p>
+          <p style="font-size: 0.875rem;">Estimated value of failure prevention per R 1 of investment in continuous
+            oversight.</p>
         </div>
       </div>
     </section>
 
+    <!-- Key Personnel: Strategic leadership profiles -->
     <section id="personnel" style="margin-top: 8rem;">
       <div class="section-title">
         <h2>Key Personnel</h2>
@@ -335,45 +386,69 @@
         <div class="diagram-card">
           <h4 class="person-name">Gcwelethemba Tshuma</h4>
           <p class="person-title-electric">System Architect Designer</p>
-          <p class="card-desc">Leading the technical architecture and structural design of the forensic governance engine.</p>
-          
+          <p class="card-desc">Leading the technical architecture and structural design of the institutional governance
+            engine.</p>
+
           <div class="bio-accordion">
             <button class="bio-trigger" onclick="toggleBio(this)">
               View Detailed Profile
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
             </button>
             <div class="bio-content">
-              <p>GT is a seasoned multidisciplinary strategist working at the intersection of AI ethics, law, and global governance. He is a certified leadership coach and facilitator, and has had the privilege of working with local and international policies teams such as BRICS and other state-led development initiatives.</p>
-              <p>His work and experiences come from years of technical and the design expertise in Ethics and Governance including integration into responsible AI and sustainable AI Governance. From Prompt Engineering to the design of Governance Automation systems, GT helps organisations ensure that their sovereign data is transformed into machine-readable formats while prioritizing transparency and accountability.</p>
-              <p>With his passion for social justice, advocacy and community development, GT brings that strategic oversight required for all of these technologies to remain aligned, transparent and accountable.</p>
+              <p>GT is a seasoned multidisciplinary strategist working at the intersection of AI ethics, law, and global
+                governance. He is a certified leadership coach and facilitator, and has had the privilege of working
+                with local and international policies teams such as BRICS and other state-led development initiatives.
+              </p>
+              <p>His work and experiences come from years of technical and the design expertise in Ethics and Governance
+                including integration into responsible AI and sustainable AI Governance. From Prompt Engineering to the
+                design of Governance Automation systems, GT helps organisations ensure that their sovereign data is
+                transformed into machine-readable formats while prioritizing transparency and accountability.</p>
+              <p>With his passion for social justice, advocacy and community development, GT brings that strategic
+                oversight required for all of these technologies to remain aligned, transparent and accountable.</p>
             </div>
           </div>
         </div>
         <div class="diagram-card orange-glow">
           <h4 class="person-name">Praveen Naidoo</h4>
           <p class="person-title-orange">Ethics & Governance Expert</p>
-          <p class="card-desc">Overseeing the alignment of analytical filters with global ethical standards and human-centric governance codes.</p>
-          
+          <p class="card-desc">Overseeing the alignment of analytical filters with global ethical standards and
+            human-centric governance codes.</p>
+
           <div class="bio-accordion">
             <button class="bio-trigger" onclick="toggleBio(this)">
               View Detailed Profile
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
             </button>
             <div class="bio-content">
-              <p>Praveen is a seasoned governance and ethics professional with over 20 years of experience in oversight governance, ethics management and anti-corruption strategy, in both the public and private sectors across Africa. He has led key institutional reforms, including the Central Bank of Nigeria’s Ethics Management Infrastructure and the Tanzanian Revenue Authority’s Anti-Corruption Programme.</p>
-              <p>He has served as an Ethics Advisor to the UNODC’s ARINSA Programme and spent over a decade heading up the Integrity Management Unit at the NPA, overseeing fraud and corruption investigations, compliance and ethics management and advocacy, and is the former Chair of the Office of Ethics and Accountability in the Justice Cluster in South Africa. Praveen currently serves as a Non-Executive Board Member of the SIU, and is also working on a new blueprint for AI Ethics and Data Governance for the African Continent.</p>
+              <p>Praveen is a seasoned governance and ethics professional with over 20 years of experience in oversight
+                governance, ethics management and anti-corruption strategy, in both the public and private sectors
+                across Africa. He has led key institutional reforms, including the Central Bank of Nigeria’s Ethics
+                Management Infrastructure and the Tanzanian Revenue Authority’s Anti-Corruption Programme.</p>
+              <p>He has served as an Ethics Advisor to the UNODC’s ARINSA Programme and spent over a decade heading up
+                the Integrity Management Unit at the NPA, overseeing fraud and corruption investigations, compliance and
+                ethics management and advocacy, and is the former Chair of the Office of Ethics and Accountability in
+                the Justice Cluster in South Africa. Praveen currently serves as a Non-Executive Board Member of the
+                SIU, and is also working on a new blueprint for AI Ethics and Data Governance for the African Continent.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Pricing & Tiers: Scalable strategic oversight plans -->
     <section id="plans" style="margin-top: 8rem;">
       <div class="section-title">
         <h2>Institutional Intelligence Plans</h2>
-        <p>Scalable forensic oversight tailored to your organization's governance requirements.</p>
+        <p>Scalable strategic oversight tailored to your organization's governance requirements.</p>
       </div>
-      
+
       <div class="pricing-grid">
         <!-- Sovereign Tier -->
         <div class="pricing-card">
@@ -386,26 +461,35 @@
           </div>
           <ul class="pricing-features">
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Core Forensic Engine
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Core Governance Engine
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
               Regulatory Sync (Monthly)
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
               Standard Support
             </li>
           </ul>
           <button class="pricing-btn">Request a Briefing</button>
         </div>
 
-        <!-- Forensic Enterprise -->
+        <!-- Stewardship Enterprise -->
         <div class="pricing-card highlighted">
           <div class="best-value">BEST VALUE</div>
           <div class="pricing-header">
-            <h3>Forensic Enterprise</h3>
+            <h3>Stewardship Enterprise</h3>
             <p>Real-time oversight for global scale operations.</p>
           </div>
           <div class="pricing-price" style="margin-bottom: 2rem;">
@@ -413,19 +497,31 @@
           </div>
           <ul class="pricing-features">
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Continuous Forensic Oversight
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Continuous Strategic Oversight
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
               Real-time Regulatory Sync
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
               Priority Advisory Access
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
               Custom Red-Teaming Modules
             </li>
           </ul>
@@ -439,17 +535,25 @@
   <footer class="container footer-layout">
     <div class="footer-brand">
       <h4 style="margin-bottom: 0.5rem;">Ethical Compass</h4>
-      <p style="font-size: 0.875rem;">A forensic platform for institutional accountability.</p>
-      <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 1rem;">&copy; 2026 Ethical Compass. Professional usage only.</p>
+      <p style="font-size: 0.875rem;">A strategic platform for institutional accountability.</p>
+      <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 1rem;">&copy; 2026 Ethical Compass.
+        Professional usage only.</p>
     </div>
     <div class="footer-contact">
-      <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; color: var(--color-text-muted);">Strategic Inquiries</p>
-      <a href="mailto:intelligence@ethicalcompass.ai" style="color: var(--color-text-bright); text-decoration: none; font-size: 0.875rem; font-weight: 500;">intelligence@ethicalcompass.ai</a>
+      <p
+        style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; color: var(--color-text-muted);">
+        Strategic Inquiries</p>
+      <a href="mailto:intelligence@ethicalcompass.ai"
+        style="color: var(--color-text-bright); text-decoration: none; font-size: 0.875rem; font-weight: 500;">intelligence@ethicalcompass.ai</a>
     </div>
   </footer>
 
   <script>
     // Theme Toggle Logic
+    /**
+     * Toggles between light and dark modes.
+     * Updates the body class and persists the preference to localStorage.
+     */
     function toggleMode() {
       document.body.classList.toggle('light-mode');
       const isLight = document.body.classList.contains('light-mode');
@@ -462,10 +566,13 @@
     }
 
     // FAQ Accordion Logic
+    /**
+     * Manages the FAQ accordion interaction.
+     * @param {HTMLElement} btn - The trigger button element.
+     */
     function toggleFAQ(btn) {
       const content = btn.nextElementSibling;
       const isOpen = content.classList.contains('active');
-      
       // Close all other FAQs (optional, but cleaner)
       document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('active'));
       document.querySelectorAll('.faq-trigger').forEach(b => b.classList.remove('active'));
@@ -477,10 +584,13 @@
     }
 
     // Bio Accordion Logic
+    /**
+     * Manages the Personnel Bio accordion interaction.
+     * @param {HTMLElement} btn - The trigger button element.
+     */
     function toggleBio(btn) {
       const content = btn.nextElementSibling;
       const isOpen = content.classList.contains('active');
-      
       // Close all other bios in the grid (optional, but cleaner)
       document.querySelectorAll('.bio-content').forEach(c => {
         if (c !== content) c.classList.remove('active');
@@ -494,29 +604,72 @@
     }
 
     // ROI Calculator Logic
+    /**
+     * ROI Calculator Logic
+     * Calculates potential institutional ROI based on risk inputs.
+     * failureCost = regulatory + brand + (complexity * 500)
+     */
     function updateROI() {
       const reg = parseInt(document.getElementById('input-regulatory').value);
       const brand = parseInt(document.getElementById('input-brand').value);
       const complexity = parseInt(document.getElementById('input-complexity').value);
-      
       document.getElementById('val-regulatory').innerText = reg;
       document.getElementById('val-brand').innerText = (brand / 1000).toFixed(1);
-      
       const complexityLabels = ['Low', 'Moderate', 'Significant', 'High', 'Critical'];
       document.getElementById('val-complexity').innerText = complexityLabels[complexity - 1];
-      
       const failureCost = reg + brand + (complexity * 500);
-      const oversightCost = 250; 
+      const oversightCost = 250
       const roi = Math.max(1, Math.round(failureCost / oversightCost));
-      
       document.getElementById('roi-display').innerText = roi + 'x';
     }
 
     // Initialize
     updateROI();
 
+    // Forensic Log Feed Simulation
+    // Provides a visual stream of background oversight activities.
+    const logEntries = [
+      "[SCANNING] Project Alpha protocol audit initiated...",
+      "[OVERSIGHT] Analyzing data stream 0x4F... PASS",
+      "[INTEGRITY] Syncing Regulatory Code 802.11...",
+      "[STRATEGIC] Emerging ethical risk detected in Module B...",
+      "[REMEDIATION] Deploying automated governance patch...",
+      "[SYSTEM] Governance engine operating at 99.8% precision...",
+      "[SYNC] Global ethical standards updated...",
+      "[SECURITY] Air-gapped enclave integrity verified...",
+      "[AUDIT] Immutable record hash generated: 7a8c...2e1",
+      "[ANALYSIS] Qualitative risk indices re-calculated..."
+    ];
 
+    const logContainer = document.getElementById('oversight-logs');
+    let logIndex = 0;
+
+    /**
+     * Recursively adds log entries to the Proactive Oversight card.
+     * Simulates real-time forensic activity.
+     */
+    function addLog() {
+      const entry = document.createElement('div');
+      entry.className = 'log-entry';
+      entry.innerText = logEntries[logIndex];
+      logContainer.appendChild(entry);
+
+      // Keep only 5 entries for density
+      if (logContainer.children.length > 5) {
+        logContainer.removeChild(logContainer.firstChild);
+      }
+
+      logIndex = (logIndex + 1) % logEntries.length;
+
+      // Auto-scroll logic (if needed, but we remove old entries)
+      logContainer.scrollTop = logContainer.scrollHeight;
+
+      setTimeout(addLog, 2000 + Math.random() * 3000);
+    }
+
+    addLog();
   </script>
 
 </body>
+
 </html>

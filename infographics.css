@@ -1,3 +1,6 @@
+/* --- DESIGN TOKENS --- 
+   The core palette and aesthetic variables for the Ethical Compass "Native OS" design system.
+*/
 :root {
   --color-midnight: #05070a; /* Darker, more premium black */
   --color-deep-blue: #0a0f1a;
@@ -25,6 +28,9 @@
   --color-negative: #ef4444; /* Premium Red */
 }
 
+/* --- THEME OVERRIDES --- 
+   Light mode support via .light-mode class. 
+*/
 body.light-mode {
   --color-midnight: #fcfcfc; /* Elegant Off-White */
   --color-deep-blue: #f8f9fa;
@@ -43,6 +49,7 @@ body.light-mode {
   padding: 0;
 }
 
+/* --- RESET & CORE STYLES --- */
 body {
   background-color: var(--color-midnight);
   color: var(--color-text-bright);
@@ -53,7 +60,9 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* Typography Refinement */
+/* --- TYPOGRAPHY REFINEMENT --- 
+   Focus on weight 300-500 for a consultancy-grade, institutional feel.
+*/
 h1, h2, h3, h4 {
   font-weight: 500; /* Lighter weight for elegance */
   letter-spacing: -0.03em;
@@ -121,7 +130,9 @@ p {
   font-size: 1.1rem;
 }
 
-/* Blueprint / Diagram Cards */
+/* --- BLUEPRINT / DIAGRAM CARDS --- 
+   Glassmorphic containers with responsive hover interactions.
+*/
 .diagram-card {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -140,6 +151,11 @@ p {
 .diagram-card::before,
 .matrix-item::before,
 .pricing-card::before {
+  /**
+   * Native OS Border Trick: 
+   * Uses -webkit-mask to create a gradient border that only appears on the edge.
+   * This prevents background-clip: border-box from bleeding through.
+   */
   content: '';
   position: absolute;
   top: -1px; left: -1px; right: -1px; bottom: -1px;
@@ -167,7 +183,9 @@ body:not(.light-mode) .diagram-card:hover {
   background: radial-gradient(circle at top left, rgba(255,255,255,0.03), transparent);
 }
 
-/* SVG Diagram Utilities */
+/* --- SVG DIAGRAM UTILITIES --- 
+   Styles for interactive SVG components and path animations.
+*/
 .svg-diagram {
   width: 100%;
   height: auto;
@@ -182,6 +200,7 @@ body:not(.light-mode) .diagram-card:hover {
   filter: drop-shadow(0 0 5px var(--color-electric-blue-glow));
 }
 
+/* Static connector line representing institutional pathways */
 .connector {
   stroke: var(--color-border);
   stroke-width: 1px;
@@ -201,6 +220,7 @@ body:not(.light-mode) .diagram-card:hover {
   animation: nodePulse 2s ease-in-out infinite;
 }
 
+/* Pulse effect for active nodes in the governance loop */
 @keyframes nodePulse {
   0% { r: 10; opacity: 1; }
   50% { r: 12; opacity: 0.7; }
@@ -229,7 +249,9 @@ body:not(.light-mode) .diagram-card:hover {
   align-items: center;
 }
 
-/* Comparison Table Refinement */
+/* --- COMPARISON TABLE REFINEMENT --- 
+   Zebra-striped table with institutional typography and custom checkmarks.
+*/
 .table-container {
   width: 100%;
   overflow-x: auto;
@@ -287,13 +309,13 @@ body:not(.light-mode) .diagram-card:hover {
   border-right: 1px solid var(--color-border);
 }
 
-.forensic-check {
+.precision-check {
   position: relative;
   color: var(--color-text-bright) !important;
   font-weight: 500 !important;
 }
 
-.forensic-check::before {
+.precision-check::before {
   content: "✓";
   font-family: 'Cursive', cursive, serif;
   margin-right: 0.75rem;
@@ -321,7 +343,9 @@ body:not(.light-mode) .diagram-card:hover {
   transform: rotate(-5deg);
 }
 
-/* Matrix Styles */
+/* --- MATRIX STYLES --- 
+   Grid-based capability display with subtle hover states.
+*/
 .matrix-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -371,7 +395,9 @@ body.light-mode .matrix-item {
   color: var(--color-electric-blue);
 }
 
-/* Calculator Styles */
+/* --- CALCULATOR STYLES --- 
+   Analytical tool for estimating failure prevention ROI.
+*/
 .calculator-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -544,7 +570,9 @@ input[type="range"]::-moz-range-thumb {
   font-size: 0.875rem;
 }
 
-/* Pricing Section Styles */
+/* --- PRICING SECTION STYLES --- 
+   Service tier display with institutional focus and highlighting.
+*/
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -706,7 +734,9 @@ input[type="range"]::-moz-range-thumb {
   line-height: 1.4;
 }
 
-/* FAQ Styles */
+/* --- FAQ STYLES --- 
+   Accordion-based interaction for institutional knowledge base.
+*/
 .faq-layout {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -787,8 +817,10 @@ input[type="range"]::-moz-range-thumb {
   color: var(--color-text-bright);
 }
 
-/* Unified Forensic Impact Block */
-.forensic-impact-block {
+/* --- FORENSIC IMPACT BLOCK --- 
+   Consolidated section for expert testimonials and operational indices.
+*/
+.institutional-impact-block {
   background: transparent;
   border: none;
   padding: 0;
@@ -1150,6 +1182,39 @@ input[type="range"]::-moz-range-thumb {
   gap: 2rem;
 }
 
+.card-logs {
+  margin-top: 1.5rem;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--color-border);
+  padding: 0.75rem 0;
+  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  mask-image: linear-gradient(to bottom, transparent, black 30%);
+}
+
+.log-entry {
+  margin-bottom: 0.2rem;
+  animation: logSlide 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  white-space: nowrap;
+}
+
+@keyframes logSlide {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body.light-mode .card-logs {
+  background: transparent;
+  border-color: var(--color-border);
+  color: #475569;
+}
+
 .footer-contact {
   text-align: right;
 }
@@ -1283,5 +1348,86 @@ input[type="range"]::-moz-range-thumb {
 
   .footer-contact {
     text-align: left;
+  }
+}
+
+/* Side Navigation (Scroll-Spy) */
+.side-nav {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--color-border);
+  z-index: -1;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-border-bright);
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.nav-dot:hover {
+  background: var(--color-electric-blue);
+  transform: scale(1.2);
+}
+
+.nav-dot.active {
+  background: var(--color-electric-blue);
+  box-shadow: 0 0 10px var(--color-electric-blue-glow);
+  transform: scale(1.5);
+}
+
+.nav-label {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  background: var(--color-deep-blue);
+  border: 1px solid var(--color-border);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-bright);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.nav-dot:hover .nav-label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+@media (max-width: 768px) {
+  .side-nav {
+    display: none;
   }
 }
