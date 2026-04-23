@@ -96,18 +96,45 @@
 </head>
 
 <body>
-  <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-  </button>
+  <!-- Premium Sticky Navigation -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        Ethical Compass
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Overview</a>
+        <div class="nav-divider"></div>
+        <a href="proactive-oversight.html" class="nav-link">Features</a>
+        <a href="closed-loop-governance.html" class="nav-link">Approach</a>
+        <a href="comparison-matrix.html" class="nav-link">Compare</a>
+        <a href="economics-of-integrity.html" class="nav-link">Value</a>
+        <a href="personnel.html" class="nav-link">Team</a>
+        <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance"
+          style="position: static; margin-left: 1rem;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
 
-  <nav class="back-nav">
-    <a href="../index.html" class="back-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-      Return to Overview
-    </a>
-  </nav>
-
-  <header class="container impact-hero">
+  <header class="container impact-hero reveal">
     <div class="header-badges" style="justify-content: center;">
       <div class="elegant-badge orange-badge">Impact Analysis</div>
     </div>
@@ -117,12 +144,12 @@
 
   <main class="container" style="padding-top: 0;">
     
-    <div class="metrics-deep-dive">
+    <div class="metrics-deep-dive reveal">
       <!-- Metric 1 -->
       <div class="metric-card">
         <div class="metric-header">
           <span class="big-number">12x</span>
-          <span class="metric-label">Institutional ROI</span>
+          <span class="metric-label">Institutional Value</span>
         </div>
         <p class="metric-desc">Achieved through the systematic prevention of high-impact reputational and regulatory failures. Our methodology treats ethics as a strategic asset with quantifiable financial returns.</p>
       </div>
@@ -155,7 +182,7 @@
       </div>
     </div>
 
-    <section class="validation-section">
+    <section class="validation-section reveal">
       <div class="quote-block">
         <div class="quote-symbol">“</div>
         <p class="large-quote">Institutional integrity is not a static milestone, but a continuous governance practice. Ethical Compass provides the analytical depth required to navigate the complex intersection of global standards and human-centric governance.</p>
@@ -177,7 +204,7 @@
           <p class="matrix-item-desc">Providing the technical foundation for continuous risk management as defined by the International Organization for Standardization.</p>
         </div>
         <div class="matrix-item">
-          <h4>King IV Methodology</h4>
+          <h4>King IV Approach</h4>
           <p class="matrix-item-desc">Integrating the principles of ethical leadership and institutional stewardship into every analytical oversight cycle.</p>
         </div>
       </div>
@@ -191,9 +218,6 @@
     </div>
   </footer>
 
-  <script>
-    function toggleMode() { document.body.classList.toggle('light-mode'); const isLight = document.body.classList.contains('light-mode'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); }
-    if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light-mode'); }
-  </script>
+  <script src="../main.js"></script>
 </body>
 </html>

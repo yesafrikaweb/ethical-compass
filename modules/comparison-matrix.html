@@ -85,23 +85,50 @@
 </head>
 
 <body>
-  <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-  </button>
+  <!-- Premium Sticky Navigation -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        Ethical Compass
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Overview</a>
+        <div class="nav-divider"></div>
+        <a href="proactive-oversight.html" class="nav-link">Features</a>
+        <a href="closed-loop-governance.html" class="nav-link">Approach</a>
+        <a href="comparison-matrix.html" class="nav-link">Compare</a>
+        <a href="economics-of-integrity.html" class="nav-link">Value</a>
+        <a href="personnel.html" class="nav-link">Team</a>
+        <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance"
+          style="position: static; margin-left: 1rem;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
 
-  <nav class="back-nav">
-    <a href="../index.html" class="back-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-      Return to Overview
-    </a>
-  </nav>
-
-  <header class="container matrix-hero">
+  <header class="container matrix-hero reveal">
     <div class="header-badges" style="justify-content: center;">
-      <div class="elegant-badge blue-badge">Industry Benchmarking</div>
+      <div class="elegant-badge blue-badge">Market Comparison</div>
     </div>
     <h1>The GRC Evolution</h1>
-    <p class="hero-subtitle" style="margin: 2rem auto;">A detailed technical comparison between legacy GRC methodologies and the Ethical Compass active intelligence model.</p>
+    <p class="hero-subtitle" style="margin: 2rem auto;">A detailed technical comparison between legacy GRC methodologies and the Ethical Compass active intelligence framework.</p>
   </header>
 
   <main class="container" style="padding-top: 0;">
@@ -120,8 +147,8 @@
           </div>
           <div class="comp-card highlight">
             <span class="comp-label ethical">Ethical Compass</span>
-            <div class="comp-value">Continuous Governance Engine</div>
-            <p class="comp-details">Automated, real-time forensic scanning of data streams. Built on an immutable "Constant Engine" that removes human error from the initial detection phase.</p>
+            <div class="comp-value">Continuous Governance Intelligence</div>
+            <p class="comp-details">Automated, real-time analytical observation of data streams. Built on a persistent "Intelligence Framework" that removes human error from the initial identification phase.</p>
           </div>
         </div>
       </div>
@@ -140,7 +167,7 @@
           <div class="comp-card highlight">
             <span class="comp-label ethical">Ethical Compass</span>
             <div class="comp-value">Near Real-Time Oversight</div>
-            <p class="comp-details">Continuous monitoring ensures that ethical drift is detected the moment it occurs, allowing for immediate remediation and failure prevention.</p>
+            <p class="comp-details">Continuous monitoring ensures that ethical drift is identified the moment it occurs, allowing for immediate remediation and continuity assurance.</p>
           </div>
         </div>
       </div>
@@ -176,7 +203,7 @@
           <thead>
             <tr>
               <th>Metric</th>
-              <th>Legacy Cost</th>
+              <th>Operational Overhead</th>
               <th>Compass Efficiency</th>
             </tr>
           </thead>
@@ -209,9 +236,6 @@
     </div>
   </footer>
 
-  <script>
-    function toggleMode() { document.body.classList.toggle('light-mode'); const isLight = document.body.classList.contains('light-mode'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); }
-    if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light-mode'); }
-  </script>
+  <script src="../main.js"></script>
 </body>
 </html>

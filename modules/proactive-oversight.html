@@ -115,40 +115,51 @@
 </head>
 
 <body>
-  <!-- Theme Toggle (reusing existing logic) -->
-  <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-      stroke-linejoin="round">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-  </button>
+  <!-- Premium Sticky Navigation -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        Ethical Compass
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Overview</a>
+        <div class="nav-divider"></div>
+        <a href="proactive-oversight.html" class="nav-link">Features</a>
+        <a href="closed-loop-governance.html" class="nav-link">Approach</a>
+        <a href="comparison-matrix.html" class="nav-link">Compare</a>
+        <a href="economics-of-integrity.html" class="nav-link">Value</a>
+        <a href="personnel.html" class="nav-link">Team</a>
+        <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance"
+          style="position: static; margin-left: 1rem;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
 
-  <nav class="back-nav">
-    <a href="../index.html" class="back-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round">
-        <line x1="19" y1="12" x2="5" y2="12"></line>
-        <polyline points="12 19 5 12 12 5"></polyline>
-      </svg>
-      Return to Overview
-    </a>
-  </nav>
-
-  <header class="container" style="padding-bottom: 2rem;">
+  <header class="container reveal" style="padding-bottom: 2rem;">
     <div class="header-badges">
-      <div class="elegant-badge blue-badge">Module 01: The Impact Engine</div>
+      <div class="elegant-badge blue-badge">Module 01: Impact Intelligence</div>
     </div>
     <h1 class="hero-title">Proactive Oversight</h1>
-    <p class="hero-subtitle">Transitioning from reactive post-mortems to a persistent analytical pulse. The Impact
-      Engine provides the forensic rigor required for continuous institutional integrity.</p>
+    <p class="hero-subtitle">Transitioning from reactive post-mortems to a persistent analytical pulse. Impact
+      Intelligence provides the precision rigor required for continuous institutional integrity.</p>
   </header>
 
   <main class="container" style="padding-top: 0;">
@@ -162,14 +173,14 @@
         <ul class="technical-specs">
           <li class="spec-item">
             <span class="spec-label">Analytical Method</span>
-            <span class="spec-value">Constant-Engine / Variable-Input (CEVI) Architecture</span>
+            <span class="spec-value">Constant-Intelligence / Variable-Input (CIVI) Architecture</span>
           </li>
           <li class="spec-item">
             <span class="spec-label">Logical Guardrails</span>
             <span class="spec-value">Dynamic diagnostic loops that prevent "Compliance Drift"</span>
           </li>
           <li class="spec-item">
-            <span class="spec-label">Forensic Integrity</span>
+            <span class="spec-label">Precision Integrity</span>
             <span class="spec-value">Immutable event-logging with SHA-256 validation</span>
           </li>
         </ul>
@@ -196,7 +207,7 @@
       </div>
     </div>
 
-    <section id="features" style="margin-top: 8rem;">
+    <section id="features" class="reveal" style="margin-top: 8rem;">
       <div class="section-title">
         <h2>Core Capabilities</h2>
         <p>Three specialized layers of the Proactive Oversight module.</p>
@@ -206,10 +217,10 @@
         <div class="matrix-item">
           <h4>Framework Synchronization</h4>
           <p class="matrix-item-desc">Automatically synchronizes with global ethical standards. When a new ISO update
-            is released, the Impact Engine updates its analytical filters across all active projects instantly.</p>
+            is released, our intelligence framework updates its analytical filters across all active projects instantly.</p>
         </div>
         <div class="matrix-item">
-          <h4>Adversarial Integrity Checks</h4>
+          <h4>Adaptive Integrity Checks</h4>
           <p class="matrix-item-desc">The engine doesn't just check for "passing" marks; it looks for evidence of
             systemic gaming or bad-faith compliance patterns (the "Greenwashing Detector").</p>
         </div>
@@ -220,16 +231,16 @@
         </div>
         <div class="matrix-item">
           <h4>Immutable Audit Trails</h4>
-          <p class="matrix-item-desc">Every scan, every flag, and every remediation is recorded in an immutable forensic
-            log, providing board-ready proof of institutional stewardship.</p>
+          <p class="matrix-item-desc">Every scan, every flag, and every remediation is recorded in a permanent 
+            activity log, providing board-ready proof of institutional stewardship.</p>
         </div>
       </div>
     </section>
 
-    <section id="impact" style="margin-top: 8rem; border-top: 1px solid var(--color-border); padding-top: 4rem;">
+    <section id="impact" class="reveal" style="margin-top: 8rem; border-top: 1px solid var(--color-border); padding-top: 4rem;">
       <div class="section-title">
         <h2>Strategic Impact</h2>
-        <p>Quantifiable benefits of the Impact Engine for global institutions.</p>
+        <p>Quantifiable benefits of Impact Intelligence for global institutions.</p>
       </div>
       <div class="numbers-row">
         <div class="number-item">
@@ -246,6 +257,18 @@
         </div>
       </div>
     </section>
+    <div class="module-switcher-container reveal">
+      <a href="adversarial-simulation.html" class="next-module-link">
+        <span class="next-label">Next Module</span>
+        <div class="next-title-wrapper">
+          <span class="next-title">Resilience Testing</span>
+          <svg class="next-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </div>
+      </a>
+    </div>
   </main>
 
   <footer class="container footer-layout">
@@ -260,16 +283,7 @@
     </div>
   </footer>
 
-  <script>
-    function toggleMode() {
-      document.body.classList.toggle('light-mode');
-      const isLight = document.body.classList.contains('light-mode');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    }
-    if (localStorage.getItem('theme') === 'light') {
-      document.body.classList.add('light-mode');
-    }
-  </script>
+  <script src="../main.js"></script>
 </body>
 
 </html>

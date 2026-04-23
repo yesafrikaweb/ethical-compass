@@ -27,18 +27,45 @@
 </head>
 
 <body>
-  <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-  </button>
+  <!-- Premium Sticky Navigation -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        Ethical Compass
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Overview</a>
+        <div class="nav-divider"></div>
+        <a href="proactive-oversight.html" class="nav-link">Features</a>
+        <a href="closed-loop-governance.html" class="nav-link">Approach</a>
+        <a href="comparison-matrix.html" class="nav-link">Compare</a>
+        <a href="economics-of-integrity.html" class="nav-link">Value</a>
+        <a href="personnel.html" class="nav-link">Team</a>
+        <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance"
+          style="position: static; margin-left: 1rem;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
 
-  <nav class="back-nav">
-    <a href="../index.html" class="back-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-      Return to Overview
-    </a>
-  </nav>
-
-  <header class="container" style="padding-bottom: 2rem;">
+  <header class="container reveal" style="padding-bottom: 2rem;">
     <div class="header-badges">
       <div class="elegant-badge blue-badge">Module 04: BI Platform</div>
     </div>
@@ -63,7 +90,7 @@
           </li>
           <li class="spec-item">
             <span class="spec-label">Forecasting Logic</span>
-            <span class="spec-value">Predictive Forensic Modeling</span>
+            <span class="spec-value">Predictive Analytical Modeling</span>
           </li>
         </ul>
       </div>
@@ -73,7 +100,7 @@
           <div class="logic-step">
             <span class="spec-label">Step 01: Synthesis</span>
             <h4>Data Aggregation</h4>
-            <p style="font-size: 0.8rem;">Synthesizing outputs from Proactive Oversight and Adversarial Simulation into a unified data model.</p>
+            <p style="font-size: 0.8rem;">Synthesizing outputs from Proactive Oversight and Resilience Testing into a unified data model.</p>
           </div>
           <div class="logic-step">
             <span class="spec-label">Step 02: Mapping</span>
@@ -82,7 +109,7 @@
           </div>
           <div class="logic-step">
             <span class="spec-label">Step 03: Decision</span>
-            <h4>Strategic Forensics</h4>
+            <h4>Strategic Insights</h4>
             <p style="font-size: 0.8rem;">Generating board-ready reports and executive briefs based on real-time analytical shifts.</p>
           </div>
         </div>
@@ -101,7 +128,7 @@
           <p class="matrix-item-desc">A single, real-time score representing the overall ethical and regulatory stability of the entire organization.</p>
         </div>
         <div class="matrix-item">
-          <h4>Forensic Forecasting</h4>
+          <h4>Trend Forecasting</h4>
           <p class="matrix-item-desc">Projecting future risk trends based on historical drift and emerging external regulatory shifts.</p>
         </div>
         <div class="matrix-item">
@@ -110,10 +137,22 @@
         </div>
         <div class="matrix-item">
           <h4>Automated Board Reporting</h4>
-          <p class="matrix-item-desc">Generating sophisticated, forensic-grade PDF briefs for quarterly board meetings with a single click.</p>
+          <p class="matrix-item-desc">Generating sophisticated, precision-grade PDF briefs for quarterly board meetings with a single click.</p>
         </div>
       </div>
     </section>
+    <div class="module-switcher-container reveal">
+      <a href="proactive-oversight.html" class="next-module-link">
+        <span class="next-label">Next Module</span>
+        <div class="next-title-wrapper">
+          <span class="next-title">Proactive Oversight</span>
+          <svg class="next-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </div>
+      </a>
+    </div>
   </main>
 
   <footer class="container footer-layout">
@@ -124,9 +163,6 @@
     </div>
   </footer>
 
-  <script>
-    function toggleMode() { document.body.classList.toggle('light-mode'); const isLight = document.body.classList.contains('light-mode'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); }
-    if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light-mode'); }
-  </script>
+  <script src="../main.js"></script>
 </body>
 </html>

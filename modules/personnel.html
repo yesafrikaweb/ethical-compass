@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Strategic Leadership | Ethical Compass Personnel</title>
+  <title>Strategic Team | Ethical Compass Personnel</title>
   <link rel="stylesheet" href="../infographics.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,20 +75,47 @@
 </head>
 
 <body>
-  <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-  </button>
+  <!-- Premium Sticky Navigation -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        Ethical Compass
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Overview</a>
+        <div class="nav-divider"></div>
+        <a href="proactive-oversight.html" class="nav-link">Features</a>
+        <a href="closed-loop-governance.html" class="nav-link">Approach</a>
+        <a href="comparison-matrix.html" class="nav-link">Compare</a>
+        <a href="economics-of-integrity.html" class="nav-link">Value</a>
+        <a href="personnel.html" class="nav-link">Team</a>
+        <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance"
+          style="position: static; margin-left: 1rem;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
 
-  <nav class="back-nav">
-    <a href="../index.html" class="back-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-      Return to Overview
-    </a>
-  </nav>
-
-  <header class="container personnel-hero">
+  <header class="container personnel-hero reveal">
     <div class="header-badges" style="justify-content: center;">
-      <div class="elegant-badge blue-badge">Strategic Leadership</div>
+      <div class="elegant-badge blue-badge">Strategic Team</div>
     </div>
     <h1>The Visionaries</h1>
     <p class="hero-subtitle" style="margin: 2rem auto;">Architecting the intersection of AI ethics, institutional law, and global governance frameworks.</p>
@@ -105,7 +132,7 @@
         <h2>Gcwelethemba Tshuma</h2>
         <span class="leader-role accent-text">System Architect Designer</span>
         <div class="leader-bio">
-          <p>GT is a multidisciplinary strategist working at the forensic intersection of AI ethics, institutional law, and global governance. As the lead architect of the Ethical Compass "Constant Engine," he specializes in transforming complex sovereign data into machine-readable governance protocols.</p>
+          <p>GT is a multidisciplinary strategist working at the forensic intersection of AI ethics, institutional law, and global governance. As the lead architect of the Ethical Compass "Constant Intelligence," he specializes in transforming complex sovereign data into machine-readable governance protocols.</p>
           <p>His experience spans collaboration with international policy teams, including BRICS and other state-led development initiatives. He is a certified leadership coach and facilitator, bringing a human-centric oversight model to highly automated technical environments.</p>
           <p>With a deep commitment to social justice and advocacy, GT ensures that the Ethical Compass framework remains transparent, accountable, and aligned with sustainable development goals.</p>
         </div>
@@ -133,7 +160,7 @@
         </div>
         <div class="expertise-list">
           <span class="expertise-tag">Anti-Corruption</span>
-          <span class="expertise-tag">Forensic Investigation</span>
+          <span class="expertise-tag">Precision Investigation</span>
           <span class="expertise-tag">Public Sector Reform</span>
           <span class="expertise-tag">Data Sovereignty</span>
         </div>
@@ -152,13 +179,10 @@
   <footer class="container footer-layout">
     <div class="footer-brand">
       <h4>Ethical Compass</h4>
-      <p style="font-size: 0.875rem;">Leadership for the future of governance.</p>
+      <p style="font-size: 0.875rem;">Expertise for the future of governance.</p>
     </div>
   </footer>
 
-  <script>
-    function toggleMode() { document.body.classList.toggle('light-mode'); const isLight = document.body.classList.contains('light-mode'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); }
-    if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light-mode'); }
-  </script>
+  <script src="../main.js"></script>
 </body>
 </html>

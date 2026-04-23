@@ -43,7 +43,7 @@ function toggleBio(btn) {
 }
 
 // --- ANALYTICAL CALCULATORS ---
-function updateROI() {
+function updateValue() {
   const regInput = document.getElementById('input-regulatory');
   if (!regInput) return;
 
@@ -82,15 +82,15 @@ function updateROI() {
 
 // --- FORENSIC LOGS ---
 const logEntries = [
-  "[SCANNING] Project Alpha protocol audit initiated...",
-  "[OVERSIGHT] Analyzing data stream 0x4F... PASS",
+  "[SCANNING] Project Alpha protocol analysis initiated...",
+  "[OVERSIGHT] Observing data stream 0x4F... PASS",
   "[INTEGRITY] Syncing Regulatory Code 802.11...",
-  "[STRATEGIC] Emerging ethical risk detected in Module B...",
-  "[REMEDIATION] Deploying automated governance patch...",
-  "[SYSTEM] Governance engine operating at 99.8% precision...",
+  "[STRATEGIC] Emerging ethical risk identified in Module B...",
+  "[REMEDIATION] Coordinating automated governance resolution...",
+  "[SYSTEM] Governance framework operating at 99.8% precision...",
   "[SYNC] Global ethical standards updated...",
   "[SECURITY] Air-gapped enclave integrity verified...",
-  "[AUDIT] Immutable record hash generated: 7a8c...2e1",
+  "[VERIFIED] Permanent record hash generated: 7a8c...2e1",
   "[ANALYSIS] Qualitative risk indices re-calculated..."
 ];
 
@@ -134,6 +134,6 @@ function initScrollReveals() {
 document.addEventListener('DOMContentLoaded', () => {
   loadTheme();
   initScrollReveals();
-  updateROI();
+  updateValue();
   addLog();
 });

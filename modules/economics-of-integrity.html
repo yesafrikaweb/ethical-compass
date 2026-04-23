@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Economics of Integrity | ROI Calculator</title>
+  <title>Strategic Value Analysis | Continuity Assurance</title>
   <link rel="stylesheet" href="../infographics.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,22 +62,49 @@
 </head>
 
 <body>
-  <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-  </button>
-
-  <nav class="back-nav">
-    <a href="../index.html" class="back-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-      Return to Overview
-    </a>
-  </nav>
-
-  <header class="container calc-hero">
-    <div class="header-badges" style="justify-content: center;">
-      <div class="elegant-badge orange-badge">Economics of Integrity</div>
+  <!-- Premium Sticky Navigation -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        Ethical Compass
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Overview</a>
+        <div class="nav-divider"></div>
+        <a href="proactive-oversight.html" class="nav-link">Features</a>
+        <a href="closed-loop-governance.html" class="nav-link">Approach</a>
+        <a href="comparison-matrix.html" class="nav-link">Compare</a>
+        <a href="economics-of-integrity.html" class="nav-link">Value</a>
+        <a href="personnel.html" class="nav-link">Team</a>
+        <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance"
+          style="position: static; margin-left: 1rem;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </nav>
     </div>
-    <h1>ROI of Failure Prevention</h1>
+  </header>
+
+  <header class="container calc-hero reveal">
+    <div class="header-badges" style="justify-content: center;">
+      <div class="elegant-badge orange-badge">Strategic Value Analysis</div>
+    </div>
+    <h1>The Value of Institutional Continuity</h1>
     <p class="hero-subtitle" style="margin: 2rem auto;">Quantifying the financial and reputational value of continuous institutional oversight. A tool for strategic capital allocation in GRC.</p>
   </header>
 
@@ -87,29 +114,29 @@
         <div class="calc-inputs">
           <div class="input-group">
             <label>Regulatory Risk <span>R <span id="val-regulatory">500</span>k</span></label>
-            <input type="range" id="input-regulatory" min="0" max="1000" value="500" oninput="updateROI()">
+            <input type="range" id="input-regulatory" min="0" max="1000" value="500" oninput="updateValue()">
           </div>
           <div class="input-group" style="margin-top: 2.5rem;">
             <label>Brand Value at Risk <span>R <span id="val-brand">2.5</span>M</span></label>
-            <input type="range" id="input-brand" min="0" max="10000" value="2500" oninput="updateROI()">
+            <input type="range" id="input-brand" min="0" max="10000" value="2500" oninput="updateValue()">
           </div>
           <div class="input-group" style="margin-top: 2.5rem;">
             <label>Remediation Complexity <span><span id="val-complexity">Low</span></span></label>
-            <input type="range" id="input-complexity" min="1" max="5" value="1" oninput="updateROI()">
+            <input type="range" id="input-complexity" min="1" max="5" value="1" oninput="updateValue()">
           </div>
         </div>
         <div class="calc-results">
-          <div class="result-label">Potential Institutional ROI</div>
+          <div class="result-label">Projected Value Realization</div>
           <div class="roi-value" id="roi-display" style="font-size: 6rem;">14x</div>
-          <p style="font-size: 0.9rem; color: var(--color-text-muted);">Estimated value of failure prevention per R 1 of investment in continuous oversight.</p>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted);">Estimated value of continuity assurance per R 1 of investment in continuous oversight.</p>
           <div class="formula-badge">
-            ROI = (Risk_Exposure / Oversight_Efficiency)
+            Value = (Risk_Exposure / Oversight_Efficiency)
           </div>
         </div>
       </div>
 
       <div class="analysis-report">
-        <h3>Forensic Risk Breakdown</h3>
+        <h3>Strategic Risk Breakdown</h3>
         <div class="report-item">
           <span class="report-label">Direct Financial Liability</span>
           <span class="report-value" id="rep-financial">R 500,000</span>
@@ -123,7 +150,7 @@
           <span class="report-value" id="rep-opportunity">R 750,000</span>
         </div>
         <div class="report-item" style="border-bottom: 2px solid var(--color-ubuntu-orange);">
-          <span class="report-label" style="color: var(--color-text-bright); font-weight: 700;">Total Potential Failure Cost</span>
+          <span class="report-label" style="color: var(--color-text-bright); font-weight: 700;">Total Potential Risk Exposure</span>
           <span class="report-value" id="rep-total" style="color: var(--color-ubuntu-orange); font-size: 1.25rem;">R 2,500,000</span>
         </div>
       </div>
@@ -141,7 +168,7 @@
         </div>
         <div class="matrix-item">
           <h4>Capital Efficiency</h4>
-          <p class="matrix-item-desc">Transitioning from high-cost manual audits to an automated analytical engine reduces operational GRC spend while increasing risk coverage by 10x.</p>
+          <p class="matrix-item-desc">Transitioning from high-cost traditional assessments to an automated analytical platform reduces operational GRC spend while increasing risk coverage by 10x.</p>
         </div>
       </div>
     </section>
@@ -154,35 +181,6 @@
     </div>
   </footer>
 
-  <script>
-    function toggleMode() { document.body.classList.toggle('light-mode'); const isLight = document.body.classList.contains('light-mode'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); }
-    if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light-mode'); }
-
-    function updateROI() {
-      const reg = parseInt(document.getElementById('input-regulatory').value);
-      const brand = parseInt(document.getElementById('input-brand').value);
-      const complexity = parseInt(document.getElementById('input-complexity').value);
-      
-      document.getElementById('val-regulatory').innerText = reg;
-      document.getElementById('val-brand').innerText = (brand / 1000).toFixed(1);
-      
-      const complexityLabels = ['Low', 'Moderate', 'Significant', 'High', 'Critical'];
-      document.getElementById('val-complexity').innerText = complexityLabels[complexity - 1];
-      
-      const totalExposure = reg + (brand * 0.5) + (complexity * 250); // Simplified forensic formula
-      const oversightEfficiency = 150;
-      const roi = Math.max(1, Math.round(totalExposure / oversightEfficiency));
-      
-      document.getElementById('roi-display').innerText = roi + 'x';
-      
-      // Update Report
-      document.getElementById('rep-financial').innerText = 'R ' + reg.toLocaleString() + ',000';
-      document.getElementById('rep-reputational').innerText = 'R ' + (brand * 500).toLocaleString();
-      document.getElementById('rep-opportunity').innerText = 'R ' + (reg * 1500).toLocaleString();
-      document.getElementById('rep-total').innerText = 'R ' + (totalExposure * 1000).toLocaleString();
-    }
-    
-    updateROI();
-  </script>
+  <script src="../main.js"></script>
 </body>
 </html>
