@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strategic Leadership | Ethical Compass Personnel</title>
+  <link rel="stylesheet" href="../infographics.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    .back-nav { position: fixed; top: 2rem; left: 2rem; z-index: 100; }
+    .back-link { display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: var(--transition); background: var(--color-deep-blue); padding: 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); }
+    .back-link:hover { color: var(--color-electric-blue); border-color: var(--color-electric-blue); }
+
+    .personnel-hero { text-align: center; margin-bottom: 6rem; }
+    
+    .leader-profile {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      margin-bottom: 8rem;
+      align-items: start;
+    }
+
+    .leader-visual {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .leader-visual::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at center, var(--color-electric-blue-glow), transparent);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .leader-info h2 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .leader-role { font-size: 1.1rem; margin-bottom: 2rem; display: block; }
+    
+    .leader-bio p { margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.7; }
+    
+    .expertise-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .expertise-tag {
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--color-border-bright);
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .org-logos {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+      opacity: 0.5;
+      filter: grayscale(1);
+    }
+  </style>
+</head>
+
+<body>
+  <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+  </button>
+
+  <nav class="back-nav">
+    <a href="../index.html" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Return to Overview
+    </a>
+  </nav>
+
+  <header class="container personnel-hero">
+    <div class="header-badges" style="justify-content: center;">
+      <div class="elegant-badge blue-badge">Strategic Leadership</div>
+    </div>
+    <h1>The Visionaries</h1>
+    <p class="hero-subtitle" style="margin: 2rem auto;">Architecting the intersection of AI ethics, institutional law, and global governance frameworks.</p>
+  </header>
+
+  <main class="container" style="padding-top: 0;">
+    
+    <!-- Profile: Gcwelethemba Tshuma -->
+    <section class="leader-profile">
+      <div class="leader-visual">
+        <div style="font-size: 4rem; font-weight: 700; color: var(--color-electric-blue); opacity: 0.5;">GT</div>
+      </div>
+      <div class="leader-info">
+        <h2>Gcwelethemba Tshuma</h2>
+        <span class="leader-role accent-text">System Architect Designer</span>
+        <div class="leader-bio">
+          <p>GT is a multidisciplinary strategist working at the forensic intersection of AI ethics, institutional law, and global governance. As the lead architect of the Ethical Compass "Constant Engine," he specializes in transforming complex sovereign data into machine-readable governance protocols.</p>
+          <p>His experience spans collaboration with international policy teams, including BRICS and other state-led development initiatives. He is a certified leadership coach and facilitator, bringing a human-centric oversight model to highly automated technical environments.</p>
+          <p>With a deep commitment to social justice and advocacy, GT ensures that the Ethical Compass framework remains transparent, accountable, and aligned with sustainable development goals.</p>
+        </div>
+        <div class="expertise-list">
+          <span class="expertise-tag">AI Ethics</span>
+          <span class="expertise-tag">System Architecture</span>
+          <span class="expertise-tag">Global Governance</span>
+          <span class="expertise-tag">Strategic Oversight</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile: Praveen Naidoo -->
+    <section class="leader-profile">
+      <div class="leader-visual" style="border-color: var(--color-ubuntu-orange-glow);">
+        <div style="font-size: 4rem; font-weight: 700; color: var(--color-ubuntu-orange); opacity: 0.5;">PN</div>
+      </div>
+      <div class="leader-info">
+        <h2>Praveen Naidoo</h2>
+        <span class="leader-role orange-text">Ethics & Governance Expert</span>
+        <div class="leader-bio">
+          <p>Praveen brings over 20 years of experience in oversight governance, ethics management, and anti-corruption strategy across the African continent. He has led critical institutional reforms, including the Ethics Management Infrastructure for the Central Bank of Nigeria and the Anti-Corruption Programme for the Tanzanian Revenue Authority.</p>
+          <p>A former head of the Integrity Management Unit at the NPA, Praveen has overseen complex fraud investigations and compliance advocacy at the highest levels of the Justice Cluster in South Africa. He currently serves as a Non-Executive Board Member of the SIU (Special Investigating Unit).</p>
+          <p>His current work focuses on architecting a new blueprint for AI Ethics and Data Governance tailored specifically for the African institutional context.</p>
+        </div>
+        <div class="expertise-list">
+          <span class="expertise-tag">Anti-Corruption</span>
+          <span class="expertise-tag">Forensic Investigation</span>
+          <span class="expertise-tag">Public Sector Reform</span>
+          <span class="expertise-tag">Data Sovereignty</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top: 4rem; text-align: center; border-top: 1px solid var(--color-border); padding-top: 6rem;">
+      <div class="section-title" style="margin: 0 auto 3rem;">
+        <h2>Institutional Alignment</h2>
+        <p>Our leadership is built on a foundation of international policy and state-led integrity initiatives.</p>
+      </div>
+      <p style="max-width: 700px; margin: 0 auto; color: var(--color-text-muted);">The Ethical Compass advisory ecosystem draws from years of technical and design expertise in Ethics and Governance, ensuring that our sovereign AI solutions remain at the cutting edge of global accountability standards.</p>
+    </section>
+  </main>
+
+  <footer class="container footer-layout">
+    <div class="footer-brand">
+      <h4>Ethical Compass</h4>
+      <p style="font-size: 0.875rem;">Leadership for the future of governance.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMode() { document.body.classList.toggle('light-mode'); const isLight = document.body.classList.contains('light-mode'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); }
+    if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light-mode'); }
+  </script>
+</body>
+</html>

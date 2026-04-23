@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Institutional Impact | Ethical Compass Metrics</title>
+  <link rel="stylesheet" href="../infographics.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    .back-nav { position: fixed; top: 2rem; left: 2rem; z-index: 100; }
+    .back-link { display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: var(--transition); background: var(--color-deep-blue); padding: 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); }
+    .back-link:hover { color: var(--color-ubuntu-orange); border-color: var(--color-ubuntu-orange); }
+
+    .impact-hero { text-align: center; margin-bottom: 6rem; }
+    
+    .metrics-deep-dive {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      margin-bottom: 8rem;
+    }
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--color-border);
+      padding: 3rem;
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+    }
+
+    .metric-card:hover {
+      border-color: var(--color-ubuntu-orange);
+      background: rgba(233, 84, 32, 0.03);
+    }
+
+    .metric-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.5rem;
+    }
+
+    .big-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--color-text-bright);
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      color: var(--color-ubuntu-orange);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+    }
+
+    .metric-desc {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    .validation-section {
+      background: var(--color-deep-blue);
+      padding: 4rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      margin-top: 4rem;
+    }
+
+    .quote-block {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .quote-symbol {
+      font-size: 4rem;
+      color: var(--color-ubuntu-orange);
+      opacity: 0.3;
+      margin-bottom: 1rem;
+    }
+
+    .large-quote {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--color-text-bright);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+  </button>
+
+  <nav class="back-nav">
+    <a href="../index.html" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Return to Overview
+    </a>
+  </nav>
+
+  <header class="container impact-hero">
+    <div class="header-badges" style="justify-content: center;">
+      <div class="elegant-badge orange-badge">Impact Analysis</div>
+    </div>
+    <h1>Institutional Integrity</h1>
+    <p class="hero-subtitle" style="margin: 2rem auto;">Quantifiable proof of analytical precision and governance excellence. Measuring the impact of continuous oversight on institutional stability.</p>
+  </header>
+
+  <main class="container" style="padding-top: 0;">
+    
+    <div class="metrics-deep-dive">
+      <!-- Metric 1 -->
+      <div class="metric-card">
+        <div class="metric-header">
+          <span class="big-number">12x</span>
+          <span class="metric-label">Institutional ROI</span>
+        </div>
+        <p class="metric-desc">Achieved through the systematic prevention of high-impact reputational and regulatory failures. Our methodology treats ethics as a strategic asset with quantifiable financial returns.</p>
+      </div>
+
+      <!-- Metric 2 -->
+      <div class="metric-card">
+        <div class="metric-header">
+          <span class="big-number">99.8%</span>
+          <span class="metric-label">Precision Accuracy</span>
+        </div>
+        <p class="metric-desc">Technical validation of our scanning engine's ability to differentiate between operational noise and genuine ethical drift. Minimizing false positives to ensure high-density oversight.</p>
+      </div>
+
+      <!-- Metric 3 -->
+      <div class="metric-card">
+        <div class="metric-header">
+          <span class="big-number">35%</span>
+          <span class="metric-label">Efficiency Uptick</span>
+        </div>
+        <p class="metric-desc">Reducing the administrative burden of manual GRC assessments. We empower internal teams to focus on strategic remediation rather than data collection.</p>
+      </div>
+
+      <!-- Metric 4 -->
+      <div class="metric-card">
+        <div class="metric-header">
+          <span class="big-number">1h</span>
+          <span class="metric-label">Detection Latency</span>
+        </div>
+        <p class="metric-desc">Closing the "Audit Gap." By reducing risk detection latency from months to hours, we enable institutional leaders to neutralize threats before they escalate into crises.</p>
+      </div>
+    </div>
+
+    <section class="validation-section">
+      <div class="quote-block">
+        <div class="quote-symbol">“</div>
+        <p class="large-quote">Institutional integrity is not a static milestone, but a continuous governance practice. Ethical Compass provides the analytical depth required to navigate the complex intersection of global standards and human-centric governance.</p>
+        <div class="author-info">
+          <span class="author-name">Praveen Naidoo</span>
+          <span class="author-role" style="color: var(--color-ubuntu-orange); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-top: 0.5rem;">Ethics & Governance Expert</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top: 8rem; border-top: 1px solid var(--color-border); padding-top: 6rem;">
+      <div class="section-title">
+        <h2>Global Standards Alignment</h2>
+        <p>Our impact metrics are mapped to the highest tiers of international governance codes.</p>
+      </div>
+      <div class="matrix-grid">
+        <div class="matrix-item">
+          <h4>ISO 31000 Compliance</h4>
+          <p class="matrix-item-desc">Providing the technical foundation for continuous risk management as defined by the International Organization for Standardization.</p>
+        </div>
+        <div class="matrix-item">
+          <h4>King IV Methodology</h4>
+          <p class="matrix-item-desc">Integrating the principles of ethical leadership and institutional stewardship into every analytical oversight cycle.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer-layout">
+    <div class="footer-brand">
+      <h4>Ethical Compass</h4>
+      <p style="font-size: 0.875rem;">Measuring what matters for institutional integrity.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMode() { document.body.classList.toggle('light-mode'); const isLight = document.body.classList.contains('light-mode'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); }
+    if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light-mode'); }
+  </script>
+</body>
+</html>

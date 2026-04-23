@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparison Matrix | Ethical Compass Evolution</title>
+  <link rel="stylesheet" href="../infographics.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    .back-nav { position: fixed; top: 2rem; left: 2rem; z-index: 100; }
+    .back-link { display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: var(--transition); background: var(--color-deep-blue); padding: 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); }
+    .back-link:hover { color: var(--color-electric-blue); border-color: var(--color-electric-blue); }
+
+    .matrix-hero {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .detailed-comparison {
+      margin-top: 4rem;
+    }
+
+    .comparison-feature {
+      margin-bottom: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .feature-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      color: var(--color-text-bright);
+    }
+
+    .comparison-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .comp-card {
+      padding: 2.5rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--color-border);
+    }
+
+    .comp-card.highlight {
+      border-color: var(--color-electric-blue);
+      background: rgba(59, 130, 246, 0.03);
+    }
+
+    .comp-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .comp-label.traditional { color: var(--color-text-muted); }
+    .comp-label.ethical { color: var(--color-electric-blue); }
+
+    .comp-value {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--color-text-bright);
+    }
+
+    .comp-details {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+  </button>
+
+  <nav class="back-nav">
+    <a href="../index.html" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Return to Overview
+    </a>
+  </nav>
+
+  <header class="container matrix-hero">
+    <div class="header-badges" style="justify-content: center;">
+      <div class="elegant-badge blue-badge">Industry Benchmarking</div>
+    </div>
+    <h1>The GRC Evolution</h1>
+    <p class="hero-subtitle" style="margin: 2rem auto;">A detailed technical comparison between legacy GRC methodologies and the Ethical Compass active intelligence model.</p>
+  </header>
+
+  <main class="container" style="padding-top: 0;">
+    <section class="detailed-comparison">
+      
+      <!-- Feature 1: Analytical Method -->
+      <div class="comparison-feature">
+        <div class="feature-header">
+          <h3 class="feature-title">Analytical Method</h3>
+        </div>
+        <div class="comparison-cards">
+          <div class="comp-card">
+            <span class="comp-label traditional">Traditional GRC</span>
+            <div class="comp-value">Manual Assessment</div>
+            <p class="comp-details">Relies on periodic, human-led audits and subjective questionnaires. Subject to cognitive bias and significant administrative overhead.</p>
+          </div>
+          <div class="comp-card highlight">
+            <span class="comp-label ethical">Ethical Compass</span>
+            <div class="comp-value">Continuous Governance Engine</div>
+            <p class="comp-details">Automated, real-time forensic scanning of data streams. Built on an immutable "Constant Engine" that removes human error from the initial detection phase.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2: Detection Latency -->
+      <div class="comparison-feature">
+        <div class="feature-header">
+          <h3 class="feature-title">Detection Latency</h3>
+        </div>
+        <div class="comparison-cards">
+          <div class="comp-card">
+            <span class="comp-label traditional">Traditional GRC</span>
+            <div class="comp-value">Quarterly / Annual</div>
+            <p class="comp-details">Risks are often only identified during formal audit cycles, creating a "Detection Gap" where failures can persist for months before being flagged.</p>
+          </div>
+          <div class="comp-card highlight">
+            <span class="comp-label ethical">Ethical Compass</span>
+            <div class="comp-value">Near Real-Time Oversight</div>
+            <p class="comp-details">Continuous monitoring ensures that ethical drift is detected the moment it occurs, allowing for immediate remediation and failure prevention.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3: Data Sovereignty -->
+      <div class="comparison-feature">
+        <div class="feature-header">
+          <h3 class="feature-title">Data Sovereignty</h3>
+        </div>
+        <div class="comparison-cards">
+          <div class="comp-card">
+            <span class="comp-label traditional">Traditional GRC</span>
+            <div class="comp-value">Public Cloud Dependencies</div>
+            <p class="comp-details">Most modern GRC tools operate exclusively on public cloud infrastructures, creating potential data sovereignty and security risks for sensitive institutions.</p>
+          </div>
+          <div class="comp-card highlight">
+            <span class="comp-label ethical">Ethical Compass</span>
+            <div class="comp-value">Air-Gapped / Sovereign AI</div>
+            <p class="comp-details">Deployable as a self-contained, air-gapped enclave. All data processing remains within the physical and digital perimeter of the organization.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section style="margin-top: 4rem; text-align: center;">
+      <div class="section-title" style="margin: 0 auto 3rem;">
+        <h2>The Cost of Inaction</h2>
+        <p>Transitioning from a passive to an active system is a strategic necessity.</p>
+      </div>
+      <div class="table-container">
+        <table class="elegant-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Legacy Cost</th>
+              <th>Compass Efficiency</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Audit Time (Annual)</td>
+              <td>~600 Human Hours</td>
+              <td class="accent-text precision-check">~40 Managed Hours</td>
+            </tr>
+            <tr>
+              <td>Risk Coverage</td>
+              <td>Sampling (~10%)</td>
+              <td class="accent-text precision-check">Full Spectrum (100%)</td>
+            </tr>
+            <tr>
+              <td>Remediation Speed</td>
+              <td>Days/Weeks</td>
+              <td class="accent-text precision-check">Hours</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer-layout">
+    <div class="footer-brand">
+      <h4>Ethical Compass</h4>
+      <p style="font-size: 0.875rem;">Redefining institutional accountability.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMode() { document.body.classList.toggle('light-mode'); const isLight = document.body.classList.contains('light-mode'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); }
+    if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light-mode'); }
+  </script>
+</body>
+</html>

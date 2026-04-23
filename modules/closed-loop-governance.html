@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closed-Loop Governance | Ethical Compass Methodology</title>
+  <link rel="stylesheet" href="../infographics.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    .back-nav { position: fixed; top: 2rem; left: 2rem; z-index: 100; }
+    .back-link { display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: var(--transition); background: var(--color-deep-blue); padding: 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); }
+    .back-link:hover { color: var(--color-electric-blue); border-color: var(--color-electric-blue); }
+    
+    .methodology-hero {
+      text-align: center;
+      margin-bottom: 6rem;
+    }
+
+    .loop-visual-container {
+      max-width: 600px;
+      margin: 0 auto 4rem;
+      position: relative;
+    }
+
+    .loop-details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .phase-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--color-border);
+      padding: 2.5rem;
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .phase-card:hover {
+      border-color: var(--color-electric-blue);
+      background: rgba(59, 130, 246, 0.03);
+    }
+
+    .phase-number {
+      font-size: 0.75rem;
+      color: var(--color-electric-blue);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .phase-card h3 {
+      margin-bottom: 1rem;
+    }
+
+    .forensic-log-preview {
+      background: #000;
+      color: var(--color-positive);
+      font-family: 'Courier New', Courier, monospace;
+      padding: 1.5rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      margin-top: 1.5rem;
+      border-left: 3px solid var(--color-positive);
+    }
+  </style>
+</head>
+
+<body>
+  <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+  </button>
+
+  <nav class="back-nav">
+    <a href="../index.html" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Return to Overview
+    </a>
+  </nav>
+
+  <header class="container methodology-hero">
+    <div class="header-badges" style="justify-content: center;">
+      <div class="elegant-badge blue-badge">Institutional Methodology</div>
+    </div>
+    <h1>Closed-Loop Governance</h1>
+    <p class="hero-subtitle" style="margin: 2rem auto;">The structural framework that ensures every institutional failure is detected, analyzed, remediated, and immutably recorded.</p>
+  </header>
+
+  <main class="container" style="padding-top: 0;">
+    <div class="loop-visual-container">
+      <svg class="svg-diagram" viewBox="0 0 400 400">
+        <circle cx="200" cy="200" r="150" class="connector" />
+        <circle cx="200" cy="200" r="150" class="connector-active" />
+
+        <g transform="translate(200, 50)">
+          <circle r="12" class="node node-active" />
+          <text y="40" text-anchor="middle" class="svg-text" style="font-size: 12px;">Phase 01: Analysis</text>
+        </g>
+        <g transform="translate(350, 200)">
+          <circle r="12" class="node" />
+          <text x="-25" text-anchor="end" class="svg-text" style="font-size: 12px;">Phase 02: Insight</text>
+        </g>
+        <g transform="translate(200, 350)">
+          <circle r="12" class="node" />
+          <text y="-30" text-anchor="middle" class="svg-text" style="font-size: 12px;">Phase 03: Action</text>
+        </g>
+        <g transform="translate(50, 200)">
+          <circle r="12" class="node" />
+          <text x="25" text-anchor="start" class="svg-text" style="font-size: 12px;">Phase 04: Proof</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="loop-details-grid">
+      <div class="phase-card">
+        <span class="phase-number">Phase 01</span>
+        <h3>Strategic Analysis</h3>
+        <p>The engine initiates continuous scanning of institutional data streams—from documentation and project protocols to operational logs. It identifies "Ethical Drift"—the subtle divergence between operational reality and governance standards.</p>
+      </div>
+
+      <div class="phase-card">
+        <span class="phase-number">Phase 02</span>
+        <h3>Strategic Insight</h3>
+        <p>Raw data is translated into C-suite intelligence. We apply weighted risk indices to filter out operational noise, ensuring that high-severity failures are prioritized for executive oversight and strategic intervention.</p>
+      </div>
+
+      <div class="phase-card">
+        <span class="phase-number">Phase 03</span>
+        <h3>Remediation Action</h3>
+        <p>Once a risk is validated, the system orchestrates a managed governance workflow. This isn't just a notification; it's a procedural requirement for corrective action, mapped directly to institutional protocols.</p>
+      </div>
+
+      <div class="phase-card">
+        <span class="phase-number">Phase 04</span>
+        <h3>Auditable Proof</h3>
+        <p>The loop closes with the creation of an immutable forensic record. Both the failure and the remediation are cryptographically hashed and logged, providing board-ready proof of proactive stewardship.</p>
+        <div class="forensic-log-preview">
+          [HASHED] remediation_id: 0x4F...2E <br>
+          [VALIDATED] compliance_timestamp: 2026-04-23T23:30 <br>
+          [STATUS] Loop Integrity Verified: 100%
+        </div>
+      </div>
+    </div>
+
+    <section style="margin-top: 8rem; text-align: center;">
+      <div class="section-title" style="margin: 0 auto 3rem;">
+        <h2>The Immutable Pulse</h2>
+        <p>Why a "Closed Loop" is the only path to genuine institutional integrity.</p>
+      </div>
+      <div class="matrix-grid" style="text-align: left;">
+        <div class="matrix-item">
+          <h4>Elimination of Blind Spots</h4>
+          <p class="matrix-item-desc">Fragmented systems allow failures to hide in the gaps between departments. The Closed Loop ensures total visibility.</p>
+        </div>
+        <div class="matrix-item">
+          <h4>Forensic Accountability</h4>
+          <p class="matrix-item-desc">By immutably recording every step, the system creates a culture of "Institutional Memory" that cannot be altered or ignored.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer-layout">
+    <div class="footer-brand">
+      <h4>Ethical Compass</h4>
+      <p style="font-size: 0.875rem;">A strategic platform for institutional accountability.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMode() { document.body.classList.toggle('light-mode'); const isLight = document.body.classList.contains('light-mode'); localStorage.setItem('theme', isLight ? 'light' : 'dark'); }
+    if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light-mode'); }
+  </script>
+</body>
+</html>

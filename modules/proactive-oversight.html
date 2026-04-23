@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proactive Oversight | Ethical Compass Deep Dive</title>
+  <link rel="stylesheet" href="../infographics.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Specific styles for module deep-dives */
+    .back-nav {
+      position: fixed;
+      top: 2rem;
+      left: 2rem;
+      z-index: 100;
+    }
+
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: var(--transition);
+      background: var(--color-deep-blue);
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+    }
+
+    .back-link:hover {
+      color: var(--color-electric-blue);
+      border-color: var(--color-electric-blue);
+    }
+
+    .deep-dive-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 4rem;
+    }
+
+    .technical-specs {
+      list-style: none;
+      margin-top: 2rem;
+    }
+
+    .spec-item {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .spec-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-electric-blue);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .spec-value {
+      font-size: 1.1rem;
+      color: var(--color-text-bright);
+      font-weight: 400;
+    }
+
+    .visual-container {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 400px;
+    }
+
+    .logic-step {
+      background: var(--color-midnight);
+      border: 1px solid var(--color-border-bright);
+      padding: 1.5rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1rem;
+      width: 100%;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .logic-step:hover {
+      border-color: var(--color-electric-blue);
+      transform: translateX(10px);
+    }
+
+    .logic-step::after {
+      content: '→';
+      position: absolute;
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-border-bright);
+      font-size: 1.5rem;
+    }
+
+    .logic-step:last-child::after {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Theme Toggle (reusing existing logic) -->
+  <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </button>
+
+  <nav class="back-nav">
+    <a href="../index.html" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Return to Overview
+    </a>
+  </nav>
+
+  <header class="container" style="padding-bottom: 2rem;">
+    <div class="header-badges">
+      <div class="elegant-badge blue-badge">Module 01: The Impact Engine</div>
+    </div>
+    <h1 class="hero-title">Proactive Oversight</h1>
+    <p class="hero-subtitle">Transitioning from reactive post-mortems to a persistent analytical pulse. The Impact
+      Engine provides the forensic rigor required for continuous institutional integrity.</p>
+  </header>
+
+  <main class="container" style="padding-top: 0;">
+    <div class="deep-dive-grid">
+      <div class="content-side">
+        <h3>The Philosophy of Continuous Scanning</h3>
+        <p>Traditional auditing relies on sampling and retrospective data. Proactive Oversight operates on the principle
+          of <strong>full-spectrum data ingestion</strong>. Every protocol, every transaction, and every strategic
+          decision is passed through a constant diagnostic loop.</p>
+
+        <ul class="technical-specs">
+          <li class="spec-item">
+            <span class="spec-label">Analytical Method</span>
+            <span class="spec-value">Constant-Engine / Variable-Input (CEVI) Architecture</span>
+          </li>
+          <li class="spec-item">
+            <span class="spec-label">Logical Guardrails</span>
+            <span class="spec-value">Dynamic diagnostic loops that prevent "Compliance Drift"</span>
+          </li>
+          <li class="spec-item">
+            <span class="spec-label">Forensic Integrity</span>
+            <span class="spec-value">Immutable event-logging with SHA-256 validation</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="visual-side">
+        <div class="visual-container">
+          <div class="logic-step">
+            <span class="spec-label">Step 01: Ingestion</span>
+            <h4>Institutional Data Streams</h4>
+            <p style="font-size: 0.8rem;">Raw protocols, documentation, and operational logs are ingested into the air-gapped engine.</p>
+          </div>
+          <div class="logic-step">
+            <span class="spec-label">Step 02: Filtration</span>
+            <h4>Modular Analytical Lenses</h4>
+            <p style="font-size: 0.8rem;">Data is filtered through regulatory frameworks (ISO, King IV, GDPR) simultaneously.</p>
+          </div>
+          <div class="logic-step">
+            <span class="spec-label">Step 03: Detection</span>
+            <h4>Strategic Risk Flagging</h4>
+            <p style="font-size: 0.8rem;">Emerging ethical drift is flagged for human-in-the-loop remediation before escalation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="features" style="margin-top: 8rem;">
+      <div class="section-title">
+        <h2>Core Capabilities</h2>
+        <p>Three specialized layers of the Proactive Oversight module.</p>
+      </div>
+
+      <div class="matrix-grid">
+        <div class="matrix-item">
+          <h4>Framework Synchronization</h4>
+          <p class="matrix-item-desc">Automatically synchronizes with global ethical standards. When a new ISO update
+            is released, the Impact Engine updates its analytical filters across all active projects instantly.</p>
+        </div>
+        <div class="matrix-item">
+          <h4>Adversarial Integrity Checks</h4>
+          <p class="matrix-item-desc">The engine doesn't just check for "passing" marks; it looks for evidence of
+            systemic gaming or bad-faith compliance patterns (the "Greenwashing Detector").</p>
+        </div>
+        <div class="matrix-item">
+          <h4>C-Suite Escalation Logic</h4>
+          <p class="matrix-item-desc">Not all risks are equal. The engine uses a strategic weighted scoring system to
+            ensure high-severity ethical risks bypass operational noise and reach decision-makers.</p>
+        </div>
+        <div class="matrix-item">
+          <h4>Immutable Audit Trails</h4>
+          <p class="matrix-item-desc">Every scan, every flag, and every remediation is recorded in an immutable forensic
+            log, providing board-ready proof of institutional stewardship.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact" style="margin-top: 8rem; border-top: 1px solid var(--color-border); padding-top: 4rem;">
+      <div class="section-title">
+        <h2>Strategic Impact</h2>
+        <p>Quantifiable benefits of the Impact Engine for global institutions.</p>
+      </div>
+      <div class="numbers-row">
+        <div class="number-item">
+          <div class="number-value">0s</div>
+          <div class="number-label">latency in ethical drift detection</div>
+        </div>
+        <div class="number-item">
+          <div class="number-value">100%</div>
+          <div class="number-label">coverage of institutional data streams</div>
+        </div>
+        <div class="number-item">
+          <div class="number-value">14x</div>
+          <div class="number-label">reduction in annual audit overhead</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer-layout">
+    <div class="footer-brand">
+      <h4 style="margin-bottom: 0.5rem;">Ethical Compass</h4>
+      <p style="font-size: 0.875rem;">A strategic platform for institutional accountability.</p>
+      <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 1rem;">&copy; 2026 Ethical Compass. Professional usage only.</p>
+    </div>
+    <div class="footer-contact">
+      <a href="mailto:intelligence@ethicalcompass.ai"
+        style="color: var(--color-text-bright); text-decoration: none; font-size: 0.875rem; font-weight: 500;">intelligence@ethicalcompass.ai</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('light-mode');
+      const isLight = document.body.classList.contains('light-mode');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    }
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  </script>
+</body>
+
+</html>
