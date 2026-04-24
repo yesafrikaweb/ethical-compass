@@ -24,8 +24,11 @@
         Ethical Compass
       </a>
       <div class="nav-controls">
+        <a href="https://end2endethics.co.za" target="_blank" rel="noopener noreferrer" class="nav-cta">Request a
+          Briefing</a>
         <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -38,7 +41,8 @@
           </svg>
         </button>
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -61,31 +65,53 @@
       <div class="elegant-badge blue-badge">Institutional Approach</div>
     </div>
     <h1>Closed-Loop Governance</h1>
-    <p class="hero-benefit" style="margin: 1.25rem auto;">Ensure <strong>every governance gap</strong> is found, fixed, and permanently verified.</p>
-    <p class="hero-subtitle" style="margin: 2rem auto;">A four-phase cycle — Analysis, Insight, Action, Proof — that transforms raw institutional data into a cryptographically verified record of stewardship your board can trust.</p>
+    <p class="hero-benefit" style="margin: 1.25rem auto;">Ensure <strong>every governance gap</strong> is found, fixed,
+      and permanently verified.</p>
+    <p class="hero-subtitle" style="margin: 2rem auto;">A four-phase cycle — Analysis, Insight, Action, Proof — that
+      transforms raw institutional data into a cryptographically verified record of stewardship your board can trust.
+    </p>
   </header>
 
   <main class="container" style="padding-top: 0;">
-    <div class="loop-visual-container">
+    <div class="loop-visual-container reveal">
       <svg class="svg-diagram" viewBox="0 0 400 400">
+        <!-- Central Anchor Icon -->
+        <g class="diagram-center-icon">
+          <circle cx="200" cy="200" r="40" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4" />
+          <path d="M200 185v30M185 200h30" stroke="currentColor" stroke-width="1" />
+          <circle cx="200" cy="200" r="4" fill="currentColor" />
+        </g>
+        
         <circle cx="200" cy="200" r="150" class="connector" />
         <circle cx="200" cy="200" r="150" class="connector-active" />
 
-        <g transform="translate(200, 50)">
-          <circle r="12" class="node node-active" />
-          <text y="40" text-anchor="middle" class="svg-text" style="font-size: 12px;">Phase 01: Analysis</text>
+        <g class="node-group" transform="translate(200, 50)">
+          <circle r="10" class="node node-active" />
+          <text y="-35" text-anchor="middle" class="svg-text">
+            <tspan x="0" dy="0" class="phase-label">Phase 01</tspan>
+            <tspan x="0" dy="1.2em" class="phase-title">Analysis</tspan>
+          </text>
         </g>
-        <g transform="translate(350, 200)">
-          <circle r="12" class="node" />
-          <text x="-25" text-anchor="end" class="svg-text" style="font-size: 12px;">Phase 02: Insight</text>
+        <g class="node-group" transform="translate(350, 200)">
+          <circle r="10" class="node" />
+          <text x="25" y="-5" text-anchor="start" class="svg-text">
+            <tspan x="25" dy="0" class="phase-label">Phase 02</tspan>
+            <tspan x="25" dy="1.2em" class="phase-title">Insight</tspan>
+          </text>
         </g>
-        <g transform="translate(200, 350)">
-          <circle r="12" class="node" />
-          <text y="-30" text-anchor="middle" class="svg-text" style="font-size: 12px;">Phase 03: Action</text>
+        <g class="node-group" transform="translate(200, 350)">
+          <circle r="10" class="node" />
+          <text y="35" text-anchor="middle" class="svg-text">
+            <tspan x="0" dy="0" class="phase-label">Phase 03</tspan>
+            <tspan x="0" dy="1.2em" class="phase-title">Action</tspan>
+          </text>
         </g>
-        <g transform="translate(50, 200)">
-          <circle r="12" class="node" />
-          <text x="25" text-anchor="start" class="svg-text" style="font-size: 12px;">Phase 04: Proof</text>
+        <g class="node-group" transform="translate(50, 200)">
+          <circle r="10" class="node" />
+          <text x="-25" y="-5" text-anchor="end" class="svg-text">
+            <tspan x="-25" dy="0" class="phase-label">Phase 04</tspan>
+            <tspan x="-25" dy="1.2em" class="phase-title">Proof</tspan>
+          </text>
         </g>
       </svg>
     </div>
@@ -94,25 +120,32 @@
       <div class="phase-card">
         <span class="phase-number">Phase 01</span>
         <h3>Strategic Analysis</h3>
-        <p>Our intelligence framework initiates continuous observation of institutional data streams—from documentation and project protocols to operational logs. It identifies "Ethical Drift"—the subtle divergence between operational reality and governance standards.</p>
+        <p>Our intelligence framework initiates continuous observation of institutional data streams—from documentation
+          and project protocols to operational logs. It identifies "Ethical Drift"—the subtle divergence between
+          operational reality and governance standards.</p>
       </div>
 
       <div class="phase-card">
         <span class="phase-number">Phase 02</span>
         <h3>Strategic Insight</h3>
-        <p>Raw data is translated into C-suite intelligence. We apply weighted risk indices to filter out operational noise, ensuring that high-severity deviations are prioritized for executive oversight and strategic intervention.</p>
+        <p>Raw data is translated into C-suite intelligence. We apply weighted risk indices to filter out operational
+          noise, ensuring that high-severity deviations are prioritized for executive oversight and strategic
+          intervention.</p>
       </div>
 
       <div class="phase-card">
         <span class="phase-number">Phase 03</span>
         <h3>Remediation Action</h3>
-        <p>Once a risk is validated, the system orchestrates a managed governance workflow. This isn't just a notification; it's a procedural requirement for corrective action, mapped directly to institutional protocols.</p>
+        <p>Once a risk is validated, the system orchestrates a managed governance workflow. This isn't just a
+          notification; it's a procedural requirement for corrective action, mapped directly to institutional protocols.
+        </p>
       </div>
 
       <div class="phase-card">
         <span class="phase-number">Phase 04</span>
         <h3>Validated Proof</h3>
-        <p>The loop closes with the creation of a permanent precision record. Both the divergence and the remediation are cryptographically verified and logged, providing board-ready proof of proactive stewardship.</p>
+        <p>The loop closes with the creation of a permanent precision record. Both the divergence and the remediation
+          are cryptographically verified and logged, providing board-ready proof of proactive stewardship.</p>
         <div class="forensic-log-preview">
           [HASHED] remediation_id: 0x4F...2E <br>
           [VALIDATED] compliance_timestamp: 2026-04-23T23:30 <br>
@@ -129,11 +162,13 @@
       <div class="matrix-grid" style="text-align: left;">
         <div class="matrix-item">
           <h4>Elimination of Blind Spots</h4>
-          <p class="matrix-item-desc">Fragmented systems allow deviations to hide in the gaps between departments. The Closed Loop ensures total visibility.</p>
+          <p class="matrix-item-desc">Fragmented systems allow deviations to hide in the gaps between departments. The
+            Closed Loop ensures total visibility.</p>
         </div>
         <div class="matrix-item">
           <h4>Institutional Memory</h4>
-          <p class="matrix-item-desc">By permanently verifying every step, the system creates a culture of accountability that ensures historical excellence is maintained.</p>
+          <p class="matrix-item-desc">By permanently verifying every step, the system creates a culture of
+            accountability that ensures historical excellence is maintained.</p>
         </div>
       </div>
     </section>
@@ -148,4 +183,5 @@
 
   <script src="../main.js"></script>
 </body>
+
 </html>
