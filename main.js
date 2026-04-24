@@ -17,6 +17,17 @@ function loadTheme() {
 }
 
 // --- UI INTERNALS ---
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  const menuToggle = document.querySelector('.menu-toggle');
+  if (navLinks) navLinks.classList.toggle('active');
+  
+  if (menuToggle) {
+    const isExpanded = navLinks.classList.contains('active');
+    menuToggle.setAttribute('aria-expanded', isExpanded);
+  }
+}
+
 function toggleFAQ(btn) {
   const content = btn.nextElementSibling;
   const isOpen = content.classList.contains('active');

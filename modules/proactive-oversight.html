@@ -9,109 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <style>
-    /* Specific styles for module deep-dives */
-    .back-nav {
-      position: fixed;
-      top: 2rem;
-      left: 2rem;
-      z-index: 100;
-    }
-
-    .back-link {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--color-text-muted);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: var(--transition);
-      background: var(--color-deep-blue);
-      padding: 0.5rem 1rem;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-sm);
-    }
-
-    .back-link:hover {
-      color: var(--color-electric-blue);
-      border-color: var(--color-electric-blue);
-    }
-
-    .deep-dive-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      margin-top: 4rem;
-    }
-
-    .technical-specs {
-      list-style: none;
-      margin-top: 2rem;
-    }
-
-    .spec-item {
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .spec-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--color-electric-blue);
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    .spec-value {
-      font-size: 1.1rem;
-      color: var(--color-text-bright);
-      font-weight: 400;
-    }
-
-    .visual-container {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 400px;
-    }
-
-    .logic-step {
-      background: var(--color-midnight);
-      border: 1px solid var(--color-border-bright);
-      padding: 1.5rem;
-      border-radius: var(--radius-sm);
-      margin-bottom: 1rem;
-      width: 100%;
-      position: relative;
-      transition: var(--transition);
-    }
-
-    .logic-step:hover {
-      border-color: var(--color-electric-blue);
-      transform: translateX(10px);
-    }
-
-    .logic-step::after {
-      content: '→';
-      position: absolute;
-      right: -2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--color-border-bright);
-      font-size: 1.5rem;
-    }
-
-    .logic-step:last-child::after {
-      display: none;
-    }
-  </style>
 </head>
 
 <body>
@@ -126,18 +23,9 @@
         </svg>
         Ethical Compass
       </a>
-      <nav class="nav-links">
-        <a href="../index.html" class="nav-link">Overview</a>
-        <div class="nav-divider"></div>
-        <a href="proactive-oversight.html" class="nav-link">Features</a>
-        <a href="closed-loop-governance.html" class="nav-link">Approach</a>
-        <a href="comparison-matrix.html" class="nav-link">Compare</a>
-        <a href="economics-of-integrity.html" class="nav-link">Value</a>
-        <a href="personnel.html" class="nav-link">Team</a>
-        <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance"
-          style="position: static; margin-left: 1rem;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
+      <div class="nav-controls">
+        <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -149,6 +37,22 @@
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
         </button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Overview</a>
+        <div class="nav-divider"></div>
+        <a href="proactive-oversight.html" class="nav-link">Features</a>
+        <a href="closed-loop-governance.html" class="nav-link">Approach</a>
+        <a href="comparison-matrix.html" class="nav-link">Compare</a>
+        <a href="economics-of-integrity.html" class="nav-link">Value</a>
+        <a href="personnel.html" class="nav-link">Team</a>
       </nav>
     </div>
   </header>

@@ -23,18 +23,9 @@
         </svg>
         Ethical Compass
       </a>
-      <nav class="nav-links">
-        <a href="index.html" class="nav-link">Overview</a>
-        <div class="nav-divider"></div>
-        <a href="modules/proactive-oversight.html" class="nav-link">Features</a>
-        <a href="modules/closed-loop-governance.html" class="nav-link">Approach</a>
-        <a href="modules/comparison-matrix.html" class="nav-link">Compare</a>
-        <a href="modules/economics-of-integrity.html" class="nav-link">Value</a>
-        <a href="modules/personnel.html" class="nav-link">Team</a>
-        <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance"
-          style="position: static; margin-left: 1rem;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
+      <div class="nav-controls">
+        <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -46,6 +37,22 @@
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
         </button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Overview</a>
+        <div class="nav-divider"></div>
+        <a href="modules/proactive-oversight.html" class="nav-link">Features</a>
+        <a href="modules/closed-loop-governance.html" class="nav-link">Approach</a>
+        <a href="modules/comparison-matrix.html" class="nav-link">Compare</a>
+        <a href="modules/economics-of-integrity.html" class="nav-link">Value</a>
+        <a href="modules/personnel.html" class="nav-link">Team</a>
       </nav>
     </div>
   </header>
@@ -517,7 +524,7 @@
       <div class="pricing-grid">
         <div class="pricing-card">
           <div class="pricing-header">
-            <h3>Ethical Tier</h3>
+            <h3>Standard Tier</h3>
             <p>Baseline governance for emerging institutions.</p>
           </div>
           <div class="pricing-price" style="margin-bottom: 2rem;">
@@ -552,7 +559,7 @@
         <div class="pricing-card highlighted">
           <div class="best-value">BEST VALUE</div>
           <div class="pricing-header">
-            <h3>Stewardship Enterprise</h3>
+            <h3>Enterprise Tier</h3>
             <p>Real-time oversight for global scale operations.</p>
           </div>
           <div class="pricing-price" style="margin-bottom: 2rem;">
