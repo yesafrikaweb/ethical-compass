@@ -245,6 +245,130 @@ p {
   padding: 6rem 2rem;
 }
 
+/* --- PARTNER / FRAMEWORK STRIP ---
+   Auto-scrolling marquee of aligned governance frameworks.
+   Full-width band, sits immediately below the hero section.
+   Pure CSS animation — no JavaScript required.
+*/
+.partner-strip {
+  width: 100%;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.01);
+  padding: 1.5rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+body.light-mode .partner-strip {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Gradient fade mask on the left and right edges */
+.partner-strip::before,
+.partner-strip::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.partner-strip::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-midnight), transparent);
+}
+
+.partner-strip::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-midnight), transparent);
+}
+
+body.light-mode .partner-strip::before {
+  background: linear-gradient(to right, var(--color-midnight), transparent);
+}
+
+body.light-mode .partner-strip::after {
+  background: linear-gradient(to left, var(--color-midnight), transparent);
+}
+
+.partner-strip-label {
+  display: none; /* Hidden — strip is self-explanatory */
+}
+
+/* The scrolling track — doubled badges for seamless loop */
+.partner-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  animation: scroll-partners 30s linear infinite;
+}
+
+.partner-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-partners {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Individual badge */
+.partner-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2.5rem;
+  border-right: 1px solid var(--color-border);
+  gap: 0.2rem;
+  white-space: nowrap;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.partner-badge:hover .badge-acronym {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.badge-acronym {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-bright);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.badge-name {
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Responsive: slow scroll and tighten padding on mobile */
+@media (max-width: 768px) {
+  .partner-badge {
+    padding: 0 1.5rem;
+  }
+  .partner-track {
+    animation-duration: 20s;
+  }
+  .partner-strip::before,
+  .partner-strip::after {
+    width: 60px;
+  }
+}
+
+
 .header-badges {
   display: flex; 
   flex-wrap: wrap;
@@ -260,6 +384,36 @@ p {
   margin-top: 2rem; 
   max-width: 600px;
   font-size: 1.1rem;
+}
+
+/* --- BENEFIT SUB-HEADLINE ---
+   Diligent-inspired verb-first benefit line, sits between H1 and hero-subtitle.
+   Uses the gradient text treatment and a lighter italic weight to distinguish
+   it visually from both the authority of the H1 and the descriptive subtitle.
+*/
+.hero-benefit {
+  margin-top: 1.25rem;
+  max-width: 700px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-text-bright);
+  opacity: 0.85;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.hero-benefit strong {
+  font-style: normal;
+  font-weight: 600;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.light-mode .hero-benefit {
+  opacity: 0.9;
 }
 
 /* Elegant Section Titles */
