@@ -792,6 +792,7 @@ body:not(.light-mode) .diagram-card:hover {
   position: relative;
   transition: var(--transition);
   background-clip: padding-box;
+  min-width: 0; /* Prevents card from growing with content */
 }
 
 body.light-mode .matrix-item {
@@ -1599,6 +1600,56 @@ input[type="range"]::-moz-range-thumb {
   stroke: currentColor;
 }
 
+.footer-share-btn {
+  background: transparent;
+  border: 1px solid var(--color-border-bright);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0;
+  position: relative;
+}
+
+.footer-share-btn svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.footer-share-btn:hover {
+  color: var(--color-electric-blue);
+  border-color: var(--color-electric-blue);
+  box-shadow: 0 0 15px var(--color-electric-blue-glow);
+}
+
+.footer-share-btn::after {
+  content: 'Link Copied';
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-deep-blue);
+  color: var(--color-text-bright);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+  border: 1px solid var(--color-border);
+}
+
+.footer-share-btn.copied::after {
+  opacity: 1;
+  top: -3rem;
+}
+
 .mode-toggle:hover {
   color: var(--color-electric-blue);
   border-color: var(--color-electric-blue);
@@ -1617,26 +1668,44 @@ input[type="range"]::-moz-range-thumb {
 
 .card-logs {
   margin-top: 1.5rem;
-  height: 80px;
-  background: rgba(0, 0, 0, 0.2);
-  border-top: 1px solid var(--color-border);
-  padding: 0.75rem 0.5rem;
-  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
-  font-size: 0.65rem;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.4); /* Slightly deeper background */
+  border: 1px solid var(--color-border-bright); /* Full border as requested */
+  padding: 0.75rem 1rem;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace;
+  font-size: 0.7rem;
   color: var(--color-text-muted);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  mask-image: linear-gradient(to bottom, transparent, black 30%);
+  justify-content: flex-start;
+  border-radius: var(--radius-sm); /* Contained box shape */
+  position: relative;
 }
 
 .log-entry {
-  margin-bottom: 0.2rem;
-  animation: logSlide 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  margin-bottom: 0.4rem;
+  height: 1.2rem;
+  animation: logSlide 0.4s ease-out forwards;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  flex-shrink: 0;
+  transition: margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  will-change: margin-top, opacity; /* Hardware acceleration hint */
+}
+
+.log-tag {
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.log-tag-blue {
+  color: var(--color-electric-blue);
+}
+
+.log-tag-orange {
+  color: var(--color-ubuntu-orange);
 }
 
 @keyframes logSlide {

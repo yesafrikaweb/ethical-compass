@@ -21,7 +21,7 @@ function toggleMenu() {
   const navLinks = document.querySelector('.nav-links');
   const menuToggle = document.querySelector('.menu-toggle');
   if (navLinks) navLinks.classList.toggle('active');
-  
+
   if (menuToggle) {
     const isExpanded = navLinks.classList.contains('active');
     menuToggle.setAttribute('aria-expanded', isExpanded);
@@ -110,18 +110,35 @@ function addLog() {
   const logContainer = document.getElementById('oversight-logs');
   if (!logContainer) return;
 
+  const rawText = logEntries[logIndex];
   const entry = document.createElement('div');
   entry.className = 'log-entry';
-  entry.innerText = logEntries[logIndex];
+  
+  // Color code the tags
+  const processedText = rawText.replace(/^\[(.*?)\]/, (match) => {
+    const tag = match.slice(1, -1);
+    let colorClass = 'log-tag-blue';
+    if (['STRATEGIC', 'REMEDIATION'].includes(tag)) colorClass = 'log-tag-orange';
+    return `<span class="log-tag ${colorClass}">${match}</span>`;
+  });
+
+  entry.innerHTML = processedText;
   logContainer.appendChild(entry);
 
-  if (logContainer.children.length > 5) {
-    logContainer.removeChild(logContainer.firstChild);
+  if (logContainer.children.length > 4) {
+    const first = logContainer.firstChild;
+    first.style.marginTop = `-${first.offsetHeight}px`;
+    first.style.opacity = '0';
+    setTimeout(() => {
+      if (first.parentNode === logContainer) {
+        logContainer.removeChild(first);
+      }
+    }, 400);
   }
 
   logIndex = (logIndex + 1) % logEntries.length;
   logContainer.scrollTop = logContainer.scrollHeight;
-  setTimeout(addLog, 2000 + Math.random() * 3000);
+  setTimeout(addLog, 3000 + Math.random() * 2000);
 }
 
 // --- PREMIUM SCROLL REVEALS ---
