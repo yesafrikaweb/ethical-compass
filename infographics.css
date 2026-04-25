@@ -1620,7 +1620,7 @@ input[type="range"]::-moz-range-thumb {
   height: 80px;
   background: rgba(0, 0, 0, 0.2);
   border-top: 1px solid var(--color-border);
-  padding: 0.75rem 0;
+  padding: 0.75rem 0.5rem;
   font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
   font-size: 0.65rem;
   color: var(--color-text-muted);
@@ -1635,6 +1635,8 @@ input[type="range"]::-moz-range-thumb {
   margin-bottom: 0.2rem;
   animation: logSlide 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @keyframes logSlide {
@@ -2382,6 +2384,14 @@ body.light-mode .card-logs {
     grid-template-columns: 1fr;
   }
 
+  .elegant-table {
+    min-width: auto;
+  }
+
+  .next-module-link {
+    max-width: 100%;
+  }
+
   .footer-layout {
     flex-direction: column;
     gap: 3rem;
@@ -2508,10 +2518,19 @@ body.light-mode .card-logs {
   }
 
   .pricing-card {
-    padding: 2rem 1.25rem;
+    padding: 1.5rem;
   }
 
   .matrix-item {
     padding: 1.5rem;
+  }
+
+  .partner-strip::before,
+  .partner-strip::after {
+    width: 40px;
+  }
+
+  .number-item.featured .number-value {
+    font-size: 2.5rem;
   }
 }
