@@ -113,7 +113,7 @@ function addLog() {
   const rawText = logEntries[logIndex];
   const entry = document.createElement('div');
   entry.className = 'log-entry';
-  
+
   // Color code the tags
   const processedText = rawText.replace(/^\[(.*?)\]/, (match) => {
     const tag = match.slice(1, -1);
