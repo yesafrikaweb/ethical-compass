@@ -11,7 +11,7 @@ layout: default
 </header>
 
 <main class="container" style="padding-top: 0;">
-  <div class="diagram-card reveal">
+  <div class="loop-visual-container reveal">
     <svg class="svg-diagram" viewBox="0 0 400 400">
       <!-- Connection Path -->
       <path class="connector-active" d="M 200,50 A 150,150 0 1,1 199.9,50 Z" />
@@ -29,22 +29,21 @@ layout: default
       </g>
       {% endfor %}
     </svg>
+  </div>
 
-    <div class="logic-details" style="margin-top: 4rem;">
-      <div class="deep-dive-grid">
-        {% for phase in page.phases %}
-        <div class="logic-step">
-          <span class="spec-label">{{ phase.label }} | {{ phase.full_title }}</span>
-          <p>{{ phase.desc }}</p>
-          {% if phase.log %}
-          <div class="code-log" style="margin-top: 1rem; font-size: 0.75rem; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 4px; font-family: monospace; color: var(--color-electric-blue);">
-            {{ phase.log | newline_to_br }}
-          </div>
-          {% endif %}
-        </div>
-        {% endfor %}
+  <div class="loop-details-grid reveal">
+    {% for phase in page.phases %}
+    <div class="phase-card">
+      <span class="phase-number">{{ phase.label }}</span>
+      <h3>{{ phase.full_title }}</h3>
+      <p>{{ phase.desc }}</p>
+      {% if phase.log %}
+      <div class="forensic-log-preview">
+        {{ phase.log | newline_to_br }}
       </div>
+      {% endif %}
     </div>
+    {% endfor %}
   </div>
 
   <section style="margin-top: 8rem;">

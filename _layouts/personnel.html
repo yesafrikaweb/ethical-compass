@@ -11,24 +11,22 @@ layout: default
 </header>
 
 <main class="container" style="padding-top: 0;">
-  <div class="people-grid">
-    {% for person in page.people %}
-    <div class="person-card reveal">
-      <div class="person-header">
-        <h2 class="person-name">{{ person.name }}</h2>
-        <span class="person-role {{ person.role_class }}">{{ person.role }}</span>
-      </div>
-      <div class="person-bio">
+  {% for person in page.people %}
+  <section class="leader-profile reveal">
+    <div class="leader-info">
+      <h2>{{ person.name }}</h2>
+      <span class="leader-role {{ person.role_class | default: 'accent-text' }}">{{ person.role }}</span>
+      <div class="leader-bio">
         {{ person.bio | markdownify }}
       </div>
-      <div class="person-expertise">
-        {% for area in person.expertise %}
-        <span class="expertise-tag">{{ area }}</span>
+      <div class="expertise-list">
+        {% for tag in person.expertise %}
+        <span class="expertise-tag">{{ tag }}</span>
         {% endfor %}
       </div>
     </div>
-    {% endfor %}
-  </div>
+  </section>
+  {% endfor %}
 
   <section class="reveal" style="margin-top: 8rem; border-top: 1px solid var(--color-border); padding-top: 4rem;">
     <div class="section-title">

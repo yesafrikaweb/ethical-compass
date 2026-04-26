@@ -11,49 +11,52 @@ layout: default
 </header>
 
 <main class="container" style="padding-top: 0;">
-  <div class="table-container reveal">
-    <table class="elegant-table">
-      <thead>
-        <tr>
-          <th>Strategic Category</th>
-          <th>Traditional GRC</th>
-          <th>Ethical Compass</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for feature in page.features %}
-        <tr>
-          <td>
-            <span class="spec-label" style="display: block; margin-bottom: 0.5rem;">Feature</span>
-            <span style="color: var(--color-text-bright); font-weight: 500;">{{ feature.title }}</span>
-          </td>
-          <td>
-            <div class="traditional-value" style="margin-bottom: 0.5rem;">{{ feature.traditional_value }}</div>
-            <p style="font-size: 0.8rem;">{{ feature.traditional_desc }}</p>
-          </td>
-          <td class="precision-check">
-            <div class="compass-value" style="color: var(--color-text-bright); font-weight: 500; margin-bottom: 0.5rem;">{{ feature.compass_value }}</div>
-            <p style="font-size: 0.8rem; color: var(--color-text-bright);">{{ feature.compass_desc }}</p>
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+  <section class="detailed-comparison reveal">
+    {% for feature in page.features %}
+    <div class="comparison-feature">
+      <div class="feature-header">
+        <h3 class="feature-title">{{ feature.title }}</h3>
+      </div>
+      <div class="comparison-cards">
+        <div class="comp-card">
+          <span class="comp-label traditional">Traditional GRC</span>
+          <div class="comp-value">{{ feature.traditional_value }}</div>
+          <p class="comp-details">{{ feature.traditional_desc }}</p>
+        </div>
+        <div class="comp-card highlight">
+          <span class="comp-label ethical">Ethical Compass</span>
+          <div class="comp-value">{{ feature.compass_value }}</div>
+          <p class="comp-details">{{ feature.compass_desc }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
 
   <section style="margin-top: 8rem;">
     <div class="section-title">
       <h2>{{ page.outro_title }}</h2>
       <p>{{ page.outro_subtitle }}</p>
     </div>
-    <div class="numbers-row">
-      {% for metric in page.metrics %}
-      <div class="number-item">
-        <div class="number-label">{{ metric.label }}</div>
-        <div style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 0.5rem;">Traditional: {{ metric.traditional }}</div>
-        <div class="number-value" style="color: var(--color-electric-blue); font-size: 2rem;">{{ metric.compass }}</div>
-      </div>
-      {% endfor %}
+    <div class="table-container">
+      <table class="elegant-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Legacy Cost</th>
+            <th>Compass Efficiency</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for metric in page.metrics %}
+          <tr>
+            <td>{{ metric.label }}</td>
+            <td>{{ metric.traditional }}</td>
+            <td class="accent-text precision-check">{{ metric.compass }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
   </section>
 </main>
