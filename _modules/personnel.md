@@ -1,6 +1,7 @@
 ---
 layout: personnel
 title: "The Visionaries"
+nav_label: "Team"
 order: 7
 module_label: "Strategic Team"
 benefit: "Decades of frontline governance experience — **built into every analytical layer**."

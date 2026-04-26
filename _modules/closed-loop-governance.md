@@ -1,6 +1,7 @@
 ---
 layout: approach
 title: "Closed-Loop Governance"
+nav_label: "Approach"
 order: 5
 module_label: "Institutional Approach"
 benefit: "Ensure **every governance gap** is found, fixed, and permanently verified."

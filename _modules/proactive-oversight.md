@@ -1,7 +1,7 @@
 ---
 layout: module
 title: "Proactive Oversight"
-short_title: "Features"
+nav_label: "Features"
 order: 1
 module_label: "Module 01: Impact Intelligence"
 benefit: "Detect institutional risk **before it escalates** — automatically."

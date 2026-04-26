@@ -1,6 +1,7 @@
 ---
 layout: calculator
 title: "The Value of Institutional Continuity"
+nav_label: "Value"
 order: 8
 module_label: "Strategic Value Analysis"
 benefit: "Prove that investing in integrity is **your highest-return strategy**."

@@ -35,8 +35,11 @@
     <nav class="nav-links">
       <a href="{{ site.baseurl }}/" class="nav-link">Overview</a>
       <div class="nav-divider"></div>
-      {% for module in site.modules %}
-      <a href="{{ module.url | relative_url }}" class="nav-link {% if page.url == module.url %}active{% endif %}">{{ module.short_title | default: module.title }}</a>
+      {% assign nav_items = site.modules | sort: 'order' %}
+      {% for item in nav_items %}
+        {% if item.nav_label %}
+        <a href="{{ item.url | relative_url }}" class="nav-link {% if page.url == item.url %}active{% endif %}">{{ item.nav_label }}</a>
+        {% endif %}
       {% endfor %}
     </nav>
   </div>

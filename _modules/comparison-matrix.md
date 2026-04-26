@@ -1,6 +1,7 @@
 ---
 layout: comparison
 title: "The GRC Evolution"
+nav_label: "Compare"
 order: 6
 module_label: "Market Comparison"
 benefit: "See exactly **what you gain** by moving from passive audits to active intelligence."
