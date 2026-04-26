@@ -1,6 +1,7 @@
 ---
 layout: module
 title: "Institutional Self-Governance"
+featured: true
 order: 3
 module_label: "Module 03: Ethical AI"
 benefit: "Own your governance data **completely** — no cloud, no compromise."

@@ -45,7 +45,7 @@ title: "Analytical Intelligence"
     </div>
 
     <div class="matrix-grid">
-      {% assign modules = site.modules | sort: 'order' %}
+      {% assign modules = site.modules | where: "featured", true | sort: 'order' %}
       {% for m in modules %}
       <div class="matrix-item reveal-delay-{{ forloop.index }}" onclick="window.location.href='{{ m.url | relative_url }}'"
         style="cursor: pointer;">

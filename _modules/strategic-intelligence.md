@@ -1,6 +1,7 @@
 ---
 layout: module
 title: "Strategic Intelligence"
+featured: true
 order: 4
 module_label: "Module 04: BI Platform"
 benefit: "Transform raw governance data into **board-ready clarity** — in real time."

@@ -1,6 +1,7 @@
 ---
 layout: module
 title: "Resilience Testing"
+featured: true
 order: 2
 module_label: "Module 02: The Workbench"
 benefit: "Expose your institution's **hidden vulnerabilities** before adversaries do."
