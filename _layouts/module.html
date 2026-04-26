@@ -1,0 +1,107 @@
+---
+layout: default
+---
+<header class="container reveal" style="padding-bottom: 2rem;">
+  <div class="header-badges">
+    <div class="elegant-badge blue-badge">{{ page.module_label | default: "Core Module" }}</div>
+  </div>
+  <h1 class="hero-title">{{ page.title }}</h1>
+  <p class="hero-benefit">{{ page.benefit | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+  <p class="hero-subtitle">{{ page.subtitle }}</p>
+</header>
+
+<main class="container" style="padding-top: 0;">
+  <div class="deep-dive-grid">
+    <div class="content-side">
+      <h3>{{ page.philosophy_title }}</h3>
+      {{ content }}
+
+      <ul class="technical-specs">
+        {% for spec in page.specs %}
+        <li class="spec-item">
+          <span class="spec-label">{{ spec.label }}</span>
+          <span class="spec-value">{{ spec.value }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="visual-side">
+      <div class="visual-container">
+        {% for step in page.steps %}
+        <div class="logic-step">
+          <span class="spec-label">{{ step.label }}</span>
+          <h4>{{ step.title }}</h4>
+          <p>{{ step.desc }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {% if page.features %}
+  <section id="features" class="reveal" style="margin-top: 8rem;">
+    <div class="section-title">
+      <h2>Core Capabilities</h2>
+      <p>{{ page.features_intro | default: "Specialized layers of the intelligence framework." }}</p>
+    </div>
+
+    <div class="matrix-grid">
+      {% for feature in page.features %}
+      <div class="matrix-item">
+        <h4>{{ feature.title }}</h4>
+        <p class="matrix-item-desc">{{ feature.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if page.impact %}
+  <section id="impact" class="reveal" style="margin-top: 8rem; border-top: 1px solid var(--color-border); padding-top: 4rem;">
+    <div class="section-title">
+      <h2>Strategic Impact</h2>
+      <p>{{ page.impact_intro | default: "Quantifiable benefits of this module." }}</p>
+    </div>
+    <div class="numbers-row">
+      {% for item in page.impact %}
+      <div class="number-item">
+        <div class="number-value">{{ item.value }}</div>
+        <div class="number-label">{{ item.label }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <div class="module-switcher-container reveal">
+    {% assign modules = site.modules | sort: 'order' %}
+    {% for m in modules %}
+      {% if m.url == page.url %}
+        {% assign next_index = forloop.index0 | plus: 1 %}
+        {% assign next_module = modules[next_index] %}
+        {% if next_module %}
+        <a href="{{ next_module.url | relative_url }}" class="next-module-link">
+          <span class="next-label">Next Module</span>
+          <div class="next-title-wrapper">
+            <span class="next-title">{{ next_module.title }}</span>
+            <svg class="next-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    <a href="{{ site.baseurl }}/" class="module-cta">
+      <span class="module-cta-label">Platform</span>
+      <div class="module-cta-inner">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        Back to Overview
+      </div>
+    </a>
+  </div>
+</main>

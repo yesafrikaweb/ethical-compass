@@ -1,758 +1,643 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: "Analytical Intelligence"
+---
+<!-- Hero Section -->
+<header class="container reveal" style="padding-bottom: 0;">
+  <div class="header-badges">
+    <div class="elegant-badge blue-badge">Organisational Governance Oversight</div>
+  </div>
+  <h1 class="hero-title">The precision of continuous institutional oversight.</h1>
+  <p class="hero-subtitle">Ethical Compass replaces periodic audits with a persistent analytical engine, providing
+    real-time oversight for complex organizational environments.</p>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ethical Compass | Analytical Intelligence</title>
-  <link rel="stylesheet" href="infographics.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-</head>
+  <div class="hero-diagram-container">
+    <svg class="svg-diagram" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100% " y2="0%">
+          <stop offset="0%" style="stop-color:var(--color-electric-blue);stop-opacity:0" />
+          <stop offset="50%" style="stop-color:var(--color-electric-blue);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:var(--color-electric-blue);stop-opacity:0" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M0 200 Q 100 200 150 200 T 200 150 T 250 250 T 300 200 T 400 200 T 450 100 T 500 300 T 550 200 T 800 200"
+        fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+      <path
+        d="M0 200 Q 100 200 150 200 T 200 150 T 250 250 T 300 200 T 400 200 T 450 100 T 500 300 T 550 200 T 800 200"
+        fill="none" stroke="url(#grad1)" stroke-width="2">
+        <animate attributeName="stroke-dasharray" from="0, 1000" to="1000, 0" dur="4s" repeatCount="indefinite" />
+        <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="4s" repeatCount="indefinite" />
+      </path>
+      <circle cx="400" cy="200" r="100" class="node" style="opacity: 0.1;" />
+      <circle cx="400" cy="200" r="60" class="node" style="opacity: 0.2;" />
+      <circle cx="400" cy="200" r="5" fill="var(--color-electric-blue)" />
+    </svg>
+  </div>
+</header>
 
-<body>
-  <!-- Premium Sticky Navigation -->
-  <header class="nav-header">
-    <div class="nav-container">
-      <a href="index.html" class="logo">
-        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="12 6 12 12 16 14"></polyline>
-        </svg>
-        Ethical Compass
-      </a>
-      <div class="nav-controls">
-        <a href="https://end2endethics.co.za" target="_blank" rel="noopener noreferrer" class="nav-cta">Request a
-          Briefing</a>
-        <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
+<main class="container">
+  <!-- Capabilities Matrix -->
+  <section id="capabilities" class="reveal">
+    <div class="section-title">
+      <h2>Strategic Capabilities</h2>
+      <p>A specialized framework of oversight tools designed for institutional integrity.</p>
+    </div>
+
+    <div class="matrix-grid">
+      {% assign modules = site.modules | sort: 'order' %}
+      {% for m in modules %}
+      <div class="matrix-item reveal-delay-{{ forloop.index }}" onclick="window.location.href='{{ m.url | relative_url }}'"
+        style="cursor: pointer;">
+        <div class="elegant-badge" style="border-color: var(--color-border); color: var(--color-text-muted);">{{ m.module_label }}</div>
+        <h4>{{ m.title }}</h4>
+        <p class="matrix-item-desc">{{ m.benefit | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+        {% if m.title == "Proactive Oversight" %}
+        <div class="card-logs" id="oversight-logs"></div>
+        {% endif %}
       </div>
-      <nav class="nav-links">
-        <a href="index.html" class="nav-link">Overview</a>
-        <div class="nav-divider"></div>
-        <a href="modules/proactive-oversight.html" class="nav-link">Features</a>
-        <a href="modules/closed-loop-governance.html" class="nav-link">Approach</a>
-        <a href="modules/comparison-matrix.html" class="nav-link">Compare</a>
-        <a href="modules/economics-of-integrity.html" class="nav-link">Value</a>
-        <a href="modules/personnel.html" class="nav-link">Team</a>
-      </nav>
+      {% endfor %}
     </div>
-  </header>
+  </section>
 
-  <!-- Hero Section -->
-  <header class="container reveal" style="padding-bottom: 0;">
-    <div class="header-badges">
-      <div class="elegant-badge blue-badge">Organisational Governance Oversight</div>
+  <!-- Institutional Intelligence FAQ -->
+  <section id="faq" class="reveal" style="margin-top: 8rem;">
+    <div class="faq-layout">
+      <div class="faq-header">
+        <div class="section-title" style="text-align: left; margin: 0;">
+          <h2>Strategic Benefits</h2>
+          <p>Key advantages of integrating Ethical Compass into institutional governance and operational frameworks.
+          </p>
+        </div>
+      </div>
+      <div class="faq-accordions">
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFAQ(this)">
+            Broad Stakeholder Value
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-content">
+            <p>We deliver direct strategic value across three core institutional pillars:</p>
+            <ul>
+              <li><strong>C-Suite Executives:</strong> Gaining strategic clarity on non-financial risks to ensure
+                long-term
+                institutional stability.</li>
+              <li><strong>Ethics & Governance Officers:</strong> Transitioning from manual audit cycles to automated,
+                continuous precision oversight.</li>
+              <li><strong>Talent & Development:</strong> Cultivating high-performance teams by providing the ethical
+                clarity
+                needed for professional growth and responsible decision-making.</li>
+              <li><strong>Legal & Compliance Counsel:</strong> Providing immutable evidence and validated proof to
+                streamline regulatory filings and strengthen institutional defense.</li>
+              <li><strong>Investors & Shareholders:</strong> Offering real-time metrics on institutional integrity to
+                enhance ESG valuations and long-term investor confidence.</li>
+              <li><strong>Institutional Partners:</strong> Building a foundation of mutual trust through shared,
+                cryptographically verified governance and performance standards.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFAQ(this)">
+            Cross-Sector Resonance
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-content">
+            <p>Our approach ensures long-term institutional stability across diverse global sectors:</p>
+            <ul>
+              <li><strong>Telecommunications & Data Centers:</strong> Securing the digital backbone by ensuring
+                operational
+                integrity and uptime reliability for infrastructure providers.</li>
+              <li><strong>Forensic & Auditing Firms:</strong> Empowering professional advisors to produce
+                precision-grade,
+                high-density reports that meet the most rigorous global standards.</li>
+              <li><strong>Financial & Public Sectors:</strong> Enhancing M&A due diligence, ESG scoring, and
+                anti-corruption
+                oversight for large-scale institutional projects.</li>
+              <li><strong>Healthcare & Life Sciences:</strong> Ensuring ethical oversight of clinical research and the
+                integrity of sensitive patient data environments through automated stewardship.</li>
+              <li><strong>Energy & Natural Resources:</strong> Optimizing environmental stewardship and ESG compliance
+                for complex extractive and renewable energy projects.</li>
+              <li><strong>E-Commerce & Digital Retail:</strong> Protecting consumer trust and platform integrity
+                through
+                continuous monitoring of algorithmic fairness and data privacy.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFAQ(this)">
+            Enhanced Infrastructure Stability
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-content">
+            <p>We strengthen the technical and operational resilience of institutional foundations:</p>
+            <ul>
+              <li><strong>Sales Acceleration:</strong> Leveraging verified integrity as a market differentiator to
+                build
+                deep trust, scale sales, and win high-value contracts.</li>
+              <li><strong>Productivity Optimization:</strong> Reducing the friction of manual compliance, allowing
+                teams to focus on high-impact strategic and operational growth.</li>
+              <li><strong>Supply Chain Resilience:</strong> Ensuring continuous third-party due diligence and
+                real-time
+                operational monitoring across global networks.</li>
+              <li><strong>Operational Continuity:</strong> Minimizing institutional downtime by proactively
+                identifying
+                structural gaps before they escalate into systemic disruptions.</li>
+              <li><strong>Cost Reduction:</strong> Significantly lowering remediation expenses by resolving governance
+                divergence at the source rather than at the point of crisis.</li>
+              <li><strong>Institutional Scalability:</strong> Providing a modular framework that grows with your
+                organization,
+                ensuring robust oversight during periods of rapid market expansion.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFAQ(this)">
+            Absolute Data Responsibility
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-content">
+            <p>Ethical Compass ensures absolute institutional control and localized responsibility for sensitive data
+              through a multi-layered ownership model:</p>
+            <ul>
+              <li><strong>Privacy by Design:</strong> Ensuring that sensitive governance metrics and institutional
+                intelligence
+                never leave the secure perimeter of your organization.</li>
+              <li><strong>Zero-Knowledge Validation:</strong> Leveraging advanced ZKP technology to verify
+                institutional
+                compliance without exposing underlying raw datasets to external risks.</li>
+              <li><strong>Regulatory Future-Proofing:</strong> Aligning with the most stringent global data protection
+                standards
+                (GDPR, POPIA, HIPAA) through a native, self-contained architecture.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFAQ(this)">
+            Home-Grown Innovation
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-content">
+            <p>Ethical Compass is a modular and extensible ecosystem designed for the future of institutions. As a
+              home-grown innovation, it is built to be adaptable and responsive to the evolving needs of the African
+              market:</p>
+            <ul>
+              <li><strong>Modular Architecture:</strong> Designed for seamless integration and extensibility, allowing
+                the platform to grow and evolve alongside your institution.</li>
+              <li><strong>Adaptable Excellence:</strong> A home-grown framework that is inherently responsive to local
+                governance nuances and regional professional standards.</li>
+              <li><strong>Technological Democratization:</strong> Leveraging distributed innovation to empower
+                institutions with high-density analytical tools that were previously inaccessible.</li>
+              <li><strong>The Economics of Trust:</strong> Aligning with the global shift where trust and ethics are
+                recognized as core drivers of economic performance and institutional stability.</li>
+              <li><strong>Future-Ready Architecture:</strong> Designing for a world where governance is native,
+                proactive, and seamlessly integrated into the digital economy.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-    <h1 class="hero-title">The precision of continuous institutional oversight.</h1>
-    <p class="hero-subtitle">Ethical Compass replaces periodic audits with a persistent analytical engine, providing
-      real-time oversight for complex organizational environments.</p>
+  </section>
 
-    <div class="hero-diagram-container">
-      <svg class="svg-diagram" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
-        <defs>
-          <linearGradient id="grad1" x1="0%" y1="0%" x2="100% " y2="0%">
-            <stop offset="0%" style="stop-color:var(--color-electric-blue);stop-opacity:0" />
-            <stop offset="50%" style="stop-color:var(--color-electric-blue);stop-opacity:1" />
-            <stop offset="100%" style="stop-color:var(--color-electric-blue);stop-opacity:0" />
-          </linearGradient>
-        </defs>
-        <path
-          d="M0 200 Q 100 200 150 200 T 200 150 T 250 250 T 300 200 T 400 200 T 450 100 T 500 300 T 550 200 T 800 200"
-          fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-        <path
-          d="M0 200 Q 100 200 150 200 T 200 150 T 250 250 T 300 200 T 400 200 T 450 100 T 500 300 T 550 200 T 800 200"
-          fill="none" stroke="url(#grad1)" stroke-width="2">
-          <animate attributeName="stroke-dasharray" from="0, 1000" to="1000, 0" dur="4s" repeatCount="indefinite" />
-          <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="4s" repeatCount="indefinite" />
-        </path>
-        <circle cx="400" cy="200" r="100" class="node" style="opacity: 0.1;" />
-        <circle cx="400" cy="200" r="60" class="node" style="opacity: 0.2;" />
-        <circle cx="400" cy="200" r="5" fill="var(--color-electric-blue)" />
-      </svg>
-    </div>
-  </header>
-
-
-  <main class="container">
-
-    <!-- Capabilities Matrix -->
-    <section id="capabilities" class="reveal">
+  <!-- Impact & Institutional Integrity -->
+  <section id="impact" class="reveal" style="margin-top: 8rem;">
+    <div class="institutional-impact-block">
       <div class="section-title">
-        <h2>Strategic Capabilities</h2>
-        <p>A specialized framework of oversight tools designed for institutional integrity.</p>
+        <h2>Impact & Institutional Integrity</h2>
+        <p style="max-width: 700px; margin-bottom: 3rem;">Our commitment to analytical precision and institutional
+          integrity is evident in every oversight cycle we execute. We deliver industry-leading governance that
+          ensures your projects are built on an ethical foundation.</p>
+
+        <div class="testimonial-lead">
+          <div class="quote-icon-small">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M14.017 21L14.017 18C14.017 16.895 14.912 16 16.017 16H19.017V14H15.017C13.912 14 13.017 13.105 13.017 12V6C13.017 4.895 13.912 4 15.017 4H21.017C22.122 4 23.017 4.895 23.017 6V12C23.017 13.105 22.122 14 21.017 14H21.017V16C21.017 18.761 18.778 21 16.017 21H14.017ZM1.017 21L1.017 18C1.017 16.895 1.912 16 3.017 16H6.017V14H2.017C0.912 14 0.017 13.105 0.017 12V6C0.017 4.895 0.912 4 2.017 4H8.017C9.122 4 10.017 4.895 10.017 6V12C10.017 13.105 9.122 14 8.017 14H8.017V16C8.017 18.761 5.778 21 3.017 21H1.017Z" />
+            </svg>
+          </div>
+          <p class="quote-text-small">"Institutional integrity is not a static milestone, but a continuous governance
+            practice. Ethical Compass provides the analytical depth required to navigate the complex intersection of
+            global standards and human-centric governance."</p>
+          <div class="author-info-small">
+            <span class="author-name">Praveen Naidoo</span>
+            <span class="author-role">| Ethics & Governance Expert</span>
+          </div>
+        </div>
       </div>
 
-      <div class="matrix-grid">
-        <div class="matrix-item reveal-delay-1" onclick="window.location.href='modules/proactive-oversight.html'"
-          style="cursor: pointer;">
-          <div class="elegant-badge" style="border-color: var(--color-border); color: var(--color-text-muted);">Impact
-            Intelligence</div>
-          <h4>Proactive Oversight</h4>
-          <p class="matrix-item-desc">Continuous scanning of project protocols and data streams for emerging ethical
-            risks and regulatory gaps.</p>
-          <div class="card-logs" id="oversight-logs"></div>
+      <div class="numbers-row">
+        <div class="number-item featured">
+          <div class="number-value">12x</div>
+          <div class="number-label">potential value realization through continuity assurance</div>
         </div>
-        <div class="matrix-item reveal-delay-2" onclick="window.location.href='modules/adversarial-simulation.html'"
-          style="cursor: pointer;">
-          <div class="elegant-badge orange-badge">Workbench</div>
-          <h4>Resilience Testing</h4>
-          <p class="matrix-item-desc">Simulating stress-tests and reputational attack vectors to test institutional
-            resilience before deployment.</p>
+        <div class="number-item">
+          <div class="number-value">99.8<span class="accent-text">%</span></div>
+          <div class="number-label">precision monitoring accuracy</div>
         </div>
-        <div class="matrix-item reveal-delay-3" onclick="window.location.href='modules/private-governance.html'"
-          style="cursor: pointer;">
-          <div class="elegant-badge" style="border-color: var(--color-text-muted); color: var(--color-text-muted);">
-            Ethical AI</div>
-          <h4>Institutional Self-Governance</h4>
-          <p class="matrix-item-desc">Self-contained, on-premise deployments for security-conscious organizations with
-            extreme data ownership needs.</p>
+        <div class="number-item">
+          <div class="number-value">
+            <span class="number-arrow up">↑</span> 35<span class="accent-text">%</span>
+          </div>
+          <div class="number-label">operational efficiency uptick</div>
         </div>
-        <div class="matrix-item reveal-delay-3" onclick="window.location.href='modules/strategic-intelligence.html'"
-          style="cursor: pointer;">
-          <div class="elegant-badge">BI Platform</div>
-          <h4>Strategic Intelligence</h4>
-          <p class="matrix-item-desc">A high-density analytical canvas for C-suite decision makers to monitor
-            qualitative and quantitative risk indices.</p>
+        <div class="number-item">
+          <div class="number-value">
+            <span class="number-arrow down">↓</span> 1h
+          </div>
+          <div class="number-label">risk detection latency</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Institutional Intelligence FAQ -->
-    <section id="faq" class="reveal" style="margin-top: 8rem;">
-      <div class="faq-layout">
-        <div class="faq-header">
-          <div class="section-title" style="text-align: left; margin: 0;">
-            <h2>Strategic Benefits</h2>
-            <p>Key advantages of integrating Ethical Compass into institutional governance and operational frameworks.
+  <!-- Closed-Loop Governance -->
+  <section id="governance" class="reveal" style="margin-top: 8rem;">
+    <div class="section-title">
+      <h2>Closed-Loop Governance</h2>
+      <p>How the engine transforms raw data into auditable remediation.</p>
+    </div>
+
+    <div class="governance-layout">
+      <div class="governance-diagram reveal">
+        <svg class="svg-diagram" viewBox="0 0 400 400">
+          <!-- Central Anchor Icon -->
+          <g class="diagram-center-icon">
+            <circle cx="200" cy="200" r="30" fill="none" stroke="currentColor" stroke-width="1"
+              stroke-dasharray="2 4" />
+            <circle cx="200" cy="200" r="3" fill="currentColor" />
+          </g>
+
+          <circle cx="200" cy="200" r="140" class="connector" />
+          <circle cx="200" cy="200" r="140" class="connector-active" />
+
+          <!-- Nodes -->
+          <g class="node-group" transform="translate(200, 60)">
+            <circle r="8" class="node node-active" />
+            <text y="-30" text-anchor="middle" class="svg-text">
+              <tspan x="0" dy="0" class="phase-label">Phase 01</tspan>
+              <tspan x="0" dy="1.2em" class="phase-title">Analysis</tspan>
+            </text>
+          </g>
+          <g class="node-group" transform="translate(340, 200)">
+            <circle r="8" class="node" />
+            <text x="20" y="-5" text-anchor="start" class="svg-text">
+              <tspan x="20" dy="0" class="phase-label">Phase 02</tspan>
+              <tspan x="20" dy="1.2em" class="phase-title">Insight</tspan>
+            </text>
+          </g>
+          <g class="node-group" transform="translate(200, 340)">
+            <circle r="8" class="node" />
+            <text y="30" text-anchor="middle" class="svg-text">
+              <tspan x="0" dy="0" class="phase-label">Phase 03</tspan>
+              <tspan x="0" dy="1.2em" class="phase-title">Action</tspan>
+            </text>
+          </g>
+          <g class="node-group" transform="translate(60, 200)">
+            <circle r="8" class="node" />
+            <text x="-20" y="-5" text-anchor="end" class="svg-text">
+              <tspan x="-20" dy="0" class="phase-label">Phase 04</tspan>
+              <tspan x="-20" dy="1.2em" class="phase-title">Proof</tspan>
+            </text>
+          </g>
+        </svg>
+      </div>
+      <div class="governance-info">
+        <div class="info-item">
+          <h4>Strategic Analysis</h4>
+          <p>Scanning institutional data streams for ethical and regulatory gaps.</p>
+        </div>
+        <div class="info-item">
+          <h4>Strategic Insight</h4>
+          <p>Translating complex risk patterns into actionable C-suite intelligence.</p>
+        </div>
+        <div class="info-item">
+          <h4>Remediation Action</h4>
+          <p>Coordinating corrective measures through a managed governance workflow.</p>
+        </div>
+        <div class="info-item">
+          <h4>Validated Proof</h4>
+          <p>Creating a permanent record of both the failure and the remediation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Matrix -->
+  <section id="comparison" class="reveal" style="margin-top: 8rem;">
+    <div class="section-title">
+      <h2>Comparison Matrix</h2>
+      <p>The structural evolution from passive systems to active intelligence.</p>
+    </div>
+    <div class="table-container">
+      <table class="elegant-table">
+        <thead>
+          <tr>
+            <th>Functional Requirement</th>
+            <th>Traditional GRC</th>
+            <th>Ethical Compass</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Analytical Method</td>
+            <td>Manual assessment</td>
+            <td class="accent-text precision-check">Continuous governance intelligence</td>
+          </tr>
+          <tr>
+            <td>Detection Latency</td>
+            <td>Quarterly / Annual</td>
+            <td class="accent-text precision-check">Near real-time oversight</td>
+          </tr>
+          <tr>
+            <td>Governance Depth</td>
+            <td>Surface compliance</td>
+            <td class="accent-text precision-check">Deep institutional analysis</td>
+          </tr>
+          <tr>
+            <td>Data Ownership</td>
+            <td>Public cloud only</td>
+            <td class="accent-text precision-check">Data Ownership / Self-Contained</td>
+          </tr>
+          <tr>
+            <td>Human In the Loop</td>
+            <td class="orange-check">Retains human oversight</td>
+            <td class="accent-text precision-check">Retains human oversight</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Economics of Integrity Calculator -->
+  <section id="roi" class="reveal" style="margin-top: 8rem;">
+    <div class="section-title">
+      <h2>Strategic Value Analysis</h2>
+      <p>Estimate the impact of a potential integrity deviation versus the efficiency of continuous stewardship.</p>
+    </div>
+    <div class="calculator-container">
+      <div class="calc-inputs">
+        <div class="input-group">
+          <label>Regulatory Risk <span>R <span id="val-regulatory">500</span>k</span></label>
+          <input type="range" id="input-regulatory" min="0" max="1000" value="500" oninput="updateValue()">
+        </div>
+        <div class="input-group">
+          <label>Brand Value at Risk <span>R <span id="val-brand">2.5</span>M</span></label>
+          <input type="range" id="input-brand" min="0" max="10000" value="2500" oninput="updateValue()">
+        </div>
+        <div class="input-group">
+          <label>Remediation Complexity <span><span id="val-complexity">Low</span></span></label>
+          <input type="range" id="input-complexity" min="1" max="5" value="1" oninput="updateValue()">
+        </div>
+      </div>
+      <div class="calc-results">
+        <div class="result-label">Projected Value Realization</div>
+        <div class="roi-value" id="roi-display">12x</div>
+        <p style="font-size: 0.875rem;">Estimated value of failure prevention per R 1 of investment in continuous
+          oversight.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Personnel -->
+  <section id="personnel" class="reveal" style="margin-top: 8rem;">
+    <div class="section-title">
+      <h2>Key Personnel</h2>
+      <p>The visionaries behind the Ethical Compass analytical framework.</p>
+    </div>
+    <div class="personnel-grid">
+      <div class="diagram-card">
+        <h4 class="person-name">Gcwelethemba Tshuma</h4>
+        <p class="person-title-electric">System Architect Designer</p>
+        <p class="card-desc">Leading the technical architecture and structural design of the institutional governance
+          engine.</p>
+
+        <div class="bio-accordion">
+          <button class="bio-trigger" onclick="toggleBio(this)">
+            View Detailed Profile
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="bio-content">
+            <p>GT is a seasoned multidisciplinary strategist working at the intersection of AI ethics, law, and global
+              governance. He is a certified leadership coach and facilitator, and has had the privilege of working
+              with local and international policies teams such as BRICS and other state-led development initiatives.
+            </p>
+            <p>His work and experiences come from years of technical and the design expertise in Ethics and Governance
+              including integration into responsible AI and sustainable AI Governance. From Prompt Engineering to the
+              design of Governance Automation systems, GT helps organisations ensure that their sovereign data is
+              transformed into machine-readable formats while prioritizing transparency and accountability.</p>
+            <p>With his passion for social justice, advocacy and community development, GT brings that strategic
+              oversight required for all of these technologies to remain aligned, transparent and accountable.</p>
+          </div>
+        </div>
+      </div>
+      <div class="diagram-card orange-glow">
+        <h4 class="person-name">Praveen Naidoo</h4>
+        <p class="person-title-orange">Ethics & Governance Expert</p>
+        <p class="card-desc">Overseeing the alignment of analytical filters with global ethical standards and
+          human-centric governance codes.</p>
+
+        <div class="bio-accordion">
+          <button class="bio-trigger" onclick="toggleBio(this)">
+            View Detailed Profile
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="bio-content">
+            <p>Praveen is a seasoned governance and ethics professional with over 20 years of experience in oversight
+              governance, ethics management and anti-corruption strategy, in both the public and private sectors
+              across Africa. He has led key institutional reforms, including the Central Bank of Nigeria’s Ethics
+              Management Infrastructure and the Tanzanian Revenue Authority’s Anti-Corruption Programme.</p>
+            <p>He has served as an Ethics Advisor to the UNODC’s ARINSA Programme and spent over a decade heading up
+              the Integrity Management Unit at the NPA, overseeing fraud and corruption investigations, compliance and
+              ethics management and advocacy, and is the former Chair of the Office of Ethics and Accountability in
+              the Justice Cluster in South Africa. Praveen currently serves as a Non-Executive Board Member of the
+              SIU, and is also working on a new blueprint for AI Ethics and Data Governance for the African Continent.
             </p>
           </div>
         </div>
-        <div class="faq-accordions">
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFAQ(this)">
-              Broad Stakeholder Value
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-content">
-              <p>We deliver direct strategic value across three core institutional pillars:</p>
-              <ul>
-                <li><strong>C-Suite Executives:</strong> Gaining strategic clarity on non-financial risks to ensure
-                  long-term
-                  institutional stability.</li>
-                <li><strong>Ethics & Governance Officers:</strong> Transitioning from manual audit cycles to automated,
-                  continuous precision oversight.</li>
-                <li><strong>Talent & Development:</strong> Cultivating high-performance teams by providing the ethical
-                  clarity
-                  needed for professional growth and responsible decision-making.</li>
-                <li><strong>Legal & Compliance Counsel:</strong> Providing immutable evidence and validated proof to
-                  streamline regulatory filings and strengthen institutional defense.</li>
-                <li><strong>Investors & Shareholders:</strong> Offering real-time metrics on institutional integrity to
-                  enhance ESG valuations and long-term investor confidence.</li>
-                <li><strong>Institutional Partners:</strong> Building a foundation of mutual trust through shared,
-                  cryptographically verified governance and performance standards.</li>
-              </ul>
-            </div>
-          </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFAQ(this)">
-              Cross-Sector Resonance
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-content">
-              <p>Our approach ensures long-term institutional stability across diverse global sectors:</p>
-              <ul>
-                <li><strong>Telecommunications & Data Centers:</strong> Securing the digital backbone by ensuring
-                  operational
-                  integrity and uptime reliability for infrastructure providers.</li>
-                <li><strong>Forensic & Auditing Firms:</strong> Empowering professional advisors to produce
-                  precision-grade,
-                  high-density reports that meet the most rigorous global standards.</li>
-                <li><strong>Financial & Public Sectors:</strong> Enhancing M&A due diligence, ESG scoring, and
-                  anti-corruption
-                  oversight for large-scale institutional projects.</li>
-                <li><strong>Healthcare & Life Sciences:</strong> Ensuring ethical oversight of clinical research and the
-                  integrity of sensitive patient data environments through automated stewardship.</li>
-                <li><strong>Energy & Natural Resources:</strong> Optimizing environmental stewardship and ESG compliance
-                  for complex extractive and renewable energy projects.</li>
-                <li><strong>E-Commerce & Digital Retail:</strong> Protecting consumer trust and platform integrity
-                  through
-                  continuous monitoring of algorithmic fairness and data privacy.</li>
-              </ul>
-            </div>
-          </div>
+  <!-- Pricing & Tiers -->
+  <section id="plans" class="reveal" style="margin-top: 8rem;">
+    <div class="section-title">
+      <h2>Institutional Intelligence Plans</h2>
+      <p>Scalable strategic oversight tailored to your organization's governance requirements.</p>
+    </div>
 
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFAQ(this)">
-              Enhanced Infrastructure Stability
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-content">
-              <p>We strengthen the technical and operational resilience of institutional foundations:</p>
-              <ul>
-                <li><strong>Sales Acceleration:</strong> Leveraging verified integrity as a market differentiator to
-                  build
-                  deep trust, scale sales, and win high-value contracts.</li>
-                <li><strong>Productivity Optimization:</strong> Reducing the friction of manual compliance, allowing
-                  teams to focus on high-impact strategic and operational growth.</li>
-                <li><strong>Supply Chain Resilience:</strong> Ensuring continuous third-party due diligence and
-                  real-time
-                  operational monitoring across global networks.</li>
-                <li><strong>Operational Continuity:</strong> Minimizing institutional downtime by proactively
-                  identifying
-                  structural gaps before they escalate into systemic disruptions.</li>
-                <li><strong>Cost Reduction:</strong> Significantly lowering remediation expenses by resolving governance
-                  divergence at the source rather than at the point of crisis.</li>
-                <li><strong>Institutional Scalability:</strong> Providing a modular framework that grows with your
-                  organization,
-                  ensuring robust oversight during periods of rapid market expansion.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFAQ(this)">
-              Absolute Data Responsibility
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-content">
-              <p>Ethical Compass ensures absolute institutional control and localized responsibility for sensitive data
-                through a multi-layered ownership model:</p>
-              <ul>
-                <li><strong>Privacy by Design:</strong> Ensuring that sensitive governance metrics and institutional
-                  intelligence
-                  never leave the secure perimeter of your organization.</li>
-                <li><strong>Zero-Knowledge Validation:</strong> Leveraging advanced ZKP technology to verify
-                  institutional
-                  compliance without exposing underlying raw datasets to external risks.</li>
-                <li><strong>Regulatory Future-Proofing:</strong> Aligning with the most stringent global data protection
-                  standards
-                  (GDPR, POPIA, HIPAA) through a native, self-contained architecture.</li>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFAQ(this)">
-              Home-Grown Innovation
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-content">
-              <p>Ethical Compass is a modular and extensible ecosystem designed for the future of institutions. As a
-                home-grown innovation, it is built to be adaptable and responsive to the evolving needs of the African
-                market:</p>
-              <ul>
-                <li><strong>Modular Architecture:</strong> Designed for seamless integration and extensibility, allowing
-                  the platform to grow and evolve alongside your institution.</li>
-                <li><strong>Adaptable Excellence:</strong> A home-grown framework that is inherently responsive to local
-                  governance nuances and regional professional standards.</li>
-                <li><strong>Technological Democratization:</strong> Leveraging distributed innovation to empower
-                  institutions with high-density analytical tools that were previously inaccessible.</li>
-                <li><strong>The Economics of Trust:</strong> Aligning with the global shift where trust and ethics are
-                  recognized as core drivers of economic performance and institutional stability.</li>
-                <li><strong>Future-Ready Architecture:</strong> Designing for a world where governance is native,
-                  proactive, and seamlessly integrated into the digital economy.</li>
-              </ul>
-            </div>
-          </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <h3>Standard Tier</h3>
+          <p>Baseline governance for emerging institutions.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- Impact & Institutional Integrity -->
-    <section id="impact" class="reveal" style="margin-top: 8rem;">
-      <div class="institutional-impact-block">
-        <div class="section-title">
-          <h2>Impact & Institutional Integrity</h2>
-          <p style="max-width: 700px; margin-bottom: 3rem;">Our commitment to analytical precision and institutional
-            integrity is evident in every oversight cycle we execute. We deliver industry-leading governance that
-            ensures your projects are built on an ethical foundation.</p>
-
-          <div class="testimonial-lead">
-            <div class="quote-icon-small">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M14.017 21L14.017 18C14.017 16.895 14.912 16 16.017 16H19.017V14H15.017C13.912 14 13.017 13.105 13.017 12V6C13.017 4.895 13.912 4 15.017 4H21.017C22.122 4 23.017 4.895 23.017 6V12C23.017 13.105 22.122 14 21.017 14H21.017V16C21.017 18.761 18.778 21 16.017 21H14.017ZM1.017 21L1.017 18C1.017 16.895 1.912 16 3.017 16H6.017V14H2.017C0.912 14 0.017 13.105 0.017 12V6C0.017 4.895 0.912 4 2.017 4H8.017C9.122 4 10.017 4.895 10.017 6V12C10.017 13.105 9.122 14 8.017 14H8.017V16C8.017 18.761 5.778 21 3.017 21H1.017Z" />
-              </svg>
-            </div>
-            <p class="quote-text-small">"Institutional integrity is not a static milestone, but a continuous governance
-              practice. Ethical Compass provides the analytical depth required to navigate the complex intersection of
-              global standards and human-centric governance."</p>
-            <div class="author-info-small">
-              <span class="author-name">Praveen Naidoo</span>
-              <span class="author-role">| Ethics & Governance Expert</span>
-            </div>
-          </div>
+        <div class="pricing-price" style="margin-bottom: 2rem;">
+          <span style="font-size: 1.25rem; color: var(--color-text-muted);">Contact for Pricing</span>
         </div>
+        <ul class="pricing-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Core Governance Intelligence
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Regulatory Sync (Monthly)
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Standard Support
+          </li>
+        </ul>
+        <button class="pricing-btn">Request a Briefing</button>
+      </div>
 
-        <div class="numbers-row">
-          <div class="number-item featured">
-            <div class="number-value">12x</div>
-            <div class="number-label">potential value realization through continuity assurance</div>
-          </div>
-          <div class="number-item">
-            <div class="number-value">99.8<span class="accent-text">%</span></div>
-            <div class="number-label">precision monitoring accuracy</div>
-          </div>
-          <div class="number-item">
-            <div class="number-value">
-              <span class="number-arrow up">↑</span> 35<span class="accent-text">%</span>
-            </div>
-            <div class="number-label">operational efficiency uptick</div>
-          </div>
-          <div class="number-item">
-            <div class="number-value">
-              <span class="number-arrow down">↓</span> 1h
-            </div>
-            <div class="number-label">risk detection latency</div>
-          </div>
+      <div class="pricing-card highlighted">
+        <div class="best-value">BEST VALUE</div>
+        <div class="pricing-header">
+          <h3>Enterprise Tier</h3>
+          <p>Real-time oversight for global scale operations.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- Closed-Loop Governance -->
-    <section id="governance" class="reveal" style="margin-top: 8rem;">
-      <div class="section-title">
-        <h2>Closed-Loop Governance</h2>
-        <p>How the engine transforms raw data into auditable remediation.</p>
-      </div>
-
-      <div class="governance-layout">
-        <div class="governance-diagram reveal">
-          <svg class="svg-diagram" viewBox="0 0 400 400">
-            <!-- Central Anchor Icon -->
-            <g class="diagram-center-icon">
-              <circle cx="200" cy="200" r="30" fill="none" stroke="currentColor" stroke-width="1"
-                stroke-dasharray="2 4" />
-              <circle cx="200" cy="200" r="3" fill="currentColor" />
-            </g>
-
-            <circle cx="200" cy="200" r="140" class="connector" />
-            <circle cx="200" cy="200" r="140" class="connector-active" />
-
-            <!-- Nodes -->
-            <g class="node-group" transform="translate(200, 60)">
-              <circle r="8" class="node node-active" />
-              <text y="-30" text-anchor="middle" class="svg-text">
-                <tspan x="0" dy="0" class="phase-label">Phase 01</tspan>
-                <tspan x="0" dy="1.2em" class="phase-title">Analysis</tspan>
-              </text>
-            </g>
-            <g class="node-group" transform="translate(340, 200)">
-              <circle r="8" class="node" />
-              <text x="20" y="-5" text-anchor="start" class="svg-text">
-                <tspan x="20" dy="0" class="phase-label">Phase 02</tspan>
-                <tspan x="20" dy="1.2em" class="phase-title">Insight</tspan>
-              </text>
-            </g>
-            <g class="node-group" transform="translate(200, 340)">
-              <circle r="8" class="node" />
-              <text y="30" text-anchor="middle" class="svg-text">
-                <tspan x="0" dy="0" class="phase-label">Phase 03</tspan>
-                <tspan x="0" dy="1.2em" class="phase-title">Action</tspan>
-              </text>
-            </g>
-            <g class="node-group" transform="translate(60, 200)">
-              <circle r="8" class="node" />
-              <text x="-20" y="-5" text-anchor="end" class="svg-text">
-                <tspan x="-20" dy="0" class="phase-label">Phase 04</tspan>
-                <tspan x="-20" dy="1.2em" class="phase-title">Proof</tspan>
-              </text>
-            </g>
-          </svg>
+        <div class="pricing-price" style="margin-bottom: 2rem;">
+          <span style="font-size: 1.25rem; color: rgba(255,255,255,0.7);">Contact for Pricing</span>
         </div>
-        <div class="governance-info">
-          <div class="info-item">
-            <h4>Strategic Analysis</h4>
-            <p>Scanning institutional data streams for ethical and regulatory gaps.</p>
-          </div>
-          <div class="info-item">
-            <h4>Strategic Insight</h4>
-            <p>Translating complex risk patterns into actionable C-suite intelligence.</p>
-          </div>
-          <div class="info-item">
-            <h4>Remediation Action</h4>
-            <p>Coordinating corrective measures through a managed governance workflow.</p>
-          </div>
-          <div class="info-item">
-            <h4>Validated Proof</h4>
-            <p>Creating a permanent record of both the failure and the remediation.</p>
-          </div>
-        </div>
+        <ul class="pricing-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Continuous Strategic Oversight
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Real-time Regulatory Sync
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Priority Advisory Access
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Custom Red-Teaming Modules
+          </li>
+        </ul>
+        <button class="pricing-btn highlighted-btn">Book a Demo Today</button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Comparison Matrix -->
-    <section id="comparison" class="reveal" style="margin-top: 8rem;">
-      <div class="section-title">
-        <h2>Comparison Matrix</h2>
-        <p>The structural evolution from passive systems to active intelligence.</p>
-      </div>
-      <div class="table-container">
-        <table class="elegant-table">
-          <thead>
-            <tr>
-              <th>Functional Requirement</th>
-              <th>Traditional GRC</th>
-              <th>Ethical Compass</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Analytical Method</td>
-              <td>Manual assessment</td>
-              <td class="accent-text precision-check">Continuous governance intelligence</td>
-            </tr>
-            <tr>
-              <td>Detection Latency</td>
-              <td>Quarterly / Annual</td>
-              <td class="accent-text precision-check">Near real-time oversight</td>
-            </tr>
-            <tr>
-              <td>Governance Depth</td>
-              <td>Surface compliance</td>
-              <td class="accent-text precision-check">Deep institutional analysis</td>
-            </tr>
-            <tr>
-              <td>Data Ownership</td>
-              <td>Public cloud only</td>
-              <td class="accent-text precision-check">Data Ownership / Self-Contained</td>
-            </tr>
-            <tr>
-              <td>Human In the Loop</td>
-              <td class="orange-check">Retains human oversight</td>
-              <td class="accent-text precision-check">Retains human oversight</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+</main>
 
-    <!-- Economics of Integrity Calculator -->
-    <section id="roi" class="reveal" style="margin-top: 8rem;">
-      <div class="section-title">
-        <h2>Strategic Value Analysis</h2>
-        <p>Estimate the impact of a potential integrity deviation versus the efficiency of continuous stewardship.</p>
-      </div>
-      <div class="calculator-container">
-        <div class="calc-inputs">
-          <div class="input-group">
-            <label>Regulatory Risk <span>R <span id="val-regulatory">500</span>k</span></label>
-            <input type="range" id="input-regulatory" min="0" max="1000" value="500" oninput="updateValue()">
-          </div>
-          <div class="input-group">
-            <label>Brand Value at Risk <span>R <span id="val-brand">2.5</span>M</span></label>
-            <input type="range" id="input-brand" min="0" max="10000" value="2500" oninput="updateValue()">
-          </div>
-          <div class="input-group">
-            <label>Remediation Complexity <span><span id="val-complexity">Low</span></span></label>
-            <input type="range" id="input-complexity" min="1" max="5" value="1" oninput="updateValue()">
-          </div>
-        </div>
-        <div class="calc-results">
-          <div class="result-label">Projected Value Realization</div>
-          <div class="roi-value" id="roi-display">12x</div>
-          <p style="font-size: 0.875rem;">Estimated value of failure prevention per R 1 of investment in continuous
-            oversight.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Key Personnel -->
-    <section id="personnel" class="reveal" style="margin-top: 8rem;">
-      <div class="section-title">
-        <h2>Key Personnel</h2>
-        <p>The visionaries behind the Ethical Compass analytical framework.</p>
-      </div>
-      <div class="personnel-grid">
-        <div class="diagram-card">
-          <h4 class="person-name">Gcwelethemba Tshuma</h4>
-          <p class="person-title-electric">System Architect Designer</p>
-          <p class="card-desc">Leading the technical architecture and structural design of the institutional governance
-            engine.</p>
-
-          <div class="bio-accordion">
-            <button class="bio-trigger" onclick="toggleBio(this)">
-              View Detailed Profile
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="bio-content">
-              <p>GT is a seasoned multidisciplinary strategist working at the intersection of AI ethics, law, and global
-                governance. He is a certified leadership coach and facilitator, and has had the privilege of working
-                with local and international policies teams such as BRICS and other state-led development initiatives.
-              </p>
-              <p>His work and experiences come from years of technical and the design expertise in Ethics and Governance
-                including integration into responsible AI and sustainable AI Governance. From Prompt Engineering to the
-                design of Governance Automation systems, GT helps organisations ensure that their sovereign data is
-                transformed into machine-readable formats while prioritizing transparency and accountability.</p>
-              <p>With his passion for social justice, advocacy and community development, GT brings that strategic
-                oversight required for all of these technologies to remain aligned, transparent and accountable.</p>
-            </div>
-          </div>
-        </div>
-        <div class="diagram-card orange-glow">
-          <h4 class="person-name">Praveen Naidoo</h4>
-          <p class="person-title-orange">Ethics & Governance Expert</p>
-          <p class="card-desc">Overseeing the alignment of analytical filters with global ethical standards and
-            human-centric governance codes.</p>
-
-          <div class="bio-accordion">
-            <button class="bio-trigger" onclick="toggleBio(this)">
-              View Detailed Profile
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="bio-content">
-              <p>Praveen is a seasoned governance and ethics professional with over 20 years of experience in oversight
-                governance, ethics management and anti-corruption strategy, in both the public and private sectors
-                across Africa. He has led key institutional reforms, including the Central Bank of Nigeria’s Ethics
-                Management Infrastructure and the Tanzanian Revenue Authority’s Anti-Corruption Programme.</p>
-              <p>He has served as an Ethics Advisor to the UNODC’s ARINSA Programme and spent over a decade heading up
-                the Integrity Management Unit at the NPA, overseeing fraud and corruption investigations, compliance and
-                ethics management and advocacy, and is the former Chair of the Office of Ethics and Accountability in
-                the Justice Cluster in South Africa. Praveen currently serves as a Non-Executive Board Member of the
-                SIU, and is also working on a new blueprint for AI Ethics and Data Governance for the African Continent.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing & Tiers -->
-    <section id="plans" class="reveal" style="margin-top: 8rem;">
-      <div class="section-title">
-        <h2>Institutional Intelligence Plans</h2>
-        <p>Scalable strategic oversight tailored to your organization's governance requirements.</p>
-      </div>
-
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <div class="pricing-header">
-            <h3>Standard Tier</h3>
-            <p>Baseline governance for emerging institutions.</p>
-          </div>
-          <div class="pricing-price" style="margin-bottom: 2rem;">
-            <span style="font-size: 1.25rem; color: var(--color-text-muted);">Contact for Pricing</span>
-          </div>
-          <ul class="pricing-features">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Core Governance Intelligence
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Regulatory Sync (Monthly)
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Standard Support
-            </li>
-          </ul>
-          <button class="pricing-btn">Request a Briefing</button>
-        </div>
-
-        <div class="pricing-card highlighted">
-          <div class="best-value">BEST VALUE</div>
-          <div class="pricing-header">
-            <h3>Enterprise Tier</h3>
-            <p>Real-time oversight for global scale operations.</p>
-          </div>
-          <div class="pricing-price" style="margin-bottom: 2rem;">
-            <span style="font-size: 1.25rem; color: rgba(255,255,255,0.7);">Contact for Pricing</span>
-          </div>
-          <ul class="pricing-features">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Continuous Strategic Oversight
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Real-time Regulatory Sync
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Priority Advisory Access
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Custom Red-Teaming Modules
-            </li>
-          </ul>
-          <button class="pricing-btn highlighted-btn">Book a Demo Today</button>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Framework Alignment Strip -->
-  <div class="partner-strip" aria-label="Aligned governance frameworks">
-    <div class="partner-track">
-      <!-- Set 1 -->
-      <div class="partner-badge">
-        <span class="badge-acronym">ISO 31000</span>
-        <span class="badge-name">Risk Management</span>
-      </div>
-      <div class="partner-badge">
-        <span class="badge-acronym">King IV</span>
-        <span class="badge-name">Corporate Governance</span>
-      </div>
-      <div class="partner-badge">
-        <span class="badge-acronym">GDPR</span>
-        <span class="badge-name">Data Protection</span>
-      </div>
-      <div class="partner-badge">
-        <span class="badge-acronym">POPIA</span>
-        <span class="badge-name">Privacy of Personal Info</span>
-      </div>
-      <div class="partner-badge">
-        <span class="badge-acronym">NACS</span>
-        <span class="badge-name">Anti-Corruption Strategy</span>
-      </div>
-      <div class="partner-badge">
-        <span class="badge-acronym">UNODC</span>
-        <span class="badge-name">UN Office on Drugs &amp; Crime</span>
-      </div>
-      <div class="partner-badge">
-        <span class="badge-acronym">ISO 42001</span>
-        <span class="badge-name">AI Management Systems</span>
-      </div>
-      <div class="partner-badge">
-        <span class="badge-acronym">PFMA</span>
-        <span class="badge-name">Public Finance Management</span>
-      </div>
-      <!-- Set 2 — duplicate for seamless loop -->
-      <div class="partner-badge">
-        <span class="badge-acronym">ISO 31000</span>
-        <span class="badge-name">Risk Management</span>
-      </div>
-      <div class="partner-badge">
-        <span class="badge-acronym">King IV</span>
-        <span class="badge-name">Corporate Governance</span>
-      </div>
-      <div class="partner-badge">
-        <span class="badge-acronym">GDPR</span>
-        <span class="badge-name">Data Protection</span>
-      </div>
-      <div class="partner-badge">
-        <span class="badge-acronym">POPIA</span>
-        <span class="badge-name">Privacy of Personal Info</span>
-      </div>
-      <div class="partner-badge">
-        <span class="badge-acronym">NACS</span>
-        <span class="badge-name">Anti-Corruption Strategy</span>
-      </div>
-      <div class="partner-badge">
-        <span class="badge-acronym">UNODC</span>
-        <span class="badge-name">UN Office on Drugs &amp; Crime</span>
-      </div>
-      <div class="partner-badge">
-        <span class="badge-acronym">ISO 42001</span>
-        <span class="badge-name">AI Management Systems</span>
-      </div>
-      <div class="partner-badge">
-        <span class="badge-acronym">PFMA</span>
-        <span class="badge-name">Public Finance Management</span>
-      </div>
+<!-- Framework Alignment Strip -->
+<div class="partner-strip" aria-label="Aligned governance frameworks">
+  <div class="partner-track">
+    <!-- Set 1 -->
+    <div class="partner-badge">
+      <span class="badge-acronym">ISO 31000</span>
+      <span class="badge-name">Risk Management</span>
+    </div>
+    <div class="partner-badge">
+      <span class="badge-acronym">King IV</span>
+      <span class="badge-name">Corporate Governance</span>
+    </div>
+    <div class="partner-badge">
+      <span class="badge-acronym">GDPR</span>
+      <span class="badge-name">Data Protection</span>
+    </div>
+    <div class="partner-badge">
+      <span class="badge-acronym">POPIA</span>
+      <span class="badge-name">Privacy of Personal Info</span>
+    </div>
+    <div class="partner-badge">
+      <span class="badge-acronym">NACS</span>
+      <span class="badge-name">Anti-Corruption Strategy</span>
+    </div>
+    <div class="partner-badge">
+      <span class="badge-acronym">UNODC</span>
+      <span class="badge-name">UN Office on Drugs &amp; Crime</span>
+    </div>
+    <div class="partner-badge">
+      <span class="badge-acronym">ISO 42001</span>
+      <span class="badge-name">AI Management Systems</span>
+    </div>
+    <div class="partner-badge">
+      <span class="badge-acronym">PFMA</span>
+      <span class="badge-name">Public Finance Management</span>
+    </div>
+    <!-- Set 2 — duplicate for seamless loop -->
+    <div class="partner-badge">
+      <span class="badge-acronym">ISO 31000</span>
+      <span class="badge-name">Risk Management</span>
+    </div>
+    <div class="partner-badge">
+      <span class="badge-acronym">King IV</span>
+      <span class="badge-name">Corporate Governance</span>
+    </div>
+    <div class="partner-badge">
+      <span class="badge-acronym">GDPR</span>
+      <span class="badge-name">Data Protection</span>
+    </div>
+    <div class="partner-badge">
+      <span class="badge-acronym">POPIA</span>
+      <span class="badge-name">Privacy of Personal Info</span>
+    </div>
+    <div class="partner-badge">
+      <span class="badge-acronym">NACS</span>
+      <span class="badge-name">Anti-Corruption Strategy</span>
+    </div>
+    <div class="partner-badge">
+      <span class="badge-acronym">UNODC</span>
+      <span class="badge-name">UN Office on Drugs &amp; Crime</span>
+    </div>
+    <div class="partner-badge">
+      <span class="badge-acronym">ISO 42001</span>
+      <span class="badge-name">AI Management Systems</span>
+    </div>
+    <div class="partner-badge">
+      <span class="badge-acronym">PFMA</span>
+      <span class="badge-name">Public Finance Management</span>
     </div>
   </div>
-
-  <footer class="container footer-layout reveal">
-    <div class="footer-brand">
-      <h4 style="margin-bottom: 0.5rem;">Ethical Compass</h4>
-      <p style="font-size: 0.875rem;">A strategic platform for institutional accountability.</p>
-      <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 1rem;">&copy; 2026 Ethical Compass.
-        Professional usage only.</p>
-    </div>
-    <div class="footer-contact">
-      <p
-        style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; color: var(--color-text-muted);">
-        Strategic Inquiries</p>
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <a href="mailto:intelligence@ethicalcompass.ai"
-          style="color: var(--color-text-bright); text-decoration: none; font-size: 0.875rem; font-weight: 500;">intelligence@ethicalcompass.ai</a>
-        <button class="footer-share-btn" onclick="sharePlatform()" aria-label="Share Platform">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-            <polyline points="16 6 12 2 8 6"></polyline>
-            <line x1="12" y1="2" x2="12" y2="15"></line>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </footer>
-
-  <script src="main.js"></script>
-</body>
-
-</html>
-</script>
-
-</body>
-
-</html>
+</div>

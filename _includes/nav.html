@@ -1,0 +1,43 @@
+<!-- Premium Sticky Navigation -->
+<header class="nav-header">
+  <div class="nav-container">
+    <a href="{{ site.baseurl }}/" class="logo">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      Ethical Compass
+    </a>
+    <div class="nav-controls">
+      <a href="https://end2endethics.co.za" target="_blank" rel="noopener noreferrer" class="nav-cta">Request a Briefing</a>
+      <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <nav class="nav-links">
+      <a href="{{ site.baseurl }}/" class="nav-link">Overview</a>
+      <div class="nav-divider"></div>
+      {% for module in site.modules %}
+      <a href="{{ module.url | relative_url }}" class="nav-link {% if page.url == module.url %}active{% endif %}">{{ module.short_title | default: module.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>
