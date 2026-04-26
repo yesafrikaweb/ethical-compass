@@ -1,0 +1,36 @@
+---
+layout: comparison
+title: "The GRC Evolution"
+order: 6
+module_label: "Market Comparison"
+benefit: "See exactly **what you gain** by moving from passive audits to active intelligence."
+subtitle: "A detailed technical comparison between legacy GRC methodologies and the Ethical Compass active intelligence framework."
+features:
+  - title: "Analytical Method"
+    traditional_value: "Manual Assessment"
+    traditional_desc: "Relies on periodic, human-led audits and subjective questionnaires. Subject to cognitive bias and significant administrative overhead."
+    compass_value: "Continuous Governance Intelligence"
+    compass_desc: "Automated, real-time analytical observation of data streams. Built on a persistent 'Intelligence Framework' that removes human error from the initial identification phase."
+  - title: "Detection Latency"
+    traditional_value: "Quarterly / Annual"
+    traditional_desc: "Risks are often only identified during formal audit cycles, creating a 'Detection Gap' where failures can persist for months before being flagged."
+    compass_value: "Near Real-Time Oversight"
+    compass_desc: "Continuous monitoring ensures that ethical drift is identified the moment it occurs, allowing for immediate remediation and continuity assurance."
+  - title: "Data Sovereignty"
+    traditional_value: "Public Cloud Dependencies"
+    traditional_desc: "Most modern GRC tools operate exclusively on public cloud infrastructures, creating potential data sovereignty and security risks for sensitive institutions."
+    compass_value: "Air-Gapped / Sovereign AI"
+    compass_desc: "Deployable as a self-contained, air-gapped enclave. All data processing remains within the physical and digital perimeter of the organization."
+outro_title: "The Cost of Inaction"
+outro_subtitle: "Transitioning from a passive to an active system is a strategic necessity."
+metrics:
+  - label: "Audit Time (Annual)"
+    traditional: "~600 Human Hours"
+    compass: "~40 Managed Hours"
+  - label: "Risk Coverage"
+    traditional: "Sampling (~10%)"
+    compass: "Full Spectrum (100%)"
+  - label: "Remediation Speed"
+    traditional: "Days/Weeks"
+    compass: "Hours"
+---

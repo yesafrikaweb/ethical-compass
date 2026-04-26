@@ -1,0 +1,59 @@
+---
+layout: default
+---
+<header class="container calc-hero reveal">
+  <div class="header-badges" style="justify-content: center;">
+    <div class="elegant-badge orange-badge">{{ page.module_label }}</div>
+  </div>
+  <h1>{{ page.title }}</h1>
+  <p class="hero-benefit" style="margin: 1.25rem auto;">{{ page.benefit | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+  <p class="hero-subtitle" style="margin: 2rem auto;">{{ page.subtitle }}</p>
+</header>
+
+<main class="container" style="padding-top: 0;">
+  <div class="full-calculator">
+    <div class="calc-grid">
+      <div class="calc-inputs">
+        {% for input in page.calc_inputs %}
+        <div class="input-group" {% if forloop.index > 1 %}style="margin-top: 2.5rem;"{% endif %}>
+          <label>{{ input.label }} <span>{{ input.prefix }} <span id="{{ input.id }}_val">{{ input.default_display }}</span>{{ input.suffix }}</span></label>
+          <input type="range" id="{{ input.id }}" min="{{ input.min }}" max="{{ input.max }}" value="{{ input.value }}" oninput="updateValue()">
+        </div>
+        {% endfor %}
+      </div>
+      <div class="calc-results">
+        <div class="result-label">{{ page.result_label }}</div>
+        <div class="roi-value" id="roi-display" style="font-size: 6rem;">{{ page.result_default }}</div>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted);">{{ page.result_desc }}</p>
+        <div class="formula-badge">
+          {{ page.formula }}
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis-report">
+      <h3>{{ page.report_title }}</h3>
+      {% for item in page.report_items %}
+      <div class="report-item" {% if item.total %}style="border-bottom: 2px solid var(--color-ubuntu-orange);"{% endif %}>
+        <span class="report-label" {% if item.total %}style="color: var(--color-text-bright); font-weight: 700;"{% endif %}>{{ item.label }}</span>
+        <span class="report-value" id="{{ item.id }}" {% if item.total %}style="color: var(--color-ubuntu-orange); font-size: 1.25rem;"{% endif %}>{{ item.value }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <section style="margin-top: 8rem;">
+    <div class="section-title">
+      <h2>{{ page.outro_title }}</h2>
+      <p>{{ page.outro_subtitle }}</p>
+    </div>
+    <div class="matrix-grid">
+      {% for item in page.outro_items %}
+      <div class="matrix-item">
+        <h4>{{ item.title }}</h4>
+        <p class="matrix-item-desc">{{ item.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</main>
