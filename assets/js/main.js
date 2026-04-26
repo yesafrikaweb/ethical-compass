@@ -53,6 +53,37 @@ function toggleBio(btn) {
   btn.classList.toggle('active');
 }
 
+// --- HYBRID MARKDOWN SUPPORT ---
+/**
+ * Fetches and renders Markdown content for modules.
+ * @param {string} file - Path to the markdown file.
+ * @param {string} targetId - ID of the element to inject content into.
+ */
+async function loadMarkdownContent(file, targetId) {
+  const container = document.getElementById(targetId);
+  if (!container) return;
+
+  try {
+    const response = await fetch(file);
+    if (!response.ok) throw new Error('Content not found');
+    
+    let text = await response.text();
+
+    // Strip Front Matter (the --- block at the top)
+    const frontMatterRegex = /^---\s*[\s\S]*?---\s*/;
+    text = text.replace(frontMatterRegex, '');
+
+    // Render using Marked
+    container.innerHTML = marked.parse(text);
+    
+    // Re-initialize reveals for the new content
+    initScrollReveals();
+  } catch (error) {
+    console.error('Markdown Loading Error:', error);
+    container.innerHTML = `<p style="color: var(--color-text-muted);">Analytical content currently unavailable. Please try again later.</p>`;
+  }
+}
+
 // --- ANALYTICAL CALCULATORS ---
 function updateValue() {
   const regInput = document.getElementById('input-regulatory');
@@ -164,4 +195,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveals();
   updateValue();
   addLog();
+
+  // Handle Dynamic Markdown Loading
+  const mdContainer = document.querySelector('[data-markdown-src]');
+  if (mdContainer) {
+    const src = mdContainer.getAttribute('data-markdown-src');
+    loadMarkdownContent(src, mdContainer.id);
+  }
 });

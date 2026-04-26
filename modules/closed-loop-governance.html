@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closed-Loop Governance | Ethical Compass</title>
+  <link rel="stylesheet" href="../assets/css/infographics.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <!-- Premium Sticky Navigation -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        Ethical Compass
+      </a>
+      <div class="nav-controls">
+        <a href="https://end2endethics.co.za" target="_blank" rel="noopener noreferrer" class="nav-cta">Request a Briefing</a>
+        <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Overview</a>
+        <div class="nav-divider"></div>
+        <a href="proactive-oversight.html" class="nav-link">Value</a>
+        <a href="closed-loop-governance.html" class="nav-link active">Approach</a>
+        <a href="personnel.html" class="nav-link">Team</a>
+        <a href="comparison-matrix.html" class="nav-link">Benchmarking</a>
+      </nav>
+    </div>
+  </header>
+
+  <header class="container reveal centered-hero" style="padding-bottom: 2rem;">
+    <div class="header-badges">
+      <div class="elegant-badge blue-badge">Institutional Approach</div>
+    </div>
+    <h1 class="hero-title">Closed-Loop Governance</h1>
+    <p class="hero-subtitle">Ensure every governance gap is found, fixed, and permanently verified.</p>
+  </header>
+
+  <main class="container">
+    <!-- Static High-Fidelity Diagram -->
+    <div class="loop-visual-container reveal">
+      <svg class="svg-diagram" viewBox="0 0 400 400">
+        <path class="connector-active" d="M 200,50 A 150,150 0 1,1 199.9,50 Z" />
+        <circle class="node node-active" cx="200" cy="50" r="10" />
+        <circle class="node node-active" cx="350" cy="200" r="10" />
+        <circle class="node node-active" cx="200" cy="350" r="10" />
+        <circle class="node node-active" cx="50" cy="200" r="10" />
+        <g class="svg-text">
+          <text x="200" y="15" text-anchor="middle"><tspan class="phase-label">Phase 01</tspan></text>
+          <text x="375" y="200" text-anchor="start"><tspan class="phase-label">Phase 02</tspan></text>
+          <text x="200" y="385" text-anchor="middle"><tspan class="phase-label">Phase 03</tspan></text>
+          <text x="25" y="200" text-anchor="end"><tspan class="phase-label">Phase 04</tspan></text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Dynamic Markdown Content -->
+    <div id="markdown-body" class="markdown-content reveal" data-markdown-src="../content/closed-loop-governance.md">
+      <p style="text-align: center; color: var(--color-text-muted);">Loading procedural framework...</p>
+    </div>
+  </main>
+
+  <footer class="container footer-layout reveal" style="padding: 4rem 2rem; border-top: 1px solid var(--color-border); margin-top: 8rem;">
+    <div class="footer-brand">
+      <h4 style="margin-bottom: 0.5rem;">Ethical Compass</h4>
+      <p style="font-size: 0.875rem;">A strategic platform for institutional accountability.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
