@@ -336,6 +336,13 @@ p {
   padding: 6rem 2rem;
 }
 
+header.container.reveal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 /* --- PARTNER / FRAMEWORK STRIP ---
    Auto-scrolling marquee of aligned governance frameworks.
    Full-width band, sits immediately below the hero section.
