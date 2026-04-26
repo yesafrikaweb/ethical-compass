@@ -1,38 +1,40 @@
 ---
 layout: default
 ---
-<header class="container personnel-hero reveal">
-  <div class="header-badges" style="justify-content: center;">
-    <div class="elegant-badge blue-badge">{{ page.module_label }}</div>
+<header class="container reveal" style="padding-bottom: 2rem; text-align: center;">
+  <div class="header-badges">
+    <div class="elegant-badge blue-badge">{{ page.module_label | default: "Team" }}</div>
   </div>
-  <h1>{{ page.title }}</h1>
-  <p class="hero-benefit" style="margin: 1.25rem auto;">{{ page.benefit | markdownify | remove: '<p>' | remove: '</p>' }}</p>
-  <p class="hero-subtitle" style="margin: 2rem auto;">{{ page.subtitle }}</p>
+  <h1 class="hero-title">{{ page.title }}</h1>
+  <p class="hero-benefit">{{ page.benefit | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+  <p class="hero-subtitle">{{ page.subtitle }}</p>
 </header>
 
 <main class="container" style="padding-top: 0;">
-  {% for person in page.people %}
-  <section class="leader-profile">
-    <div class="leader-info">
-      <h2>{{ person.name }}</h2>
-      <span class="leader-role {{ person.role_class | default: 'accent-text' }}">{{ person.role }}</span>
-      <div class="leader-bio">
+  <div class="people-grid">
+    {% for person in page.people %}
+    <div class="person-card reveal">
+      <div class="person-header">
+        <h2 class="person-name">{{ person.name }}</h2>
+        <span class="person-role {{ person.role_class }}">{{ person.role }}</span>
+      </div>
+      <div class="person-bio">
         {{ person.bio | markdownify }}
       </div>
-      <div class="expertise-list">
-        {% for tag in person.expertise %}
-        <span class="expertise-tag">{{ tag }}</span>
+      <div class="person-expertise">
+        {% for area in person.expertise %}
+        <span class="expertise-tag">{{ area }}</span>
         {% endfor %}
       </div>
     </div>
-  </section>
-  {% endfor %}
+    {% endfor %}
+  </div>
 
-  <section style="margin-top: 4rem; text-align: center; border-top: 1px solid var(--color-border); padding-top: 6rem;">
-    <div class="section-title" style="margin: 0 auto 3rem;">
+  <section class="reveal" style="margin-top: 8rem; border-top: 1px solid var(--color-border); padding-top: 4rem;">
+    <div class="section-title">
       <h2>{{ page.outro_title }}</h2>
       <p>{{ page.outro_subtitle }}</p>
     </div>
-    <p style="max-width: 700px; margin: 0 auto; color: var(--color-text-muted);">{{ page.outro_text }}</p>
+    <p style="max-width: 800px; font-size: 1.1rem; line-height: 1.6;">{{ page.outro_text }}</p>
   </section>
 </main>

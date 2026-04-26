@@ -1,62 +1,59 @@
 ---
 layout: default
 ---
-<header class="container matrix-hero reveal">
-  <div class="header-badges" style="justify-content: center;">
-    <div class="elegant-badge blue-badge">{{ page.module_label }}</div>
+<header class="container reveal" style="padding-bottom: 2rem; text-align: center;">
+  <div class="header-badges">
+    <div class="elegant-badge blue-badge">{{ page.module_label | default: "Comparison" }}</div>
   </div>
-  <h1>{{ page.title }}</h1>
-  <p class="hero-benefit" style="margin: 1.25rem auto;">{{ page.benefit | markdownify | remove: '<p>' | remove: '</p>' }}</p>
-  <p class="hero-subtitle" style="margin: 2rem auto;">{{ page.subtitle }}</p>
+  <h1 class="hero-title">{{ page.title }}</h1>
+  <p class="hero-benefit">{{ page.benefit | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+  <p class="hero-subtitle">{{ page.subtitle }}</p>
 </header>
 
 <main class="container" style="padding-top: 0;">
-  <section class="detailed-comparison">
-    {% for feature in page.features %}
-    <div class="comparison-feature">
-      <div class="feature-header">
-        <h3 class="feature-title">{{ feature.title }}</h3>
-      </div>
-      <div class="comparison-cards">
-        <div class="comp-card">
-          <span class="comp-label traditional">Traditional GRC</span>
-          <div class="comp-value">{{ feature.traditional_value }}</div>
-          <p class="comp-details">{{ feature.traditional_desc }}</p>
-        </div>
-        <div class="comp-card highlight">
-          <span class="comp-label ethical">Ethical Compass</span>
-          <div class="comp-value">{{ feature.compass_value }}</div>
-          <p class="comp-details">{{ feature.compass_desc }}</p>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-  </section>
+  <div class="table-container reveal">
+    <table class="elegant-table">
+      <thead>
+        <tr>
+          <th>Strategic Category</th>
+          <th>Traditional GRC</th>
+          <th>Ethical Compass</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for feature in page.features %}
+        <tr>
+          <td>
+            <span class="spec-label" style="display: block; margin-bottom: 0.5rem;">Feature</span>
+            <span style="color: var(--color-text-bright); font-weight: 500;">{{ feature.title }}</span>
+          </td>
+          <td>
+            <div class="traditional-value" style="margin-bottom: 0.5rem;">{{ feature.traditional_value }}</div>
+            <p style="font-size: 0.8rem;">{{ feature.traditional_desc }}</p>
+          </td>
+          <td class="precision-check">
+            <div class="compass-value" style="color: var(--color-text-bright); font-weight: 500; margin-bottom: 0.5rem;">{{ feature.compass_value }}</div>
+            <p style="font-size: 0.8rem; color: var(--color-text-bright);">{{ feature.compass_desc }}</p>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 
-  <section style="margin-top: 4rem; text-align: center;">
-    <div class="section-title" style="margin: 0 auto 3rem;">
+  <section style="margin-top: 8rem;">
+    <div class="section-title">
       <h2>{{ page.outro_title }}</h2>
       <p>{{ page.outro_subtitle }}</p>
     </div>
-    <div class="table-container">
-      <table class="elegant-table">
-        <thead>
-          <tr>
-            <th>Metric</th>
-            <th>Operational Overhead</th>
-            <th>Compass Efficiency</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for metric in page.metrics %}
-          <tr>
-            <td>{{ metric.label }}</td>
-            <td>{{ metric.traditional }}</td>
-            <td class="accent-text precision-check">{{ metric.compass }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+    <div class="numbers-row">
+      {% for metric in page.metrics %}
+      <div class="number-item">
+        <div class="number-label">{{ metric.label }}</div>
+        <div style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 0.5rem;">Traditional: {{ metric.traditional }}</div>
+        <div class="number-value" style="color: var(--color-electric-blue); font-size: 2rem;">{{ metric.compass }}</div>
+      </div>
+      {% endfor %}
     </div>
   </section>
 </main>

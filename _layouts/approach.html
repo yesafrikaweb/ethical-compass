@@ -1,61 +1,58 @@
 ---
 layout: default
 ---
-<header class="container methodology-hero">
-  <div class="header-badges" style="justify-content: center;">
-    <div class="elegant-badge blue-badge">{{ page.module_label }}</div>
+<header class="container reveal" style="padding-bottom: 2rem; text-align: center;">
+  <div class="header-badges">
+    <div class="elegant-badge blue-badge">{{ page.module_label | default: "Approach" }}</div>
   </div>
-  <h1>{{ page.title }}</h1>
-  <p class="hero-benefit" style="margin: 1.25rem auto;">{{ page.benefit | markdownify | remove: '<p>' | remove: '</p>' }}</p>
-  <p class="hero-subtitle" style="margin: 2rem auto;">{{ page.subtitle }}</p>
+  <h1 class="hero-title">{{ page.title }}</h1>
+  <p class="hero-benefit">{{ page.benefit | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+  <p class="hero-subtitle">{{ page.subtitle }}</p>
 </header>
 
 <main class="container" style="padding-top: 0;">
-  <div class="loop-visual-container reveal">
+  <div class="diagram-card reveal">
     <svg class="svg-diagram" viewBox="0 0 400 400">
-      <!-- Central Anchor Icon -->
-      <g class="diagram-center-icon">
-        <circle cx="200" cy="200" r="40" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4" />
-        <path d="M200 185v30M185 200h30" stroke="currentColor" stroke-width="1" />
-        <circle cx="200" cy="200" r="4" fill="currentColor" />
-      </g>
-      
-      <circle cx="200" cy="200" r="150" class="connector" />
-      <circle cx="200" cy="200" r="150" class="connector-active" />
+      <!-- Connection Path -->
+      <path class="connector-active" d="M 200,50 A 150,150 0 1,1 199.9,50 Z" />
 
       {% for phase in page.phases %}
-      <g class="node-group" transform="translate({{ phase.x }}, {{ phase.y }})">
-        <circle r="10" class="node {% if forloop.first %}node-active{% endif %}" />
-        <text {% if phase.text_x %}x="{{ phase.text_x }}"{% endif %} {% if phase.text_y %}y="{{ phase.text_y }}"{% endif %} text-anchor="{{ phase.text_anchor | default: 'middle' }}" class="svg-text">
-          <tspan {% if phase.text_x %}x="{{ phase.text_x }}"{% endif %} dy="0" class="phase-label">{{ phase.label }}</tspan>
-          <tspan {% if phase.text_x %}x="{{ phase.text_x }}"{% endif %} dy="1.2em" class="phase-title">{{ phase.title }}</tspan>
+      <!-- Node {{ phase.label }} -->
+      <circle class="node node-active" cx="{{ phase.x }}" cy="{{ phase.y }}" r="10" />
+      <g class="svg-text">
+        <text x="{{ phase.x | plus: phase.text_x | default: phase.x }}" 
+              y="{{ phase.y | plus: phase.text_y | default: phase.y }}" 
+              text-anchor="{{ phase.text_anchor | default: 'middle' }}">
+          <tspan class="phase-label" x="{{ phase.x | plus: phase.text_x | default: phase.x }}" dy="0">{{ phase.label }}</tspan>
+          <tspan class="phase-title" x="{{ phase.x | plus: phase.text_x | default: phase.x }}" dy="15">{{ phase.title }}</tspan>
         </text>
       </g>
       {% endfor %}
     </svg>
-  </div>
 
-  <div class="loop-details-grid">
-    {% for phase in page.phases %}
-    <div class="phase-card">
-      <span class="phase-number">{{ phase.label }}</span>
-      <h3>{{ phase.full_title }}</h3>
-      <p>{{ phase.desc }}</p>
-      {% if phase.log %}
-      <div class="forensic-log-preview">
-        {{ phase.log | newline_to_br }}
+    <div class="logic-details" style="margin-top: 4rem;">
+      <div class="deep-dive-grid">
+        {% for phase in page.phases %}
+        <div class="logic-step">
+          <span class="spec-label">{{ phase.label }} | {{ phase.full_title }}</span>
+          <p>{{ phase.desc }}</p>
+          {% if phase.log %}
+          <div class="code-log" style="margin-top: 1rem; font-size: 0.75rem; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 4px; font-family: monospace; color: var(--color-electric-blue);">
+            {{ phase.log | newline_to_br }}
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
       </div>
-      {% endif %}
     </div>
-    {% endfor %}
   </div>
 
-  <section style="margin-top: 8rem; text-align: center;">
-    <div class="section-title" style="margin: 0 auto 3rem;">
+  <section style="margin-top: 8rem;">
+    <div class="section-title">
       <h2>{{ page.outro_title }}</h2>
       <p>{{ page.outro_subtitle }}</p>
     </div>
-    <div class="matrix-grid" style="text-align: left;">
+    <div class="matrix-grid">
       {% for item in page.outro_items %}
       <div class="matrix-item">
         <h4>{{ item.title }}</h4>
