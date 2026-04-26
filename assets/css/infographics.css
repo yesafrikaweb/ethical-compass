@@ -336,7 +336,7 @@ p {
   padding: 6rem 2rem;
 }
 
-header.container.reveal {
+header.container.reveal.centered-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -684,11 +684,12 @@ body:not(.light-mode) .diagram-card:hover {
 /* Hero Diagram Specifics */
 .hero-diagram-container {
   position: relative;
-  height: clamp(300px, 50vh, 500px);
-  margin-top: 4rem;
+  height: clamp(200px, 40vh, 350px); /* Scaled down from 500px */
+  margin-top: 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Ensure left alignment */
   align-items: center;
+  overflow: hidden;
 }
 
 /* --- COMPARISON TABLE REFINEMENT --- 
