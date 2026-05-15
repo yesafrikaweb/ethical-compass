@@ -1,0 +1,39 @@
+# Project Rules Research & Draft
+
+## Tech Stack
+- Core: Vanilla HTML5, Vanilla CSS3, Vanilla JavaScript.
+- Fonts: Inter (Google Fonts).
+- Icons: Lucide/SVG based (inline).
+
+## Design System (Tokens)
+- Background: `--color-midnight` (#05070a)
+- Secondary BG: `--color-deep-blue` (#0a0f1a)
+- Accents: 
+  - `--color-electric-blue` (#3b82f6)
+  - `--color-ubuntu-orange` (#e95420)
+- Borders: `--color-border` (rgba(255,255,255,0.05))
+- Border Radius: 
+  - `--radius-sm`: 4px
+  - `--radius-md`: 8px
+- Transitions: `--transition` (all 0.5s cubic-bezier(0.16, 1, 0.3, 1))
+
+## Aesthetic Guidelines
+- "Native OS" / "Consultancy-grade" minimalist aesthetic.
+- "Midnight Navy" palette with "Ubuntu Orange" humanistic accents.
+- High-density data visualization (analytical canvas).
+- Subtle micro-animations and gradients.
+- Glassmorphism/Transparent containers with subtle borders.
+- Responsive design: Centered layouts for mobile/tablet.
+
+## Coding Standards
+- Use CSS Variables for all colors and design tokens.
+- Maintain "No Uppercase Policy" (Sentence case preferred for headers/labels unless specified).
+- Semantic HTML5 elements.
+- Accessible ARIA labels for interactive components.
+- Standardized 6px-8px rounding for consistency.
+
+## Prohibited
+- Generic colors (pure red, blue, green).
+- TailwindCSS (unless explicitly requested).
+- External JS libraries (unless explicitly requested).
+- Placeholders (use `generate_image` or SVG).
