@@ -1,0 +1,16 @@
+{
+  "name": "Ethical Compass",
+  "short_name": "EthicalCompass",
+  "description": "A strategic platform for continuous institutional accountability.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#08090a",
+  "theme_color": "#08090a",
+  "icons": [
+    {
+      "src": "avatar.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
