@@ -736,13 +736,36 @@
     </div>
   </div>
 
-  <!-- Embedded Executive Briefing Section -->
+  <!-- Institutional Contact & Briefing Section -->
   <section id="briefing-section" class="container briefing-embed-section reveal">
     <div class="briefing-embed-card">
       <div class="briefing-info-side">
-        <div class="elegant-badge blue-badge" style="margin-bottom: 1rem;">Institutional Briefings</div>
-        <h3>Request an Executive Briefing</h3>
-        <p>Schedule an in-depth strategic briefing and technical architecture demonstration tailored to your organization’s compliance and governance mandates.</p>
+        <div class="element-badge blue-badge" style="margin-bottom: 1rem;">Direct Channel</div>
+        <h3>Contact Executive Support</h3>
+        <p>Get in touch with our institutional governance team for briefings, technical consultations, or platform inquiries.</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.5rem; margin-bottom: 2rem;">
+          <div style="display: flex; align-items: center; gap: 0.85rem;">
+            <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(59, 130, 246, 0.1); display: flex; align-items: center; justify-content: center; color: var(--color-electric-blue);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div>
+              <div style="font-size: 0.75rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Official Contact</div>
+              <a href="mailto:yesafrikafoundation@gmail.com" style="color: var(--color-text-bright); font-weight: 600; text-decoration: none; font-size: 0.95rem;">yesafrikafoundation@gmail.com</a>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.85rem;">
+            <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(233, 84, 32, 0.1); display: flex; align-items: center; justify-content: center; color: var(--color-ubuntu-orange);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div>
+              <div style="font-size: 0.75rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Governance Intelligence</div>
+              <a href="mailto:intelligence@ethicalcompass.ai" style="color: var(--color-text-bright); font-weight: 600; text-decoration: none; font-size: 0.95rem;">intelligence@ethicalcompass.ai</a>
+            </div>
+          </div>
+        </div>
+
         <ul class="briefing-features-list">
           <li class="briefing-feature-item">
             <svg class="briefing-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
@@ -750,11 +773,7 @@
           </li>
           <li class="briefing-feature-item">
             <svg class="briefing-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-            <span>POPIA, PFMA &amp; ISO 42001 regulatory framework mapping</span>
-          </li>
-          <li class="briefing-feature-item">
-            <svg class="briefing-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-            <span>Custom ROI &amp; risk vulnerability impact assessment</span>
+            <span>POPIA, PFMA &amp; ISO 42001 regulatory compliance mapping</span>
           </li>
         </ul>
       </div>
@@ -762,33 +781,32 @@
       <div class="briefing-form-side">
         <form onsubmit="handleBriefingSubmit(event)">
           <div class="briefing-form-group">
-            <label for="embed-briefing-name">Full Name</label>
-            <input type="text" id="embed-briefing-name" class="briefing-form-input" placeholder="e.g. Dr. Jane Smith" required />
+            <label for="embed-contact-name">Full Name</label>
+            <input type="text" id="embed-contact-name" class="briefing-form-input" placeholder="e.g. Dr. Jane Smith" required />
           </div>
           <div class="briefing-form-group">
-            <label for="embed-briefing-email">Official Email</label>
-            <input type="email" id="embed-briefing-email" class="briefing-form-input" placeholder="name@institution.gov.za" required />
+            <label for="embed-contact-email">Official Email</label>
+            <input type="email" id="embed-contact-email" class="briefing-form-input" placeholder="name@institution.gov.za" required />
           </div>
           <div class="briefing-form-group">
-            <label for="embed-briefing-org">Organization / Department</label>
-            <input type="text" id="embed-briefing-org" class="briefing-form-input" placeholder="Department of Public Works / Treasury" required />
+            <label for="embed-contact-org">Organization / Entity</label>
+            <input type="text" id="embed-contact-org" class="briefing-form-input" placeholder="Department of Public Works / Enterprise" required />
           </div>
           <div class="briefing-form-group">
-            <label for="embed-briefing-type">Organization Sector</label>
-            <select id="embed-briefing-type" class="briefing-form-select" required>
-              <option value="" disabled selected>Select Sector...</option>
-              <option value="soe">State-Owned Enterprise (SOE)</option>
-              <option value="public">Public Sector / Department</option>
-              <option value="financial">Financial Institution</option>
-              <option value="corporate">Private Corporate Enclave</option>
-              <option value="other">Other Institutional Body</option>
+            <label for="embed-contact-type">Inquiry Type</label>
+            <select id="embed-contact-type" class="briefing-form-select" required>
+              <option value="" disabled selected>Select Subject...</option>
+              <option value="briefing">Executive Briefing Request</option>
+              <option value="architecture">Technical Architecture Consultation</option>
+              <option value="compliance">Compliance &amp; POPIA / PFMA Audit</option>
+              <option value="general">General Inquiry</option>
             </select>
           </div>
           <div class="briefing-form-group">
-            <label for="embed-briefing-notes">Briefing Focus Areas</label>
-            <textarea id="embed-briefing-notes" class="briefing-form-textarea" rows="3" placeholder="Outline specific regulatory, POPIA, or governance requirements..."></textarea>
+            <label for="embed-contact-message">Your Message</label>
+            <textarea id="embed-contact-message" class="briefing-form-textarea" rows="4" placeholder="How can our governance team assist your organization?..." required></textarea>
           </div>
-          <button type="submit" class="briefing-submit-btn">Submit Briefing Inquiry &rarr;</button>
+          <button type="submit" class="briefing-submit-btn">Send Message &rarr;</button>
         </form>
       </div>
     </div>
