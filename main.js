@@ -248,7 +248,7 @@ function injectBriefingModal() {
       </div>
     </div>
     <div id="briefing-toast" class="briefing-toast">
-      ✅ Briefing request submitted. Our executive team will contact you shortly.
+      ✅ Demo Request Received! Our team will contact you shortly to schedule your live walkthrough.
     </div>
   `;
 
