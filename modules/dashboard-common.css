@@ -1,0 +1,1058 @@
+/**
+ * Ethical Compass System Styles
+ * Developed & Created by Gcwelethemba Tshuma
+ * Copyright (c) 2026 Gcwelethemba Tshuma. All rights reserved.
+ */
+
+/* dashboard-common.css
+   Shared design overrides to achieve the clean, exquisite Vanta GRC aesthetic.
+*/
+
+/* Prevent transition flashes on page load */
+.no-transitions,
+.no-transitions * {
+  transition: none !important;
+  animation: none !important;
+}
+
+:root {
+  /* Dark Mode Canvas (Deep Charcoal - Darkened by 25%) */
+  --bg-canvas-dark: #111215;
+  --bg-surface-dark: #111215;
+  --bg-surface-hover-dark: #16171b;
+  --border-subtle-dark: rgba(255, 255, 255, 0.015);
+  --border-default-dark: rgba(255, 255, 255, 0.035);
+  --text-primary-dark: #f8fafc;
+  --text-secondary-dark: #94a3b8;
+  --text-muted-dark: #64748b;
+  --bg-accent-pill-dark: rgba(59, 130, 246, 0.12);
+  --text-accent-pill-dark: #60a5fa;
+
+  /* Light Mode Canvas */
+  --bg-canvas-light: #ffffff;
+  --bg-surface-light: #ffffff;
+  --bg-surface-hover-light: #f1f5f9;
+  --border-subtle-light: #f1f5f9;
+  --border-default-light: #e2e8f0;
+  --text-primary-light: #0f172a;
+  --text-secondary-light: #475569;
+  --text-muted-light: #64748b;
+  --bg-accent-pill-light: rgba(15, 23, 42, 0.06);
+  --text-accent-pill-light: #0f172a;
+
+  /* Shared Accent Palette */
+  --color-brand-primary: #3b82f6;
+  --color-brand-secondary: #e95420;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* Layout Metrics */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --transition-fast: all 0.15s ease-out;
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* CSS Mappings (Dark mode defaults) */
+  --color-midnight: var(--bg-canvas-dark);
+  --color-card-bg: var(--bg-surface-dark);
+  --color-border: var(--border-default-dark);
+  --color-text: var(--text-primary-dark);
+  --color-text-muted: var(--text-secondary-dark);
+  --color-active-pill-bg: var(--bg-accent-pill-dark);
+  --color-active-pill-text: var(--text-accent-pill-dark);
+  --color-nav-frame: #060708;
+  --radius-lg-card: var(--radius-md);
+}
+
+body.light-mode {
+  --color-midnight: var(--bg-canvas-light) !important;
+  --color-card-bg: var(--bg-surface-light) !important;
+  --color-border: var(--border-default-light) !important;
+  --color-text: var(--text-primary-light) !important;
+  --color-text-muted: var(--text-secondary-light) !important;
+  --color-active-pill-bg: var(--bg-accent-pill-light) !important;
+  --color-active-pill-text: var(--text-accent-pill-light) !important;
+  --color-nav-frame: #ffffff !important;
+  --color-electric-blue: #1b4fc6 !important;
+}
+
+/* 1. Global Page Layout & Typography Hierarchy */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Standardized Top Header Bar Typography */
+.dashboard-header h1 {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.2rem 0 !important;
+  color: var(--color-text) !important;
+  line-height: 1.2 !important;
+}
+
+.dashboard-header p {
+  font-size: 10px !important;
+  color: var(--color-text-muted) !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
+/* Standardized Card/Panel Typography */
+.card-title, 
+.chart-title h2, 
+.chart-title h3, 
+.panel-title, 
+.section-title h3, 
+.simulator-title, 
+.detail-card-title,
+.detail-header h3,
+.summary-title,
+[class*="card"] h2,
+[class*="card"] h3,
+[class*="panel"] h2,
+[class*="panel"] h3,
+[class*="pane"] h2,
+[class*="pane"] h3 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: var(--color-text) !important;
+}
+
+.card-subtitle, 
+.panel-subtitle, 
+.chart-subtitle, 
+.section-desc, 
+.detail-card-desc {
+  font-size: 0.8rem !important;
+  color: var(--color-text-muted) !important;
+  line-height: 1.4 !important;
+}
+
+.page-title {
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.page-desc {
+  font-size: 0.875rem !important;
+  line-height: 1.6 !important;
+  color: var(--color-text-muted) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* 2. Redesigned Sidebar (Vanta GRC inspired) */
+.sidebar {
+  background-color: var(--color-nav-frame) !important;
+  border-right: none !important;
+  position: relative !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar::after {
+  display: none !important;
+}
+
+/* Cohesive Top Navigation Bar — sticky 52px bar pinned to top of main-content */
+.dashboard-header {
+  background-color: var(--color-nav-frame) !important;
+  border-bottom: none !important;
+  /* Bleed out of main-content's padding on all sides except bottom */
+  margin-top: -0.8rem !important;
+  margin-left: -2rem !important;
+  margin-right: -2rem !important;
+  margin-bottom: 1.5rem !important;
+  padding: 0 1.5rem !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+}
+
+/* Profile card zone in sidebar — exactly 52px to align with top bar */
+.profile-card {
+  border-bottom: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+/* Constrain avatar to fit cleanly inside 52px zone */
+.avatar-container {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  flex-shrink: 0 !important;
+}
+
+.avatar-img {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+.avatar-badge {
+  width: 8px !important;
+  height: 8px !important;
+  bottom: 0 !important;
+  right: 0 !important;
+}
+
+body.light-mode .profile-card {
+  border-bottom: none !important;
+}
+
+/* Sidebar navigation item overrides */
+.nav-menu {
+  gap: 0.4rem !important;
+  padding: 0.5rem 0.25rem 1rem 0.25rem !important;
+}
+
+.nav-item a,
+.nav-item a:visited {
+  border-left: none !important;
+  border-radius: var(--radius-md) !important;
+  padding: 0.65rem 0.85rem !important;
+  color: var(--color-text-muted) !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.nav-item a:hover {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  color: var(--color-text) !important;
+}
+
+body.light-mode .nav-item a:hover {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Active navigation pill indicator */
+.nav-item.active a,
+.nav-item.active a:visited {
+  border-left: none !important;
+  border-radius: var(--radius-sm) !important;
+  padding-left: 0.85rem !important;
+  background-color: var(--color-active-pill-bg) !important;
+  color: var(--color-active-pill-text) !important;
+  font-weight: 600 !important;
+}
+
+/* Back button redesign */
+.back-btn {
+  border-radius: var(--radius-md) !important;
+  transition: all 0.2s ease-in-out !important;
+  font-weight: 600 !important;
+}
+
+/* Collapsed sidebar adjustments */
+body.sidebar-collapsed .sidebar {
+  width: 52px !important;
+  padding: 0 !important;
+}
+
+body.sidebar-collapsed .sidebar .nav-menu a {
+  justify-content: center !important;
+  padding: 0.75rem 0 !important;
+}
+
+/* 3. Flat Card Design System */
+.metric-card,
+.recommended-card,
+.data-card,
+.registry-card,
+.chart-card,
+.card,
+.collab-card,
+.incident-card {
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.02) !important;
+  box-shadow: none !important;
+  padding: 1.5rem !important;
+  background-color: var(--color-card-bg) !important;
+  transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out !important;
+}
+
+body.light-mode .metric-card,
+body.light-mode .recommended-card,
+body.light-mode .data-card,
+body.light-mode .registry-card,
+body.light-mode .chart-card,
+body.light-mode .card,
+body.light-mode .collab-card,
+body.light-mode .incident-card {
+  border: 1px solid #f1f5f9 !important;
+  box-shadow: none !important;
+  background-color: #ffffff !important;
+}
+
+/* Card hovers - elegant micro-interactions without vertical elevation */
+.metric-card:hover,
+.recommended-card:hover,
+.collab-card:hover,
+.incident-card:hover {
+  transform: none !important;
+  background-color: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+body.light-mode .metric-card:hover,
+body.light-mode .recommended-card:hover,
+body.light-mode .collab-card:hover,
+body.light-mode .incident-card:hover {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+
+.progress-track {
+  height: 2px !important;
+}
+
+/* Theme overrides for body */
+body.light-mode {
+  --color-midnight: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+body.light-mode .main-content {
+  background: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250' viewBox='0 0 250 250'%3E%3Ctext x='50%25' y='50%25' fill='rgba%280, 0, 0, 0.01%29' font-size='10' font-family='Inter, sans-serif' font-weight='600' text-anchor='middle' transform='rotate%28-30 125 125%29'%3EETHICAL COMPASS SECURE IP%3C/text%3E%3C/svg%3E") repeat,
+    #ffffff !important;
+}
+
+/* KPI Cards Delta Indicators & Transitions */
+.metric-delta {
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  padding: 0.15rem 0.35rem !important;
+  border-radius: 4px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 2px !important;
+  transition: all 0.3s ease !important;
+}
+
+.metric-delta.green {
+  background-color: rgba(16, 185, 129, 0.1) !important;
+  color: #10b981 !important;
+}
+
+.metric-delta.orange {
+  background-color: rgba(245, 158, 11, 0.1) !important;
+  color: #f59e0b !important;
+}
+
+.metric-delta.neutral {
+  background-color: rgba(100, 116, 139, 0.1) !important;
+  color: #64748b !important;
+}
+
+.progress-fill {
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.metric-value {
+  transition: color 0.3s ease !important;
+}
+
+/* 4. Permanently Collapsed Icon-Only Sidebar Override */
+.sidebar {
+  width: 52px !important;
+  padding: 0 !important;
+}
+
+.sidebar .profile-card {
+  width: 52px !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.sidebar .profile-card div:last-child {
+  display: none !important;
+}
+
+.sidebar .nav-menu a {
+  font-size: 0 !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  padding: 0.75rem 0 !important;
+}
+
+.sidebar .back-btn {
+  font-size: 0 !important;
+  gap: 0 !important;
+  padding: 0 !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+}
+
+/* Sidebar footer — contains the back-btn icon */
+.sidebar .sidebar-footer {
+  width: 52px !important;
+  padding: 0 !important;
+  margin-top: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/* Hide sidebar togglers across header systems */
+.sidebar-toggle-btn,
+.sidebar-toggle,
+[onclick="toggleSidebar()"] {
+  display: none !important;
+}
+
+/* 5. Premium Big Right-Positioned Tooltips */
+[data-tooltip]::after {
+  font-size: 0.75rem !important;
+  padding: 0.5rem 0.85rem !important;
+  border-radius: var(--radius-xs) !important;
+  letter-spacing: 0.015em !important;
+  font-weight: 500 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Force show tooltips on the sidebar links on hover */
+.sidebar [data-tooltip]::after,
+.sidebar [data-tooltip]::before {
+  display: block !important;
+}
+
+[data-tooltip-pos="right"]::after {
+  bottom: auto !important;
+  top: 50% !important;
+  left: 62px !important;
+  transform: translateY(-50%) scale(0.95) !important;
+}
+
+[data-tooltip-pos="right"]::before {
+  bottom: auto !important;
+  top: 50% !important;
+  left: 52px !important;
+  transform: translateY(-50%) !important;
+  border-color: transparent rgba(18, 19, 21, 0.95) transparent transparent !important;
+  border-width: 5px !important;
+}
+
+[data-tooltip-pos="right"]:hover::after {
+  transform: translateY(-50%) scale(1) !important;
+  opacity: 1 !important;
+}
+
+[data-tooltip-pos="right"]:hover::before {
+  transform: translateY(-50%) !important;
+  opacity: 1 !important;
+}
+
+body.light-mode [data-tooltip-pos="right"]::before {
+  border-color: transparent rgba(255, 255, 255, 0.98) transparent transparent !important;
+}
+
+/* 6. Sophisticated Map Connections & Animation */
+.map-link {
+  stroke: rgba(59, 130, 246, 0.25) !important;
+  stroke-width: 1px !important;
+  stroke-dasharray: 4, 3 !important;
+  fill: none !important;
+  animation: mapDash 20s linear infinite !important;
+  transition: stroke 0.3s ease !important;
+}
+
+body.light-mode .map-link {
+  stroke: rgba(37, 99, 235, 0.2) !important;
+}
+
+@keyframes mapDash {
+  to {
+    stroke-dashoffset: -200;
+  }
+}
+
+/* 7. Segmented Control / Tabs Styling (iOS HIG Capsule Style) */
+.tab-container, .chart-controls, .filter-tabs, .filter-group {
+  display: flex !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  padding: 0.25rem !important;
+  border-radius: 20px !important;
+  width: fit-content !important;
+  border: 1px solid var(--color-border) !important;
+  gap: 0 !important;
+}
+
+/* Specific margins for inline controls */
+.table-controls .filter-tabs, .view-controls .filter-group {
+  margin-bottom: 0 !important;
+}
+
+body.light-mode .tab-container,
+body.light-mode .chart-controls,
+body.light-mode .filter-tabs,
+body.light-mode .filter-group {
+  background: rgba(0, 0, 0, 0.03) !important;
+}
+
+.tab-container .tab-btn, 
+.chart-controls .chart-btn, 
+.filter-tabs .tab-btn, 
+.filter-group .filter-btn {
+  padding: 0.5rem 1.25rem !important;
+  border-radius: 18px !important;
+  border: none !important;
+  background: transparent !important;
+  color: var(--color-text-muted) !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: var(--transition-fast) !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+
+.tab-container .tab-btn.active, 
+.chart-controls .chart-btn.active, 
+.filter-tabs .tab-btn.active, 
+.filter-group .filter-btn.active {
+  background: var(--color-electric-blue) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.tab-container .tab-btn:hover, 
+.chart-controls .chart-btn:hover, 
+.filter-tabs .tab-btn:hover, 
+.filter-group .filter-btn:hover {
+  color: var(--color-text) !important;
+}
+
+/* 8. iOS Style Screen Time Chart Styles */
+.screentime-chart-container {
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.screentime-y-axis {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 25px;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.screentime-grid-lines {
+  position: absolute;
+  left: 35px;
+  right: 0;
+  top: 0;
+  bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.screentime-grid-line {
+  width: 100%;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+body.light-mode .screentime-grid-line {
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+}
+
+.screentime-bars {
+  position: absolute;
+  left: 35px;
+  right: 0;
+  top: 0;
+  bottom: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 0 10px;
+}
+
+.screentime-bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  width: 10%;
+  cursor: pointer;
+  position: relative;
+}
+
+.screentime-bar-wrapper:hover .screentime-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-8px);
+}
+
+.screentime-bar {
+  width: 24px;
+  border-radius: 4px 4px 0 0;
+  background: var(--color-electric-blue);
+  transition: height 0.5s ease, opacity 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.screentime-bar-wrapper.active .screentime-bar {
+  outline: 2px solid var(--color-electric-blue);
+  outline-offset: 2px;
+}
+
+/* Stacked Chart Segments */
+.segment-focus {
+  background: #3b82f6; /* Blue */
+  height: 50%;
+}
+.segment-meetings {
+  background: #8b5cf6; /* Purple */
+  height: 30%;
+}
+.segment-glue {
+  background: #f59e0b; /* Yellow */
+  height: 15%;
+}
+.segment-overtime {
+  background: #ef4444; /* Red */
+  height: 5%;
+}
+
+.screentime-x-axis {
+  height: 20px;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 45px;
+  padding-right: 10px;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.screentime-tooltip {
+  position: absolute;
+  bottom: 100%;
+  background: #1e293b;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.screentime-tooltip table {
+  border-collapse: collapse;
+}
+
+.screentime-tooltip td {
+  padding: 1px 4px;
+}
+
+.screentime-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  justify-content: center;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Global Context Drawer Framework */
+.context-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  will-change: transform;
+  width: 340px;
+  height: 100%;
+  background: rgba(17, 18, 21, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-left: 1px solid var(--color-border);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.context-drawer.open {
+  transform: translateX(0);
+}
+
+body.light-mode .context-drawer {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.08);
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.drawer-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.drawer-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+}
+
+.drawer-close-btn:hover {
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+body.light-mode .drawer-close-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.drawer-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.drawer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.drawer-section h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.drawer-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.drawer-toggle input[type="checkbox"] {
+  accent-color: var(--color-electric-blue);
+  cursor: pointer;
+}
+
+.drawer-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.drawer-slider input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--color-border);
+  outline: none;
+  accent-color: var(--color-electric-blue);
+}
+
+.drawer-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-electric-blue);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.drawer-slider input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Bespoke Adoption Scorecard inside Drawer */
+.utaut-score-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+body.light-mode .utaut-score-card {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.utaut-index-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.utaut-gauge-container {
+  position: relative;
+  width: 120px;
+  height: 60px;
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+}
+
+.utaut-gauge-background {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 12px solid var(--color-border);
+  box-sizing: border-box;
+}
+
+.utaut-gauge-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 12px solid var(--color-electric-blue);
+  box-sizing: border-box;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+  transform: rotate(-135deg);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.utaut-gauge-value {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.utaut-insight {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  min-height: 2.8rem;
+}
+
+/* Save button for Drawer */
+.utaut-save-btn {
+  background: var(--color-electric-blue);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.6rem;
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.utaut-save-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* Pill Rounded Header Buttons & Search Inputs */
+.search-input,
+.action-btn-report,
+.action-btn-settings,
+.action-btn-adoption,
+.utaut-save-btn {
+  border-radius: 9999px !important;
+}
+
+/* Global Monochromatic Theme & Progress Bar Weight Overrides */
+:root {
+  --color-graphite: #1e3a8a !important;   /* Deep Corporate Navy */
+  --color-ochre: #3b71ca !important;      /* Medium Corporate Blue */
+  --color-terracotta: #6c7a89 !important;   /* Steel Gray-Blue */
+  --color-soft-gold: #9cb2c0 !important;    /* Light Slate-Gray */
+}
+
+.color-blue { background-color: var(--color-graphite) !important; }
+.color-orange { background-color: var(--color-ochre) !important; }
+.color-teal { background-color: var(--color-terracotta) !important; }
+.color-red { background-color: var(--color-soft-gold) !important; }
+
+.segment-compliance { background-color: var(--color-graphite) !important; }
+.segment-ethical { background-color: var(--color-ochre) !important; }
+.segment-mitigation { background-color: var(--color-terracotta) !important; }
+.segment-esg { background-color: var(--color-soft-gold) !important; }
+
+.fill-blue { background-color: var(--color-graphite) !important; }
+.fill-orange { background-color: var(--color-terracotta) !important; }
+.fill-teal { background-color: var(--color-ochre) !important; }
+.fill-red { background-color: var(--color-soft-gold) !important; }
+
+.progress-track {
+  height: 6px !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 3px !important;
+  overflow: hidden !important;
+  display: flex !important;
+}
+
+.tag-red {
+  background-color: rgba(156, 178, 192, 0.15) !important;
+  color: var(--color-soft-gold) !important;
+  border: 1px solid rgba(156, 178, 192, 0.2) !important;
+}
+
+/* Global 25% Size Reduction for Header Controls, Buttons, and Tabs */
+.search-input {
+  width: 170px !important;
+  padding: 0.4rem 0.75rem 0.4rem 2.2rem !important;
+  font-size: 0.8rem !important;
+}
+
+.search-box .search-icon {
+  width: 13px !important;
+  height: 13px !important;
+  left: 0.75rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+.action-btn-report,
+.action-btn-adoption {
+  padding: 0.4rem 0.8rem !important;
+  font-size: 0.8rem !important;
+}
+
+.action-btn-report svg,
+.action-btn-adoption svg {
+  width: 13px !important;
+  height: 13px !important;
+}
+
+.action-btn-settings,
+.theme-toggle {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.action-btn-settings svg,
+.theme-toggle svg {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+.tab-container {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 2px !important;
+  border-radius: 9999px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid var(--color-border) !important;
+  width: fit-content !important;
+}
+
+.tab-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.25rem 1rem !important;
+  height: 26px !important;
+  border-radius: 9999px !important;
+  font-size: 0.75rem !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
+}
+
+
+
