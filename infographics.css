@@ -2812,3 +2812,155 @@ body.light-mode .share-input-group {
   text-decoration: none;
   font-weight: 500;
 }
+
+/* --- BRIEFING INQUIRY MODAL STYLES --- */
+.briefing-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(8, 9, 10, 0.8);
+  backdrop-filter: blur(12px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 1.5rem;
+}
+
+.briefing-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.briefing-modal-card {
+  background: var(--color-deep-blue);
+  border: 1px solid var(--color-border-bright);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 520px;
+  padding: 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px) scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.briefing-modal-overlay.active .briefing-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.briefing-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.briefing-modal-close:hover {
+  color: var(--color-text-bright);
+}
+
+.briefing-modal-header h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: var(--color-text-bright);
+}
+
+.briefing-modal-header p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.briefing-form-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.briefing-form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-bright);
+}
+
+.briefing-form-input, .briefing-form-select, .briefing-form-textarea {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+  color: var(--color-text-bright);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.briefing-form-input:focus, .briefing-form-select:focus, .briefing-form-textarea:focus {
+  outline: none;
+  border-color: var(--color-electric-blue);
+  box-shadow: 0 0 0 3px var(--color-electric-blue-glow);
+}
+
+.briefing-form-select option {
+  background: var(--color-deep-blue);
+  color: var(--color-text-bright);
+}
+
+.briefing-submit-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.briefing-submit-btn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+/* Toast notification */
+.briefing-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--color-deep-blue);
+  border: 1px solid var(--color-electric-blue);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  color: var(--color-text-bright);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  z-index: 10000;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.briefing-toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+

@@ -203,12 +203,110 @@ function initCounterAnimations() {
   document.querySelectorAll('[data-target], .count-up, .metric-value, .stat-number').forEach(el => counterObserver.observe(el));
 }
 
+// --- BRIEFING MODAL SYSTEM ---
+function injectBriefingModal() {
+  if (document.getElementById('briefing-modal-overlay')) return;
+
+  const modalHtml = `
+    <div id="briefing-modal-overlay" class="briefing-modal-overlay" onclick="handleBriefingBackdropClick(event)">
+      <div class="briefing-modal-card">
+        <button class="briefing-modal-close" onclick="closeBriefingModal()" aria-label="Close Modal">&times;</button>
+        <div class="briefing-modal-header">
+          <h3>Request an Executive Briefing</h3>
+          <p>Tailored governance intelligence and deployment options for your organization.</p>
+        </div>
+        <form onsubmit="handleBriefingSubmit(event)">
+          <div class="briefing-form-group">
+            <label for="briefing-name">Full Name</label>
+            <input type="text" id="briefing-name" class="briefing-form-input" placeholder="e.g. Dr. Jane Smith" required />
+          </div>
+          <div class="briefing-form-group">
+            <label for="briefing-email">Official Email</label>
+            <input type="email" id="briefing-email" class="briefing-form-input" placeholder="name@institution.gov.za" required />
+          </div>
+          <div class="briefing-form-group">
+            <label for="briefing-org">Organization / Department</label>
+            <input type="text" id="briefing-org" class="briefing-form-input" placeholder="Department of Public Works / Treasury" required />
+          </div>
+          <div class="briefing-form-group">
+            <label for="briefing-type">Organization Sector</label>
+            <select id="briefing-type" class="briefing-form-select" required>
+              <option value="" disabled selected>Select Sector...</option>
+              <option value="soe">State-Owned Enterprise (SOE)</option>
+              <option value="public">Public Sector / Department</option>
+              <option value="financial">Financial Institution</option>
+              <option value="corporate">Private Corporate Enclave</option>
+              <option value="other">Other Institutional Body</option>
+            </select>
+          </div>
+          <div class="briefing-form-group">
+            <label for="briefing-notes">Briefing Focus Areas</label>
+            <textarea id="briefing-notes" class="briefing-form-textarea" rows="3" placeholder="Outline specific regulatory, POPIA, or governance requirements..."></textarea>
+          </div>
+          <button type="submit" class="briefing-submit-btn">Submit Request &rarr;</button>
+        </form>
+      </div>
+    </div>
+    <div id="briefing-toast" class="briefing-toast">
+      ✅ Briefing request submitted. Our executive team will contact you shortly.
+    </div>
+  `;
+
+  document.body.insertAdjacentHTML('beforeend', modalHtml);
+}
+
+function openBriefingModal(e) {
+  if (e) e.preventDefault();
+  injectBriefingModal();
+  const overlay = document.getElementById('briefing-modal-overlay');
+  if (overlay) {
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeBriefingModal() {
+  const overlay = document.getElementById('briefing-modal-overlay');
+  if (overlay) {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function handleBriefingBackdropClick(e) {
+  if (e.target.id === 'briefing-modal-overlay') {
+    closeBriefingModal();
+  }
+}
+
+function handleBriefingSubmit(e) {
+  e.preventDefault();
+  closeBriefingModal();
+  
+  const toast = document.getElementById('briefing-toast');
+  if (toast) {
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 4000);
+  }
+}
+
+// Global Escape Key Listener
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeBriefingModal();
+  }
+});
+
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
   loadTheme();
   initScrollReveals();
   initCounterAnimations();
+  injectBriefingModal();
   updateValue();
   addLog();
 });
+
 
