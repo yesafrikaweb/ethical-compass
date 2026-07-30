@@ -26,3 +26,10 @@ yarn-error.log*
 
 # Project Specific
 activate-node24.sh
+
+# Unreleased Dashboard Modules
+modules/dashboard.html
+modules/dashboard_test.html
+modules/dashboard-common.css
+modules/dashboard-common.js
+
