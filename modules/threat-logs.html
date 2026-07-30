@@ -5,6 +5,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta name="author" content="Gcwelethemba Tshuma">
   <meta name="copyright" content="Gcwelethemba Tshuma">
   <meta property="og:author" content="Gcwelethemba Tshuma">
@@ -125,7 +128,6 @@
       height: 100%;
       overflow-y: auto;
       background: 
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250' viewBox='0 0 250 250'%3E%3Ctext x='50%25' y='50%25' fill='rgba(255, 255, 255, 0.012)' font-size='10' font-family='Inter, sans-serif' font-weight='600' text-anchor='middle' transform='rotate(-30 125 125)'%3EETHICAL COMPASS SECURE IP%3C/text%3E%3C/svg%3E") repeat,
         linear-gradient(135deg, var(--color-midnight) 0%, #121315 100%);
       padding: 0.8rem 2rem;
     }
@@ -421,7 +423,6 @@
 
     body.light-mode .main-content {
       background: 
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250' viewBox='0 0 250 250'%3E%3Ctext x='50%25' y='50%25' fill='rgba(0, 0, 0, 0.018)' font-size='10' font-family='Inter, sans-serif' font-weight='600' text-anchor='middle' transform='rotate(-30 125 125)'%3EETHICAL COMPASS SECURE IP%3C/text%3E%3C/svg%3E") repeat,
         #f9fafb;
     }
     .action-btn-settings {
