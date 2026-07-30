@@ -37,3 +37,7 @@
 - TailwindCSS (unless explicitly requested).
 - External JS libraries (unless explicitly requested).
 - Placeholders (use `generate_image` or SVG).
+
+
+<!-- Tag 0.20 -->
+- Version: 0.20
