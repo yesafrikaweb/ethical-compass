@@ -736,6 +736,64 @@
     </div>
   </div>
 
+  <!-- Embedded Executive Briefing Section -->
+  <section id="briefing-section" class="container briefing-embed-section reveal">
+    <div class="briefing-embed-card">
+      <div class="briefing-info-side">
+        <div class="elegant-badge blue-badge" style="margin-bottom: 1rem;">Institutional Briefings</div>
+        <h3>Request an Executive Briefing</h3>
+        <p>Schedule an in-depth strategic briefing and technical architecture demonstration tailored to your organization’s compliance and governance mandates.</p>
+        <ul class="briefing-features-list">
+          <li class="briefing-feature-item">
+            <svg class="briefing-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span>On-premise air-gapped deployment architecture review</span>
+          </li>
+          <li class="briefing-feature-item">
+            <svg class="briefing-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span>POPIA, PFMA &amp; ISO 42001 regulatory framework mapping</span>
+          </li>
+          <li class="briefing-feature-item">
+            <svg class="briefing-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span>Custom ROI &amp; risk vulnerability impact assessment</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="briefing-form-side">
+        <form onsubmit="handleBriefingSubmit(event)">
+          <div class="briefing-form-group">
+            <label for="embed-briefing-name">Full Name</label>
+            <input type="text" id="embed-briefing-name" class="briefing-form-input" placeholder="e.g. Dr. Jane Smith" required />
+          </div>
+          <div class="briefing-form-group">
+            <label for="embed-briefing-email">Official Email</label>
+            <input type="email" id="embed-briefing-email" class="briefing-form-input" placeholder="name@institution.gov.za" required />
+          </div>
+          <div class="briefing-form-group">
+            <label for="embed-briefing-org">Organization / Department</label>
+            <input type="text" id="embed-briefing-org" class="briefing-form-input" placeholder="Department of Public Works / Treasury" required />
+          </div>
+          <div class="briefing-form-group">
+            <label for="embed-briefing-type">Organization Sector</label>
+            <select id="embed-briefing-type" class="briefing-form-select" required>
+              <option value="" disabled selected>Select Sector...</option>
+              <option value="soe">State-Owned Enterprise (SOE)</option>
+              <option value="public">Public Sector / Department</option>
+              <option value="financial">Financial Institution</option>
+              <option value="corporate">Private Corporate Enclave</option>
+              <option value="other">Other Institutional Body</option>
+            </select>
+          </div>
+          <div class="briefing-form-group">
+            <label for="embed-briefing-notes">Briefing Focus Areas</label>
+            <textarea id="embed-briefing-notes" class="briefing-form-textarea" rows="3" placeholder="Outline specific regulatory, POPIA, or governance requirements..."></textarea>
+          </div>
+          <button type="submit" class="briefing-submit-btn">Submit Briefing Inquiry &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <footer class="container footer-layout reveal">
     <div class="footer-brand">
       <h4 style="margin-bottom: 0.5rem;">Ethical Compass</h4>

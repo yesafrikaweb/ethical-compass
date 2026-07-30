@@ -257,11 +257,18 @@ function injectBriefingModal() {
 
 function openBriefingModal(e) {
   if (e) e.preventDefault();
-  injectBriefingModal();
-  const overlay = document.getElementById('briefing-modal-overlay');
-  if (overlay) {
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
+  const section = document.getElementById('briefing-section');
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+    const firstInput = section.querySelector('input');
+    if (firstInput) setTimeout(() => firstInput.focus(), 600);
+  } else {
+    injectBriefingModal();
+    const overlay = document.getElementById('briefing-modal-overlay');
+    if (overlay) {
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
   }
 }
 
