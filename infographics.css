@@ -2987,20 +2987,21 @@ body.light-mode .share-input-group {
 .briefing-submit-btn {
   width: 100%;
   padding: 0.85rem;
-  background: var(--gradient-primary);
+  background: var(--color-electric-blue);
   border: none;
   border-radius: var(--radius-sm);
   color: #fff;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
   margin-top: 0.5rem;
 }
 
 .briefing-submit-btn:hover {
-  opacity: 0.95;
+  background-color: #2563eb;
   transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
 }
 
 /* Toast notification */
