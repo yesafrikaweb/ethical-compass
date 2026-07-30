@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<!-- Developed & Created by Gcwelethemba Tshuma -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gcwelethemba Tshuma">
+  <meta name="copyright" content="Gcwelethemba Tshuma">
+  <meta property="og:author" content="Gcwelethemba Tshuma">
+  <title>Integrity Inbox | Ethical Compass Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-midnight: #08090a;
+      --color-deep-blue: #121315;
+      --color-card-bg: rgba(18, 19, 21, 0.65);
+      --color-electric-blue: #3b82f6;
+      --color-ubuntu-orange: #e95420;
+      --color-green: #10b981;
+      --color-teal: #14b8a6;
+      --color-text: #f3f4f6;
+      --color-text-muted: #9ca3af;
+      --color-border: rgba(255, 255, 255, 0.05);
+      --radius-md: 8px;
+      --radius-sm: 4px;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--color-midnight);
+      color: var(--color-text);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Layout structure */
+    .sidebar {
+      will-change: width, padding;
+      width: 230px;
+      background-color: #030508;
+      border-right: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      padding: 1.25rem 1rem;
+      height: 100%;
+      flex-shrink: 0;
+      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body.sidebar-collapsed .sidebar {
+      will-change: width, padding;
+      width: 70px;
+      padding: 1.25rem 0.5rem;
+    }
+
+    body.sidebar-collapsed .sidebar .profile-card {
+      justify-content: center;
+    }
+
+    body.sidebar-collapsed .sidebar .profile-card div:last-child {
+      display: none;
+    }
+
+    body.sidebar-collapsed .sidebar .nav-menu a {
+      font-size: 0;
+      justify-content: center;
+      gap: 0;
+      padding: 0.6rem 0;
+    }
+
+    body.sidebar-collapsed .sidebar .back-btn {
+      font-size: 0;
+      gap: 0;
+      padding: 0.7rem 0;
+    }
+
+    /* Only show tooltips on sidebar when collapsed */
+    body:not(.sidebar-collapsed) .sidebar [data-tooltip]::after,
+    body:not(.sidebar-collapsed) .sidebar [data-tooltip]::before {
+      display: none !important;
+    }
+
+    .sidebar-toggle-btn {
+      background: transparent;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: var(--radius-md);
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .sidebar-toggle-btn:hover {
+      border-color: var(--color-electric-blue);
+      color: var(--color-text);
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.15);
+    }
+    
+    body.light-mode .sidebar-toggle-btn {
+      border-color: rgba(0, 0, 0, 0.08);
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow-y: auto;
+      background: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250' viewBox='0 0 250 250'%3E%3Ctext x='50%25' y='50%25' fill='rgba(255, 255, 255, 0.012)' font-size='10' font-family='Inter, sans-serif' font-weight='600' text-anchor='middle' transform='rotate(-30 125 125)'%3EETHICAL COMPASS SECURE IP%3C/text%3E%3C/svg%3E") repeat,
+        linear-gradient(135deg, var(--color-midnight) 0%, #121315 100%);
+      padding: 0.8rem 2rem;
+    }
+
+    /* Sidebar Components */
+    .profile-card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.75rem;
+      text-align: left;
+    }
+
+    .avatar-container {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid var(--color-electric-blue);
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+    }
+
+    .avatar-badge {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: var(--color-green);
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      border: 1.5px solid #030508;
+    }
+
+    .profile-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .profile-role {
+      font-size: 0.7rem;
+      color: var(--color-text-muted);
+      margin-top: 0.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .nav-item a,
+    .nav-item a:visited {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.6rem 0.75rem;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-item a:hover,
+    .nav-item.active a,
+    .nav-item.active a:visited {
+      color: var(--color-text);
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    .nav-item.active a,
+    .nav-item.active a:visited {
+      border-left: 3px solid var(--color-electric-blue);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding-left: calc(0.75rem - 3px);
+    }
+
+    .nav-icon {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 1.5rem;
+    }
+
+    .back-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.7rem;
+      background: transparent;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      border-radius: var(--radius-md);
+      font-size: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .back-btn:hover {
+      border-color: var(--color-electric-blue);
+      color: var(--color-text);
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.1);
+    }
+
+    /* Main Area Header — controlled by dashboard-common.css */
+
+    .header-left h1 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .header-left p {
+      font-size: 10px;
+      color: var(--color-text-muted);
+      margin-top: 0.15rem;
+      white-space: nowrap;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .search-box {
+      position: relative;
+    }
+
+    .search-input {
+      background-color: var(--color-deep-blue);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 0.6rem 1rem 0.6rem 2.5rem;
+      color: var(--color-text);
+      font-size: 0.9rem;
+      width: 200px;
+      transition: var(--transition);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--color-electric-blue);
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.875rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      stroke: var(--color-text-muted);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .clock-display {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 10px;
+      color: var(--color-text-muted);
+      background-color: var(--color-deep-blue);
+      border: 1px solid var(--color-border);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-md);
+      white-space: nowrap;
+    }
+
+    /* Inbox Layout */
+    .inbox-layout {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 1.5rem;
+      height: 500px;
+    }
+
+    .inbox-list-panel {
+      background: var(--color-deep-blue);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius-md);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .inbox-item {
+      padding: 1.25rem;
+      border-bottom: 1px solid var(--color-border);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      transition: var(--transition);
+    }
+
+    .inbox-item:hover {
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    .inbox-item.active {
+      background-color: rgba(59, 130, 246, 0.05);
+      border-left: 3px solid var(--color-electric-blue);
+      padding-left: calc(1.25rem - 3px);
+    }
+
+    .inbox-item.unread {
+      font-weight: 600;
+    }
+
+    .inbox-item-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: var(--color-text-muted);
+    }
+
+    .inbox-sender {
+      color: var(--color-text);
+    }
+
+    .inbox-item-subject {
+      font-size: 0.9rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .inbox-item-snippet {
+      font-size: 10px;
+      color: var(--color-text-muted);
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .inbox-reading-panel {
+      background: var(--color-deep-blue);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .inbox-msg-header {
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+    }
+
+    .msg-sender-info h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .msg-sender-info p {
+      font-size: 10px;
+      color: var(--color-text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .msg-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      background-color: var(--color-deep-blue);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover {
+      border-color: var(--color-electric-blue);
+      color: var(--color-text);
+    }
+
+    .inbox-msg-content {
+      flex: 1;
+      overflow-y: auto;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--color-text);
+      opacity: 0.95;
+    }
+    body.light-mode {
+      --color-midnight: #f8fafc;
+      --color-deep-blue: #ffffff;
+      --color-card-bg: #ffffff;
+      --color-border: #e2e8f0;
+      --color-text: #0f172a;
+      --color-text-muted: #64748b;
+    }
+
+    body.light-mode .sidebar {
+      will-change: width, padding;
+      background-color: #f1f5f9;
+    }
+
+    body.light-mode .search-input {
+      background-color: #f3f4f6;
+    }
+
+    body.light-mode .log-feed {
+      background-color: #f3f4f6;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    body.light-mode .back-btn:hover {
+      background-color: #e5e7eb;
+    }
+
+    body.light-mode .main-content {
+      background: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250' viewBox='0 0 250 250'%3E%3Ctext x='50%25' y='50%25' fill='rgba(0, 0, 0, 0.018)' font-size='10' font-family='Inter, sans-serif' font-weight='600' text-anchor='middle' transform='rotate(-30 125 125)'%3EETHICAL COMPASS SECURE IP%3C/text%3E%3C/svg%3E") repeat,
+        #f9fafb;
+    }
+    .action-btn-settings {
+      background: transparent;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .action-btn-settings:hover {
+      border-color: var(--color-electric-blue);
+      color: var(--color-text);
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.15);
+    }
+    
+    body.light-mode .action-btn-settings {
+      border-color: rgba(0, 0, 0, 0.08);
+    }
+      .action-btn-settings {
+      background: transparent;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .action-btn-settings:hover {
+      border-color: var(--color-electric-blue);
+      color: var(--color-text);
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.15);
+    }
+    
+    body.light-mode .action-btn-settings {
+      border-color: rgba(0, 0, 0, 0.08);
+    }
+    /* Context Drawer Glassmorphism */
+    .context-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      transform: translateX(100%);
+      will-change: transform;
+      width: 320px;
+      height: 100%;
+      background: rgba(10, 12, 16, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-left: 1px solid var(--color-border);
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .context-drawer.open {
+      transform: translateX(0);
+    }
+
+    body.light-mode .context-drawer {
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .drawer-header h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .drawer-close-btn {
+      background: transparent;
+      border: none;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+
+    .drawer-close-btn:hover {
+      color: var(--color-text);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .drawer-body {
+      padding: 1.5rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .drawer-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .drawer-section h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .drawer-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+
+    .drawer-toggle input[type="checkbox"] {
+      accent-color: var(--color-electric-blue);
+      cursor: pointer;
+    }
+
+    .drawer-select {
+      background: var(--color-midnight);
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+      padding: 0.5rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      outline: none;
+      cursor: pointer;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    body.light-mode .drawer-select {
+      background: #f3f4f6;
+    }
+
+    .drawer-slider {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .drawer-slider input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--color-border);
+      outline: none;
+    }
+
+    .drawer-slider input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--color-electric-blue);
+      cursor: pointer;
+    }
+
+    /* ==========================================
+       Responsive Media Queries
+       ========================================== */
+    @media (max-width: 1024px) {
+      .data-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+        overflow-y: auto;
+        height: auto;
+      }
+      
+      .sidebar {
+      will-change: width, padding;
+        width: 100% !important;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+        flex-direction: row;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: #030508;
+      }
+      
+      body.sidebar-collapsed .sidebar {
+      will-change: width, padding;
+        width: 100% !important;
+        padding: 0.75rem 1rem;
+      }
+      
+      .profile-card {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+      
+      .profile-card div:last-child {
+        display: none; /* Hide profile name/role on mobile topbar */
+      }
+      
+      nav {
+        flex: initial !important;
+      }
+      
+      .nav-menu {
+        flex-direction: row !important;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      
+      .nav-item {
+        margin: 0 !important;
+      }
+      
+      .nav-menu a {
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0.8rem !important;
+        justify-content: center;
+      }
+      
+      .sidebar-footer {
+        display: none; /* Hide back link from mobile top sidebar */
+      }
+
+      .main-content {
+        padding: 1.5rem 1rem;
+        height: auto;
+        overflow-y: visible;
+      }
+
+      .dashboard-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .header-right {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .search-box {
+        flex: 1;
+        min-width: 150px;
+      }
+
+      .search-input {
+        width: 100%;
+      }
+
+      .table-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+      }
+
+      .filter-tabs {
+        flex-wrap: wrap;
+      }
+
+      .table-search-input {
+        width: 100% !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .metrics-grid,
+      .recommended-grid {
+        grid-template-columns: 1fr;
+      }
+      .context-drawer {
+        width: 100%;
+        right: 0;
+        transform: translateX(100%);
+      }
+      .context-drawer.open {
+        transform: translateX(0);
+      }
+    }
+
+    body.light-mode .metric-card,
+    body.light-mode .recommended-card,
+    body.light-mode .data-card,
+    body.light-mode .registry-card,
+    body.light-mode .chart-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+    }
+    body.light-mode .metric-card:hover,
+    body.light-mode .recommended-card:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+      border-color: #cbd5e1;
+    }
+
+    /* Visited Link Color Reset for Sidebar */
+    .sidebar a:visited,
+    .nav-item a:visited,
+    .nav-menu a:visited,
+    .back-btn:visited {
+      color: inherit;
+    }
+</style>
+  <link rel="stylesheet" href="dashboard-common.css">
+</head>
+
+<body>
+  <script>
+    document.documentElement.classList.add('no-transitions');
+    if (localStorage.getItem('sidebar-collapsed') === 'true') {
+      document.body.classList.add('sidebar-collapsed');
+    }
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  </script>
+  <script src="dashboard-common.js"></script>
+  <!-- Dashboard Sidebar -->
+  <aside class="sidebar">
+    <div class="profile-card">
+      <div class="avatar-container">
+        <img class="avatar-img" src="../avatar.png" alt="Praveen Naidoo profile headshot">
+        <div class="avatar-badge"></div>
+      </div>
+      <div>
+        <h2 class="profile-name">GT</h2>
+        <p class="profile-role">E&amp;G</p>
+      </div>
+    </div>
+
+    <nav style="flex: 1;">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="dashboard.html" data-tooltip="Dashboard" data-tooltip-pos="right">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+              <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+              <rect x="3" y="16" width="7" height="5" rx="1"></rect>
+            </svg>
+            Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="governance-data-hub.html" data-tooltip="Governance Data Hub" data-tooltip-pos="right">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
+            </svg>
+            Governance Data Hub
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="esg-indicators.html" data-tooltip="ESG Indicators" data-tooltip-pos="right">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            ESG Indicators
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="collaboration-hub.html" data-tooltip="Collaboration Hub" data-tooltip-pos="right">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+              <polyline points="16 6 12 2 8 6"></polyline>
+              <line x1="12" y1="2" x2="12" y2="15"></line>
+            </svg>
+            Collaboration Hub
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="threat-logs.html" data-tooltip="Threat Logs" data-tooltip-pos="right">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            Threat Logs
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="incident-calendar.html" data-tooltip="Incident Calendar" data-tooltip-pos="right">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            Incident Calendar
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="system-portfolios.html" data-tooltip="System Portfolios" data-tooltip-pos="right">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+            System Portfolios
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="franchise-governance.html" data-tooltip="Franchise Governance" data-tooltip-pos="right">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"></path>
+            </svg>
+            Franchise Governance
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a href="integrity-inbox.html" data-tooltip="Integrity Inbox" data-tooltip-pos="right">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            Integrity Inbox
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="governance-tasks.html" data-tooltip="Governance Tasks" data-tooltip-pos="right">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            Governance Tasks
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="rest-fatigue-monitor.html" data-tooltip="Rest &amp; Fatigue" data-tooltip-pos="right">
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            Rest &amp; Fatigue
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="../index.html" class="back-btn" data-tooltip="Back to Website" data-tooltip-pos="right">
+        <svg style="width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5;" viewBox="0 0 24 24">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        Back to Website
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content Dashboard -->
+  <main class="main-content">
+    <header class="dashboard-header">
+      <div class="header-left" style="display: flex; align-items: center; gap: 1rem;">
+        <button onclick="toggleSidebar()" class="sidebar-toggle-btn" aria-label="Toggle Sidebar" data-tooltip="Toggle left panel" data-tooltip-pos="right">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="9" y1="3" x2="9" y2="21"></line>
+          </svg>
+        </button>
+        <div>
+        <h1>Integrity Inbox</h1>
+        <p>Ethical warnings whistleblower reports</p>        </div>
+      </div>
+      <div class="header-right">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" class="search-input" placeholder="Search logs &amp; assets...">
+        </div>
+        
+        <button onclick="toggleContextDrawer()" class="action-btn-settings" data-tooltip="Configure enclave settings &amp; scanner nodes" data-tooltip-pos="bottom">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="15" y1="3" x2="15" y2="21"></line>
+            <path d="M14 9l-3 3 3 3"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="inbox-layout">
+      <!-- Message list panel -->
+      <div class="inbox-list-panel" id="inbox-list-container">
+        <!-- Filled via script -->
+      </div>
+
+      <!-- Read pane -->
+      <div class="inbox-reading-panel">
+        <div class="inbox-msg-header">
+          <div class="msg-sender-info">
+            <h4 id="msg-view-subject">Select a message</h4>
+            <p id="msg-view-sender">From: --</p>
+          </div>
+          <div class="msg-actions">
+            <button class="filter-btn" style="padding:0.4rem 0.8rem;" onclick="archiveCurrentMessage()">Archive</button>
+            <button class="filter-btn" style="padding:0.4rem 0.8rem; border-color:var(--color-electric-blue); color:white;" onclick="escalateCurrentMessage()">Escalate</button>
+          </div>
+        </div>
+        <div class="inbox-msg-content" id="msg-view-body">
+          Please select an integrity alert or system notice from the inbox listing to view the detail and coordinate remediation paths.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+
+    // Toast alert helper
+    function showToast(message) {
+      const existingToast = document.getElementById('toast');
+      if (existingToast) {
+        existingToast.innerText = message;
+        existingToast.classList.add('show');
+        setTimeout(() => existingToast.classList.remove('show'), 3000);
+      } else {
+        const toast = document.createElement('div');
+        toast.style.position = 'fixed';
+        toast.style.bottom = '2rem';
+        toast.style.right = '2rem';
+        toast.style.background = 'var(--color-deep-blue)';
+        toast.style.border = '1px solid var(--color-electric-blue)';
+        toast.style.color = 'var(--color-text)';
+        toast.style.padding = '1rem 1.5rem';
+        toast.style.borderRadius = 'var(--radius-md)';
+        toast.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+        toast.style.zIndex = '99999';
+        toast.innerText = message;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+      }
+    }
+
+    // Load Inbox from LocalStorage
+    function getInbox() {
+      let stored = localStorage.getItem('ethical_compass_inbox');
+      let inbox = null;
+      if (stored) {
+        try {
+          inbox = JSON.parse(stored);
+        } catch(e) {}
+      }
+      
+      const formatOffsetDate = (daysAgo) => {
+        const d = new Date();
+        d.setDate(d.getDate() - daysAgo);
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        return `${months[d.getMonth()]} ${d.getDate()}`;
+      };
+
+      const defaults = [
+        { id: 1, sender: "Governance Monitor", subject: "[ALERT] Compliance Drift Detected", date: formatOffsetDate(0), unread: true, body: "Compliance scanner detected a storage deviation in POPIA User Consent directories. Incident reference INC-8821 has been opened. Instant mitigation checks have been armed. Immediate officer verification is requested." },
+        { id: 2, sender: "Gcwelethemba Tshuma", subject: "Verification Enclave Key Updates", date: formatOffsetDate(2), unread: false, body: "Hi Praveen, I have completed the verification keys update for the automated diagnostics framework (ISO 42001 alignment). All tests are green. Let me know if you want a technical overview walkthrough of the key enclaves." },
+        { id: 3, sender: "Whistleblower Hotline", subject: "Anonymous Report: Database access logging bypass", date: formatOffsetDate(4), unread: true, body: "A ticket submitted anonymously claims that certain diagnostic scripts bypass POPIA core access logs during development maintenance windows. Please investigate development portal log configuration policies." }
+      ];
+
+      if (!inbox) {
+        localStorage.setItem('ethical_compass_inbox', JSON.stringify(defaults));
+        return defaults;
+      }
+
+      // Automatically update the dates of the default mock messages if they are still showing March
+      let updated = false;
+      inbox.forEach(msg => {
+        if (msg.id === 1 && (msg.date === "March 8" || !msg.date)) {
+          msg.date = formatOffsetDate(0);
+          updated = true;
+        } else if (msg.id === 2 && (msg.date === "March 5" || !msg.date)) {
+          msg.date = formatOffsetDate(2);
+          updated = true;
+        } else if (msg.id === 3 && (msg.date === "March 3" || !msg.date)) {
+          msg.date = formatOffsetDate(4);
+          updated = true;
+        }
+      });
+
+      if (updated) {
+        localStorage.setItem('ethical_compass_inbox', JSON.stringify(inbox));
+      }
+
+      return inbox;
+    }
+
+    function saveInbox(inbox) {
+      localStorage.setItem('ethical_compass_inbox', JSON.stringify(inbox));
+    }
+
+    let activeMessageId = null;
+
+    function loadInbox() {
+      const container = document.getElementById('inbox-list-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      const inbox = getInbox();
+      const activeInbox = inbox.filter(m => !m.archived);
+      
+      if (activeInbox.length === 0) {
+        container.innerHTML = `<div style="color:var(--color-text-muted); text-align:center; padding:2rem; font-size:0.85rem;">Inbox is empty.</div>`;
+        return;
+      }
+
+      activeInbox.forEach(msg => {
+        const msgEl = document.createElement('div');
+        msgEl.className = `inbox-item ${msg.unread ? 'unread' : ''} ${msg.id === activeMessageId ? 'active' : ''}`;
+        msgEl.id = `inbox-item-${msg.id}`;
+        msgEl.onclick = () => readMessage(msg.id);
+        msgEl.innerHTML = `
+          <div class="inbox-item-header">
+            <span class="inbox-sender">${msg.sender}</span>
+            <span>${msg.date}</span>
+          </div>
+          <div class="inbox-item-subject" style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem;">
+            <span>${msg.subject}</span>
+            ${msg.escalated ? '<span style="font-size:0.65rem; background:rgba(239,68,68,0.15); color:#ef4444; padding:0.1rem 0.3rem; border-radius:3px; font-weight:600; flex-shrink:0;">ESC</span>' : ''}
+          </div>
+          <div class="inbox-item-snippet">${msg.body.substring(0, 50)}...</div>
+        `;
+        container.appendChild(msgEl);
+      });
+    }
+
+    function readMessage(id) {
+      activeMessageId = id;
+      const inbox = getInbox();
+      const msg = inbox.find(m => m.id === id);
+      if (!msg) return;
+
+      document.querySelectorAll('.inbox-item').forEach(el => el.classList.remove('active'));
+      const activeEl = document.getElementById(`inbox-item-${id}`);
+      if (activeEl) {
+        activeEl.classList.remove('unread');
+        activeEl.classList.add('active');
+      }
+
+      msg.unread = false;
+      saveInbox(inbox);
+
+      document.getElementById('msg-view-subject').innerHTML = msg.subject + (msg.escalated ? ' <span style="font-size:0.75rem; background:rgba(239,68,68,0.15); color:#ef4444; padding:0.2rem 0.5rem; border-radius:4px; margin-left:0.5rem; font-weight:600; vertical-align:middle;">ESCALATED</span>' : '');
+      document.getElementById('msg-view-sender').innerText = `From: ${msg.sender} | Date: ${msg.date}`;
+      document.getElementById('msg-view-body').innerText = msg.body;
+    }
+
+    function archiveCurrentMessage() {
+      if (!activeMessageId) {
+        showToast("No active message selected to archive.");
+        return;
+      }
+      
+      const inbox = getInbox();
+      const msg = inbox.find(m => m.id === activeMessageId);
+      if (!msg) return;
+      
+      msg.archived = true;
+      saveInbox(inbox);
+      
+      showToast("Message archived successfully.");
+      
+      // Reload list
+      loadInbox();
+      
+      // Find the first non-archived message
+      const nextMsg = inbox.find(m => !m.archived);
+      if (nextMsg) {
+        readMessage(nextMsg.id);
+      } else {
+        activeMessageId = null;
+        document.getElementById('msg-view-subject').innerText = "Select a message";
+        document.getElementById('msg-view-sender').innerText = "From: --";
+        document.getElementById('msg-view-body').innerText = "All messages have been archived.";
+      }
+    }
+
+    function escalateCurrentMessage() {
+      if (!activeMessageId) {
+        showToast("No active message selected to escalate.");
+        return;
+      }
+      
+      const inbox = getInbox();
+      const msg = inbox.find(m => m.id === activeMessageId);
+      if (!msg) return;
+      
+      if (msg.escalated) {
+        showToast("This message has already been escalated.");
+        return;
+      }
+
+      // 1. Mark message as escalated in inbox
+      msg.escalated = true;
+      saveInbox(inbox);
+
+      // 2. Add high-priority task in governance_tasks
+      let tasks = [];
+      const storedTasks = localStorage.getItem('governance_tasks');
+      if (storedTasks) {
+        try {
+          tasks = JSON.parse(storedTasks);
+        } catch(e) {}
+      } else {
+        tasks = [
+          { id: 1, title: "Review GDPR User Consent policies", desc: "Audit core user profiles to align with updated EU privacy standards.", priority: "HIGH", completed: false },
+          { id: 2, title: "Mitigate LLM assistant toxicity risk", desc: "Update system prompts and output filters to resolve bias feedback logs.", priority: "HIGH", completed: true },
+          { id: 3, title: "King IV Corporate Governance alignment review", desc: "Coordinate board-level compliance checklist with corporate legal counsel.", priority: "MEDIUM", completed: true },
+          { id: 4, title: "Verify ISO 31000 Risk templates", desc: "Review database schemas for security incident mitigation rules.", priority: "LOW", completed: true },
+          { id: 5, title: "Configure rate limiter on dev portals", desc: "Limit API exposure risks for non-production environments.", priority: "LOW", completed: false }
+        ];
+      }
+
+      // Check if task already exists
+      const taskTitle = `Escalated: ${msg.subject}`;
+      const taskExists = tasks.some(t => t.title === taskTitle);
+      
+      if (!taskExists) {
+        const newTaskId = tasks.length > 0 ? Math.max(...tasks.map(t => t.id)) + 1 : 1;
+        tasks.push({
+          id: newTaskId,
+          title: taskTitle,
+          desc: `Investigation required: ${msg.body.substring(0, 100)}...`,
+          priority: "HIGH",
+          completed: false
+        });
+        localStorage.setItem('governance_tasks', JSON.stringify(tasks));
+      }
+
+      showToast("Report escalated! Created a high-priority item under Governance Tasks.");
+      
+      // Re-read message and reload list to show updated status
+      readMessage(activeMessageId);
+      loadInbox();
+    }
+
+    function addNewReport(e) {
+      e.preventDefault();
+      const sender = document.getElementById('rep-sender').value;
+      const subject = document.getElementById('rep-subject').value;
+      const body = document.getElementById('rep-body').value;
+      
+      const now = new Date();
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const dateStr = `${months[now.getMonth()]} ${now.getDate()}`;
+
+      const inbox = getInbox();
+      const newId = inbox.length > 0 ? Math.max(...inbox.map(m => m.id)) + 1 : 1;
+      
+      inbox.unshift({
+        id: newId,
+        sender: sender || "Anonymous Report",
+        subject: subject,
+        date: dateStr,
+        unread: true,
+        body: body
+      });
+
+      saveInbox(inbox);
+      
+      // Reset form
+      document.getElementById('new-report-form').reset();
+      
+      // Reload list
+      loadInbox();
+      
+      // Select the new message
+      readMessage(newId);
+
+      showToast("Anonymous report submitted successfully!");
+      toggleContextDrawer();
+    }
+
+    // Initialize UI
+    loadInbox();
+    const initialInbox = getInbox();
+    const firstActive = initialInbox.find(m => !m.archived);
+    if (firstActive) {
+      readMessage(firstActive.id);
+    }
+  </script>
+  <div id="context-drawer" class="context-drawer">
+    <div class="drawer-header">
+      <h3>Inbox Preferences</h3>
+      <button class="drawer-close-btn" onclick="toggleContextDrawer()">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <h4>Report Privacy</h4>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <span style="font-size: 0.85rem;">Anonymity Scheme:</span>
+          <select class="drawer-select" onchange="showToast('Reporting scheme set to ' + this.value)">
+            <option value="zkp">Zero-Knowledge Compliant proof</option>
+            <option value="tls">Standard Cryptographic Hashing</option>
+          </select>
+        </div>
+      </div>
+      <div class="drawer-section">
+        <h4>Auto-Archive Rules</h4>
+        <label class="drawer-toggle">
+          <span>Archive after 90 days</span>
+          <input type="checkbox" checked>
+        </label>
+        <label class="drawer-toggle">
+          <span>Audio Alert on High Threat</span>
+          <input type="checkbox">
+        </label>
+      </div>
+
+      <!-- Submit Report Form -->
+      <div class="drawer-section" style="border-top: 1px solid var(--color-border); padding-top: 1.25rem; margin-top: 0.5rem;">
+        <h4>Submit Whistleblower Report</h4>
+        <form id="new-report-form" onsubmit="addNewReport(event)" style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <input type="text" id="rep-sender" placeholder="Sender (Optional - e.g. Hotline)" style="background: rgba(0,0,0,0.2); border: 1px solid var(--color-border); color: var(--color-text); padding: 0.4rem; border-radius: var(--radius-sm); font-size: 0.85rem; width: 100%; box-sizing: border-box;">
+          <input type="text" id="rep-subject" placeholder="Report Subject" required style="background: rgba(0,0,0,0.2); border: 1px solid var(--color-border); color: var(--color-text); padding: 0.4rem; border-radius: var(--radius-sm); font-size: 0.85rem; width: 100%; box-sizing: border-box;">
+          <textarea id="rep-body" placeholder="Whistleblower message content..." required style="background: rgba(0,0,0,0.2); border: 1px solid var(--color-border); color: var(--color-text); padding: 0.4rem; border-radius: var(--radius-sm); font-size: 0.85rem; height: 100px; resize: none; width: 100%; box-sizing: border-box; font-family: inherit;"></textarea>
+          
+          <button type="submit" style="background: var(--color-ubuntu-orange); color: white; border: none; padding: 0.55rem; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600; cursor: pointer; width: 100%; transition: var(--transition); margin-top: 0.25rem;">Submit Anonymous Report</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
