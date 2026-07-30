@@ -165,10 +165,50 @@ function initScrollReveals() {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
+// --- SMOOTH COUNTER ANIMATIONS ---
+function initCounterAnimations() {
+  const counterObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const rawText = el.innerText.trim();
+        const targetValue = parseFloat(el.getAttribute('data-target') || rawText.replace(/[^0-9.]/g, ''));
+        if (isNaN(targetValue) || targetValue === 0) return;
+
+        const duration = 1500;
+        const startTime = performance.now();
+        const prefix = el.getAttribute('data-prefix') || (rawText.match(/^[^\d]+/)?.[0] || '');
+        const suffix = el.getAttribute('data-suffix') || (rawText.match(/[^\d]+$/)?.[0] || '');
+        const decimals = el.getAttribute('data-decimals') ? parseInt(el.getAttribute('data-decimals')) : (rawText.includes('.') ? 1 : 0);
+
+        function updateCount(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+          const currentCount = (easeProgress * targetValue).toFixed(decimals);
+          
+          el.innerText = `${prefix}${parseFloat(currentCount).toLocaleString()}${suffix}`;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          }
+        }
+
+        requestAnimationFrame(updateCount);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('[data-target], .count-up, .metric-value, .stat-number').forEach(el => counterObserver.observe(el));
+}
+
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
   loadTheme();
   initScrollReveals();
+  initCounterAnimations();
   updateValue();
   addLog();
 });
+
