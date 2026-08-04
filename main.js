@@ -95,7 +95,19 @@ function updateValue() {
     document.getElementById('rep-reputational').innerText = 'R ' + (brand * 500).toLocaleString();
     document.getElementById('rep-opportunity').innerText = 'R ' + (reg * 1500).toLocaleString();
     document.getElementById('rep-total').innerText = 'R ' + (totalExposure * 1000).toLocaleString();
-    if (roiDisplay) roiDisplay.innerText = Math.max(1, Math.round(totalExposure / 150)) + 'x';
+    if (roiDisplay) {
+      const finalRoi = Math.max(1, Math.round(totalExposure / 150));
+      roiDisplay.innerText = finalRoi + 'x';
+      
+      const donutFill = document.getElementById('roi-donut-fill');
+      if (donutFill) {
+        // Cap visual fill at 100% for 100x+ ROI
+        const fillPercent = Math.min(100, finalRoi);
+        const circumference = 282.74; // 2 * pi * r (45)
+        const offset = circumference - (circumference * (fillPercent / 100));
+        donutFill.style.strokeDashoffset = offset;
+      }
+    }
   }
 }
 
