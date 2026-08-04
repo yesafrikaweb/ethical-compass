@@ -2818,6 +2818,8 @@ body.light-mode .share-input-group {
 .briefing-embed-section {
   margin-top: 6rem;
   margin-bottom: 6rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .briefing-embed-card {
@@ -2829,14 +2831,43 @@ body.light-mode .share-input-group {
   grid-template-columns: 1fr 1.2fr;
   gap: 3rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 @media (max-width: 900px) {
   .briefing-embed-card {
     grid-template-columns: 1fr;
-    padding: 2rem;
-    gap: 2rem;
+    padding: 2.25rem 2rem;
+    gap: 2.25rem;
   }
+}
+
+@media (max-width: 640px) {
+  .briefing-embed-section {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .briefing-embed-card {
+    padding: 1.5rem 1.25rem;
+    gap: 1.75rem;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .briefing-embed-card {
+    padding: 1.25rem 0.9rem;
+    gap: 1.25rem;
+  }
+}
+
+.briefing-info-side {
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .briefing-info-side h3 {
@@ -2846,6 +2877,13 @@ body.light-mode .share-input-group {
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  line-height: 1.25;
+}
+
+@media (max-width: 640px) {
+  .briefing-info-side h3 {
+    font-size: 1.5rem;
+  }
 }
 
 .briefing-info-side p {
@@ -2860,6 +2898,8 @@ body.light-mode .share-input-group {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 0;
+  margin: 0;
 }
 
 .briefing-feature-item {
@@ -2868,6 +2908,7 @@ body.light-mode .share-input-group {
   gap: 0.75rem;
   font-size: 0.9rem;
   color: var(--color-text-bright);
+  line-height: 1.45;
 }
 
 .briefing-feature-icon {
@@ -2894,6 +2935,7 @@ body.light-mode .share-input-group {
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   padding: 1.5rem;
+  box-sizing: border-box;
 }
 
 .briefing-modal-overlay.active {
@@ -2912,6 +2954,13 @@ body.light-mode .share-input-group {
   transform: translateY(20px) scale(0.95);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .briefing-modal-card {
+    padding: 1.35rem 1.1rem;
+  }
 }
 
 .briefing-modal-overlay.active .briefing-modal-card {
@@ -2948,11 +2997,24 @@ body.light-mode .share-input-group {
   margin-bottom: 1.5rem;
 }
 
+.briefing-form-side {
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.briefing-form-side form {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .briefing-form-group {
   margin-bottom: 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .briefing-form-group label {
@@ -2964,14 +3026,22 @@ body.light-mode .share-input-group {
 }
 
 .briefing-form-input, .briefing-form-select, .briefing-form-textarea {
+  width: 100%;
+  box-sizing: border-box;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  padding: 0.75rem 0.9rem;
+  padding: 0.8rem 0.9rem;
   color: var(--color-text-bright);
   font-family: var(--font-main);
-  font-size: 0.9rem;
+  font-size: 1rem; /* 16px prevents iOS Safari automatic focus zoom */
   transition: var(--transition);
+  max-width: 100%;
+}
+
+.briefing-form-textarea {
+  resize: vertical;
+  min-height: 90px;
 }
 
 .briefing-form-input:focus, .briefing-form-select:focus, .briefing-form-textarea:focus {
@@ -2987,16 +3057,21 @@ body.light-mode .share-input-group {
 
 .briefing-submit-btn {
   width: 100%;
-  padding: 0.85rem;
+  box-sizing: border-box;
+  padding: 0.9rem 1rem;
+  min-height: 48px;
   background: var(--color-electric-blue);
   border: none;
   border-radius: var(--radius-sm);
   color: #fff;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
   margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .briefing-submit-btn:hover {
