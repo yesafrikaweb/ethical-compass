@@ -96,6 +96,11 @@
             <stop offset="60%" stop-color="#1d4ed8" stop-opacity="0.1" />
             <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0.0" />
           </linearGradient>
+          <linearGradient id="greenGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#16a34a" stop-opacity="0.4" />
+            <stop offset="60%" stop-color="#15803d" stop-opacity="0.1" />
+            <stop offset="100%" stop-color="#14532d" stop-opacity="0.0" />
+          </linearGradient>
         </defs>
 
         <!-- Background Grid Lines -->
@@ -113,27 +118,36 @@
         <path fill="url(#orangeGradient)">
           <animate attributeName="d" dur="6s" repeatCount="indefinite" 
             values="
-              M 0 320 L 0 100 L 150 250 L 350 80 L 550 280 L 800 120 L 1000 200 L 1000 320 Z;
-              M 0 320 L 0 120 L 150 230 L 350 100 L 550 250 L 800 150 L 1000 180 L 1000 320 Z;
-              M 0 320 L 0 100 L 150 250 L 350 80 L 550 280 L 800 120 L 1000 200 L 1000 320 Z" />
+              M 0 320 L 0 200 L 400 20 L 750 200 L 1000 200 L 1000 320 Z;
+              M 0 320 L 0 180 L 400 40 L 750 180 L 1000 180 L 1000 320 Z;
+              M 0 320 L 0 200 L 400 20 L 750 200 L 1000 200 L 1000 320 Z" />
         </path>
 
         <!-- Stream 2: Stark White Geometric Mid-Layer -->
         <path fill="url(#whiteGradient)">
           <animate attributeName="d" dur="8s" repeatCount="indefinite" 
             values="
-              M 0 320 L 0 180 L 200 280 L 400 100 L 600 220 L 850 60 L 1000 150 L 1000 320 Z;
-              M 0 320 L 0 150 L 200 250 L 400 130 L 600 190 L 850 90 L 1000 120 L 1000 320 Z;
-              M 0 320 L 0 180 L 200 280 L 400 100 L 600 220 L 850 60 L 1000 150 L 1000 320 Z" />
+              M 0 320 L 0 220 L 300 180 L 600 50 L 1000 220 L 1000 320 Z;
+              M 0 320 L 0 200 L 300 200 L 600 80 L 1000 200 L 1000 320 Z;
+              M 0 320 L 0 220 L 300 180 L 600 50 L 1000 220 L 1000 320 Z" />
         </path>
 
         <!-- Stream 3: Electric Blue Geometric Foreground -->
         <path fill="url(#blueGradient)">
           <animate attributeName="d" dur="10s" repeatCount="indefinite" 
             values="
-              M 0 320 L 0 260 L 250 150 L 450 300 L 700 100 L 900 250 L 1000 100 L 1000 320 Z;
-              M 0 320 L 0 220 L 250 180 L 450 260 L 700 140 L 900 210 L 1000 140 L 1000 320 Z;
-              M 0 320 L 0 260 L 250 150 L 450 300 L 700 100 L 900 250 L 1000 100 L 1000 320 Z" />
+              M 0 320 L 0 240 L 500 220 L 850 0 L 1000 240 L 1000 320 Z;
+              M 0 320 L 0 220 L 500 240 L 850 20 L 1000 220 L 1000 320 Z;
+              M 0 320 L 0 240 L 500 220 L 850 0 L 1000 240 L 1000 320 Z" />
+        </path>
+
+        <!-- Stream 4: Vibrant Green Geometric Accent -->
+        <path fill="url(#greenGradient)">
+          <animate attributeName="d" dur="7s" repeatCount="indefinite" 
+            values="
+              M 0 320 L 0 190 L 150 205 L 300 180 L 450 210 L 600 185 L 750 205 L 900 190 L 1000 210 L 1000 320 Z;
+              M 0 320 L 0 205 L 150 180 L 300 205 L 450 190 L 600 210 L 750 185 L 900 205 L 1000 190 L 1000 320 Z;
+              M 0 320 L 0 190 L 150 205 L 300 180 L 450 210 L 600 185 L 750 205 L 900 190 L 1000 210 L 1000 320 Z" />
         </path>
       </svg>
     </div>
