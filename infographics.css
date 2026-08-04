@@ -1320,6 +1320,18 @@ body.light-mode .matrix-item-desc {
   color: var(--color-electric-blue);
 }
 
+.green-badge {
+  border-color: #10b981;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+}
+
+body.light-mode .green-badge {
+  border-color: #059669;
+  color: #059669;
+  background: rgba(5, 150, 105, 0.08);
+}
+
 /* --- CALCULATOR STYLES --- 
    Analytical tool for estimating failure prevention ROI.
    Wrapped in executive master form card.
