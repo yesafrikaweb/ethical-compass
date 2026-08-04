@@ -299,16 +299,44 @@ function handleBriefingBackdropClick(e) {
   }
 }
 
-function handleBriefingSubmit(e) {
+async function handleBriefingSubmit(e) {
   e.preventDefault();
-  closeBriefingModal();
   
-  const toast = document.getElementById('briefing-toast');
-  if (toast) {
-    toast.classList.add('show');
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, 4000);
+  const form = e.target;
+  const formData = new FormData(form);
+  
+  // Web3Forms Access Key (Replace with your actual key from web3forms.com)
+  formData.append("access_key", "2e3f5ed3-cbf1-4ed6-9dde-f3a2725c5c31");
+
+  try {
+    // Currently commented out to prevent errors with the fake key. 
+    // Uncomment this fetch block once you have your real key!
+    
+    
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+  
+
+    // Simulate success for now
+    const response = { ok: true };
+
+    if (response.ok) {
+      closeBriefingModal();
+      const toast = document.getElementById('briefing-toast');
+      if (toast) {
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 4000);
+      }
+      form.reset();
+    } else {
+      alert("Something went wrong submitting the form.");
+    }
+  } catch (err) {
+    alert("Network error. Please try again.");
   }
 }
 
