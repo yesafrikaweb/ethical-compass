@@ -140,10 +140,12 @@ body.light-mode .nav-header.scrolled {
   order: 1;
 }
 
-.logo-icon {
-  width: 20px;
-  height: 20px;
-  color: var(--color-electric-blue);
+.logo-icon,
+.logo-img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
 }
 
 .nav-links {
