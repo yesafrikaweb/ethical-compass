@@ -307,14 +307,49 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// --- STICKY NAV SCROLL OPAQUE CONTROLLER ---
+function initNavScroll() {
+  const navHeader = document.querySelector('.nav-header');
+  if (!navHeader) return;
+
+  const handleScroll = () => {
+    if (window.scrollY > 20) {
+      navHeader.classList.add('scrolled');
+    } else {
+      navHeader.classList.remove('scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll(); // Check on load
+}
+
+// --- REAL-TIME HERO TELEMETRY TICKER ---
+function initRealTimeChart() {
+  const throughputEl = document.getElementById('rt-throughput');
+  const latencyEl = document.getElementById('rt-latency');
+
+  if (!throughputEl || !latencyEl) return;
+
+  setInterval(() => {
+    const baseTP = 14850 + Math.floor(Math.random() * 420) - 210;
+    throughputEl.textContent = baseTP.toLocaleString() + '/s';
+
+    const baseLat = (0.011 + Math.random() * 0.003).toFixed(3);
+    latencyEl.textContent = baseLat + ' ms';
+  }, 2200);
+}
+
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
   loadTheme();
+  initNavScroll();
   initScrollReveals();
   initCounterAnimations();
   injectBriefingModal();
   updateValue();
   addLog();
+  initRealTimeChart();
 });
 
 
