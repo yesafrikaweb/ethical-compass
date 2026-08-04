@@ -2973,12 +2973,19 @@ body.light-mode .expertise-tag {
 }
 
 .full-calculator {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  background: var(--color-deep-blue);
+  border: 1px solid var(--color-border-bright);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   padding: 4rem;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+body.light-mode .full-calculator {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .calc-grid {
