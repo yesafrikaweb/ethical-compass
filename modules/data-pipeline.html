@@ -26,9 +26,89 @@
   <style>
     .pipeline-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
       margin-bottom: 2rem;
+    }
+
+    .bento-wide {
+      grid-column: span 2;
+    }
+
+    .bento-tall {
+      grid-row: span 2;
+    }
+    
+    .bento-full {
+      grid-column: span 4;
+    }
+    
+    .pipeline-card-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    
+    .bento-wide .pipeline-card-body,
+    .bento-full .pipeline-card-body {
+      flex-direction: row;
+    }
+    
+    .bento-wide .pipeline-icon-area,
+    .bento-full .pipeline-icon-area {
+      border-bottom: none;
+      border-right: 1px solid var(--color-border-bright);
+      flex: 0 0 45%;
+    }
+    
+    .bento-full .pipeline-icon-area {
+      flex: 0 0 30%;
+    }
+    
+    body.light-mode .bento-wide .pipeline-icon-area,
+    body.light-mode .bento-full .pipeline-icon-area {
+      border-right-color: #f1f5f9;
+    }
+    
+    @media (max-width: 1024px) {
+      .pipeline-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .bento-wide {
+        grid-column: span 2;
+      }
+      .bento-full {
+        grid-column: span 2;
+      }
+      .bento-tall {
+        grid-row: span 1;
+      }
+      .bento-full .pipeline-icon-area {
+        flex: 0 0 45%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .pipeline-grid {
+        grid-template-columns: 1fr;
+      }
+      .bento-wide, .bento-full {
+        grid-column: span 1;
+      }
+      .bento-wide .pipeline-card-body,
+      .bento-full .pipeline-card-body {
+        flex-direction: column;
+      }
+      .bento-wide .pipeline-icon-area,
+      .bento-full .pipeline-icon-area {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border-bright);
+        flex: auto;
+      }
+      body.light-mode .bento-wide .pipeline-icon-area,
+      body.light-mode .bento-full .pipeline-icon-area {
+        border-bottom-color: #f1f5f9;
+      }
     }
 
     .pipeline-card {
@@ -427,34 +507,36 @@
     <div class="pipeline-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
       
       <!-- Stage 1 -->
-      <div class="pipeline-card color-blue">
+      <div class="pipeline-card color-blue bento-wide">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">1</span>
           Raw Data Sources
         </div>
-        <div class="pipeline-icon-area" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: center;">
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
-            <i data-lucide="database"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">Databases</span>
+        <div class="pipeline-card-body">
+          <div class="pipeline-icon-area" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: center;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+              <i data-lucide="database"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">Databases</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+              <i data-lucide="file-spreadsheet"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">Files</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+              <i data-lucide="cloud"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">Cloud Apps</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+              <i data-lucide="cpu"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">ERP / CRM</span>
+            </div>
           </div>
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
-            <i data-lucide="file-spreadsheet"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">Files</span>
+          <div class="pipeline-list">
+            <ul>
+              <li>Databases</li>
+              <li>Files / Excel</li>
+              <li>Cloud Apps</li>
+              <li>ERP / CRM Systems</li>
+              <li>Web / APIs</li>
+              <li>IoT Devices</li>
+            </ul>
           </div>
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
-            <i data-lucide="cloud"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">Cloud Apps</span>
-          </div>
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
-            <i data-lucide="cpu"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">ERP / CRM</span>
-          </div>
-        </div>
-        <div class="pipeline-list">
-          <ul>
-            <li>Databases</li>
-            <li>Files / Excel</li>
-            <li>Cloud Apps</li>
-            <li>ERP / CRM Systems</li>
-            <li>Web / APIs</li>
-            <li>IoT Devices</li>
-          </ul>
         </div>
       </div>
 
@@ -498,22 +580,24 @@
       </div>
 
       <!-- Stage 4 -->
-      <div class="pipeline-card color-emerald">
+      <div class="pipeline-card color-emerald bento-wide">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">4</span>
           Data Cleansing
         </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="sparkles"></i>
-        </div>
-        <div class="pipeline-list">
-          <ul>
-            <li>Remove duplicates</li>
-            <li>Fix missing values</li>
-            <li>Correct errors</li>
-            <li>Standardize formats</li>
-            <li>Validate data</li>
-          </ul>
+        <div class="pipeline-card-body">
+          <div class="pipeline-icon-area">
+            <i data-lucide="sparkles"></i>
+          </div>
+          <div class="pipeline-list">
+            <ul>
+              <li>Remove duplicates</li>
+              <li>Fix missing values</li>
+              <li>Correct errors</li>
+              <li>Standardize formats</li>
+              <li>Validate data</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -557,20 +641,22 @@
       </div>
 
       <!-- Stage 7 -->
-      <div class="pipeline-card color-purple">
+      <div class="pipeline-card color-purple bento-full">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">7</span>
           Data Storage <span style="font-size: 0.55rem; opacity: 0.8; font-weight: normal; margin-left: auto;">(DW / LAKE)</span>
         </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="hard-drive"></i>
-        </div>
-        <div class="pipeline-list">
-          <ul>
-            <li>Store data securely</li>
-            <li>Structured / semi-structured storage</li>
-            <li>Optimized for performance and scalability</li>
-          </ul>
+        <div class="pipeline-card-body">
+          <div class="pipeline-icon-area">
+            <i data-lucide="hard-drive"></i>
+          </div>
+          <div class="pipeline-list">
+            <ul style="flex-direction: row; gap: 2rem;">
+              <li style="flex: 1;">Store data securely</li>
+              <li style="flex: 1;">Structured / semi-structured storage</li>
+              <li style="flex: 1;">Optimized for performance and scalability</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -627,21 +713,23 @@
       </div>
 
       <!-- Stage 10 -->
-      <div class="pipeline-card color-amber">
+      <div class="pipeline-card color-amber bento-wide">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">10</span>
           Dashboard Design
         </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="layout-dashboard"></i>
-        </div>
-        <div class="pipeline-list">
-          <ul>
-            <li>Identify audience and goals</li>
-            <li>Select KPIs & visuals</li>
-            <li>Design layout & user experience</li>
-            <li>Create wireframes / prototypes</li>
-          </ul>
+        <div class="pipeline-card-body">
+          <div class="pipeline-icon-area">
+            <i data-lucide="layout-dashboard"></i>
+          </div>
+          <div class="pipeline-list">
+            <ul>
+              <li>Identify audience and goals</li>
+              <li>Select KPIs & visuals</li>
+              <li>Design layout & user experience</li>
+              <li>Create wireframes / prototypes</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -684,21 +772,23 @@
       </div>
 
       <!-- Stage 13 -->
-      <div class="pipeline-card color-indigo">
+      <div class="pipeline-card color-indigo bento-wide">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">13</span>
           Business Value & Action
         </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="trending-up"></i>
-        </div>
-        <div class="pipeline-list">
-          <ul>
-            <li>Implement actions</li>
-            <li>Improve processes</li>
-            <li>Drive performance and growth</li>
-            <li>Monitor results and iterate</li>
-          </ul>
+        <div class="pipeline-card-body">
+          <div class="pipeline-icon-area">
+            <i data-lucide="trending-up"></i>
+          </div>
+          <div class="pipeline-list">
+            <ul>
+              <li>Implement actions</li>
+              <li>Improve processes</li>
+              <li>Drive performance and growth</li>
+              <li>Monitor results and iterate</li>
+            </ul>
+          </div>
         </div>
       </div>
 
