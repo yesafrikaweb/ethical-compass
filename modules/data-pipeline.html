@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<!-- Developed & Created by Gcwelethemba Tshuma -->
+<html lang="en">
+
+<head>
+  <!-- Tag 0.20 -->
+  <meta name="version" content="0.20">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090a">
+  <link rel="icon" type="image/png" href="../avatar.png">
+  <link rel="apple-touch-icon" href="../avatar.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="author" content="Gcwelethemba Tshuma">
+  <meta name="copyright" content="Gcwelethemba Tshuma">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ethical Compass | Data Pipeline Architecture">
+  <meta property="og:description" content="End-to-End Data Pipeline Architecture: From Raw Data to Business Insights.">
+  <meta property="og:url" content="https://yesafrikaweb.github.io/ethical-compass/modules/data-pipeline.html">
+  <title>Data Pipeline | Ethical Compass Deep Dive</title>
+  <link rel="stylesheet" href="../infographics.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .pipeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .pipeline-card {
+      background: var(--color-deep-blue);
+      border: 1px solid var(--color-border-bright);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .pipeline-card::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+      border-radius: inherit;
+      padding: 1.5px;
+      background: var(--gradient-border);
+      z-index: 10;
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .pipeline-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .pipeline-card:hover::before {
+      opacity: 1;
+    }
+
+    body:not(.light-mode) .pipeline-card:hover {
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.03), var(--color-deep-blue));
+    }
+
+    body.light-mode .pipeline-card {
+      background: #ffffff;
+      border-color: #e2e8f0;
+      box-shadow: 0 5px 15px rgba(15, 23, 42, 0.05);
+    }
+
+    body.light-mode .pipeline-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+    }
+
+    .pipeline-card-header {
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pipeline-badge {
+      width: 32px;
+      height: 32px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      flex-shrink: 0;
+      color: inherit;
+    }
+
+    .pipeline-icon-area {
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--color-border);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    body.light-mode .pipeline-icon-area {
+      border-color: #f1f5f9;
+      background: #f8fafc;
+    }
+
+    .pipeline-icon-area svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .pipeline-list {
+      padding: 1.5rem;
+      flex: 1;
+      font-size: 0.85rem;
+      color: var(--color-text-bright);
+      opacity: 0.85;
+    }
+
+    .pipeline-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .pipeline-list li {
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+      line-height: 1.4;
+    }
+
+    .pipeline-list li::before {
+      content: '•';
+      font-weight: bold;
+    }
+
+    /* Color Themes */
+    .color-indigo .pipeline-card-header { background: #3730a3; }
+    .color-indigo .pipeline-card:hover { border-color: #3730a3; }
+    .color-indigo .pipeline-badge { color: #3730a3; }
+    .color-indigo .pipeline-icon-area svg { color: #4f46e5; }
+    .color-indigo .pipeline-list li::before { color: #4f46e5; }
+
+    .color-blue .pipeline-card-header { background: #1e3a8a; }
+    .color-blue .pipeline-card:hover { border-color: #1e3a8a; }
+    .color-blue .pipeline-badge { color: #1e3a8a; }
+    .color-blue .pipeline-icon-area svg { color: var(--color-electric-blue); }
+    .color-blue .pipeline-list li::before { color: var(--color-electric-blue); }
+
+    .color-teal .pipeline-card-header { background: #0f766e; }
+    .color-teal .pipeline-card:hover { border-color: #0f766e; }
+    .color-teal .pipeline-badge { color: #0f766e; }
+    .color-teal .pipeline-icon-area svg { color: #14b8a6; }
+    .color-teal .pipeline-list li::before { color: #14b8a6; }
+
+    .color-emerald .pipeline-card-header { background: #047857; }
+    .color-emerald .pipeline-card:hover { border-color: #047857; }
+    .color-emerald .pipeline-badge { color: #047857; }
+    .color-emerald .pipeline-icon-area svg { color: #10b981; }
+    .color-emerald .pipeline-list li::before { color: #10b981; }
+
+    .color-amber .pipeline-card-header { background: #b45309; }
+    .color-amber .pipeline-card:hover { border-color: #b45309; }
+    .color-amber .pipeline-badge { color: #b45309; }
+    .color-amber .pipeline-icon-area svg { color: #f59e0b; }
+    .color-amber .pipeline-list li::before { color: #f59e0b; }
+
+    .color-orange .pipeline-card-header { background: #c2410c; }
+    .color-orange .pipeline-card:hover { border-color: #c2410c; }
+    .color-orange .pipeline-badge { color: #c2410c; }
+    .color-orange .pipeline-icon-area svg { color: var(--color-ubuntu-orange); }
+    .color-orange .pipeline-list li::before { color: var(--color-ubuntu-orange); }
+
+    .color-purple .pipeline-card-header { background: #581c87; }
+    .color-purple .pipeline-card:hover { border-color: #581c87; }
+    .color-purple .pipeline-badge { color: #581c87; }
+    .color-purple .pipeline-icon-area svg { color: #a855f7; }
+    .color-purple .pipeline-list li::before { color: #a855f7; }
+
+    .phase-transition {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin: 4rem 0;
+    }
+    
+    .phase-transition-line {
+      position: absolute;
+      width: 100%;
+      border-top: 2px dashed var(--color-border-bright);
+      z-index: 0;
+    }
+    
+    .phase-transition-badge {
+      background: var(--color-deep-blue);
+      border: 1px solid var(--color-border-bright);
+      color: var(--color-text-bright);
+      padding: 0.6rem 2rem;
+      border-radius: 2rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    .phase-transition-badge svg {
+      width: 16px;
+      height: 16px;
+      color: var(--color-electric-blue);
+    }
+    
+    body.light-mode .phase-transition-badge {
+      background: #fff;
+      border-color: #cbd5e1;
+      color: #0f172a;
+      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05);
+    }
+
+    .governance-banner {
+      background: transparent;
+      border: none;
+      padding: 1rem 0;
+      margin-top: 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      position: relative;
+    }
+    
+    .governance-banner-header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    
+    .governance-banner-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--color-electric-blue);
+      color: #fff;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .governance-banner-title h4 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-bright);
+    }
+    
+    .governance-banner-title p {
+      margin: 0;
+      font-size: 0.9rem;
+      margin-top: 0.35rem;
+      color: var(--color-text-muted);
+    }
+    
+    .governance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+    
+    .governance-item {
+      background: var(--color-deep-blue);
+      border: 1px solid var(--color-border-bright);
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-text-bright);
+      position: relative;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    }
+    
+    .governance-item::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+      border-radius: inherit;
+      padding: 1.5px;
+      background: var(--gradient-border);
+      z-index: 10;
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .governance-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .governance-item:hover::before {
+      opacity: 1;
+    }
+
+    body:not(.light-mode) .governance-item:hover {
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.04), var(--color-deep-blue));
+    }
+    
+    .governance-item svg {
+      width: 24px;
+      height: 24px;
+      color: var(--color-electric-blue);
+      flex-shrink: 0;
+    }
+    
+    body.light-mode .governance-item {
+      background: #fff;
+      border-color: #e2e8f0;
+      color: #0f172a;
+    }
+    
+    body.light-mode .governance-item:hover {
+      border-color: var(--color-electric-blue);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Premium Sticky Navigation -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/logo.png" alt="Ethical Compass Logo" class="logo-img" />
+        Ethical Compass
+      </a>
+      <div class="nav-controls">
+        <a href="#" onclick="openBriefingModal(event)" class="nav-cta">Request a Briefing</a>
+        <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Overview</a>
+        <div class="nav-divider"></div>
+        <a href="proactive-oversight.html" class="nav-link">Approach</a>
+        <a href="closed-loop-governance.html" class="nav-link">Features</a>
+        <a href="comparison-matrix.html" class="nav-link">Compare</a>
+        <a href="economics-of-integrity.html" class="nav-link">Value</a>
+        <a href="personnel.html" class="nav-link">Team</a>
+      </nav>
+    </div>
+  </header>
+
+  <header class="container reveal" style="padding-bottom: 2rem;">
+    <div class="header-badges">
+      <div class="elegant-badge blue-badge">Module 05: Data Intelligence</div>
+    </div>
+    <h1 class="hero-title">Data Pipeline Architecture</h1>
+    <p class="hero-benefit">Transforming raw data into <strong>actionable business insights</strong>.</p>
+    <p class="hero-subtitle">A comprehensive 13-stage framework detailing the journey of data from ingestion and cleansing to visualization and actionable business value.</p>
+  </header>
+
+  <main class="container reveal" style="padding-top: 0;">
+    
+    <!-- ROW 1: Stages 1 to 7 -->
+    <div class="pipeline-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+      
+      <!-- Stage 1 -->
+      <div class="pipeline-card color-blue">
+        <div class="pipeline-card-header">
+          <span class="pipeline-badge">1</span>
+          Raw Data Sources
+        </div>
+        <div class="pipeline-icon-area" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+            <i data-lucide="database"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">Databases</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+            <i data-lucide="file-spreadsheet"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">Files</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+            <i data-lucide="cloud"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">Cloud Apps</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+            <i data-lucide="cpu"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">ERP / CRM</span>
+          </div>
+        </div>
+        <div class="pipeline-list">
+          <ul>
+            <li>Databases</li>
+            <li>Files / Excel</li>
+            <li>Cloud Apps</li>
+            <li>ERP / CRM Systems</li>
+            <li>Web / APIs</li>
+            <li>IoT Devices</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stage 2 -->
+      <div class="pipeline-card color-indigo">
+        <div class="pipeline-card-header">
+          <span class="pipeline-badge">2</span>
+          Data Collection
+        </div>
+        <div class="pipeline-icon-area">
+          <i data-lucide="cloud-download"></i>
+        </div>
+        <div class="pipeline-list">
+          <ul>
+            <li>Extract data from sources</li>
+            <li>Schedule extraction</li>
+            <li>Ensure secure data transfer</li>
+            <li>Log & monitor extraction</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stage 3 -->
+      <div class="pipeline-card color-teal">
+        <div class="pipeline-card-header">
+          <span class="pipeline-badge">3</span>
+          Profiling & Assessment
+        </div>
+        <div class="pipeline-icon-area">
+          <i data-lucide="file-search"></i>
+        </div>
+        <div class="pipeline-list">
+          <ul>
+            <li>Analyze structure & data types</li>
+            <li>Check completeness</li>
+            <li>Detect duplicates</li>
+            <li>Assess data quality</li>
+            <li>Identify issues and patterns</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stage 4 -->
+      <div class="pipeline-card color-emerald">
+        <div class="pipeline-card-header">
+          <span class="pipeline-badge">4</span>
+          Data Cleansing
+        </div>
+        <div class="pipeline-icon-area">
+          <i data-lucide="sparkles"></i>
+        </div>
+        <div class="pipeline-list">
+          <ul>
+            <li>Remove duplicates</li>
+            <li>Fix missing values</li>
+            <li>Correct errors</li>
+            <li>Standardize formats</li>
+            <li>Validate data</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stage 5 -->
+      <div class="pipeline-card color-amber">
+        <div class="pipeline-card-header">
+          <span class="pipeline-badge">5</span>
+          Data Transformation
+        </div>
+        <div class="pipeline-icon-area">
+          <i data-lucide="arrow-right-left"></i>
+        </div>
+        <div class="pipeline-list">
+          <ul>
+            <li>Standardize & format</li>
+            <li>Apply business rules</li>
+            <li>Derive new fields</li>
+            <li>Aggregate data</li>
+            <li>Calculate KPIs</li>
+            <li>Enrich data</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stage 6 -->
+      <div class="pipeline-card color-orange">
+        <div class="pipeline-card-header">
+          <span class="pipeline-badge">6</span>
+          Data Integration
+        </div>
+        <div class="pipeline-icon-area">
+          <i data-lucide="puzzle"></i>
+        </div>
+        <div class="pipeline-list">
+          <ul>
+            <li>Combine data from multiple sources</li>
+            <li>Resolve key conflicts</li>
+            <li>Create unified view of data</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stage 7 -->
+      <div class="pipeline-card color-purple">
+        <div class="pipeline-card-header">
+          <span class="pipeline-badge">7</span>
+          Data Storage <span style="font-size: 0.55rem; opacity: 0.8; font-weight: normal; margin-left: auto;">(DW / LAKE)</span>
+        </div>
+        <div class="pipeline-icon-area">
+          <i data-lucide="hard-drive"></i>
+        </div>
+        <div class="pipeline-list">
+          <ul>
+            <li>Store data securely</li>
+            <li>Structured / semi-structured storage</li>
+            <li>Optimized for performance and scalability</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Flow Arrow / Transition Indicator -->
+    <div class="phase-transition">
+      <div class="phase-transition-line"></div>
+      <div class="phase-transition-badge">
+        Phase Transition: Modeling & Analytics Engine
+        <i data-lucide="arrow-down"></i>
+      </div>
+    </div>
+
+    <!-- ROW 2: Stages 8 to 13 -->
+    <div class="pipeline-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+
+      <!-- Stage 8 -->
+      <div class="pipeline-card color-purple">
+        <div class="pipeline-card-header">
+          <span class="pipeline-badge">8</span>
+          Data Modelling
+        </div>
+        <div class="pipeline-icon-area">
+          <i data-lucide="network"></i>
+        </div>
+        <div class="pipeline-list">
+          <ul>
+            <li>Design data model (Star / Snowflake)</li>
+            <li>Define fact & dimension tables</li>
+            <li>Create relationships & hierarchies</li>
+            <li>Optimize for reporting</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stage 9 -->
+      <div class="pipeline-card color-teal">
+        <div class="pipeline-card-header">
+          <span class="pipeline-badge">9</span>
+          Analysis & KPI Definition
+        </div>
+        <div class="pipeline-icon-area">
+          <i data-lucide="target"></i>
+        </div>
+        <div class="pipeline-list">
+          <ul>
+            <li>Understand business requirements</li>
+            <li>Define KPIs & metrics</li>
+            <li>Establish calculation logic</li>
+            <li>Document business rules</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stage 10 -->
+      <div class="pipeline-card color-amber">
+        <div class="pipeline-card-header">
+          <span class="pipeline-badge">10</span>
+          Dashboard Design
+        </div>
+        <div class="pipeline-icon-area">
+          <i data-lucide="layout-dashboard"></i>
+        </div>
+        <div class="pipeline-list">
+          <ul>
+            <li>Identify audience and goals</li>
+            <li>Select KPIs & visuals</li>
+            <li>Design layout & user experience</li>
+            <li>Create wireframes / prototypes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stage 11 -->
+      <div class="pipeline-card color-blue">
+        <div class="pipeline-card-header">
+          <span class="pipeline-badge">11</span>
+          Visualization & Reporting
+        </div>
+        <div class="pipeline-icon-area">
+          <i data-lucide="pie-chart"></i>
+        </div>
+        <div class="pipeline-list">
+          <ul>
+            <li>Build interactive dashboards</li>
+            <li>Use appropriate visualizations</li>
+            <li>Add filters, slicers and drill-downs</li>
+            <li>Ensure accuracy and clarity</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stage 12 -->
+      <div class="pipeline-card color-emerald">
+        <div class="pipeline-card-header">
+          <span class="pipeline-badge">12</span>
+          Insights & Decisions
+        </div>
+        <div class="pipeline-icon-area">
+          <i data-lucide="lightbulb"></i>
+        </div>
+        <div class="pipeline-list">
+          <ul>
+            <li>Interpret insights</li>
+            <li>Identify trends and opportunities</li>
+            <li>Make data-driven decisions</li>
+            <li>Communicate findings</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stage 13 -->
+      <div class="pipeline-card color-indigo">
+        <div class="pipeline-card-header">
+          <span class="pipeline-badge">13</span>
+          Business Value & Action
+        </div>
+        <div class="pipeline-icon-area">
+          <i data-lucide="trending-up"></i>
+        </div>
+        <div class="pipeline-list">
+          <ul>
+            <li>Implement actions</li>
+            <li>Improve processes</li>
+            <li>Drive performance and growth</li>
+            <li>Monitor results and iterate</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Banner: Data Governance & Quality -->
+    <div class="governance-banner">
+      <div class="governance-banner-header">
+        <div class="governance-banner-icon">
+          <i data-lucide="shield-check" style="width: 28px; height: 28px;"></i>
+        </div>
+        <div class="governance-banner-title">
+          <h4>Data Governance & Quality (Ongoing)</h4>
+          <p>Cross-cutting foundational pillars applied across all stages of the pipeline.</p>
+        </div>
+      </div>
+
+      <div class="governance-grid">
+        <div class="governance-item">
+          <i data-lucide="clipboard-check"></i>
+          <span>Data Quality Monitoring</span>
+        </div>
+        <div class="governance-item">
+          <i data-lucide="lock"></i>
+          <span>Data Security & Access Control</span>
+        </div>
+        <div class="governance-item">
+          <i data-lucide="file-text"></i>
+          <span>Metadata & Documentation</span>
+        </div>
+        <div class="governance-item">
+          <i data-lucide="refresh-cw"></i>
+          <span>Continuous Improvement</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-switcher-container reveal" style="margin-top: 4rem;">
+      <a href="proactive-oversight.html" class="next-module-link">
+        <span class="next-label">Next Module</span>
+        <div class="next-title-wrapper">
+          <span class="next-title">Proactive Oversight</span>
+          <svg class="next-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+      </a>
+      <a href="../index.html" class="module-cta">
+        <span class="module-cta-label">Platform</span>
+        <div class="module-cta-inner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          Back to Overview
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="container footer-layout" style="display: flex; flex-direction: column; gap: 1.5rem;">
+    <div class="footer-brand" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <h4 style="margin: 0;">Ethical Compass</h4>
+    </div>
+    <div class="footer-meta" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 1rem;">
+      <p style="font-size: 12px; color: var(--color-text-muted); margin: 0;">&copy; 2008 - 2026 Ethical Compass. All Rights Reserved.</p>
+      <p class="author-credit" style="font-size: 0.75rem; color: var(--color-text-muted); margin: 0;">Developed &amp; Maintained by <strong>Gcwelethemba Tshuma</strong></p>
+    </div>
+  </footer>
+
+  <script src="../config.js"></script>
+  <script src="../main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>
