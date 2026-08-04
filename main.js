@@ -303,24 +303,24 @@ async function handleBriefingSubmit(e) {
   e.preventDefault();
   
   const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
   const formData = new FormData(form);
   
-  // Web3Forms Access Key (Replace with your actual key from web3forms.com)
   formData.append("access_key", "2e3f5ed3-cbf1-4ed6-9dde-f3a2725c5c31");
 
+  const originalText = submitBtn ? submitBtn.textContent : "Submit Request";
+  if (submitBtn) {
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+  }
+
   try {
-    // Currently commented out to prevent errors with the fake key. 
-    // Uncomment this fetch block once you have your real key!
-    
-    
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       body: formData
     });
-  
 
-    // Simulate success for now
-    const response = { ok: true };
+    const data = await response.json();
 
     if (response.ok) {
       closeBriefingModal();
@@ -333,10 +333,15 @@ async function handleBriefingSubmit(e) {
       }
       form.reset();
     } else {
-      alert("Something went wrong submitting the form.");
+      alert("Error: " + data.message);
     }
   } catch (err) {
-    alert("Network error. Please try again.");
+    alert("Something went wrong. Please try again.");
+  } finally {
+    if (submitBtn) {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
   }
 }
 
