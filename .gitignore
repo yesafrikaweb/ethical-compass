@@ -34,3 +34,5 @@ modules/dashboard_test.html
 modules/dashboard-common.css
 modules/dashboard-common.js
 
+# Agent Documentation
+guardrails.md

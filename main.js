@@ -307,6 +307,14 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// --- HORIZONTAL FEATURE SCROLL CONTROLLER ---
+function scrollFeatures(direction) {
+  const track = document.getElementById('features-scroll-track');
+  if (!track) return;
+  const scrollAmount = 360 * direction;
+  track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+}
+
 // --- STICKY NAV SCROLL OPAQUE CONTROLLER ---
 function initNavScroll() {
   const navHeader = document.querySelector('.nav-header');

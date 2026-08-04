@@ -1332,10 +1332,173 @@ body.light-mode .green-badge {
   background: rgba(5, 150, 105, 0.08);
 }
 
+.red-badge {
+  border-color: #ef4444;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+}
+
+body.light-mode .red-badge {
+  border-color: #dc2626;
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.purple-badge {
+  border-color: #a855f7;
+  color: #a855f7;
+  background: rgba(168, 85, 247, 0.08);
+}
+
+body.light-mode .purple-badge {
+  border-color: #9333ea;
+  color: #9333ea;
+  background: rgba(147, 51, 234, 0.08);
+}
+
 /* --- CALCULATOR STYLES --- 
    Analytical tool for estimating failure prevention ROI.
    Wrapped in executive master form card.
 */
+
+/* --- HORIZONTAL FEATURE SCROLL SYSTEM --- */
+.horizontal-scroll-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 1.5rem;
+  padding-top: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-electric-blue) transparent;
+}
+
+.horizontal-scroll-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.horizontal-scroll-track::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+
+.horizontal-scroll-track::-webkit-scrollbar-thumb {
+  background: var(--color-electric-blue);
+  border-radius: 10px;
+}
+
+.feature-scroll-card {
+  flex: 0 0 340px;
+  scroll-snap-align: start;
+  background: var(--color-deep-blue);
+  border: 1px solid var(--color-border-bright);
+  border-radius: 16px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+body.light-mode .feature-scroll-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.feature-scroll-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-electric-blue);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+}
+
+body.light-mode .feature-scroll-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+}
+
+.feature-scroll-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-bright);
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+body.light-mode .feature-scroll-card h3 {
+  color: #0f172a;
+}
+
+.feature-scroll-card .card-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(241, 245, 249, 0.85);
+  margin-bottom: 1.5rem;
+}
+
+body.light-mode .feature-scroll-card .card-desc {
+  color: rgba(51, 65, 85, 0.85);
+}
+
+.card-footer-meta {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border-bright);
+  gap: 0.25rem;
+}
+
+body.light-mode .card-footer-meta {
+  border-top-color: #f1f5f9;
+}
+
+.card-footer-meta .meta-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+}
+
+.card-footer-meta .meta-val {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-text-bright);
+}
+
+body.light-mode .card-footer-meta .meta-val {
+  color: #0f172a;
+}
+
+.scroll-arrow-btn {
+  background: var(--color-deep-blue);
+  border: 1px solid var(--color-border-bright);
+  color: var(--color-text-bright);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+body.light-mode .scroll-arrow-btn {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.scroll-arrow-btn:hover {
+  border-color: var(--color-electric-blue);
+  color: var(--color-electric-blue);
+  transform: scale(1.05);
+}
 .calculator-container {
   display: grid;
   grid-template-columns: 1.2fr 1fr;

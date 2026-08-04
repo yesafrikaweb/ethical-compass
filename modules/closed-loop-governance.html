@@ -189,14 +189,114 @@
         </div>
       </div>
     </section>
+
+    <!-- Advanced Enterprise Feature Capabilities (4 Horizontally Scrollable Cards) -->
+    <section class="horizontal-features-section reveal" style="margin-top: 8rem;">
+      <div class="section-title" style="text-align: left; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h2>Guardrails</h2>
+          <p>We uphold safety parameters and non-negotiable constraints to ensure continuous enterprise protection and technical defensibility.</p>
+        </div>
+        <div class="scroll-nav-controls" style="display: flex; gap: 0.5rem;">
+          <button class="scroll-arrow-btn" onclick="scrollFeatures(-1)" aria-label="Scroll Left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button class="scroll-arrow-btn" onclick="scrollFeatures(1)" aria-label="Scroll Right">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="horizontal-scroll-track" id="features-scroll-track">
+        <!-- Card 01 -->
+        <div class="feature-scroll-card">
+          <div>
+            <div class="elegant-badge green-badge">Access Control</div>
+            <h3>Identity</h3>
+            <p class="card-desc">Strict execution boundaries and runtime identity constraints preventing autonomous multi-agent networks from exceeding authorized operational scopes.</p>
+          </div>
+          <div class="card-footer-meta">
+            <span class="meta-label">Access Protocol</span>
+            <span class="meta-val">Zero Trust Identity</span>
+          </div>
+        </div>
+
+        <!-- Card 02 -->
+        <div class="feature-scroll-card">
+          <div>
+            <div class="elegant-badge blue-badge">Hardware Security</div>
+            <h3>Confidentiality</h3>
+            <p class="card-desc">Cryptographic isolation safeguards preventing data leakage by locking strategic corporate IP in hardware-enforced Trusted Execution Environments during model processing.</p>
+          </div>
+          <div class="card-footer-meta">
+            <span class="meta-label">Data Sovereignty</span>
+            <span class="meta-val">Zero-Knowledge Enclaves</span>
+          </div>
+        </div>
+
+        <!-- Card 03 -->
+        <div class="feature-scroll-card">
+          <div>
+            <div class="elegant-badge orange-badge">Predictive BI</div>
+            <h3>Simulations</h3>
+            <p class="card-desc">Predictive risk containment checkpoints halting high-stakes autonomous deployments until regulatory, financial, and reputational fallout is mathematically modeled.</p>
+          </div>
+          <div class="card-footer-meta">
+            <span class="meta-label">Decision Modeling</span>
+            <span class="meta-val">Monte Carlo Twin</span>
+          </div>
+        </div>
+
+        <!-- Card 04 -->
+        <div class="feature-scroll-card">
+          <div>
+            <div class="elegant-badge green-badge">Defensibility</div>
+            <h3>Cryptography</h3>
+            <p class="card-desc">Immutable liability shields utilizing zero-knowledge proofs to lock down audit trails, strictly guaranteeing legal defensibility of all automated decisions.</p>
+          </div>
+          <div class="card-footer-meta">
+            <span class="meta-label">Regulatory Status</span>
+            <span class="meta-val">100% Lawfully Defensible</span>
+          </div>
+        </div>
+
+        <!-- Card 05 -->
+        <div class="feature-scroll-card">
+          <div>
+            <div class="elegant-badge red-badge">Red Team Defense</div>
+            <h3>Cybersecurity</h3>
+            <p class="card-desc">Active defense perimeters automatically intercepting and neutralizing prompt injections and adversarial breaches before they penetrate core enterprise infrastructure.</p>
+          </div>
+          <div class="card-footer-meta">
+            <span class="meta-label">Security Posture</span>
+            <span class="meta-val">Zero Trust Architecture</span>
+          </div>
+        </div>
+
+        <!-- Card 06 -->
+        <div class="feature-scroll-card">
+          <div>
+            <div class="elegant-badge purple-badge">Value Alignment</div>
+            <h3>AI Ethics</h3>
+            <p class="card-desc">Hardcoded behavioral constraints dynamically filtering toxicity and bias, strictly tethering all autonomous enterprise outputs to corporate ethical frameworks.</p>
+          </div>
+          <div class="card-footer-meta">
+            <span class="meta-label">Ethical Standard</span>
+            <span class="meta-val">Zero-Bias Guarantee</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="container footer-layout">
+  <footer class="container footer-layout" style="display: flex; flex-direction: column; gap: 1.5rem;">
     <div class="footer-brand">
-      <h4 style="margin-bottom: 0.5rem;">Ethical Compass</h4>
-      <p style="font-size: 12px; color: var(--color-text-muted); margin-top: 0.5rem;">&copy; 2008 - 2026 Ethical Compass. All Rights Reserved.</p>
+      <h4 style="margin: 0;">Ethical Compass</h4>
     </div>
-    <p class="author-credit" style="font-size: 0.75rem; color: var(--color-text-muted, #888); margin-top: 0.5rem;">Developed &amp; Maintained by <strong>Gcwelethemba Tshuma</strong></p>
+    <div class="footer-meta" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 1rem;">
+      <p style="font-size: 12px; color: var(--color-text-muted); margin: 0;">&copy; 2008 - 2026 Ethical Compass. All Rights Reserved.</p>
+      <p class="author-credit" style="font-size: 0.75rem; color: var(--color-text-muted, #888); margin: 0;">Developed &amp; Maintained by <strong>Gcwelethemba Tshuma</strong></p>
+    </div>
   </footer>
 
   <script src="../main.js"></script>
