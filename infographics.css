@@ -377,14 +377,14 @@ p {
   width: 100%;
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
-  background: rgba(15, 23, 42, 0.4);
+  background: transparent;
   padding: 1.75rem 0;
   overflow: hidden;
   position: relative;
 }
 
 body.light-mode .partner-strip {
-  background: rgba(248, 250, 252, 0.8);
+  background: transparent;
 }
 
 /* Gradient fade mask on the left and right edges */

@@ -225,25 +225,25 @@ function injectBriefingModal() {
       <div class="briefing-modal-card">
         <button class="briefing-modal-close" onclick="closeBriefingModal()" aria-label="Close Modal">&times;</button>
         <div class="briefing-modal-header">
-          <h3>Request an Executive Briefing</h3>
+          <h3>Request a Quote</h3>
           <p>Tailored governance intelligence and deployment options for your organization.</p>
         </div>
         <form onsubmit="handleBriefingSubmit(event)">
           <div class="briefing-form-group">
             <label for="briefing-name">Full Name</label>
-            <input type="text" id="briefing-name" class="briefing-form-input" placeholder="e.g. Dr. Jane Smith" required />
+            <input type="text" id="briefing-name" name="name" class="briefing-form-input" placeholder="e.g. Dr. Jane Smith" required />
           </div>
           <div class="briefing-form-group">
             <label for="briefing-email">Official Email</label>
-            <input type="email" id="briefing-email" class="briefing-form-input" placeholder="name@institution.gov.za" required />
+            <input type="email" id="briefing-email" name="email" class="briefing-form-input" placeholder="name@institution.gov.za" required />
           </div>
           <div class="briefing-form-group">
             <label for="briefing-org">Organization / Department</label>
-            <input type="text" id="briefing-org" class="briefing-form-input" placeholder="Department of Public Works / Treasury" required />
+            <input type="text" id="briefing-org" name="organization" class="briefing-form-input" placeholder="Department of Public Works / Treasury" required />
           </div>
           <div class="briefing-form-group">
             <label for="briefing-type">Organization Sector</label>
-            <select id="briefing-type" class="briefing-form-select" required>
+            <select id="briefing-type" name="sector" class="briefing-form-select" required>
               <option value="" disabled selected>Select Sector...</option>
               <option value="soe">State-Owned Enterprise (SOE)</option>
               <option value="public">Public Sector / Department</option>
@@ -254,7 +254,7 @@ function injectBriefingModal() {
           </div>
           <div class="briefing-form-group">
             <label for="briefing-notes">Briefing Focus Areas</label>
-            <textarea id="briefing-notes" class="briefing-form-textarea" rows="3" placeholder="Outline specific regulatory, POPIA, or governance requirements..."></textarea>
+            <textarea id="briefing-notes" name="notes" class="briefing-form-textarea" rows="3" placeholder="Outline specific regulatory, POPIA, or governance requirements..."></textarea>
           </div>
           <button type="submit" class="briefing-submit-btn">Submit Request &rarr;</button>
         </form>

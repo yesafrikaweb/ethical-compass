@@ -570,7 +570,7 @@
               Standard Support
             </li>
           </ul>
-          <button class="pricing-btn">Request a Briefing</button>
+          <button class="pricing-btn" onclick="openBriefingModal(event)">Request a Quote</button>
         </div>
 
         <div class="pricing-card highlighted">
@@ -612,7 +612,7 @@
               Custom Red-Teaming Modules
             </li>
           </ul>
-          <button class="pricing-btn highlighted-btn">Book a Demo Today</button>
+          <button class="pricing-btn highlighted-btn" onclick="openBriefingModal(event)">Get a Quote Today</button>
         </div>
       </div>
     </section>
@@ -827,19 +827,19 @@
         <form onsubmit="handleBriefingSubmit(event)">
           <div class="briefing-form-group">
             <label for="embed-demo-name">Full Name</label>
-            <input type="text" id="embed-demo-name" class="briefing-form-input" placeholder="e.g. Dr. Jane Smith" required />
+            <input type="text" id="embed-demo-name" name="name" class="briefing-form-input" placeholder="e.g. Dr. Jane Smith" required />
           </div>
           <div class="briefing-form-group">
             <label for="embed-demo-email">Work / Official Email</label>
-            <input type="email" id="embed-demo-email" class="briefing-form-input" placeholder="name@institution.gov.za" required />
+            <input type="email" id="embed-demo-email" name="email" class="briefing-form-input" placeholder="name@institution.gov.za" required />
           </div>
           <div class="briefing-form-group">
             <label for="embed-demo-org">Organization / Entity Name</label>
-            <input type="text" id="embed-demo-org" class="briefing-form-input" placeholder="e.g. Department of Public Works / Treasury" required />
+            <input type="text" id="embed-demo-org" name="organization" class="briefing-form-input" placeholder="e.g. Department of Public Works / Treasury" required />
           </div>
           <div class="briefing-form-group">
             <label for="embed-demo-focus">Primary Demo Focus</label>
-            <select id="embed-demo-focus" class="briefing-form-select" required>
+            <select id="embed-demo-focus" name="sector" class="briefing-form-select" required>
               <option value="" disabled selected>Select Demo Focus Area...</option>
               <option value="oversight">Continuous Oversight &amp; Monitoring Engine</option>
               <option value="compliance">POPIA / PFMA / ISO 42001 Compliance</option>
@@ -849,7 +849,7 @@
           </div>
           <div class="briefing-form-group">
             <label for="embed-demo-notes">Specific Requirements / Team Size</label>
-            <textarea id="embed-demo-notes" class="briefing-form-textarea" rows="3" placeholder="Tell us about your organization's governance goals or timeline..."></textarea>
+            <textarea id="embed-demo-notes" name="notes" class="briefing-form-textarea" rows="3" placeholder="Tell us about your organization's governance goals or timeline..."></textarea>
           </div>
           <button type="submit" class="briefing-submit-btn">Book Live Demo &rarr;</button>
         </form>
