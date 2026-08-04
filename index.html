@@ -81,15 +81,20 @@
     <div class="hero-bg-graphic">
       <svg class="realtime-svg-chart static-chart" viewBox="0 0 1000 320" preserveAspectRatio="none">
         <defs>
-          <linearGradient id="blueGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3" />
-            <stop offset="60%" stop-color="#2563eb" stop-opacity="0.1" />
-            <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.0" />
+          <linearGradient id="orangeGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ea580c" stop-opacity="0.4" />
+            <stop offset="60%" stop-color="#ea580c" stop-opacity="0.1" />
+            <stop offset="100%" stop-color="#ea580c" stop-opacity="0.0" />
           </linearGradient>
-          <linearGradient id="purpleGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#a855f7" stop-opacity="0.2" />
-            <stop offset="70%" stop-color="#7c3aed" stop-opacity="0.05" />
-            <stop offset="100%" stop-color="#6d28d9" stop-opacity="0.0" />
+          <linearGradient id="whiteGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.2" />
+            <stop offset="70%" stop-color="#ffffff" stop-opacity="0.05" />
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0.0" />
+          </linearGradient>
+          <linearGradient id="blueGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2563eb" stop-opacity="0.35" />
+            <stop offset="60%" stop-color="#1d4ed8" stop-opacity="0.1" />
+            <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0.0" />
           </linearGradient>
         </defs>
 
@@ -104,11 +109,32 @@
         <line x1="600" y1="0" x2="600" y2="320" class="chart-grid-line vertical" />
         <line x1="800" y1="0" x2="800" y2="320" class="chart-grid-line vertical" />
 
-        <!-- Stream 2: Smooth Purple Ambient Gradient Fill -->
-        <path id="purpleFill" d="M 0 320 L 0 200 Q 150 240 300 180 T 600 210 T 850 160 T 1000 190 L 1000 320 Z" fill="url(#purpleGradient)" />
+        <!-- Stream 1: Deep Orange Geometric Mountains -->
+        <path fill="url(#orangeGradient)">
+          <animate attributeName="d" dur="6s" repeatCount="indefinite" 
+            values="
+              M 0 320 L 0 100 L 150 250 L 350 80 L 550 280 L 800 120 L 1000 200 L 1000 320 Z;
+              M 0 320 L 0 120 L 150 230 L 350 100 L 550 250 L 800 150 L 1000 180 L 1000 320 Z;
+              M 0 320 L 0 100 L 150 250 L 350 80 L 550 280 L 800 120 L 1000 200 L 1000 320 Z" />
+        </path>
 
-        <!-- Stream 1: Smooth Blue Ambient Gradient Fill -->
-        <path id="blueFill" d="M 0 320 L 0 160 Q 120 100 250 140 T 500 80 T 750 120 T 1000 70 L 1000 320 Z" fill="url(#blueGradient)" />
+        <!-- Stream 2: Stark White Geometric Mid-Layer -->
+        <path fill="url(#whiteGradient)">
+          <animate attributeName="d" dur="8s" repeatCount="indefinite" 
+            values="
+              M 0 320 L 0 180 L 200 280 L 400 100 L 600 220 L 850 60 L 1000 150 L 1000 320 Z;
+              M 0 320 L 0 150 L 200 250 L 400 130 L 600 190 L 850 90 L 1000 120 L 1000 320 Z;
+              M 0 320 L 0 180 L 200 280 L 400 100 L 600 220 L 850 60 L 1000 150 L 1000 320 Z" />
+        </path>
+
+        <!-- Stream 3: Electric Blue Geometric Foreground -->
+        <path fill="url(#blueGradient)">
+          <animate attributeName="d" dur="10s" repeatCount="indefinite" 
+            values="
+              M 0 320 L 0 260 L 250 150 L 450 300 L 700 100 L 900 250 L 1000 100 L 1000 320 Z;
+              M 0 320 L 0 220 L 250 180 L 450 260 L 700 140 L 900 210 L 1000 140 L 1000 320 Z;
+              M 0 320 L 0 260 L 250 150 L 450 300 L 700 100 L 900 250 L 1000 100 L 1000 320 Z" />
+        </path>
       </svg>
     </div>
 
