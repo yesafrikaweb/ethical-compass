@@ -549,15 +549,15 @@ body.light-mode .badge-name {
 
 .hero-subtitle {
   margin-top: 2rem;
-  max-width: 750px;
+  max-width: 810px;
   font-size: 1.1rem;
   line-height: 1.65;
-  color: var(--color-text-muted);
+  color: rgba(241, 245, 249, 0.85);
   font-weight: 400;
 }
 
 body.light-mode .hero-subtitle {
-  color: var(--color-text-muted);
+  color: rgba(51, 65, 85, 0.85);
 }
 
 /* --- BENEFIT SUB-HEADLINE ---
