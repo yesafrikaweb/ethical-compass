@@ -235,6 +235,31 @@ body.light-mode .nav-header.scrolled {
   transform: translateX(5px);
 }
 
+/* Previous Module Link */
+.prev-module-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  transition: var(--transition);
+  max-width: 340px;
+}
+
+.prev-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-electric-blue);
+  transition: var(--transition);
+}
+
+.prev-module-link:hover .next-title {
+  color: var(--color-electric-blue);
+}
+
+.prev-module-link:hover .prev-icon {
+  transform: translateX(-5px);
+}
+
 /* --- MODULE CTA (right side of split strip — "Back to Platform Overview") --- */
 .module-cta {
   display: inline-flex;
