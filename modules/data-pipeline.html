@@ -141,6 +141,21 @@
       letter-spacing: 0.05em;
     }
 
+    .pipeline-card-header-icon {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.9;
+    }
+
+    .pipeline-card-header-icon svg,
+    .pipeline-card-header-icon i {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+    }
+
     .pipeline-badge {
       width: 32px;
       height: 32px;
@@ -553,10 +568,8 @@
       <div class="pipeline-card color-indigo">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">2</span>
-          Data Collection
-        </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="cloud-download"></i>
+          <span>Data Collection</span>
+          <div class="pipeline-card-header-icon"><i data-lucide="cloud-download"></i></div>
         </div>
         <div class="pipeline-list">
           <ul>
@@ -572,10 +585,8 @@
       <div class="pipeline-card color-teal">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">3</span>
-          Profiling & Assessment
-        </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="file-search"></i>
+          <span>Profiling & Assessment</span>
+          <div class="pipeline-card-header-icon"><i data-lucide="file-search"></i></div>
         </div>
         <div class="pipeline-list">
           <ul>
@@ -592,10 +603,8 @@
       <div class="pipeline-card color-emerald">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">4</span>
-          Data Cleansing
-        </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="sparkles"></i>
+          <span>Data Cleansing</span>
+          <div class="pipeline-card-header-icon"><i data-lucide="sparkles"></i></div>
         </div>
         <div class="pipeline-list">
           <ul>
@@ -612,10 +621,8 @@
       <div class="pipeline-card color-amber">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">5</span>
-          Data Transformation
-        </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="arrow-right-left"></i>
+          <span>Data Transformation</span>
+          <div class="pipeline-card-header-icon"><i data-lucide="arrow-right-left"></i></div>
         </div>
         <div class="pipeline-list">
           <ul>
@@ -633,10 +640,8 @@
       <div class="pipeline-card color-orange">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">6</span>
-          Data Integration
-        </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="puzzle"></i>
+          <span>Data Integration</span>
+          <div class="pipeline-card-header-icon"><i data-lucide="puzzle"></i></div>
         </div>
         <div class="pipeline-list">
           <ul>
@@ -651,10 +656,8 @@
       <div class="pipeline-card color-purple">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">7</span>
-          Data Storage <span style="font-size: 0.55rem; opacity: 0.8; font-weight: normal; margin-left: auto;">(DW / LAKE)</span>
-        </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="hard-drive"></i>
+          <span>Data Storage <span style="font-size: 0.55rem; opacity: 0.8; font-weight: normal;">(DW / LAKE)</span></span>
+          <div class="pipeline-card-header-icon"><i data-lucide="hard-drive"></i></div>
         </div>
         <div class="pipeline-list">
           <ul>
@@ -683,10 +686,8 @@
       <div class="pipeline-card color-purple">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">8</span>
-          Data Modelling
-        </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="network"></i>
+          <span>Data Modelling</span>
+          <div class="pipeline-card-header-icon"><i data-lucide="network"></i></div>
         </div>
         <div class="pipeline-list">
           <ul>
@@ -702,10 +703,8 @@
       <div class="pipeline-card color-teal">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">9</span>
-          Analysis & KPI Definition
-        </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="target"></i>
+          <span>Analysis & KPI Definition</span>
+          <div class="pipeline-card-header-icon"><i data-lucide="target"></i></div>
         </div>
         <div class="pipeline-list">
           <ul>
@@ -721,10 +720,8 @@
       <div class="pipeline-card color-amber">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">10</span>
-          Dashboard Design
-        </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="layout-dashboard"></i>
+          <span>Dashboard Design</span>
+          <div class="pipeline-card-header-icon"><i data-lucide="layout-dashboard"></i></div>
         </div>
         <div class="pipeline-list">
           <ul>
@@ -740,10 +737,8 @@
       <div class="pipeline-card color-blue">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">11</span>
-          Visualization & Reporting
-        </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="pie-chart"></i>
+          <span>Visualization & Reporting</span>
+          <div class="pipeline-card-header-icon"><i data-lucide="pie-chart"></i></div>
         </div>
         <div class="pipeline-list">
           <ul>
@@ -759,10 +754,8 @@
       <div class="pipeline-card color-emerald">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">12</span>
-          Insights & Decisions
-        </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="lightbulb"></i>
+          <span>Insights & Decisions</span>
+          <div class="pipeline-card-header-icon"><i data-lucide="lightbulb"></i></div>
         </div>
         <div class="pipeline-list">
           <ul>
@@ -778,10 +771,8 @@
       <div class="pipeline-card color-indigo">
         <div class="pipeline-card-header">
           <span class="pipeline-badge">13</span>
-          Business Value & Action
-        </div>
-        <div class="pipeline-icon-area">
-          <i data-lucide="trending-up"></i>
+          <span>Business Value & Action</span>
+          <div class="pipeline-card-header-icon"><i data-lucide="trending-up"></i></div>
         </div>
         <div class="pipeline-list">
           <ul>
