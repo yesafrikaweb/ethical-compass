@@ -544,7 +544,10 @@ body.light-mode .badge-name {
 }
 
 .hero-title {
-  max-width: 800px;
+  max-width: 100%;
+  font-size: clamp(1.65rem, 4vw, 2.5rem);
+  white-space: nowrap;
+  flex-wrap: nowrap;
 }
 
 .hero-subtitle {
@@ -2513,6 +2516,31 @@ body.light-mode .best-value {
 
 body.light-mode .footer-brand img {
   filter: brightness(0);
+}
+
+/* Dynamic Module Logo Tinting Classes */
+.orange-logo-icon {
+  filter: invert(41%) sepia(85%) saturate(2250%) hue-rotate(345deg) brightness(95%) contrast(92%);
+}
+
+.green-logo-icon {
+  filter: invert(58%) sepia(75%) saturate(2000%) hue-rotate(120deg) brightness(98%) contrast(92%);
+}
+
+.blue-logo-icon {
+  filter: invert(45%) sepia(80%) saturate(2500%) hue-rotate(200deg) brightness(100%) contrast(95%);
+}
+
+.purple-logo-icon {
+  filter: invert(48%) sepia(85%) saturate(3000%) hue-rotate(250deg) brightness(98%) contrast(92%);
+}
+
+.red-logo-icon {
+  filter: invert(36%) sepia(85%) saturate(3500%) hue-rotate(345deg) brightness(95%) contrast(92%);
+}
+
+.cyan-logo-icon {
+  filter: invert(58%) sepia(85%) saturate(2000%) hue-rotate(160deg) brightness(95%) contrast(92%);
 }
 
 .card-logs {
