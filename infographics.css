@@ -34,6 +34,16 @@
   --gradient-border: linear-gradient(to right, var(--color-electric-blue), var(--color-ubuntu-orange));
   --gradient-text: linear-gradient(to right, var(--color-electric-blue), var(--color-ubuntu-orange));
 
+  /* Core Module Accent Palette */
+  --color-crimson-red: #ef4444;
+  --color-crimson-red-glow: rgba(239, 68, 68, 0.2);
+  --color-amber-yellow: #f59e0b;
+  --color-amber-yellow-glow: rgba(245, 158, 11, 0.2);
+  --color-emerald-green: #10b981;
+  --color-emerald-green-glow: rgba(16, 185, 129, 0.2);
+  --color-cyber-cyan: #06b6d4;
+  --color-cyber-cyan-glow: rgba(6, 182, 212, 0.2);
+
   /* Feedback Colors */
   --color-positive: #10b981;
   /* Premium Green */
@@ -1372,15 +1382,27 @@ body.light-mode .green-badge {
 }
 
 .red-badge {
-  border-color: #ef4444;
-  color: #ef4444;
-  background: rgba(239, 68, 68, 0.08);
+  border-color: var(--color-crimson-red);
+  color: var(--color-crimson-red);
+  background: var(--color-crimson-red-glow);
 }
 
 body.light-mode .red-badge {
   border-color: #dc2626;
   color: #dc2626;
   background: rgba(220, 38, 38, 0.08);
+}
+
+.yellow-badge {
+  border-color: var(--color-amber-yellow);
+  color: var(--color-amber-yellow);
+  background: var(--color-amber-yellow-glow);
+}
+
+body.light-mode .yellow-badge {
+  border-color: #d97706;
+  color: #d97706;
+  background: rgba(217, 119, 6, 0.08);
 }
 
 .purple-badge {
@@ -2561,7 +2583,11 @@ body.light-mode .footer-brand img {
 }
 
 .red-logo-icon {
-  filter: invert(36%) sepia(85%) saturate(3500%) hue-rotate(345deg) brightness(95%) contrast(92%);
+  filter: hue-rotate(335deg) saturate(220%) brightness(88%) contrast(115%);
+}
+
+.yellow-logo-icon {
+  filter: invert(75%) sepia(85%) saturate(3000%) hue-rotate(5deg) brightness(100%) contrast(98%);
 }
 
 .cyan-logo-icon {
