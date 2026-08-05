@@ -1,13 +1,13 @@
 // Tag 0.20
 /**
- * Ethical Compass Intelligence Script
+ * Ethical Intelligence Script
  * Developed & Created by Gcwelethemba Tshuma
  * Copyright (c) 2026 Gcwelethemba Tshuma. All rights reserved.
  */
 
-console.log("%c Ethical Compass — Developed & Created by Gcwelethemba Tshuma", "font-weight: bold; color: #3b82f6; font-size: 12px;");
+console.log("%c Ethical Intelligence — Developed & Created by Gcwelethemba Tshuma", "font-weight: bold; color: #3b82f6; font-size: 12px;");
 /**
- * Ethical Compass | Main Intelligence Script
+ * Ethical Intelligence | Main Intelligence Script
  * Consolidates all interactive logic and premium animations.
  */
 

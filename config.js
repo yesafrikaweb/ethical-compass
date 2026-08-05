@@ -17,7 +17,7 @@ window.EthicalCompassConfig = {
 
   // Site Metadata
   site: {
-    name: "Ethical Compass",
+    name: "Ethical Intelligence",
     tagline: "The precision of continuous institutional oversight",
     version: "1.0.0"
   }
