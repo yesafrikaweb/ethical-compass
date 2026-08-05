@@ -105,10 +105,10 @@
     <div class="hero-bg-graphic">
       <svg class="realtime-svg-chart static-chart" viewBox="0 0 1000 320" preserveAspectRatio="none">
         <defs>
-          <linearGradient id="orangeGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#ea580c" stop-opacity="0.55" />
-            <stop offset="60%" stop-color="#ea580c" stop-opacity="0.18" />
-            <stop offset="100%" stop-color="#ea580c" stop-opacity="0.0" />
+          <linearGradient id="yellowOchreGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.65" />
+            <stop offset="60%" stop-color="#d97706" stop-opacity="0.22" />
+            <stop offset="100%" stop-color="#b45309" stop-opacity="0.0" />
           </linearGradient>
           <linearGradient id="whiteGradient" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#ffffff" stop-opacity="0.28" />
@@ -130,11 +130,6 @@
             <stop offset="60%" stop-color="#dc2626" stop-opacity="0.18" />
             <stop offset="100%" stop-color="#991b1b" stop-opacity="0.0" />
           </linearGradient>
-          <linearGradient id="yellowGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.55" />
-            <stop offset="60%" stop-color="#d97706" stop-opacity="0.18" />
-            <stop offset="100%" stop-color="#78350f" stop-opacity="0.0" />
-          </linearGradient>
         </defs>
 
         <!-- Background Grid Lines -->
@@ -148,8 +143,8 @@
         <line x1="600" y1="0" x2="600" y2="320" class="chart-grid-line vertical" />
         <line x1="800" y1="0" x2="800" y2="320" class="chart-grid-line vertical" />
 
-        <!-- Stream 1: Deep Orange Geometric Mountains -->
-        <path fill="url(#orangeGradient)" style="mix-blend-mode: screen;">
+        <!-- Stream 1: Ndebele Yellow Ochre Geometric Mountains -->
+        <path fill="url(#yellowOchreGradient)" style="mix-blend-mode: screen;">
           <animate attributeName="d" dur="6s" repeatCount="indefinite" 
             values="
               M 0 320 L 0 200 L 400 20 L 750 200 L 1000 200 L 1000 320 Z;
@@ -184,22 +179,13 @@
               M 0 320 L 0 190 L 150 205 L 300 180 L 450 210 L 600 185 L 750 205 L 900 190 L 1000 210 L 1000 320 Z" />
         </path>
 
-        <!-- Stream 5: Vivid Ndebele Crimson Red Stream (#ef4444) -->
+        <!-- Stream 5: Vivid Ndebele Crimson Red Stream (5 Geometric Nodes) -->
         <path fill="url(#redGradient)" style="mix-blend-mode: screen;">
           <animate attributeName="d" dur="9s" repeatCount="indefinite" 
             values="
               M 0 320 L 0 160 L 250 40 L 500 170 L 750 30 L 1000 160 L 1000 320 Z;
               M 0 320 L 0 175 L 250 60 L 500 150 L 750 45 L 1000 175 L 1000 320 Z;
               M 0 320 L 0 160 L 250 40 L 500 170 L 750 30 L 1000 160 L 1000 320 Z" />
-        </path>
-
-        <!-- Stream 6: Authentic Ndebele Yellow Ochre Stream (#f59e0b) -->
-        <path fill="url(#yellowGradient)" style="mix-blend-mode: screen;">
-          <animate attributeName="d" dur="8.5s" repeatCount="indefinite" 
-            values="
-              M 0 320 L 0 210 L 180 150 L 380 230 L 650 35 L 850 180 L 1000 210 L 1000 320 Z;
-              M 0 320 L 0 220 L 180 165 L 380 210 L 650 50 L 850 195 L 1000 220 L 1000 320 Z;
-              M 0 320 L 0 210 L 180 150 L 380 230 L 650 35 L 850 180 L 1000 210 L 1000 320 Z" />
         </path>
       </svg>
     </div>
