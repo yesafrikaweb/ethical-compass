@@ -585,6 +585,15 @@ body.light-mode .badge-name {
   flex-wrap: nowrap;
 }
 
+.main-landing-title {
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem) !important;
+  line-height: 1.1 !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.03em !important;
+  max-width: 1050px !important;
+  white-space: normal !important;
+}
+
 .hero-subtitle {
   margin-top: 2rem;
   max-width: 810px;
