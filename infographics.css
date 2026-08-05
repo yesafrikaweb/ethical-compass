@@ -630,14 +630,18 @@ body.light-mode .diagram-card:hover {
   box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
 }
 
+.diagram-card,
+.matrix-item,
+.pricing-card {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
 .diagram-card::before,
 .matrix-item::before,
 .pricing-card::before {
-  /**
-   * Native OS Border Trick: 
-   * Uses -webkit-mask to create a gradient border that only appears on the edge.
-   * This prevents background-clip: border-box from bleeding through.
-   */
   content: '';
   position: absolute;
   top: -1px;
@@ -646,7 +650,6 @@ body.light-mode .diagram-card:hover {
   bottom: -1px;
   border-radius: inherit;
   padding: 1.5px;
-  /* Slightly thicker to prevent rounding issues */
   background: var(--gradient-border);
   z-index: 10;
   -webkit-mask:
@@ -659,14 +662,16 @@ body.light-mode .diagram-card:hover {
   pointer-events: none;
 }
 
-.diagram-card:hover::before,
-.matrix-item:hover::before,
-.pricing-card:hover::before {
-  opacity: 1;
-}
+@media (hover: hover) {
+  .diagram-card:hover::before,
+  .matrix-item:hover::before,
+  .pricing-card:hover::before {
+    opacity: 1;
+  }
 
-body:not(.light-mode) .diagram-card:hover {
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.03), transparent);
+  body:not(.light-mode) .diagram-card:hover {
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.03), transparent);
+  }
 }
 
 /* --- SVG DIAGRAM UTILITIES --- 

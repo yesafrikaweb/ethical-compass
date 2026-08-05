@@ -41,40 +41,22 @@
       position: relative;
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
     }
 
-    .pipeline-card::before {
-      content: '';
-      position: absolute;
-      top: -1px;
-      left: -1px;
-      right: -1px;
-      bottom: -1px;
-      border-radius: inherit;
-      padding: 1.5px;
-      background: var(--gradient-border);
-      z-index: 10;
-      -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      pointer-events: none;
-    }
+    @media (hover: hover) {
+      .pipeline-card:hover {
+        transform: translateY(-5px) translateZ(0);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        border-color: var(--color-electric-blue);
+      }
 
-    .pipeline-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    .pipeline-card:hover::before {
-      opacity: 1;
-    }
-
-    body:not(.light-mode) .pipeline-card:hover {
-      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.03), var(--color-deep-blue));
+      body:not(.light-mode) .pipeline-card:hover {
+        background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.03), var(--color-deep-blue));
+      }
     }
 
     body.light-mode .pipeline-card {
@@ -349,41 +331,23 @@
       font-weight: 600;
       color: var(--color-text-bright);
       position: relative;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
     }
     
-    .governance-item::before {
-      content: '';
-      position: absolute;
-      top: -1px;
-      left: -1px;
-      right: -1px;
-      bottom: -1px;
-      border-radius: inherit;
-      padding: 1.5px;
-      background: var(--gradient-border);
-      z-index: 10;
-      -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      pointer-events: none;
-    }
+    @media (hover: hover) {
+      .governance-item:hover {
+        transform: translateY(-3px) translateZ(0);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        border-color: var(--color-electric-blue);
+      }
 
-    .governance-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-    
-    .governance-item:hover::before {
-      opacity: 1;
-    }
-
-    body:not(.light-mode) .governance-item:hover {
-      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.04), var(--color-deep-blue));
+      body:not(.light-mode) .governance-item:hover {
+        background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.04), var(--color-deep-blue));
+      }
     }
     
     .governance-item svg {
