@@ -45,8 +45,8 @@
    Light mode support via .light-mode class. 
 */
 body.light-mode {
-  --color-midnight: #f7f7f7;
-  /* Pure Neutral Off-White Grey */
+  --color-midnight: #faf9f6;
+  /* Warm Premium Off-White */
   --color-deep-blue: #ffffff;
   /* Bright white for cards */
   --color-text-bright: #0f172a;
