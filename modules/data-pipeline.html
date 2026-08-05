@@ -31,6 +31,65 @@
       margin-bottom: 2rem;
     }
 
+    .pipeline-grid-3col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .card-span-full {
+      grid-column: 1 / -1;
+    }
+
+    .card-span-full .pipeline-icon-grid-full {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
+      text-align: center;
+      padding: 1.5rem 2rem;
+    }
+
+    .card-span-full .pipeline-list-grid-full ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem 1.5rem;
+    }
+
+    @media (max-width: 992px) {
+      .pipeline-grid-3col {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card-span-full .pipeline-icon-grid-full {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .card-span-full .pipeline-list-grid-full ul {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .pipeline-grid-3col {
+        grid-template-columns: 1fr;
+      }
+      .card-span-full .pipeline-icon-grid-full {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card-span-full .pipeline-list-grid-full ul {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .post-pipeline-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      .post-pipeline-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .pipeline-card {
       background: var(--color-deep-blue);
       border: 1px solid var(--color-border-bright);
@@ -418,32 +477,58 @@
     </div>
   </header>
 
-  <header class="container reveal" style="padding-bottom: 2rem;">
+  <header class="container reveal" style="padding-bottom: 3.5rem;">
     <div class="header-badges">
       <div class="elegant-badge blue-badge">Module 05: Data Intelligence</div>
     </div>
     <h1 class="hero-title">Data Pipeline Architecture</h1>
     <p class="hero-benefit">Transforming raw data into <strong>actionable business insights</strong>.</p>
     <p class="hero-subtitle">A comprehensive 13-stage framework detailing the journey of data from ingestion and cleansing to visualization and actionable business value.</p>
+    
+    <!-- Hero Architecture Metrics Bar -->
+    <div class="numbers-row" style="margin-top: 2rem; margin-bottom: 1rem; border-top: 1px solid var(--color-border); padding-top: 1.5rem;">
+      <div class="number-item">
+        <div class="number-value" style="font-size: 1.8rem; color: var(--color-electric-blue);">13</div>
+        <div class="number-label">Architecture Stages</div>
+      </div>
+      <div class="number-item">
+        <div class="number-value" style="font-size: 1.8rem; color: #10b981;">0s</div>
+        <div class="number-label">Stream Latency Target</div>
+      </div>
+      <div class="number-item">
+        <div class="number-value" style="font-size: 1.8rem; color: var(--color-ubuntu-orange);">100%</div>
+        <div class="number-label">End-to-End Lineage</div>
+      </div>
+      <div class="number-item">
+        <div class="number-value" style="font-size: 1.8rem; color: #a855f7;">ISO 42001</div>
+        <div class="number-label">Governance Standard</div>
+      </div>
+    </div>
   </header>
 
-  <main class="container reveal" style="padding-top: 0;">
+  <main class="container reveal" style="padding-top: 1.5rem;">
     
     <!-- ROW 1: Stages 1 to 7 -->
-    <div class="pipeline-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+    <div class="pipeline-grid pipeline-grid-3col">
       
-      <!-- Stage 1 -->
-      <div class="pipeline-card color-blue">
-        <div class="pipeline-card-header">
-          <span class="pipeline-badge">1</span>
-          Raw Data Sources
+      <!-- Stage 1: Full-Width Master Ingestion Header -->
+      <div class="pipeline-card color-blue card-span-full">
+        <div class="pipeline-card-header" style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span class="pipeline-badge">1</span>
+            Raw Data Sources (Master Ingestion Layer)
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.65rem; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #10b981; padding: 0.25rem 0.65rem; border-radius: 1rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em;">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: #10b981; box-shadow: 0 0 8px #10b981;"></span>
+            Ingestion Active
+          </div>
         </div>
-        <div class="pipeline-icon-area" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: center;">
+        <div class="pipeline-icon-area pipeline-icon-grid-full">
           <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
             <i data-lucide="database"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">Databases</span>
           </div>
           <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
-            <i data-lucide="file-spreadsheet"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">Files</span>
+            <i data-lucide="file-spreadsheet"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">Files / Excel</span>
           </div>
           <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
             <i data-lucide="cloud"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">Cloud Apps</span>
@@ -451,15 +536,21 @@
           <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
             <i data-lucide="cpu"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">ERP / CRM</span>
           </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+            <i data-lucide="globe"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">Web / APIs</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem;">
+            <i data-lucide="wifi"></i><span style="font-size: 0.65rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-bright);">IoT Devices</span>
+          </div>
         </div>
-        <div class="pipeline-list">
+        <div class="pipeline-list pipeline-list-grid-full">
           <ul>
-            <li>Databases</li>
-            <li>Files / Excel</li>
-            <li>Cloud Apps</li>
-            <li>ERP / CRM Systems</li>
-            <li>Web / APIs</li>
-            <li>IoT Devices</li>
+            <li>Databases (SQL / NoSQL)</li>
+            <li>Files / Excel / CSV Data</li>
+            <li>Cloud Apps & SaaS Portals</li>
+            <li>ERP / CRM Enterprise Systems</li>
+            <li>Web Services & REST APIs</li>
+            <li>IoT & Streaming Edge Sensors</li>
           </ul>
         </div>
       </div>
@@ -592,7 +683,7 @@
     </div>
 
     <!-- ROW 2: Stages 8 to 13 -->
-    <div class="pipeline-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+    <div class="pipeline-grid pipeline-grid-3col">
 
       <!-- Stage 8 -->
       <div class="pipeline-card color-purple">
@@ -752,14 +843,14 @@
       </div>
     </div>
 
-    <!-- Post-Pipeline Operations & Observability -->
+    <!-- Post-Pipeline Operations -->
     <section id="post-pipeline-ops" class="reveal" style="margin-top: 5rem;">
       <div class="section-title">
-        <h2>Post-Pipeline Operations & Observability</h2>
+        <h2>Post-Pipeline Operations</h2>
         <p>Four standard enterprise pillars that govern data integrity, security, and activation after modeling.</p>
       </div>
 
-      <div class="pipeline-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+      <div class="pipeline-grid post-pipeline-grid">
         
         <!-- Pillar 1: Data Lineage & Traceability -->
         <div class="pipeline-card color-indigo">
