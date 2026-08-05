@@ -21,7 +21,7 @@
   --color-border: rgba(255, 255, 255, 0.05);
   --color-border-bright: rgba(255, 255, 255, 0.1);
   --color-text-bright: #ffffff;
-  --color-text-muted: #64748b;
+  --color-text-muted: rgba(241, 245, 249, 0.85);
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
   --radius-sm: 4px;
   /* Sharper corners for elegance */
@@ -51,8 +51,8 @@ body.light-mode {
   /* Bright white for cards */
   --color-text-bright: #0f172a;
   /* Soft dark slate */
-  --color-text-muted: #64748b;
-  /* Cool slate gray */
+  --color-text-muted: #475569;
+  /* Crisp Slate Gray */
   --color-border: #e2e8f0;
   /* Light slate border */
   --color-border-bright: #cbd5e1;
