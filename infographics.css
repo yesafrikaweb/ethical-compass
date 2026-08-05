@@ -2505,6 +2505,16 @@ body.light-mode .best-value {
   gap: 2rem;
 }
 
+/* Footer Logo Mode Colors (White in Dark Mode, Black in Light Mode) */
+.footer-brand img {
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+body.light-mode .footer-brand img {
+  filter: brightness(0);
+}
+
 .card-logs {
   margin-top: 1.5rem;
   height: 100px;
