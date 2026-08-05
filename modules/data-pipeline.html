@@ -268,6 +268,14 @@
     .color-purple .pipeline-icon-area svg { color: #a855f7; }
     .color-purple .pipeline-list li::before { color: #a855f7; }
 
+    .color-slate .pipeline-card-header { background: #334155; }
+    .color-slate .pipeline-card:hover { border-color: #475569; }
+    .color-slate .pipeline-badge { color: #334155; }
+    .color-slate .pipeline-list li::before { color: #94a3b8; }
+
+    body.light-mode .color-slate .pipeline-card-header { background: #e2e8f0; color: #1e293b; }
+    body.light-mode .color-slate .pipeline-badge { background: #1e293b; color: #ffffff; }
+
     .phase-transition {
       display: flex;
       align-items: center;
@@ -808,22 +816,69 @@
         <path d="M 50,0 C 50,50 87.5,50 87.5,100" />
       </svg>
 
-      <div class="governance-grid">
-        <div class="governance-item">
-          <i data-lucide="clipboard-check"></i>
-          <span>Data Quality Monitoring</span>
+      <div class="pipeline-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <!-- Pillar 1 -->
+        <div class="pipeline-card color-slate">
+          <div class="pipeline-card-header">
+            <span class="pipeline-badge" style="font-size: 0.8rem;">01</span>
+            <span>Data Quality Monitoring</span>
+            <div class="pipeline-card-header-icon"><i data-lucide="clipboard-check"></i></div>
+          </div>
+          <div class="pipeline-list">
+            <ul>
+              <li>Automated schema & integrity validation</li>
+              <li>Null-rate & anomaly threshold alerts</li>
+              <li>Duplicate entry detection & deduplication</li>
+            </ul>
+          </div>
         </div>
-        <div class="governance-item">
-          <i data-lucide="lock"></i>
-          <span>Data Security & Access Control</span>
+
+        <!-- Pillar 2 -->
+        <div class="pipeline-card color-slate">
+          <div class="pipeline-card-header">
+            <span class="pipeline-badge" style="font-size: 0.8rem;">02</span>
+            <span>Security & Access Control</span>
+            <div class="pipeline-card-header-icon"><i data-lucide="lock"></i></div>
+          </div>
+          <div class="pipeline-list">
+            <ul>
+              <li>Role-based & attribute access policies</li>
+              <li>Dynamic column & row-level masking</li>
+              <li>Encrypted key management & rotation</li>
+            </ul>
+          </div>
         </div>
-        <div class="governance-item">
-          <i data-lucide="file-text"></i>
-          <span>Metadata & Documentation</span>
+
+        <!-- Pillar 3 -->
+        <div class="pipeline-card color-slate">
+          <div class="pipeline-card-header">
+            <span class="pipeline-badge" style="font-size: 0.8rem;">03</span>
+            <span>Metadata & Documentation</span>
+            <div class="pipeline-card-header-icon"><i data-lucide="file-text"></i></div>
+          </div>
+          <div class="pipeline-list">
+            <ul>
+              <li>Automated data dictionary generation</li>
+              <li>Business glossary & taxonomy alignment</li>
+              <li>End-to-end lineage data cataloging</li>
+            </ul>
+          </div>
         </div>
-        <div class="governance-item">
-          <i data-lucide="refresh-cw"></i>
-          <span>Continuous Improvement</span>
+
+        <!-- Pillar 4 -->
+        <div class="pipeline-card color-slate">
+          <div class="pipeline-card-header">
+            <span class="pipeline-badge" style="font-size: 0.8rem;">04</span>
+            <span>Continuous Improvement</span>
+            <div class="pipeline-card-header-icon"><i data-lucide="refresh-cw"></i></div>
+          </div>
+          <div class="pipeline-list">
+            <ul>
+              <li>Feedback loop integration on drift</li>
+              <li>Performance benchmarking & tuning</li>
+              <li>Governance audit log compliance reviews</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
