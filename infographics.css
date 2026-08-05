@@ -2990,6 +2990,29 @@ body.light-mode .expertise-tag {
   background: rgba(59, 130, 246, 0.03);
 }
 
+/* Phase Card Emblem Watermark */
+.phase-card-watermark {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 38px;
+  height: 38px;
+  opacity: 0.14;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+body.light-mode .phase-card-watermark {
+  filter: brightness(0);
+}
+
+.phase-card:hover .phase-card-watermark {
+  opacity: 0.9;
+  filter: invert(45%) sepia(80%) saturate(2500%) hue-rotate(200deg) brightness(100%) contrast(95%);
+  transform: scale(1.08);
+}
+
 .phase-number {
   font-size: 0.6875rem;
   color: var(--color-electric-blue);
