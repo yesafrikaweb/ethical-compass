@@ -45,8 +45,8 @@
    Light mode support via .light-mode class. 
 */
 body.light-mode {
-  --color-midnight: #f8fafc;
-  /* Premium Cool Off-White */
+  --color-midnight: #f7f7f7;
+  /* Pure Neutral Off-White Grey */
   --color-deep-blue: #ffffff;
   /* Bright white for cards */
   --color-text-bright: #0f172a;
@@ -417,11 +417,11 @@ body.light-mode .partner-strip {
 }
 
 body.light-mode .partner-strip::before {
-  background: linear-gradient(to right, #f8fafc, transparent);
+  background: linear-gradient(to right, #f7f7f7, transparent);
 }
 
 body.light-mode .partner-strip::after {
-  background: linear-gradient(to left, #f8fafc, transparent);
+  background: linear-gradient(to left, #f7f7f7, transparent);
 }
 
 .partner-strip-label {
