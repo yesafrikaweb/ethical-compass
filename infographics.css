@@ -3750,6 +3750,39 @@ body.light-mode .full-calculator {
     font-size: 0.7rem;
   }
 }
+
+/* Strategic Capabilities Cards Mobile Rendering Fix */
+@media (max-width: 768px) {
+  .matrix-item {
+    padding: 2rem 1.5rem;
+  }
+  .matrix-item h4 {
+    font-size: 1.2rem;
+    padding-right: 2rem;
+  }
+  .matrix-item-watermark {
+    top: 1.5rem;
+    right: 1.25rem;
+    width: 28px;
+    height: 28px;
+    opacity: 0.2;
+  }
+  .card-logs {
+    height: 90px;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .matrix-item {
+    padding: 1.5rem 1.25rem;
+  }
+  .matrix-item .matrix-item-desc {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+}
 /* --- PREMIUM SHARE MODAL --- */
 .share-modal-overlay {
   position: fixed;
