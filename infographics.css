@@ -1328,6 +1328,29 @@ body.light-mode .matrix-item {
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
 }
 
+/* Watermark emblem on Strategic Capabilities cards */
+.matrix-item-watermark {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 36px;
+  height: 36px;
+  opacity: 0.15;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+body.light-mode .matrix-item-watermark {
+  filter: brightness(0);
+}
+
+.matrix-item:hover .matrix-item-watermark {
+  opacity: 0.9;
+  filter: none;
+  transform: scale(1.08);
+}
+
 body.light-mode .matrix-item:hover {
   border-color: #cbd5e1;
   box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
@@ -1472,6 +1495,7 @@ body.light-mode .purple-badge {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
   box-sizing: border-box;
+  position: relative;
 }
 
 body.light-mode .feature-scroll-card {
@@ -1484,6 +1508,29 @@ body.light-mode .feature-scroll-card {
   transform: translateY(-4px);
   border-color: var(--color-electric-blue);
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+}
+
+/* Watermark emblem on Guardrails horizontal cards */
+.feature-scroll-card-watermark {
+  position: absolute;
+  top: 1.75rem;
+  right: 1.75rem;
+  width: 32px;
+  height: 32px;
+  opacity: 0.15;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+body.light-mode .feature-scroll-card-watermark {
+  filter: brightness(0);
+}
+
+.feature-scroll-card:hover .feature-scroll-card-watermark {
+  opacity: 0.9;
+  filter: none;
+  transform: scale(1.08);
 }
 
 body.light-mode .feature-scroll-card:hover {
@@ -2575,32 +2622,24 @@ body.light-mode .footer-brand img {
 }
 
 /* Dynamic Module Logo Tinting Classes */
-.orange-logo-icon {
-  filter: invert(41%) sepia(85%) saturate(2250%) hue-rotate(345deg) brightness(95%) contrast(92%);
-}
-
-.green-logo-icon {
-  filter: invert(58%) sepia(75%) saturate(2000%) hue-rotate(120deg) brightness(98%) contrast(92%);
-}
-
-.blue-logo-icon {
-  filter: invert(45%) sepia(80%) saturate(2500%) hue-rotate(200deg) brightness(100%) contrast(95%);
-}
-
-.purple-logo-icon {
-  filter: invert(48%) sepia(85%) saturate(3000%) hue-rotate(250deg) brightness(98%) contrast(92%);
-}
-
-.red-logo-icon {
-  filter: hue-rotate(335deg) saturate(220%) brightness(88%) contrast(115%);
-}
-
-.yellow-logo-icon {
-  filter: invert(75%) sepia(85%) saturate(3000%) hue-rotate(5deg) brightness(100%) contrast(98%);
-}
-
+.orange-logo-icon,
+.green-logo-icon,
+.blue-logo-icon,
+.purple-logo-icon,
+.red-logo-icon,
+.yellow-logo-icon,
 .cyan-logo-icon {
-  filter: invert(58%) sepia(85%) saturate(2000%) hue-rotate(160deg) brightness(95%) contrast(92%);
+  /* SVG files carry exact fill colors */
+}
+
+.blue-logo-icon,
+.purple-logo-icon,
+.red-logo-icon,
+.yellow-logo-icon,
+.cyan-logo-icon,
+.green-logo-icon,
+.orange-logo-icon {
+  /* SVG files carry exact fill colors */
 }
 
 .card-logs {
@@ -3610,6 +3649,105 @@ body.light-mode .full-calculator {
 
   .number-item.featured .number-value {
     font-size: 2.5rem;
+  }
+}
+
+/* Responsive Enhancements for Closed-Loop Features Module */
+@media (max-width: 768px) {
+  .horizontal-features-section {
+    margin-top: 4rem !important;
+  }
+  .horizontal-scroll-track {
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+  .feature-scroll-card {
+    flex: 0 0 280px;
+    padding: 1.75rem 1.5rem;
+  }
+  .forensic-log-preview {
+    font-size: 0.7rem;
+    word-break: break-all;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .loop-visual-container {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  .svg-text .text-right-node {
+    text-anchor: end;
+    transform: translate(-50px, -20px);
+  }
+  .svg-text .text-left-node {
+    text-anchor: start;
+    transform: translate(50px, -20px);
+  }
+  .feature-scroll-card {
+    flex: 0 0 85vw;
+  }
+  .phase-card {
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+/* Responsive Enhancements for Strategic Value / Economics of Integrity */
+@media (max-width: 768px) {
+  .full-calculator {
+    padding: 2rem 1.25rem !important;
+  }
+  .calc-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+  .analysis-report {
+    margin-top: 2.5rem !important;
+    padding-top: 2rem !important;
+  }
+  .report-item {
+    padding: 1rem 0;
+  }
+  .table-container {
+    border-radius: 12px;
+  }
+  .elegant-table th, 
+  .elegant-table td {
+    padding: 1rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .roi-value {
+    font-size: 3.5rem !important;
+  }
+  .formula-badge {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.75rem;
+    word-break: break-all;
+  }
+}
+
+/* Responsive Enhancements for About Us / Visionaries Personnel */
+@media (max-width: 768px) {
+  .leader-profile {
+    padding: 2rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .leader-info h2 {
+    font-size: 1.75rem;
+  }
+  .leader-bio p {
+    font-size: 0.975rem;
+    line-height: 1.65;
+  }
+  .expertise-list {
+    gap: 0.5rem;
+  }
+  .expertise-tag {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.7rem;
   }
 }
 /* --- PREMIUM SHARE MODAL --- */
