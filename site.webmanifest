@@ -8,9 +8,10 @@
   "theme_color": "#08090a",
   "icons": [
     {
-      "src": "avatar.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "assets/logo-avatar.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ],
   "version": "0.20"
