@@ -2913,6 +2913,83 @@ body.light-mode .card-logs {
   /* Remove the old arrow */
 }
 
+/* Module Accent Color Themes (Green, Orange, Purple, Red, Blue) */
+body.green-theme .spec-label,
+.green-theme .spec-label {
+  color: #10b981;
+}
+
+body.light-mode.green-theme .spec-label,
+body.light-mode .green-theme .spec-label {
+  color: #059669;
+}
+
+body.green-theme .logic-step.active::before,
+body.green-theme .logic-step:hover::before,
+.green-theme .logic-step.active::before,
+.green-theme .logic-step:hover::before {
+  border-color: #10b981;
+  background: #10b981;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
+}
+
+body.orange-theme .spec-label,
+.orange-theme .spec-label {
+  color: #f97316;
+}
+
+body.light-mode.orange-theme .spec-label,
+body.light-mode .orange-theme .spec-label {
+  color: #ea580c;
+}
+
+body.orange-theme .logic-step.active::before,
+body.orange-theme .logic-step:hover::before,
+.orange-theme .logic-step.active::before,
+.orange-theme .logic-step:hover::before {
+  border-color: #f97316;
+  background: #f97316;
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.6);
+}
+
+body.purple-theme .spec-label,
+.purple-theme .spec-label {
+  color: #a855f7;
+}
+
+body.light-mode.purple-theme .spec-label,
+body.light-mode .purple-theme .spec-label {
+  color: #7e22ce;
+}
+
+body.purple-theme .logic-step.active::before,
+body.purple-theme .logic-step:hover::before,
+.purple-theme .logic-step.active::before,
+.purple-theme .logic-step:hover::before {
+  border-color: #a855f7;
+  background: #a855f7;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+}
+
+body.red-theme .spec-label,
+.red-theme .spec-label {
+  color: #ef4444;
+}
+
+body.light-mode.red-theme .spec-label,
+body.light-mode .red-theme .spec-label {
+  color: #dc2626;
+}
+
+body.red-theme .logic-step.active::before,
+body.red-theme .logic-step:hover::before,
+.red-theme .logic-step.active::before,
+.red-theme .logic-step:hover::before {
+  border-color: #ef4444;
+  background: #ef4444;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+}
+
 /* Personnel Specifics */
 .personnel-hero {
   text-align: center;
