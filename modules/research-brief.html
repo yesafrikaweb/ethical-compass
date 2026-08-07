@@ -13,17 +13,20 @@
   <link rel="mask-icon" href="../assets/icon-avatar.svg" color="#3b82f6">
   <link rel="manifest" href="../site.webmanifest">
   <meta name="author" content="Gcwelethemba Tshuma, Praveen Naidoo">
-  <meta name="description" content="Sovereign AI Intelligence in Continuous Governance Flows: Transitioning from Reactive Audits to Real-Time Institutional Oversight in Africa. Executive Research Brief by Ethical Intelligence.">
-  <meta name="keywords" content="Executive Research Brief, Ethical Intelligence, Sovereign AI Governance, Multi-Agent Swarms, GraphRAG, POPIA, PFMA, Gcwelethemba Tshuma, Praveen Naidoo">
+  <meta name="description"
+    content="Sovereign AI Intelligence in Continuous Governance Flows: Transitioning from Reactive Audits to Real-Time Institutional Oversight in Africa. Executive Research Brief by Ethical Intelligence.">
+  <meta name="keywords"
+    content="Executive Research Brief, Ethical Intelligence, Sovereign AI Governance, Multi-Agent Swarms, GraphRAG, POPIA, PFMA, Gcwelethemba Tshuma, Praveen Naidoo">
   <meta property="og:site_name" content="Ethical Intelligence (formerly Ethical Compass)">
   <meta property="og:title" content="Executive Research Brief | Ethical Intelligence">
-  <meta property="og:description" content="An Executive Framework for Real-Time Governance, Multi-Agent Swarms, and Sovereign Compliance in Africa.">
+  <meta property="og:description"
+    content="An Executive Framework for Real-Time Governance, Multi-Agent Swarms, and Sovereign Compliance in Africa.">
   <title>Executive Research Brief | Ethical Intelligence</title>
   <link rel="stylesheet" href="../infographics.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+
   <style>
     .paper-card {
       background: #ffffff !important;
@@ -34,7 +37,7 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
       color: #0f172a !important;
     }
-    
+
     body.light-mode .paper-card {
       background: #ffffff !important;
       border-color: #cbd5e1 !important;
@@ -44,7 +47,7 @@
     .paper-card h1 {
       color: #0f172a !important;
     }
-    
+
     .paper-meta-row {
       display: flex;
       align-items: center;
@@ -55,7 +58,7 @@
       padding-bottom: 1.5rem;
       margin-bottom: 2rem;
     }
-    
+
     .paper-authors-list {
       font-size: 0.95rem;
       color: #475569 !important;
@@ -64,7 +67,7 @@
     .paper-authors-list strong {
       color: #0f172a !important;
     }
-    
+
     .paper-body p {
       font-size: 1.0625rem !important;
       line-height: 1.75 !important;
@@ -72,7 +75,7 @@
       font-weight: 500 !important;
       margin-bottom: 1.5rem;
     }
-    
+
     .paper-body h2 {
       font-size: 1.35rem;
       font-weight: 700;
@@ -122,14 +125,21 @@
     }
 
     @media print {
-      .nav-header, .nav-controls, footer, .nav-cta, button {
+
+      .nav-header,
+      .nav-controls,
+      footer,
+      .nav-cta,
+      button {
         display: none !important;
       }
+
       body {
         background: #ffffff !important;
         color: #000000 !important;
         padding: 0 !important;
       }
+
       .paper-card {
         box-shadow: none !important;
         border: none !important;
@@ -137,10 +147,35 @@
         margin: 0 !important;
       }
     }
-    
+
     @media (max-width: 768px) {
+      main.container {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+        padding-top: 1rem !important;
+      }
+
       .paper-card {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1rem !important;
+        border-radius: var(--radius-sm) !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      .paper-body p,
+      .paper-abstract {
+        font-size: 0.95rem !important;
+        line-height: 1.65 !important;
+      }
+
+      .paper-body h2 {
+        font-size: 1.15rem !important;
+        margin: 1.75rem 0 0.75rem !important;
+      }
+
+      .paper-meta-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem !important;
       }
     }
   </style>
@@ -150,14 +185,16 @@
   <!-- Premium Sticky Navigation -->
   <header class="nav-header">
     <div class="nav-container">
-      <a href="../index.html" class="logo" title="Ethical Intelligence (formerly Ethical Compass)" aria-label="Ethical Intelligence (formerly Ethical Compass)">
+      <a href="../index.html" class="logo" title="Ethical Intelligence (formerly Ethical Compass)"
+        aria-label="Ethical Intelligence (formerly Ethical Compass)">
         <img src="../assets/logo.svg" alt="Ethical Intelligence (formerly Ethical Compass)" class="logo-img" />
         Ethical Intelligence
       </a>
       <div class="nav-controls">
         <a href="#" onclick="openBriefingModal(event)" class="nav-cta">Request a Briefing</a>
         <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -167,6 +204,14 @@
             <line x1="21" y1="12" x2="23" y2="12"></line>
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
         </button>
       </div>
@@ -182,20 +227,25 @@
   </header>
 
   <main class="container" style="padding-top: 2rem;">
-    
+
     <!-- Executive Paper Card Container with Integrated Academic Journal Header -->
     <article class="paper-card reveal">
-      
+
       <!-- Academic Journal Header (Inside White Card) -->
       <div style="border-bottom: 2px solid #e2e8f0; padding-bottom: 2rem; margin-bottom: 2rem;">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+        <div
+          style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
           <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
             <img src="../assets/logo.svg" alt="Ethical Intelligence Logo" style="width: 32px; height: 32px;" />
-            <span style="font-weight: 700; font-size: 1.15rem; color: #0f172a; letter-spacing: -0.01em;">Ethical Intelligence</span>
-            <div class="elegant-badge green-badge" style="margin: 0; background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0;">Executive Research Brief</div>
+            <span style="font-weight: 700; font-size: 1.15rem; color: #0f172a; letter-spacing: -0.01em;">Ethical
+              Intelligence</span>
+            <div class="elegant-badge green-badge"
+              style="margin: 0; background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0;">Executive Research
+              Brief</div>
           </div>
-          <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #059669; background: #ecfdf5; padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid #a7f3d0;">
-            3 Mins Read • Ref: EI-2026-08
+          <div
+            style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #059669; background: #ecfdf5; padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); border: 1px solid #a7f3d0;">
+            3 Mins Read • Ref: EI-2025-07
           </div>
         </div>
 
@@ -207,44 +257,80 @@
         </p>
 
         <div style="font-size: 0.95rem; color: #475569; margin-top: 1rem; line-height: 1.6;">
-          By <a href="about-us.html" style="color: #2563eb; text-decoration: underline; font-weight: 700;" title="View Gcwelethemba Tshuma Profile">Gcwelethemba Tshuma</a> &amp; <a href="about-us.html" style="color: #2563eb; text-decoration: underline; font-weight: 700;" title="View Praveen Naidoo Profile">Praveen Naidoo</a><br>
-          <span style="font-size: 0.85rem; color: #64748b; font-weight: 500; display: inline-block; margin-top: 0.35rem;">Published by Ethical Intelligence R&amp;D Division • August 2026</span>
+          By <a href="about-us.html" style="color: #2563eb; text-decoration: underline; font-weight: 700;"
+            title="View Gcwelethemba Tshuma Profile">Gcwelethemba Tshuma</a> &amp; <a href="about-us.html"
+            style="color: #2563eb; text-decoration: underline; font-weight: 700;"
+            title="View Praveen Naidoo Profile">Praveen Naidoo</a><br>
+          <span
+            style="font-size: 0.85rem; color: #64748b; font-weight: 500; display: inline-block; margin-top: 0.35rem;">Published by Ethical Intelligence R&amp;D Division • July 17 2025</span>
         </div>
       </div>
 
       <div class="paper-body">
-        
+
         <div class="paper-abstract">
-          <strong>Abstract:</strong> Traditional Governance, Risk, and Compliance (GRC) models rely on periodic, retrospective annual audits. In automated, high-velocity digital environments, this 12-month lag creates catastrophic operational blindspots. This briefing presents the architecture for <em>Continuous Institutional Oversight</em>—combining Multi-Agent Swarms, GraphRAG, and local sovereign SLMs to enforce POPIA and PFMA compliance in real-time.
+          <strong>Abstract:</strong> Traditional Governance, Risk, and Compliance (GRC) models rely on periodic,
+          retrospective annual audits. In automated, high-velocity digital environments, this 12-month lag creates
+          catastrophic operational blindspots. This briefing presents the architecture for <em>Continuous Institutional
+            Oversight</em>—combining Multi-Agent Swarms, GraphRAG, and local sovereign SLMs to enforce POPIA and PFMA
+          compliance in real-time.
         </div>
 
         <h2>1. The Structural Deficit of Retrospective Audits</h2>
-        <p>For decades, institutional governance in both the public and private sectors has operated on a post-mortem model. Traditional compliance relies on annual financial audits, static spreadsheets, and sample-based reporting. While sufficient for slow-moving industrial organizations, this retrospective framework is fundamentally inadequate for automated digital infrastructure.</p>
-        <p>When automated systems process millions of daily transactions, algorithmic bias, data corruption, and ethical drift occur within milliseconds. Identifying a governance failure twelve months after its occurrence leads to severe regulatory penalties, loss of public trust, and irreversible brand damage. <mark style="background: #fef08a; color: #0f172a; padding: 0.15rem 0.4rem; border-radius: 4px; font-weight: 700;">Modern institutions require real-time visibility, not historical autopsies.</mark></p>
+        <p>For decades, institutional governance in both the public and private sectors has operated on a post-mortem
+          model. Traditional compliance relies on annual financial audits, static spreadsheets, and sample-based
+          reporting. While sufficient for slow-moving industrial organizations, this retrospective framework is
+          fundamentally inadequate for automated digital infrastructure.</p>
+        <p>When automated systems process millions of daily transactions, algorithmic bias, data corruption, and ethical
+          drift occur within milliseconds. Identifying a governance failure twelve months after its occurrence leads to
+          severe regulatory penalties, loss of public trust, and irreversible brand damage. <mark
+            style="background: #fef08a; color: #0f172a; padding: 0.15rem 0.4rem; border-radius: 4px; font-weight: 700;">Modern
+            institutions require real-time visibility, not historical autopsies.</mark></p>
 
         <h2>2. Architecture for Continuous Oversight: Multi-Agent Swarms &amp; GraphRAG</h2>
-        <p>To solve this structural deficit, Ethical Intelligence introduces a dual-layer AI architecture engineered for deterministic, zero-hallucination compliance oversight:</p>
-        <p><strong>A. Multi-Agent Swarms:</strong> Dedicated autonomous AI agents operate across the data pipeline. While an <em>Ingestion Agent</em> monitors schema drift and volume anomalies, a parallel <em>Privacy Agent</em> continuously enforces row- and column-level PII masking before data touches reporting layers.</p>
-        <p><strong>B. GraphRAG Grounding:</strong> By uniting Knowledge Graphs with Retrieval-Augmented Generation (RAG), every metric and alert produced by the platform is mathematically linked to explicit legal statutes (such as South Africa's POPIA and PFMA frameworks). This eliminates AI hallucinations and ensures total auditability.</p>
+        <p>To solve this structural deficit, Ethical Intelligence introduces a dual-layer AI architecture engineered for
+          deterministic, zero-hallucination compliance oversight:</p>
+        <p><strong>A. Multi-Agent Swarms:</strong> Dedicated autonomous AI agents operate across the data pipeline.
+          While an <em>Ingestion Agent</em> monitors schema drift and volume anomalies, a parallel <em>Privacy
+            Agent</em> continuously enforces row- and column-level PII masking before data touches reporting layers.</p>
+        <p><strong>B. GraphRAG Grounding:</strong> By uniting Knowledge Graphs with Retrieval-Augmented Generation
+          (RAG), every metric and alert produced by the platform is mathematically linked to explicit legal statutes
+          (such as South Africa's POPIA and PFMA frameworks). This eliminates AI hallucinations and ensures total
+          auditability.</p>
 
         <h2>3. Sovereign Deployment &amp; Local Data Ownership</h2>
-        <p>Data sovereignty is non-negotiable for state entities, financial institutions, and central banks. Transmitting sensitive governance telemetry to public cloud APIs introduces severe national security and legal liabilities. Ethical Intelligence is architected for local, air-gapped deployment utilizing on-premise Small Language Models (SLMs).</p>
-        <p>By executing AI inference locally within secure institutional perimeters, organizations maintain 100% data ownership while adhering to African regulatory standards and international ISO 42001 AI governance benchmarks.</p>
+        <p>Data sovereignty is non-negotiable for state entities, financial institutions, and central banks.
+          Transmitting sensitive governance telemetry to public cloud APIs introduces severe national security and legal
+          liabilities. Ethical Intelligence is architected for local, air-gapped deployment utilizing on-premise Small
+          Language Models (SLMs).</p>
+        <p>By executing AI inference locally within secure institutional perimeters, organizations maintain 100% data
+          ownership while adhering to African regulatory standards and international ISO 42001 AI governance benchmarks.
+        </p>
 
         <h2>4. The Economic Imperative for C-Suite Leadership</h2>
-        <p>Moving from passive compliance to active intelligence is not merely a legal safety measure—it is a strategic capital allocation decision. Continuous oversight reduces forensic investigation costs by up to 75%, prevents regulatory fines, and provides board members with a real-time "Mission Control" dashboard of institutional health.</p>
+        <p>Moving from passive compliance to active intelligence is not merely a legal safety measure—it is a strategic
+          capital allocation decision. Continuous oversight reduces forensic investigation costs by up to 75%, prevents
+          regulatory fines, and provides board members with a real-time "Mission Control" dashboard of institutional
+          health.</p>
 
         <h2>5. Conclusion</h2>
-        <p>As African institutions scale automated systems, continuous oversight is the foundation of long-term resilience. Ethical Intelligence delivers the precision rigor required to transform governance from a passive administrative burden into a competitive strategic advantage.</p>
+        <p>As African institutions scale automated systems, continuous oversight is the foundation of long-term
+          resilience. Ethical Intelligence delivers the precision rigor required to transform governance from a passive
+          administrative burden into a competitive strategic advantage.</p>
 
         <!-- Institutional Citation Block -->
         <div class="citation-box">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
-            <h4 style="margin: 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-electric-blue);">Suggested Institutional Citation</h4>
+            <h4
+              style="margin: 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-electric-blue);">
+              Suggested Institutional Citation</h4>
             <span style="font-size: 0.75rem; color: var(--color-text-muted);">APA &amp; IEEE Format</span>
           </div>
           <div class="citation-code">
-            Tshuma, G., &amp; Naidoo, P. (2026). <em>Sovereign AI Intelligence in Continuous Governance Flows: Transitioning from Reactive Audits to Real-Time Institutional Oversight in Africa</em>. Ethical Intelligence R&amp;D Division, Tech. Rep. EI-2026-08. https://yesafrikaweb.github.io/ethical-compass/modules/research-brief.html
+            Tshuma, G., &amp; Naidoo, P. (2025). <em>Sovereign AI Intelligence in Continuous Governance Flows:
+              Transitioning from Reactive Audits to Real-Time Institutional Oversight in Africa</em>. Ethical
+            Intelligence R&amp;D Division, Tech. Rep. EI-2025-07.
+            https://yesafrikaweb.github.io/ethical-compass/modules/research-brief.html
           </div>
         </div>
 
@@ -253,13 +339,20 @@
     </article>
 
     <!-- Bottom Alignment Section Matching about-us.html -->
-    <section style="margin-top: 2rem; text-align: center; border-top: 1px solid var(--color-border); padding-top: 4rem; margin-bottom: 4rem;">
+    <section
+      style="margin-top: 2rem; text-align: center; border-top: 1px solid var(--color-border); padding-top: 4rem; margin-bottom: 4rem;">
       <div class="section-title" style="margin: 0 auto; max-width: 750px;">
         <h2>Research &amp; Advisory Ecosystem</h2>
-        <p class="hero-subtitle" style="font-size: 1.0625rem; line-height: 1.7; text-align: center; margin: 0 auto; max-width: 720px; width: 100%;">Our research output bridges academic rigor with frontline sovereign AI implementation. Explore our technical modules or connect directly with our governance experts to schedule an executive briefing.</p>
+        <p class="hero-subtitle"
+          style="font-size: 1.0625rem; line-height: 1.7; text-align: center; margin: 0 auto; max-width: 720px; width: 100%;">
+          Our research output bridges academic rigor with frontline sovereign AI implementation. Explore our technical
+          modules or connect directly with our governance experts to schedule an executive briefing.</p>
         <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-          <a href="about-us.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.25rem; border: 1px solid var(--color-border-bright); border-radius: var(--radius-sm); font-size: 0.875rem; font-weight: 600; text-decoration: none; color: var(--color-text-bright); background: rgba(255, 255, 255, 0.03);">View Leadership Team</a>
-          <a href="#" onclick="openBriefingModal(event)" class="nav-cta" style="padding: 0.65rem 1.5rem; font-size: 0.9rem;">Request a Briefing</a>
+          <a href="about-us.html" class="nav-link"
+            style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.25rem; border: 1px solid var(--color-border-bright); border-radius: var(--radius-sm); font-size: 0.875rem; font-weight: 600; text-decoration: none; color: var(--color-text-bright); background: rgba(255, 255, 255, 0.03);">View
+            Leadership Team</a>
+          <a href="#" onclick="openBriefingModal(event)" class="nav-cta"
+            style="padding: 0.65rem 1.5rem; font-size: 0.9rem;">Request a Briefing</a>
         </div>
       </div>
     </section>
@@ -272,13 +365,17 @@
       <img src="../assets/logo.svg" alt="Ethical Intelligence Logo" style="width: 24px; height: 24px;" />
       <h4 style="margin: 0;">Ethical Intelligence</h4>
     </div>
-    <div class="footer-meta" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 1rem;">
-      <p style="font-size: 12px; color: var(--color-text-muted); margin: 0;">&copy; 2008 - 2026 Ethical Intelligence. All Rights Reserved.</p>
-      <p class="author-credit" style="font-size: 0.75rem; color: var(--color-text-muted, #888); margin: 0;">Developed &amp; Maintained by <strong>Gcwelethemba Tshuma</strong></p>
+    <div class="footer-meta"
+      style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 1rem;">
+      <p style="font-size: 12px; color: var(--color-text-muted); margin: 0;">&copy; 2008 - 2026 Ethical Intelligence.
+        All Rights Reserved.</p>
+      <p class="author-credit" style="font-size: 0.75rem; color: var(--color-text-muted, #888); margin: 0;">Developed
+        &amp; Maintained by <strong>Gcwelethemba Tshuma</strong></p>
     </div>
   </footer>
 
   <script src="../config.js"></script>
   <script src="../main.js"></script>
 </body>
+
 </html>

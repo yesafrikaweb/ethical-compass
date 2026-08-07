@@ -69,7 +69,7 @@ body.light-mode {
   --color-electric-blue-glow: rgba(59, 130, 246, 0.06);
   --color-ubuntu-orange-glow: rgba(233, 84, 32, 0.06);
   --gradient-subtle: linear-gradient(135deg, rgba(59, 130, 246, 0.03), rgba(233, 84, 32, 0.03));
-  
+
 }
 
 * {
@@ -81,7 +81,7 @@ body.light-mode {
 /* --- RESET & CORE STYLES --- */
 body {
   background-color: var(--color-midnight);
-  
+
   background-repeat: repeat;
   color: var(--color-text-bright);
   font-family: var(--font-main);
@@ -716,6 +716,7 @@ body.light-mode .diagram-card:hover {
 }
 
 @media (hover: hover) {
+
   .diagram-card:hover::before,
   .matrix-item:hover::before,
   .pricing-card:hover::before {
@@ -958,8 +959,17 @@ body.light-mode .chart-status-pill {
 }
 
 @keyframes pulseLiveDot {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.35); opacity: 0.6; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 0.6;
+  }
 }
 
 .chart-metrics-summary {
@@ -1037,8 +1047,15 @@ body.light-mode .chart-grid-line {
 }
 
 @keyframes nodeRingPulse {
-  0% { transform: scale(1); opacity: 0.5; }
-  100% { transform: scale(2.5); opacity: 0; }
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
 }
 
 .chart-time-scale {
@@ -1313,7 +1330,8 @@ body.light-mode .orange-check {
   position: relative;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  min-width: 0; /* Prevents card from growing with content */
+  min-width: 0;
+  /* Prevents card from growing with content */
 }
 
 body.light-mode .matrix-item {
@@ -1646,6 +1664,7 @@ body.light-mode .scroll-arrow-btn {
   color: var(--color-electric-blue);
   transform: scale(1.05);
 }
+
 .calculator-container {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -2689,8 +2708,10 @@ body.light-mode .footer-brand img {
 .card-logs {
   margin-top: 1.5rem;
   height: 100px;
-  background: rgba(0, 0, 0, 0.4); /* Slightly deeper background */
-  border: 1px solid var(--color-border-bright); /* Full border as requested */
+  background: rgba(0, 0, 0, 0.4);
+  /* Slightly deeper background */
+  border: 1px solid var(--color-border-bright);
+  /* Full border as requested */
   padding: 0.75rem 1rem;
   font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace;
   font-size: 0.7rem;
@@ -2699,7 +2720,8 @@ body.light-mode .footer-brand img {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border-radius: var(--radius-sm); /* Contained box shape */
+  border-radius: var(--radius-sm);
+  /* Contained box shape */
   position: relative;
 }
 
@@ -2712,7 +2734,8 @@ body.light-mode .footer-brand img {
   text-overflow: ellipsis;
   flex-shrink: 0;
   transition: margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
-  will-change: margin-top, opacity; /* Hardware acceleration hint */
+  will-change: margin-top, opacity;
+  /* Hardware acceleration hint */
 }
 
 .log-tag {
@@ -3797,14 +3820,17 @@ body.light-mode .full-calculator {
   .horizontal-features-section {
     margin-top: 4rem !important;
   }
+
   .horizontal-scroll-track {
     gap: 1rem;
     padding-bottom: 1rem;
   }
+
   .feature-scroll-card {
     flex: 0 0 280px;
     padding: 1.75rem 1.5rem;
   }
+
   .forensic-log-preview {
     font-size: 0.7rem;
     word-break: break-all;
@@ -3817,17 +3843,21 @@ body.light-mode .full-calculator {
     padding: 0;
     margin-bottom: 2rem;
   }
+
   .svg-text .text-right-node {
     text-anchor: end;
     transform: translate(-50px, -20px);
   }
+
   .svg-text .text-left-node {
     text-anchor: start;
     transform: translate(50px, -20px);
   }
+
   .feature-scroll-card {
     flex: 0 0 85vw;
   }
+
   .phase-card {
     padding: 1.75rem 1.5rem;
   }
@@ -3838,21 +3868,26 @@ body.light-mode .full-calculator {
   .full-calculator {
     padding: 2rem 1.25rem !important;
   }
+
   .calc-grid {
     grid-template-columns: 1fr !important;
     gap: 2.5rem !important;
   }
+
   .analysis-report {
     margin-top: 2.5rem !important;
     padding-top: 2rem !important;
   }
+
   .report-item {
     padding: 1rem 0;
   }
+
   .table-container {
     border-radius: 12px;
   }
-  .elegant-table th, 
+
+  .elegant-table th,
   .elegant-table td {
     padding: 1rem 1.25rem;
   }
@@ -3862,6 +3897,7 @@ body.light-mode .full-calculator {
   .roi-value {
     font-size: 3.5rem !important;
   }
+
   .formula-badge {
     font-size: 0.7rem;
     padding: 0.4rem 0.75rem;
@@ -3875,16 +3911,20 @@ body.light-mode .full-calculator {
     padding: 2rem 1.5rem;
     margin-bottom: 2.5rem;
   }
+
   .leader-info h2 {
     font-size: 1.75rem;
   }
+
   .leader-bio p {
     font-size: 0.975rem;
     line-height: 1.65;
   }
+
   .expertise-list {
     gap: 0.5rem;
   }
+
   .expertise-tag {
     padding: 0.35rem 0.85rem;
     font-size: 0.7rem;
@@ -3896,10 +3936,12 @@ body.light-mode .full-calculator {
   .matrix-item {
     padding: 2rem 1.5rem;
   }
+
   .matrix-item h4 {
     font-size: 1.2rem;
     padding-right: 2rem;
   }
+
   .matrix-item-watermark {
     top: 1.5rem;
     right: 1.25rem;
@@ -3907,6 +3949,7 @@ body.light-mode .full-calculator {
     height: 28px;
     opacity: 0.2;
   }
+
   .card-logs {
     height: 90px;
     padding: 0.6rem 0.85rem;
@@ -3918,11 +3961,13 @@ body.light-mode .full-calculator {
   .matrix-item {
     padding: 1.5rem 1.25rem;
   }
+
   .matrix-item .matrix-item-desc {
     font-size: 0.875rem;
     line-height: 1.5;
   }
 }
+
 /* --- PREMIUM SHARE MODAL --- */
 .share-modal-overlay {
   position: fixed;
@@ -4027,10 +4072,11 @@ body.light-mode .share-qr-container {
   width: 160px;
   height: 160px;
   border-radius: var(--radius-sm);
-  background: #fff; /* Ensure QR is always on white for scanning */
+  background: #fff;
+  /* Ensure QR is always on white for scanning */
   padding: 8px;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .qr-hint {
@@ -4157,7 +4203,7 @@ body.light-mode .share-input-group {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
-  
+
   .briefing-embed-card {
     padding: 1.5rem 1.25rem;
     gap: 1.75rem;
@@ -4333,7 +4379,9 @@ body.light-mode .share-input-group {
   color: var(--color-text-bright);
 }
 
-.briefing-form-input, .briefing-form-select, .briefing-form-textarea {
+.briefing-form-input,
+.briefing-form-select,
+.briefing-form-textarea {
   width: 100%;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.03);
@@ -4342,7 +4390,8 @@ body.light-mode .share-input-group {
   padding: 0.8rem 0.9rem;
   color: var(--color-text-bright);
   font-family: var(--font-main);
-  font-size: 1rem; /* 16px prevents iOS Safari automatic focus zoom */
+  font-size: 1rem;
+  /* 16px prevents iOS Safari automatic focus zoom */
   transition: var(--transition);
   max-width: 100%;
 }
@@ -4352,7 +4401,9 @@ body.light-mode .share-input-group {
   min-height: 90px;
 }
 
-.briefing-form-input:focus, .briefing-form-select:focus, .briefing-form-textarea:focus {
+.briefing-form-input:focus,
+.briefing-form-select:focus,
+.briefing-form-textarea:focus {
   outline: none;
   border-color: var(--color-electric-blue);
   box-shadow: 0 0 0 3px var(--color-electric-blue-glow);
@@ -4411,4 +4462,3 @@ body.light-mode .share-input-group {
   transform: translateY(0);
   opacity: 1;
 }
-
