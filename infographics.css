@@ -2658,7 +2658,8 @@ body.light-mode .best-value {
   width: 2rem;
   height: 2rem;
   background: transparent;
-  border: 1px solid var(--color-border-bright);
+  border: none;
+  outline: none;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -2728,7 +2729,6 @@ body.light-mode .best-value {
 
 .mode-toggle:hover {
   color: var(--color-electric-blue);
-  border-color: var(--color-electric-blue);
 }
 
 /* Footer Styles */
@@ -3569,7 +3569,8 @@ body.light-mode .full-calculator {
 .menu-toggle {
   display: none;
   background: transparent;
-  border: 1px solid var(--color-border-bright);
+  border: none;
+  outline: none;
   border-radius: var(--radius-sm);
   color: var(--color-text-bright);
   cursor: pointer;
@@ -3591,7 +3592,6 @@ body.light-mode .full-calculator {
 }
 
 .menu-toggle:hover {
-  border-color: var(--color-electric-blue);
   color: var(--color-electric-blue);
 }
 
