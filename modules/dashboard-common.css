@@ -226,6 +226,21 @@ h1, h2, h3, h4, h5, h6 {
   right: 0 !important;
 }
 
+/* System Bot & User Avatar Icon Utility */
+.system-avatar-icon,
+.bot-avatar-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-image: url('../assets/icon-avatar.svg');
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1.5px solid var(--color-border-bright, rgba(59, 130, 246, 0.4));
+}
+
 body.light-mode .profile-card {
   border-bottom: none !important;
 }

@@ -2047,6 +2047,20 @@ body.light-mode .pricing-contact-label {
   border: 2px solid var(--color-border-bright);
 }
 
+.system-avatar-icon,
+.bot-avatar-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background-image: url('assets/icon-avatar.svg');
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1.5px solid var(--color-border-bright, rgba(59, 130, 246, 0.4));
+}
+
 .author-name {
   font-weight: 700;
   font-size: 1rem;

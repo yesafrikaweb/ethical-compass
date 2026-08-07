@@ -8,10 +8,16 @@
   "theme_color": "#08090a",
   "icons": [
     {
-      "src": "assets/logo-avatar.svg",
+      "src": "assets/icon-avatar.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-avatar.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
     }
   ],
   "version": "0.20"
