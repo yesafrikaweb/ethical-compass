@@ -93,43 +93,91 @@
 
   <main class="container" style="padding-top: 0;">
     <div class="loop-visual-container reveal">
-      <svg class="svg-diagram" viewBox="0 0 400 400">
-        <!-- Central Anchor Icon -->
-        <g class="diagram-center-icon">
-          <circle cx="200" cy="200" r="40" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4" />
-          <path d="M200 185v30M185 200h30" stroke="currentColor" stroke-width="1" />
-          <circle cx="200" cy="200" r="4" fill="currentColor" />
-        </g>
-        
-        <circle cx="200" cy="200" r="150" class="connector" />
-        <circle cx="200" cy="200" r="150" class="connector-active" />
+      <svg class="svg-diagram ndebele-diamond-chart" viewBox="0 0 400 400">
+        <!-- SVG Gradients for Vibrant Ndebele Palette -->
+        <defs>
+          <linearGradient id="ndebeleGradFeat" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#10b981" />
+            <stop offset="33%" stop-color="#f59e0b" />
+            <stop offset="66%" stop-color="#f97316" />
+            <stop offset="100%" stop-color="#3b82f6" />
+          </linearGradient>
+        </defs>
 
-        <g class="node-group" transform="translate(200, 50)">
-          <circle r="10" class="node node-active" />
-          <text y="-35" text-anchor="middle" class="svg-text">
-            <tspan x="0" dy="0" class="phase-label">Phase 01</tspan>
+        <!-- Central Ndebele Diamond Core (Rich Vibrant Palette) -->
+        <g class="ndebele-core">
+          <polygon points="200,160 240,200 200,240 160,200" fill="rgba(249, 115, 22, 0.12)" stroke="#f97316" stroke-width="2" stroke-dasharray="4 3" />
+          <polygon points="200,175 225,200 200,225 175,200" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="2" />
+          <polygon points="200,188 212,200 200,212 188,200" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5" />
+          <circle cx="200" cy="200" r="3" fill="#ffffff" />
+          <!-- Crosshair Notches -->
+          <path d="M 200,140 L 200,155 M 200,245 L 200,260 M 140,200 L 155,200 M 245,200 L 260,200" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" />
+        </g>
+
+        <!-- Inner Concentric Diamond Frame -->
+        <polygon points="200,105 295,200 200,295 105,200" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.6" />
+
+        <!-- Main Outer Ithala Diamond Path -->
+        <polygon points="200,60 340,200 200,340 60,200" class="connector" stroke="rgba(255,255,255,0.15)" stroke-width="2" />
+        <polygon points="200,60 340,200 200,340 60,200" class="connector-active ndebele-diamond-active" />
+
+        <!-- Ndebele Color-Coded Chevron Markers along Edges -->
+        <g class="ndebele-chevrons">
+          <!-- Top-Right Edge Chevron (Green -> Yellow) -->
+          <path d="M 265,125 L 277,137 L 265,149" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M 257,125 L 269,137 L 257,149" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
+
+          <!-- Bottom-Right Edge Chevron (Yellow -> Orange) -->
+          <path d="M 277,263 L 265,275 L 253,263" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M 277,253 L 265,265 L 253,253" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
+
+          <!-- Bottom-Left Edge Chevron (Orange -> Blue) -->
+          <path d="M 135,275 L 123,263 L 135,251" fill="none" stroke="#f97316" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M 143,275 L 131,263 L 143,251" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
+
+          <!-- Top-Left Edge Chevron (Blue -> Green) -->
+          <path d="M 123,137 L 135,125 L 147,137" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M 123,147 L 135,135 L 147,147" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
+        </g>
+
+        <!-- Phase Nodes Color-Coded -->
+        <!-- Phase 01: Green (Analysis) -->
+        <g class="node-group" transform="translate(200, 60)">
+          <polygon points="0,-14 14,0 0,14 -14,0" class="node-diamond node-diamond-green" />
+          <polygon points="0,-5 5,0 0,5 -5,0" fill="#ffffff" />
+          <text y="-30" text-anchor="middle" class="svg-text">
+            <tspan x="0" dy="0" class="phase-label" style="fill: #10b981; font-weight: 700;">Phase 01</tspan>
             <tspan x="0" dy="1.2em" class="phase-title">Analysis</tspan>
           </text>
         </g>
-        <g class="node-group" transform="translate(350, 200)">
-          <circle r="10" class="node" />
-          <text x="25" y="-5" text-anchor="start" class="svg-text text-right-node">
-            <tspan x="25" dy="0" class="phase-label">Phase 02</tspan>
-            <tspan x="25" dy="1.2em" class="phase-title">Insight</tspan>
+
+        <!-- Phase 02: Yellow (Insight) -->
+        <g class="node-group" transform="translate(340, 200)">
+          <polygon points="0,-14 14,0 0,14 -14,0" class="node-diamond node-diamond-yellow" />
+          <polygon points="0,-5 5,0 0,5 -5,0" fill="#ffffff" />
+          <text x="24" y="-5" text-anchor="start" class="svg-text text-right-node">
+            <tspan x="24" dy="0" class="phase-label" style="fill: #f59e0b; font-weight: 700;">Phase 02</tspan>
+            <tspan x="24" dy="1.2em" class="phase-title">Insight</tspan>
           </text>
         </g>
-        <g class="node-group" transform="translate(200, 350)">
-          <circle r="10" class="node" />
-          <text y="35" text-anchor="middle" class="svg-text">
-            <tspan x="0" dy="0" class="phase-label">Phase 03</tspan>
+
+        <!-- Phase 03: Orange (Action) -->
+        <g class="node-group" transform="translate(200, 340)">
+          <polygon points="0,-14 14,0 0,14 -14,0" class="node-diamond node-diamond-orange" />
+          <polygon points="0,-5 5,0 0,5 -5,0" fill="#ffffff" />
+          <text y="34" text-anchor="middle" class="svg-text">
+            <tspan x="0" dy="0" class="phase-label" style="fill: #f97316; font-weight: 700;">Phase 03</tspan>
             <tspan x="0" dy="1.2em" class="phase-title">Action</tspan>
           </text>
         </g>
-        <g class="node-group" transform="translate(50, 200)">
-          <circle r="10" class="node" />
-          <text x="-25" y="-5" text-anchor="end" class="svg-text text-left-node">
-            <tspan x="-25" dy="0" class="phase-label">Phase 04</tspan>
-            <tspan x="-25" dy="1.2em" class="phase-title">Proof</tspan>
+
+        <!-- Phase 04: Blue (Proof) -->
+        <g class="node-group" transform="translate(60, 200)">
+          <polygon points="0,-14 14,0 0,14 -14,0" class="node-diamond node-diamond-blue" />
+          <polygon points="0,-5 5,0 0,5 -5,0" fill="#ffffff" />
+          <text x="-24" y="-5" text-anchor="end" class="svg-text text-left-node">
+            <tspan x="-24" dy="0" class="phase-label" style="fill: #3b82f6; font-weight: 700;">Phase 04</tspan>
+            <tspan x="-24" dy="1.2em" class="phase-title">Proof</tspan>
           </text>
         </g>
       </svg>
