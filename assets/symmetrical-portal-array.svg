@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Ndebele Ithala Architecture - Concept 3: The Symmetrical Portal Array (3-Diamond Sovereign Gateway)
+  Copyright (c) 2025 Gcwelethemba Tshuma & Ethical Intelligence R&D Division. All Rights Reserved.
+  Designed & Authored by Gcwelethemba Tshuma.
+  Ref: EI-2025-ITHALA-03-SLIDESHOW
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" aria-labelledby="portal-title portal-desc">
+  <title id="portal-title">Ndebele Symmetrical Portal Array - 3-Diamond Sovereign Gateway</title>
+  <desc id="portal-desc">Designed &amp; Copyrighted by Gcwelethemba Tshuma and Ethical Intelligence R&amp;D Division (2025). High-resolution 16:9 presentation SVG asset for continuous AI governance slideshows.</desc>
+  <metadata>
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#">
+      <cc:Work>
+        <dc:title>Ndebele Symmetrical Portal Array (3-Diamond Sovereign Gateway)</dc:title>
+        <dc:creator>Gcwelethemba Tshuma</dc:creator>
+        <dc:publisher>Ethical Intelligence R&amp;D Division</dc:publisher>
+        <dc:date>2025-07-17</dc:date>
+        <dc:rights>&copy; 2025 Gcwelethemba Tshuma &amp; Ethical Intelligence. All Rights Reserved.</dc:rights>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+
+  <defs>
+    <!-- Dark Sovereign Slate Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08090a" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#050608" />
+    </linearGradient>
+
+    <!-- Portal 1 (Green Telemetry) Gradient -->
+    <linearGradient id="greenPortalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <!-- Portal 2 (Center Sovereign Gold/Ochre) Gradient -->
+    <linearGradient id="centerPortalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+
+    <!-- Portal 3 (Blue Proof) Gradient -->
+    <linearGradient id="bluePortalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+
+    <!-- Circuit Dash Line Gradient -->
+    <linearGradient id="circuitGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .bg-rect { fill: url(#bgGrad); }
+    .grid-line { stroke: rgba(255, 255, 255, 0.05); stroke-width: 1; stroke-dasharray: 4 8; }
+    .bridge-line { stroke: rgba(255, 255, 255, 0.15); stroke-width: 2; fill: none; }
+    .bridge-active { stroke: url(#circuitGrad); stroke-width: 3; fill: none; stroke-dasharray: 16 12; animation: bridgeDash 12s linear infinite; filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.6)); }
+    .white-pulse { stroke: #ffffff; stroke-width: 2.5; fill: none; stroke-dasharray: 12 12; animation: bridgeDash 10s linear infinite; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); }
+    
+    .portal-outer { stroke-width: 2; fill: none; }
+    .portal-inner { stroke-width: 1.5; fill: none; stroke-dasharray: 6 4; }
+    
+    .portal-green { stroke: #10b981; filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.4)); }
+    .portal-gold { stroke: #f59e0b; filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.5)); }
+    .portal-blue { stroke: #3b82f6; filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.4)); }
+
+    .node-text-title { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 700; fill: #ffffff; letter-spacing: 0.05em; text-transform: uppercase; }
+    .node-text-sub { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+    
+    @keyframes bridgeDash {
+      to { stroke-dashoffset: -320; }
+    }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="1920" height="1080" class="bg-rect" />
+
+  <!-- Ndebele Architectural Grid Lines -->
+  <g class="grid-lines">
+    <line x1="0" y1="270" x2="1920" y2="270" class="grid-line" />
+    <line x1="0" y1="540" x2="1920" y2="540" class="grid-line" />
+    <line x1="0" y1="810" x2="1920" y2="810" class="grid-line" />
+    <line x1="420" y1="0" x2="420" y2="1080" class="grid-line" />
+    <line x1="960" y1="0" x2="960" y2="1080" class="grid-line" />
+    <line x1="1500" y1="0" x2="1500" y2="1080" class="grid-line" />
+  </g>
+
+  <!-- Outer Ndebele Border Chevron Frame -->
+  <g class="border-frame" opacity="0.4">
+    <!-- Top Left Corner Chevron -->
+    <path d="M 60,120 L 120,60 L 240,60" stroke="#10b981" stroke-width="3" fill="none" />
+    <!-- Top Right Corner Chevron -->
+    <path d="M 1860,120 L 1800,60 L 1680,60" stroke="#3b82f6" stroke-width="3" fill="none" />
+    <!-- Bottom Left Corner Chevron -->
+    <path d="M 60,960 L 120,1020 L 240,1020" stroke="#10b981" stroke-width="3" fill="none" />
+    <!-- Bottom Right Corner Chevron -->
+    <path d="M 1860,960 L 1800,1020 L 1680,1020" stroke="#3b82f6" stroke-width="3" fill="none" />
+  </g>
+
+  <!-- Connecting Telemetry Bridges (Horizontal & Diagonal Interconnecting Paths) -->
+  <g class="connecting-bridges">
+    <!-- Center Horizontal Backbone -->
+    <path d="M 180,540 L 1740,540" class="bridge-line" />
+    <path d="M 180,540 L 1740,540" class="bridge-active" />
+    
+    <!-- Top Symmetrical Diamond Circuit Loop -->
+    <path d="M 420,540 L 960,180 L 1500,540 L 960,900 Z" class="bridge-line" />
+    <path d="M 420,540 L 960,180 L 1500,540 L 960,900 Z" class="white-pulse" />
+  </g>
+
+  <!-- PORTAL 1 (LEFT): Telemetry & Ingestion Gateway (Center: 420, 540) -->
+  <g class="portal-gateway-1" transform="translate(420, 540)">
+    <!-- Outer Ithala Diamond -->
+    <polygon points="0,-180 180,0 0,180 -180,0" class="portal-outer portal-green" />
+    <!-- Concentric Inner Diamond -->
+    <polygon points="0,-130 130,0 0,130 -130,0" class="portal-inner portal-green" fill="rgba(16, 185, 129, 0.05)" />
+    <polygon points="0,-80 80,0 0,80 -80,0" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="2" />
+    <!-- Center Emblem Core -->
+    <polygon points="0,-30 30,0 0,30 -30,0" fill="#10b981" stroke="#ffffff" stroke-width="2" />
+    <circle cx="0" cy="0" r="5" fill="#ffffff" />
+    <!-- Cardinal Chevron Accents -->
+    <path d="M 0,-150 L 15,-135 L -15,-135 Z" fill="#10b981" />
+    <path d="M 150,0 L 135,15 L 135,-15 Z" fill="#10b981" />
+    <path d="M 0,150 L 15,135 L -15,135 Z" fill="#10b981" />
+    <path d="M -150,0 L -135,15 L -135,-15 Z" fill="#10b981" />
+    
+    <!-- Portal Labels -->
+    <text y="-210" text-anchor="middle" class="node-text-sub" fill="#10b981">Gateway 01</text>
+    <text y="225" text-anchor="middle" class="node-text-title">Telemetry &amp; Ingestion</text>
+    <text y="250" text-anchor="middle" class="node-text-sub" fill="rgba(255,255,255,0.6)">POPIA / PFMA Stream Observation</text>
+  </g>
+
+  <!-- PORTAL 2 (CENTER): Sovereign Executive Core (Center: 960, 540) -->
+  <g class="portal-gateway-2" transform="translate(960, 540)">
+    <!-- Outer Ithala Diamond -->
+    <polygon points="0,-240 240,0 0,240 -240,0" class="portal-outer portal-gold" stroke-width="3" />
+    <!-- Concentric Inner Diamonds -->
+    <polygon points="0,-180 180,0 0,180 -180,0" class="portal-inner portal-gold" fill="rgba(245, 158, 11, 0.08)" />
+    <polygon points="0,-120 120,0 0,120 -120,0" fill="rgba(249, 115, 22, 0.18)" stroke="#f97316" stroke-width="2.5" />
+    <polygon points="0,-60 60,0 0,60 -60,0" fill="url(#centerPortalGrad)" stroke="#ffffff" stroke-width="3" />
+    <circle cx="0" cy="0" r="8" fill="#ffffff" />
+    
+    <!-- Cardinal Chevron Accents -->
+    <path d="M 0,-210 L 20,-190 L -20,-190 Z" fill="#f59e0b" />
+    <path d="M 210,0 L 190,20 L 190,-20 Z" fill="#f59e0b" />
+    <path d="M 0,210 L 20,190 L -20,190 Z" fill="#f59e0b" />
+    <path d="M -210,0 L -190,20 L -190,-20 Z" fill="#f59e0b" />
+
+    <!-- Central Executive Brand Text -->
+    <text y="-270" text-anchor="middle" class="node-text-sub" fill="#f59e0b">Sovereign Core</text>
+    <text y="285" text-anchor="middle" class="node-text-title" font-size="24">Ethical Intelligence</text>
+    <text y="312" text-anchor="middle" class="node-text-sub" fill="rgba(255,255,255,0.7)">Continuous C-Suite Oversight</text>
+  </g>
+
+  <!-- PORTAL 3 (RIGHT): Immutable Audit Proof Gateway (Center: 1500, 540) -->
+  <g class="portal-gateway-3" transform="translate(1500, 540)">
+    <!-- Outer Ithala Diamond -->
+    <polygon points="0,-180 180,0 0,180 -180,0" class="portal-outer portal-blue" />
+    <!-- Concentric Inner Diamond -->
+    <polygon points="0,-130 130,0 0,130 -130,0" class="portal-inner portal-blue" fill="rgba(59, 130, 246, 0.05)" />
+    <polygon points="0,-80 80,0 0,80 -80,0" fill="rgba(59, 130, 246, 0.15)" stroke="#3b82f6" stroke-width="2" />
+    <!-- Center Emblem Core -->
+    <polygon points="0,-30 30,0 0,30 -30,0" fill="#3b82f6" stroke="#ffffff" stroke-width="2" />
+    <circle cx="0" cy="0" r="5" fill="#ffffff" />
+    <!-- Cardinal Chevron Accents -->
+    <path d="M 0,-150 L 15,-135 L -15,-135 Z" fill="#3b82f6" />
+    <path d="M 150,0 L 135,15 L 135,-15 Z" fill="#3b82f6" />
+    <path d="M 0,150 L 15,135 L -15,135 Z" fill="#3b82f6" />
+    <path d="M -150,0 L -135,15 L -135,-15 Z" fill="#3b82f6" />
+    
+    <!-- Portal Labels -->
+    <text y="-210" text-anchor="middle" class="node-text-sub" fill="#3b82f6">Gateway 03</text>
+    <text y="225" text-anchor="middle" class="node-text-title">Immutable Audit Proof</text>
+    <text y="250" text-anchor="middle" class="node-text-sub" fill="rgba(255,255,255,0.6)">ISO 42001 Forensic Logs</text>
+  </g>
+
+  <!-- Copyright Footer Banner (Embedded into Presentation Asset) -->
+  <g class="svg-footer" transform="translate(960, 1030)">
+    <text text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="rgba(255, 255, 255, 0.45)" letter-spacing="0.1em">
+      &copy; 2025 ETHICAL INTELLIGENCE R&amp;D DIVISION • DESIGNED BY GCWELETHEMBA TSHUMA • REF: EI-2025-ITHALA-03
+    </text>
+  </g>
+</svg>
