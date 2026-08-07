@@ -393,6 +393,53 @@ function initRealTimeChart() {
   }, 2200);
 }
 
+// --- SHARE PLATFORM ---
+function sharePlatform() {
+  const shareData = {
+    title: document.title || 'Ethical Intelligence',
+    text: 'Check out Ethical Intelligence platform.',
+    url: window.location.href
+  };
+
+  if (navigator.share) {
+    navigator.share(shareData).catch((err) => {
+      if (err.name !== 'AbortError') {
+        copyToClipboard();
+      }
+    });
+  } else {
+    copyToClipboard();
+  }
+
+  function copyToClipboard() {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(window.location.href)
+        .then(showTooltip)
+        .catch(showTooltip);
+    } else {
+      const textArea = document.createElement('textarea');
+      textArea.value = window.location.href;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+      } catch (e) {}
+      document.body.removeChild(textArea);
+      showTooltip();
+    }
+  }
+
+  function showTooltip() {
+    const btn = document.querySelector('.footer-share-btn');
+    if (btn) {
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.classList.remove('copied');
+      }, 2000);
+    }
+  }
+}
+
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
   loadTheme();
