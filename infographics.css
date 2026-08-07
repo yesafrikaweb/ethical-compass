@@ -1159,14 +1159,14 @@ body.light-mode .ticker-value {
 */
 .table-container {
   width: 100%;
-  overflow-x: auto;
+  max-width: 100%;
+  overflow-x: auto !important;
   -webkit-overflow-scrolling: touch;
   margin-top: 2rem;
   background: var(--color-deep-blue);
   border: 1px solid var(--color-border-bright);
   border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
 }
 
 body.light-mode .table-container {
@@ -3885,11 +3885,36 @@ body.light-mode .full-calculator {
 
   .table-container {
     border-radius: 12px;
+    margin: 1.5rem 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .elegant-table {
+    min-width: 640px !important;
+    table-layout: fixed !important;
   }
 
   .elegant-table th,
   .elegant-table td {
-    padding: 1rem 1.25rem;
+    padding: 0.85rem 1rem !important;
+    font-size: 0.85rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .elegant-table th:first-child,
+  .elegant-table td:first-child {
+    width: 24% !important;
+  }
+
+  .elegant-table th:nth-child(2),
+  .elegant-table td:nth-child(2),
+  .elegant-table th:nth-child(3),
+  .elegant-table td:nth-child(3) {
+    width: 38% !important;
   }
 }
 
