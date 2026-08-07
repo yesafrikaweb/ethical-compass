@@ -3907,14 +3907,20 @@ body.light-mode .full-calculator {
 
   .elegant-table th:first-child,
   .elegant-table td:first-child {
-    width: 24% !important;
+    width: 28% !important;
   }
 
   .elegant-table th:nth-child(2),
   .elegant-table td:nth-child(2),
   .elegant-table th:nth-child(3),
   .elegant-table td:nth-child(3) {
-    width: 38% !important;
+    width: 36% !important;
+  }
+
+  .precision-check::before,
+  .orange-check::before {
+    margin-right: 0.4rem !important;
+    font-size: 1rem !important;
   }
 }
 
