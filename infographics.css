@@ -2990,6 +2990,25 @@ body.red-theme .logic-step:hover::before,
   box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
 }
 
+body.yellow-theme .spec-label,
+.yellow-theme .spec-label {
+  color: #f59e0b;
+}
+
+body.light-mode.yellow-theme .spec-label,
+body.light-mode .yellow-theme .spec-label {
+  color: #d97706;
+}
+
+body.yellow-theme .logic-step.active::before,
+body.yellow-theme .logic-step:hover::before,
+.yellow-theme .logic-step.active::before,
+.yellow-theme .logic-step:hover::before {
+  border-color: #f59e0b;
+  background: #f59e0b;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.6);
+}
+
 /* Personnel Specifics */
 .personnel-hero {
   text-align: center;
