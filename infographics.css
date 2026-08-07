@@ -2679,7 +2679,8 @@ body.light-mode .best-value {
 
 .footer-share-btn {
   background: transparent;
-  border: 1px solid var(--color-border-bright);
+  border: none;
+  outline: none;
   border-radius: var(--radius-sm);
   color: var(--color-text-muted);
   width: 2.25rem;
@@ -2700,7 +2701,6 @@ body.light-mode .best-value {
 
 .footer-share-btn:hover {
   color: var(--color-electric-blue);
-  border-color: var(--color-electric-blue);
   box-shadow: 0 0 15px var(--color-electric-blue-glow);
 }
 
