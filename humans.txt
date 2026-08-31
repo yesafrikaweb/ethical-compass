@@ -1,0 +1,11 @@
+/* TEAM */
+  Architect & Developer: Gcwelethemba Tshuma
+  Role: Founder, Chief Architect & Lead Engineer
+  Organization: Ethical Intelligence / Yes Afrika Foundation
+  Website: https://yesafrikaweb.github.io/ethical-compass/
+  LinkedIn: https://www.linkedin.com/in/gcwelethemba-t-743533295/
+
+/* SITE */
+  Standards: HTML5, CSS3, ES6+ JavaScript, SVG
+  Design: Ndebele Geometric Matrix, Sovereign African Governance Architecture
+  Copyright: Copyright (c) 2008 - 2026 Ethical Intelligence. All Rights Reserved.

@@ -1,40 +1,147 @@
 # Tag 0.20
-# Project Directories
+# ==============================================================================
+# Dependencies & Package Managers
+# ==============================================================================
 node_modules/
+.pnpm-store/
+.npm/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
 
-# IDEs & Editors
-.vscode/
+# ==============================================================================
+# IDEs, Editors & Workspaces
+# ==============================================================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 .idx/
 .idea/
 *.swp
 *.swo
+*~
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+.buildpath
 .cursorrules
+*.code-workspace
+.history/
+.zed/
 
-# OS Files
+# ==============================================================================
+# AI Assistants, Agents & LLM Trajectories
+# ==============================================================================
+.agents/
+.gemini/
+.claude/
+.copilot/
+.system_generated/
+brain/
+trajectories/
+transcript*.jsonl
+scratch/
+
+# ==============================================================================
+# OS Generated Files
+# ==============================================================================
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
 Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
 
-# Logs
+# ==============================================================================
+# Logs & Debugging
+# ==============================================================================
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Environment Secrets
+# ==============================================================================
+# Environment Secrets & Cryptographic Keys
+# ==============================================================================
 .env
 .env.local
 .env.*.local
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+id_rsa
+id_rsa.pub
+id_ed25519
+credentials.json
+service-account*.json
+*.secret
 
-# Project Specific
+# ==============================================================================
+# Testing, Coverage & Reports
+# ==============================================================================
+coverage/
+.nyc_output/
+cypress/videos/
+cypress/screenshots/
+playwright-report/
+test-results/
+*.lcov
+
+# ==============================================================================
+# Build Caches, Outputs & Temp Files
+# ==============================================================================
+dist/
+build/
+out/
+.cache/
+.eslintcache
+.parcel-cache/
+.turbo/
+*.tsbuildinfo
+*.tmp
+*.bak
+*.orig
+temp/
+tmp/
+
+# ==============================================================================
+# Project-Specific & Internal Drafts
+# ==============================================================================
 activate-node24.sh
+guardrails.md
+ithala.md
+design guide
+assets/symmetrical-portal-array.svg
 
-# Unreleased Dashboard Modules
+# Unreleased Dashboard Modules & Private Interactive Prototypes
 modules/dashboard.html
 modules/dashboard_test.html
 modules/dashboard-common.css
 modules/dashboard-common.js
+modules/collaboration-hub.html
+modules/esg-indicators.html
+modules/franchise-governance.html
+modules/governance-data-hub.html
+modules/governance-tasks.html
+modules/incident-calendar.html
+modules/integrity-inbox.html
+modules/rest-fatigue-monitor.html
+modules/system-portfolios.html
+modules/threat-logs.html
 
-# Agent Documentation
-guardrails.md
-ithala.md
-assets/symmetrical-portal-array.svg
+
+
