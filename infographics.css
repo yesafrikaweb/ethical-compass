@@ -632,9 +632,15 @@ body.light-mode .badge-name {
 
 .header-badges {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.85rem;
   margin-bottom: 2rem;
+}
+
+.header-badges .elegant-badge,
+.header-badges .cohort-status-pill {
+  margin-bottom: 0;
 }
 
 .hero-title {
@@ -4616,4 +4622,187 @@ body.light-mode .share-input-group {
 .briefing-toast.show {
   transform: translateY(0);
   opacity: 1;
+}
+
+/* --- PILOT DEMAND & COHORT 01 STATUS WIDGET / PILL --- */
+.cohort-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(233, 84, 32, 0.06);
+  border: 1px solid rgba(233, 84, 32, 0.25);
+  border-radius: 9999px;
+  font-size: 0.775rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+  user-select: none;
+}
+
+.cohort-status-pill strong {
+  color: var(--color-text-bright);
+  font-weight: 600;
+}
+
+.cohort-status-pill:hover {
+  background: rgba(233, 84, 32, 0.12);
+  border-color: var(--color-ubuntu-orange);
+  color: var(--color-text-bright);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(233, 84, 32, 0.2);
+}
+
+.cohort-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-ubuntu-orange);
+  box-shadow: 0 0 8px rgba(233, 84, 32, 0.7);
+  animation: authorityPulse 2s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+.cohort-arrow-icon {
+  color: var(--color-ubuntu-orange);
+  transition: transform 0.2s ease;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.cohort-status-pill:hover .cohort-arrow-icon {
+  transform: translateX(3px);
+}
+
+@keyframes authorityPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+body.light-mode .cohort-status-pill {
+  background: rgba(233, 84, 32, 0.08);
+  border-color: rgba(233, 84, 32, 0.3);
+  color: #334155;
+}
+
+body.light-mode .cohort-status-pill strong {
+  color: #0f172a;
+}
+
+/* --- ANALYTICAL VALIDATION METRICS GRID --- */
+.validation-hud-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.validation-metric-card {
+  background: var(--color-deep-blue);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.validation-metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-electric-blue), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.validation-metric-card:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.validation-metric-card:hover::before {
+  opacity: 1;
+}
+
+.val-metric-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  font-size: 0.725rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.val-metric-top svg {
+  color: var(--color-electric-blue);
+}
+
+.val-metric-num {
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text-bright);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+  font-feature-settings: "tnum";
+}
+
+.val-metric-sub {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.val-metric-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-bright);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.val-metric-desc {
+  font-size: 0.825rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .validation-hud-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .validation-hud-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+body.light-mode .validation-metric-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+body.light-mode .validation-metric-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }

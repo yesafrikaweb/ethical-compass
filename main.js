@@ -225,8 +225,9 @@ function injectBriefingModal() {
       <div class="briefing-modal-card">
         <button class="briefing-modal-close" onclick="closeBriefingModal()" aria-label="Close Modal">&times;</button>
         <div class="briefing-modal-header">
-          <h3>Request a Quote</h3>
-          <p>Tailored governance intelligence and deployment options for your organization.</p>
+          <div class="elegant-badge orange-badge" style="margin-bottom: 0.75rem; padding: 0.25rem 0.75rem; font-size: 0.7rem;">Private Evaluation Track</div>
+          <h3 style="margin-top: 0;">Request a Strategic Briefing</h3>
+          <p>Join peer risk & compliance executives participating in our private evaluation track.</p>
         </div>
         <form onsubmit="handleBriefingSubmit(event)">
           <div class="briefing-form-group">
@@ -235,33 +236,34 @@ function injectBriefingModal() {
           </div>
           <div class="briefing-form-group">
             <label for="briefing-email">Official Email</label>
-            <input type="email" id="briefing-email" name="email" class="briefing-form-input" placeholder="name@institution.gov.za" required />
+            <input type="email" id="briefing-email" name="email" class="briefing-form-input" placeholder="name@institution.com" required />
           </div>
           <div class="briefing-form-group">
             <label for="briefing-org">Organization / Department</label>
-            <input type="text" id="briefing-org" name="organization" class="briefing-form-input" placeholder="Department of Public Works / Treasury" required />
+            <input type="text" id="briefing-org" name="organization" class="briefing-form-input" placeholder="e.g. Advisory, Banking, Healthcare, or Enterprise" required />
           </div>
           <div class="briefing-form-group">
             <label for="briefing-type">Organization Sector</label>
             <select id="briefing-type" name="sector" class="briefing-form-select" required>
               <option value="" disabled selected>Select Sector...</option>
-              <option value="soe">State-Owned Enterprise (SOE)</option>
-              <option value="public">Public Sector / Department</option>
-              <option value="financial">Financial Institution</option>
-              <option value="corporate">Private Corporate Enclave</option>
-              <option value="other">Other Institutional Body</option>
+              <option value="advisory">Tier-1 Advisory & Forensic Audit</option>
+              <option value="banking">Banking & Capital Markets</option>
+              <option value="insurtech">Insurtech & Algorithmic Risk</option>
+              <option value="healthcare">Healthcare & Pharmacy Retail Networks</option>
+              <option value="corporate">Enterprise Corporate & Legal Counsel</option>
+              <option value="public">Public Sector & Statutory Body</option>
             </select>
           </div>
           <div class="briefing-form-group">
             <label for="briefing-notes">Briefing Focus Areas</label>
-            <textarea id="briefing-notes" name="notes" class="briefing-form-textarea" rows="3" placeholder="Outline specific regulatory, POPIA, or governance requirements..."></textarea>
+            <textarea id="briefing-notes" name="notes" class="briefing-form-textarea" rows="3" placeholder="Outline specific compliance priorities, algorithmic risks, or governance mandates..."></textarea>
           </div>
-          <button type="submit" class="briefing-submit-btn">Submit Request &rarr;</button>
+          <button type="submit" class="briefing-submit-btn">Request Confidential Briefing &rarr;</button>
         </form>
       </div>
     </div>
     <div id="briefing-toast" class="briefing-toast">
-      ✅ Demo Request Received! Our team will contact you shortly to schedule your live walkthrough.
+      ✅ Briefing Request Received. Our leadership team will contact you shortly to coordinate your private session.
     </div>
   `;
 
