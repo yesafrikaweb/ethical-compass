@@ -3,6 +3,9 @@
   "version": "0.20.0",
   "description": "A strategic platform for institutional accountability.",
   "main": "main.js",
+  "scripts": {
+    "test": "node tests/validate-html.js"
+  },
   "author": "Gcwelethemba Tshuma",
   "license": "MIT"
 }
