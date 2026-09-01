@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--
+  Ethical Intelligence (formerly Ethical Compass)
+  Institutional Governance & Continuous Oversight Platform
+  Developed & Created by Gcwelethemba Tshuma
+  Copyright (c) 2008 - 2026 Ethical Intelligence. All Rights Reserved.
+-->
+<html lang="en">
+
+<head>
+  <meta name="author" content="Gcwelethemba Tshuma">
+  <meta name="creator" content="Gcwelethemba Tshuma">
+  <meta name="publisher" content="Ethical Intelligence">
+  <meta name="copyright" content="Copyright (c) 2008 - 2026 Ethical Intelligence. All Rights Reserved.">
+  <meta property="og:author" content="Gcwelethemba Tshuma">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090a">
+  <meta name="application-name" content="Ethical Intelligence">
+  <meta name="apple-mobile-web-app-title" content="Ethical Intelligence">
+  <link rel="icon" type="image/svg+xml" href="assets/icon-avatar.svg">
+  <link rel="apple-touch-icon" href="assets/icon-avatar.svg">
+  <link rel="mask-icon" href="assets/icon-avatar.svg" color="#3b82f6">
+  <meta name="description" content="404 - The requested resource or module does not exist on Ethical Intelligence.">
+  <meta property="og:site_name" content="Ethical Intelligence">
+  <meta property="og:title" content="404 - Page Not Found | Ethical Intelligence">
+  <meta property="og:description" content="Institutional resource or module endpoint not located.">
+  <meta property="og:image" content="https://yesafrikaweb.github.io/ethical-compass/assets/icon-avatar.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="404 - Page Not Found | Ethical Intelligence">
+  <meta name="twitter:description" content="Institutional resource or module endpoint not located.">
+  <meta name="twitter:image" content="https://yesafrikaweb.github.io/ethical-compass/assets/icon-avatar.svg">
+  <title>404 - Resource Not Located | Ethical Intelligence</title>
+  <link rel="stylesheet" href="infographics.css?v=0.21">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .error-hero {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 1.5rem;
+      position: relative;
+    }
+
+    .error-code-badge {
+      font-size: clamp(4.5rem, 12vw, 8rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      background: linear-gradient(135deg, var(--color-text-bright) 30%, var(--color-electric-blue) 70%, var(--color-ubuntu-orange) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+      font-feature-settings: "tnum";
+    }
+
+    .error-card {
+      background: var(--color-deep-blue);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 3rem 2.5rem;
+      max-width: 680px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .error-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--color-ubuntu-orange), var(--color-electric-blue), transparent);
+    }
+
+    .error-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .error-links-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2.5rem;
+      text-align: left;
+    }
+
+    .error-link-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      color: var(--color-text-bright);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .error-link-pill:hover {
+      border-color: var(--color-electric-blue);
+      background: rgba(59, 130, 246, 0.08);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 640px) {
+      .error-links-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="red-theme">
+  <!-- Premium Sticky Navigation -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" title="Ethical Intelligence" aria-label="Ethical Intelligence">
+        <img src="assets/logo.svg" alt="Ethical Intelligence Logo" class="logo-img" />
+        Ethical Intelligence
+      </a>
+      <div class="nav-controls">
+        <a href="#" onclick="openBriefingModal(event)" class="nav-cta">Request a Briefing</a>
+        <button class="mode-toggle" onclick="toggleMode()" aria-label="Toggle Appearance">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Overview</a>
+        <div class="nav-divider"></div>
+        <a href="modules/approach.html" class="nav-link">Approach</a>
+        <a href="modules/features.html" class="nav-link">Features</a>
+        <a href="modules/economics-of-integrity.html" class="nav-link">Value</a>
+        <a href="modules/research-brief.html" class="nav-link">Research</a>
+        <a href="modules/about-us.html" class="nav-link">About Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container error-hero">
+    <div class="error-card reveal">
+      <div class="elegant-badge red-badge" style="margin-bottom: 1.25rem;">Status Code 404 • Resource Not Located</div>
+      <div class="error-code-badge">404</div>
+      <h1 style="font-size: clamp(1.5rem, 3.5vw, 2rem); margin-bottom: 1rem; color: var(--color-text-bright);">
+        Institutional Endpoint Not Found
+      </h1>
+      <p style="font-size: 1rem; color: var(--color-text-muted); line-height: 1.6; margin: 0 auto; max-width: 520px;">
+        The requested resource, analytical vector, or documentation module does not exist or has been relocated within the sovereign governance enclave.
+      </p>
+
+      <div class="error-actions">
+        <a href="index.html" class="hero-cta" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+          <span>Return to Overview</span>
+          <span>&rarr;</span>
+        </a>
+        <a href="modules/features.html" class="matrix-more" style="text-decoration: none; padding: 0.75rem 1.25rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 0.9rem; color: var(--color-text-bright);">
+          Explore Features
+        </a>
+      </div>
+
+      <div class="error-links-grid">
+        <a href="modules/approach.html" class="error-link-pill">
+          <span>Methodology</span>
+          <span style="color: var(--color-electric-blue);">&rarr;</span>
+        </a>
+        <a href="modules/research-brief.html" class="error-link-pill">
+          <span>Research Brief</span>
+          <span style="color: var(--color-ubuntu-orange);">&rarr;</span>
+        </a>
+        <a href="modules/about-us.html" class="error-link-pill">
+          <span>About Leadership</span>
+          <span style="color: var(--color-electric-blue);">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="container footer-layout reveal" style="display: flex; flex-direction: column; gap: 1.5rem;">
+    <div class="footer-brand" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <img src="assets/logo.svg" alt="Ethical Intelligence Logo" style="width: 24px; height: 24px;" />
+        <h4 style="margin: 0;">Ethical Intelligence</h4>
+      </div>
+      <button class="footer-share-btn" onclick="sharePlatform()" aria-label="Share Platform" style="margin: 0;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" width="18" height="18">
+          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+          <polyline points="16 6 12 2 8 6"></polyline>
+          <line x1="12" y1="2" x2="12" y2="15"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="footer-meta" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 1rem;">
+      <p style="font-size: 12px; color: var(--color-text-muted); margin: 0;">Copyright &copy; 2008 - 2026 Ethical Intelligence. All Rights Reserved.</p>
+      <p class="author-credit" style="font-size: 0.75rem; color: var(--color-text-muted, #888); margin: 0;">Developed &amp; Maintained by <strong>Gcwelethemba Tshuma</strong></p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

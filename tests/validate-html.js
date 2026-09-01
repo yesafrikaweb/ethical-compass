@@ -24,7 +24,11 @@ function assert(condition, message, file) {
 }
 
 function getAllHtmlFiles() {
-  const files = [path.join(ROOT_DIR, 'index.html')];
+  const rootFiles = fs.readdirSync(ROOT_DIR)
+    .filter(f => f.endsWith('.html'))
+    .map(f => path.join(ROOT_DIR, f));
+
+  const files = [...rootFiles];
   if (fs.existsSync(MODULES_DIR)) {
     const moduleFiles = fs.readdirSync(MODULES_DIR)
       .filter(f => f.endsWith('.html'))
