@@ -1,0 +1,56 @@
+# ==============================================================================
+# Ethical Intelligence (formerly Ethical Compass)
+# Web Crawler & Robot Access Policy (robots.txt)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Commercial AI Data Scrapers & Bulk Harvest Crawlers (Blocked)
+# ------------------------------------------------------------------------------
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+User-agent: CCBot
+User-agent: anthropic-ai
+User-agent: Claude-Web
+User-agent: ClaudeBot
+User-agent: Bytespider
+User-agent: Diffbot
+User-agent: FacebookBot
+User-agent: Meta-ExternalAgent
+User-agent: ImagesiftBot
+User-agent: PerplexityBot
+User-agent: Amazonbot
+User-agent: Scrapy
+User-agent: cohere-ai
+User-agent: Omgilibot
+Disallow: /
+
+# ------------------------------------------------------------------------------
+# 2. General Public Crawlers & Search Engines (Allowed on Public Pages)
+# ------------------------------------------------------------------------------
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /modules/
+Allow: /assets/
+
+# Protected Unreleased Prototypes & Internal Testing Suites
+Disallow: /modules/pilot-program.html
+Disallow: /modules/dashboard.html
+Disallow: /modules/dashboard_test.html
+Disallow: /modules/collaboration-hub.html
+Disallow: /modules/esg-indicators.html
+Disallow: /modules/franchise-governance.html
+Disallow: /modules/governance-data-hub.html
+Disallow: /modules/governance-tasks.html
+Disallow: /modules/incident-calendar.html
+Disallow: /modules/integrity-inbox.html
+Disallow: /modules/rest-fatigue-monitor.html
+Disallow: /modules/system-portfolios.html
+Disallow: /modules/threat-logs.html
+Disallow: /tests/
+
+# ------------------------------------------------------------------------------
+# 3. Canonical Sitemap Index
+# ------------------------------------------------------------------------------
+Sitemap: https://yesafrikaweb.github.io/ethical-compass/sitemap.xml

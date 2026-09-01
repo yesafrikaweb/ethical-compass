@@ -140,8 +140,18 @@ function runTestSuite() {
     });
   }
 
+  // 7. Robots.txt Security Policy Validation
+  const robotsPath = path.join(ROOT_DIR, 'robots.txt');
+  assert(fs.existsSync(robotsPath), 'Missing robots.txt crawler security policy', 'robots.txt');
+  if (fs.existsSync(robotsPath)) {
+    const robotsContent = fs.readFileSync(robotsPath, 'utf8');
+    assert(/User-agent:\s*GPTBot/i.test(robotsContent), 'robots.txt missing AI scraper blocking for GPTBot', 'robots.txt');
+    assert(/User-agent:\s*CCBot/i.test(robotsContent), 'robots.txt missing AI scraper blocking for CCBot', 'robots.txt');
+    assert(/Sitemap:\s*https?:\/\/[^\s]+/i.test(robotsContent), 'robots.txt missing canonical Sitemap directive', 'robots.txt');
+  }
+
   // Final Results Output
-  console.log(`Executed ${totalTests} assertions across ${htmlFiles.length} HTML files & sitemap.`);
+  console.log(`Executed ${totalTests} assertions across ${htmlFiles.length} HTML files, sitemap & robots.txt.`);
 
   if (failures.length === 0) {
     console.log(`\n\x1b[32m✔ ALL ${passedTests} TESTS PASSED! HTML structure & asset integrity verified.\x1b[0m\n`);
