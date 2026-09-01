@@ -951,6 +951,10 @@
 
       <div class="briefing-form-side">
         <form onsubmit="handleBriefingSubmit(event)">
+          <!-- Anti-bot honeypot trap -->
+          <div style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;" aria-hidden="true">
+            <input type="text" name="b_institutional_verify" tabindex="-1" autocomplete="off" />
+          </div>
           <div class="briefing-form-group">
             <label for="embed-demo-name">Full Name</label>
             <input type="text" id="embed-demo-name" name="name" class="briefing-form-input" placeholder="e.g. Dr. Jane Smith" required />

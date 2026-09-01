@@ -217,6 +217,36 @@ function initCounterAnimations() {
 }
 
 // --- BRIEFING MODAL SYSTEM ---
+// --- ANTI-AUTOMATION & HUMAN TIMING HEURISTICS ---
+window.__formInitTime = Date.now();
+
+function isAutomatedBot(form) {
+  // 1. Honeypot check (filled only by automated DOM crawlers)
+  const honeypot = form.querySelector('input[name="b_institutional_verify"]');
+  if (honeypot && honeypot.value.trim() !== '') {
+    return true;
+  }
+
+  // 2. Headless WebDriver flag (Puppeteer, Selenium, Playwright)
+  if (navigator.webdriver) {
+    return true;
+  }
+
+  // 3. Human timing heuristic (bots submit in < 1800ms)
+  const startTime = form.__openedAt || window.__formInitTime || 0;
+  const elapsed = Date.now() - startTime;
+  if (elapsed < 1800) {
+    return true;
+  }
+
+  // 4. Phantom zero-dimension display check
+  if (window.outerWidth === 0 && window.outerHeight === 0) {
+    return true;
+  }
+
+  return false;
+}
+
 function injectBriefingModal() {
   if (document.getElementById('briefing-modal-overlay')) return;
 
@@ -230,6 +260,10 @@ function injectBriefingModal() {
           <p>Join peer risk & compliance executives participating in our private evaluation track.</p>
         </div>
         <form onsubmit="handleBriefingSubmit(event)">
+          <!-- Anti-bot honeypot trap -->
+          <div style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;" aria-hidden="true">
+            <input type="text" name="b_institutional_verify" tabindex="-1" autocomplete="off" />
+          </div>
           <div class="briefing-form-group">
             <label for="briefing-name">Full Name</label>
             <input type="text" id="briefing-name" name="name" class="briefing-form-input" placeholder="e.g. Dr. Jane Smith" required />
@@ -275,6 +309,8 @@ function openBriefingModal(e) {
   const section = document.getElementById('briefing-section');
   if (section) {
     section.scrollIntoView({ behavior: 'smooth' });
+    const form = section.querySelector('form');
+    if (form) form.__openedAt = Date.now();
     const firstInput = section.querySelector('input');
     if (firstInput) setTimeout(() => firstInput.focus(), 600);
   } else {
@@ -282,6 +318,8 @@ function openBriefingModal(e) {
     const overlay = document.getElementById('briefing-modal-overlay');
     if (overlay) {
       overlay.classList.add('active');
+      const form = overlay.querySelector('form');
+      if (form) form.__openedAt = Date.now();
       document.body.style.overflow = 'hidden';
     }
   }
@@ -306,8 +344,32 @@ async function handleBriefingSubmit(e) {
   
   const form = e.target;
   const submitBtn = form.querySelector('button[type="submit"]');
+
+  // Anti-bot heuristic evaluation
+  if (isAutomatedBot(form)) {
+    console.warn("[Security] Automated submission filtered.");
+    if (submitBtn) {
+      submitBtn.textContent = "Processing...";
+      submitBtn.disabled = true;
+    }
+    // Simulate natural response without consuming API quota
+    await new Promise(resolve => setTimeout(resolve, 600));
+    closeBriefingModal();
+    const toast = document.getElementById('briefing-toast');
+    if (toast) {
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+    form.reset();
+    if (submitBtn) {
+      submitBtn.textContent = "Request Confidential Briefing →";
+      submitBtn.disabled = false;
+    }
+    return;
+  }
+
   const formData = new FormData(form);
-  
+  formData.delete("b_institutional_verify"); // Strip honeypot before sending
   formData.append("access_key", "2e3f5ed3-cbf1-4ed6-9dde-f3a2725c5c31");
 
   const originalText = submitBtn ? submitBtn.textContent : "Submit Request";
